@@ -1,13 +1,58 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "version": 2,
-  "cleanUrls": true,
-  "trailingSlash": false,
+  "cleanUrls": false,
+  "trailingSlash": true,
   "redirects": [
     {
       "source": "/",
-      "destination": "/templates",
+      "destination": "/templates/",
       "permanent": false
+    },
+    {
+      "source": "/templates",
+      "destination": "/templates/",
+      "permanent": true
+    },
+    {
+      "source": "/templates/template_1",
+      "destination": "/templates/template_1/",
+      "permanent": true
+    },
+    {
+      "source": "/templates/template_2",
+      "destination": "/templates/template_2/",
+      "permanent": true
+    },
+    {
+      "source": "/templates/template_3",
+      "destination": "/templates/template_3/",
+      "permanent": true
+    },
+    {
+      "source": "/templates/template_4",
+      "destination": "/templates/template_4/",
+      "permanent": true
+    },
+    {
+      "source": "/template_1",
+      "destination": "/templates/template_1/",
+      "permanent": true
+    },
+    {
+      "source": "/template_2",
+      "destination": "/templates/template_2/",
+      "permanent": true
+    },
+    {
+      "source": "/template_3",
+      "destination": "/templates/template_3/",
+      "permanent": true
+    },
+    {
+      "source": "/template_4",
+      "destination": "/templates/template_4/",
+      "permanent": true
     }
   ],
   "headers": [
@@ -44,22 +89,6 @@
   ],
   "rewrites": [
     {
-      "source": "/templates",
-      "destination": "/templates/index.html"
-    },
-    {
-      "source": "/templates/",
-      "destination": "/templates/index.html"
-    },
-    {
-      "source": "/switcher",
-      "destination": "/switcher.html"
-    },
-    {
-      "source": "/flagship",
-      "destination": "/index.html"
-    },
-    {
       "source": "/template_1/:path*",
       "destination": "/templates/template_1/:path*"
     },
@@ -74,6 +103,10 @@
     {
       "source": "/template_4/:path*",
       "destination": "/templates/template_4/:path*"
+    },
+    {
+      "source": "/flagship",
+      "destination": "/index.html"
     }
   ]
 }
