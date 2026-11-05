@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital e-Hundi & Giving | BHTCC Devotee App Template 2</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- App Header -->
+  <header class="t2-app-navbar">
+    <div class="container t2-nav-container">
+      <div class="t2-nav-left">
+        <a href="index.html" class="t2-app-brand">
+          <div class="t2-app-logo">🕉️</div>
+          <div>
+            <h2>BHTCC Ballarat</h2>
+            <span>Devotee App Portal</span>
+          </div>
+        </a>
+      </div>
+
+      <nav class="t2-pill-nav">
+        <a href="index.html">Sanctum</a>
+        <a href="project.html">Ross Creek Masterplan</a>
+        <a href="worship.html">Book Pooja</a>
+        <a href="community.html">Programs</a>
+        <a href="donate.html" class="active">Tax-Deductible Fund</a>
+      </nav>
+
+      <div class="t2-nav-actions">
+        <a href="donate.html" class="t2-btn-e-hundi"><span>🪔</span> e-Hundi</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Subpage Hero -->
+  <section class="t2-subpage-hero">
+    <div class="container">
+      <span class="t2-hero-pill">ACNC REGISTERED CHARITY</span>
+      <h1>Digital e-Hundi & Tax-Deductible Giving</h1>
+      <p>Directly support the construction of Ross Creek Temple and cultural classrooms. Donations of $2 or more to eligible building funds are tax-deductible in Australia (ABN: 13 397 829 440).</p>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main class="container py-4">
+
+    <!-- DevTech Checkout Container -->
+    <div class="t2-checkout-wrapper">
+      <div class="t2-checkout-box">
+        <div class="t2-cbox-top">
+          <span class="t2-pill-orange">100% SECURE DGR CHECKOUT</span>
+          <h2>Make Your Sacred Offering</h2>
+          <p>Instant PDF receipt dispatched to your email for Australian tax return claiming. Endorsed as a Deductible Gift Recipient (DGR) under Subdivision 30-B ITAA 1997 (Tax-deductible for gifts of $2+ AUD).</p>
+        </div>
+
+        <form onsubmit="handleDevTechDonation(event)">
+          <!-- Campaign Choice -->
+          <div class="t2-form-section-item">
+            <label class="t2-label-bold">1. Select Giving Campaign</label>
+            <div class="t2-camp-pill-group">
+              <label class="t2-cpill">
+                <input type="radio" name="camp" value="Ross Creek Temple Building" checked>
+                <span>🧱 Ross Creek Building Fund</span>
+              </label>
+              <label class="t2-cpill">
+                <input type="radio" name="camp" value="Cultural & Library Education">
+                <span>📚 Cultural & Library Fund</span>
+              </label>
+              <label class="t2-cpill">
+                <input type="radio" name="camp" value="Annadanam Free Kitchen Feast">
+                <span>🍲 Annadanam Feast Seva</span>
+              </label>
+              <label class="t2-cpill">
+                <input type="radio" name="camp" value="Foundation Brick ($101)">
+                <span>✨ Sponsor Foundation Brick ($101)</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Quick Amounts -->
+          <div class="t2-form-section-item">
+            <label class="t2-label-bold">2. Choose Amount (AUD)</label>
+            <div class="t2-amounts-row">
+              <button type="button" class="t2-amt-btn active" onclick="setT2Amt(50, this)">$50</button>
+              <button type="button" class="t2-amt-btn" onclick="setT2Amt(101, this)">$101</button>
+              <button type="button" class="t2-amt-btn" onclick="setT2Amt(251, this)">$251</button>
+              <button type="button" class="t2-amt-btn" onclick="setT2Amt(501, this)">$501</button>
+              <button type="button" class="t2-amt-btn" onclick="setT2Amt(1001, this)">$1,001</button>
+            </div>
+            <div class="mt-2">
+              <input type="number" id="t2CustomAmt" placeholder="Or enter custom amount in AUD" class="t2-field-input" oninput="customT2Amt(this.value)">
+            </div>
+          </div>
+
+          <!-- Devotee Details -->
+          <div class="t2-form-section-item">
+            <label class="t2-label-bold">3. Devotee & Tax Receipt Details</label>
+            <div class="t2-fields-grid">
+              <div class="t2-input-field">
+                <label>Full Name *</label>
+                <input type="text" id="t2Name" placeholder="Full legal name for ABN receipt" required>
+              </div>
+              <div class="t2-input-field">
+                <label>Email Address *</label>
+                <input type="email" id="t2Email" placeholder="yourname@gmail.com" required>
+              </div>
+            </div>
+            <div class="t2-checkbox-line mt-2">
+              <label>
+                <input type="checkbox" id="t2Anon">
+                <span>Keep my offering anonymous on public devotee boards</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Simulated Credit Terminal -->
+          <div class="t2-form-section-item">
+            <label class="t2-label-bold">4. Simulated Secure Card Terminal (256-Bit SSL)</label>
+            <div class="t2-card-box">
+              <input type="text" placeholder="Card Number" value="4532 •••• •••• 9210" class="t2-field-input mb-2">
+              <div class="t2-fields-grid">
+                <input type="text" placeholder="MM/YY" value="09/28" class="t2-field-input">
+                <input type="password" placeholder="CVV" value="999" class="t2-field-input">
+              </div>
+            </div>
+          </div>
+
+          <!-- Submit Button -->
+          <button type="submit" class="t2-btn-orange-large w-full mt-3">
+            <span>💳 Complete Secure Contribution:</span> <strong id="t2DisplayAmt">$50 AUD</strong>
+          </button>
+        </form>
+
+        <!-- Dynamic Instant Official Receipt Result -->
+        <div id="t2Receipt" style="display:none; margin-top: 2rem; background: #FFF; border: 2px solid #F59F00; padding: 2rem; border-radius: 16px; box-shadow: 0 10px 25px rgba(217, 72, 15, 0.08);">
+          <div style="text-align: center; border-bottom: 2px dashed #F59F00; padding-bottom: 1rem; margin-bottom: 1rem;">
+            <div style="font-size: 2rem;">🕉️</div>
+            <h3 style="color: #9A3412;">BALLARAT HINDU TEMPLE & CULTURAL CENTRE INC.</h3>
+            <p style="font-size: 0.8rem; color: #6B5B52;">110 Vaggs Rd, Ross Creek VIC 3351 • ABN: 13 397 829 440</p>
+            <span style="background: #2E7D32; color: #FFF; font-size: 0.75rem; font-weight: 700; padding: 0.2rem 0.6rem; border-radius: 9999px;">OFFICIAL DGR TAX RECEIPT (ATO COMPLIANT)</span>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; font-size: 0.85rem;">
+            <div><strong>Receipt ID:</strong> <span id="t2RecId">BHTCC-APP-7819</span></div>
+            <div><strong>Timestamp:</strong> <span id="t2RecTime"></span></div>
+            <div><strong>Donor:</strong> <span id="t2RecDonor"></span></div>
+            <div><strong>Fund:</strong> <span id="t2RecFund"></span></div>
+            <div><strong>Amount:</strong> <span id="t2RecVal" style="color: #D9480F; font-size: 1.15rem; font-weight: 800;"></span></div>
+            <div><strong>Deduction:</strong> 100% Tax Deductible ($2+ Rule)</div>
+          </div>
+
+          <div style="text-align: center; margin-top: 1.5rem;">
+            <button onclick="window.print()" class="t2-btn-outline">🖨️ Save PDF Receipt</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Membership Tiers (From BHTCC Membership Page) -->
+    <section class="mt-5" id="membership">
+      <div class="t2-section-header">
+        <div>
+          <span class="t2-sub-label">Devotee Association</span>
+          <h2>BHTCC Membership Subscription Tiers</h2>
+        </div>
+      </div>
+
+      <div class="t2-membership-cards-grid">
+        <div class="t2-mem-card">
+          <div class="t2-mem-head">
+            <h3>Ordinary Member</h3>
+            <div class="t2-mem-price">$50 <span>AUD / Year</span></div>
+          </div>
+          <p>Annual voting membership for regional individuals and families.</p>
+          <ul class="t2-mem-list">
+            <li>✓ Full voting rights at BHTCC AGMs</li>
+            <li>✓ Priority priest booking privileges</li>
+            <li>✓ Monthly building development newsletters</li>
+          </ul>
+          <button class="t2-btn-mem" onclick="joinMembershipT2('Ordinary')">Join for $50/Yr ↗</button>
+        </div>
+
+        <div class="t2-mem-card featured">
+          <span class="t2-ribbon-badge">RECOMMENDED</span>
+          <div class="t2-mem-head">
+            <h3>Life Member</h3>
+            <div class="t2-mem-price">$500 <span>AUD (One-Time)</span></div>
+          </div>
+          <p>Lifetime association and permanent patron status for devotee families.</p>
+          <ul class="t2-mem-list">
+            <li>✓ Lifetime voting rights and AGM participation</li>
+            <li>✓ Discounts on hall and commercial kitchen hire</li>
+            <li>✓ Family name engraved on Foundation Devotee Board</li>
+            <li>✓ 2 Children free enrollment in Sanskrit classes</li>
+          </ul>
+          <button class="t2-btn-mem-highlight" onclick="joinMembershipT2('Life')">Join Life Tier ($500) ↗</button>
+        </div>
+
+        <div class="t2-mem-card">
+          <div class="t2-mem-head">
+            <h3>Association Member</h3>
+            <div class="t2-mem-price">$150 <span>AUD / Year</span></div>
+          </div>
+          <p>Institutional membership for cultural organizations and non-profits.</p>
+          <ul class="t2-mem-list">
+            <li>✓ Collaborative festival hosting at Ross Creek</li>
+            <li>✓ Co-branding in regional multicultural publications</li>
+            <li>✓ Representation at Ballarat interfaith meetings</li>
+          </ul>
+          <button class="t2-btn-mem" onclick="joinMembershipT2('Association')">Join Association ↗</button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="t2-app-footer">
+    <div class="container">
+      <div class="t2-footer-split">
+        <div class="t2-f-left">
+          <div class="t2-app-brand">
+            <div class="t2-app-logo">🕉️</div>
+            <div>
+              <h3>BALLARAT HINDU TEMPLE & CULTURAL CENTRE</h3>
+              <p>Incorporated Association (Victoria) • ABN: 13 397 829 440</p>
+            </div>
+          </div>
+        </div>
+        <div class="t2-f-nav">
+          <a href="index.html">Sanctum</a>
+          <a href="project.html">Masterplan</a>
+          <a href="worship.html">Book Pooja</a>
+          <a href="community.html">Programs</a>
+          <a href="donate.html">Tax Invoicing ($2+)</a>
+        </div>
+      </div>
+      <div class="t2-footer-sub">
+        <p>© 2026 Ballarat Hindu Temple & Cultural Centre Inc. All rights reserved. • Template 2: Modern DevTech App Architecture</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

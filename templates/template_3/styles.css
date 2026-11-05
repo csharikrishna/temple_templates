@@ -1,0 +1,1298 @@
+/* ==========================================================================
+   TEMPLATE 3: DRAVIDIAN GRANITE, ANCIENT BRONZE & ENTERPRISE PILGRIMAGE HUB
+   Architectural Archetype: Operations Command Center & Trust Portal (TTD / Shirdi Sansthan)
+   Ballarat Hindu Temple & Cultural Centre Inc. (BHTCC)
+   ========================================================================== */
+
+:root {
+  /* -------------------------------------------------------------------------
+     1. SACRED COLOR HARMONY DESIGN TOKENS
+     ------------------------------------------------------------------------- */
+  /* Primary Heritage Tones */
+  --t3-obsidian: #0D1211;         /* Deep Garbhagriha Midnight */
+  --t3-granite: #111816;          /* Temple Chiseled Granite */
+  --t3-granite-card: #18221F;     /* Deep Slate Command Surface */
+  --t3-granite-border: rgba(184, 115, 51, 0.28);
+  --t3-crimson: #58111A;          /* Sacred Kumkum Crimson */
+  --t3-crimson-dark: #3C0A11;
+  
+  /* Divine Accent & Metallic Tones */
+  --t3-bronze: #B87333;           /* Ancient Temple Bronze */
+  --t3-bronze-light: #D99B72;     /* Polished Copper Highlight */
+  --t3-bronze-glow: rgba(184, 115, 51, 0.35);
+  --t3-gold: #D4AF37;             /* Classic Temple Gold Foil */
+  --t3-gold-light: #F3E5AB;
+  --t3-emerald: #10B981;          /* Consecrated Tulasi Emerald */
+  --t3-emerald-dark: #0F5132;     /* Deep Bilva Green */
+  --t3-amber: #F59E0B;            /* Auspicious Haldi Amber */
+  
+  /* Sandalwood Neutrals & Surfaces */
+  --t3-slate-bg: #F1F5F9;         /* Cool Sandstone Mist */
+  --t3-slate-surface: #FFFFFF;    /* Crisp White Surface */
+  --t3-text-dark: #0F172A;        /* Deep Inscription Ink */
+  --t3-text-muted: #64748B;       /* Muted Slate Inscriptions */
+  
+  /* Borders & Shadows */
+  --t3-border-light: 1px solid #CBD5E1;
+  --t3-border-subtle: 1px solid rgba(184, 115, 51, 0.2);
+  --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.05);
+  --shadow-md: 0 8px 24px rgba(15, 23, 42, 0.08);
+  --shadow-lg: 0 16px 40px rgba(13, 18, 17, 0.16);
+  --shadow-bronze: 0 8px 30px rgba(184, 115, 51, 0.25);
+  
+  /* Typography & Layout */
+  --t3-font-serif: 'Cinzel', Georgia, serif;
+  --t3-font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --t3-radius: 6px;
+  --radius-full: 9999px;
+  --transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* -------------------------------------------------------------------------
+   BASE RESET & FLUID TYPOGRAPHY
+   ------------------------------------------------------------------------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--t3-font-sans);
+  background-color: var(--t3-slate-bg);
+  color: var(--t3-text-dark);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: var(--t3-font-serif);
+  font-weight: 700;
+  color: var(--t3-granite);
+  letter-spacing: 0.02em;
+  line-height: 1.25;
+}
+
+p {
+  color: var(--t3-text-muted);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  transition: var(--transition);
+}
+
+.container {
+  width: 100%;
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.py-5 { padding-top: 4rem; padding-bottom: 4rem; }
+.py-4 { padding-top: 2.75rem; padding-bottom: 2.75rem; }
+.mb-5 { margin-bottom: 3.5rem; }
+.mb-4 { margin-bottom: 2rem; }
+.mt-4 { margin-top: 2rem; }
+.mt-3 { margin-top: 1rem; }
+.mt-2 { margin-top: 0.5rem; }
+
+/* -------------------------------------------------------------------------
+   1. MULTI-TIER OFFICIAL GOVERNMENT / TRUST HEADER (3 TIERS)
+   ------------------------------------------------------------------------- */
+.t3-enterprise-header {
+  width: 100%;
+  position: relative;
+  z-index: 100;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.12);
+}
+
+/* Tier 1: Top Gov Ribbon */
+.t3-top-gov-ribbon {
+  background: var(--t3-obsidian);
+  color: #94A3B8;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 0.45rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.t3-gov-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+}
+
+.t3-gov-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.t3-gov-ssl-tag {
+  color: var(--t3-emerald);
+  font-weight: 700;
+}
+
+.t3-lang-switcher {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.t3-lang-switcher button {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #CBD5E1;
+  font-size: 0.725rem;
+  padding: 0.2rem 0.55rem;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.t3-lang-switcher button:hover,
+.t3-lang-switcher button.active {
+  background: var(--t3-bronze);
+  color: #FFF;
+  border-color: var(--t3-bronze);
+}
+
+/* Tier 2: Main Navigation Bar */
+.t3-main-nav-bar {
+  background: var(--t3-granite);
+  color: #FFF;
+  padding: 1.1rem 0;
+  border-bottom: 3px solid var(--t3-bronze);
+}
+
+.t3-nav-split {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.t3-official-seal-brand {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+  text-decoration: none;
+  color: #FFF;
+}
+
+.t3-seal-crest {
+  width: 54px;
+  height: 54px;
+  background: radial-gradient(circle at 35% 35%, #263430 0%, #0D1211 100%);
+  border: 2px solid var(--t3-bronze);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.85rem;
+  box-shadow: 0 0 18px var(--t3-bronze-glow);
+  flex-shrink: 0;
+}
+
+.t3-official-seal-brand h1 {
+  font-size: clamp(1.1rem, 2vw, 1.35rem);
+  color: #FFF;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.15rem;
+}
+
+.t3-official-seal-brand p {
+  font-size: 0.775rem;
+  color: var(--t3-bronze-light);
+  font-weight: 500;
+  letter-spacing: 0.03em;
+}
+
+.t3-hotline-cluster {
+  display: flex;
+  align-items: center;
+  gap: 1.85rem;
+}
+
+.t3-hotline-item {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+  border-right: 1px solid rgba(255, 255, 255, 0.15);
+  padding-right: 1.35rem;
+}
+
+.t3-hl-label {
+  font-size: 0.65rem;
+  color: #94A3B8;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.t3-hl-val {
+  font-size: 0.95rem;
+  color: var(--t3-emerald);
+  font-weight: 800;
+  font-family: monospace;
+}
+
+.t3-btn-pass {
+  background: linear-gradient(135deg, var(--t3-bronze) 0%, #8A4B1A 100%);
+  color: #FFF;
+  padding: 0.65rem 1.35rem;
+  border-radius: var(--t3-radius);
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 14px rgba(184, 115, 51, 0.35);
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.t3-btn-pass:hover {
+  background: #C2845B;
+  color: #0F1413;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(194, 132, 91, 0.45);
+}
+
+/* Tier 3: Official Subnav Bar */
+.t3-subnav-bar {
+  background: var(--t3-granite-card);
+  border-bottom: 1px solid rgba(184, 115, 51, 0.25);
+  padding: 0.75rem 0;
+}
+
+.t3-subnav-flex {
+  display: flex;
+  gap: 1.85rem;
+  flex-wrap: wrap;
+}
+
+.t3-subnav-bar a {
+  color: #CBD5E1;
+  text-decoration: none;
+  font-size: 0.825rem;
+  font-weight: 600;
+  transition: var(--transition);
+  position: relative;
+  padding: 0.2rem 0;
+}
+
+.t3-subnav-bar a:hover,
+.t3-subnav-bar a.active {
+  color: var(--t3-bronze-light);
+  font-weight: 700;
+}
+
+.t3-subnav-bar a.active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--t3-bronze-light);
+}
+
+/* -------------------------------------------------------------------------
+   2. COMMAND CENTER DASHBOARD HERO (3-PANEL HIGH-DENSITY OPERATIONS)
+   ------------------------------------------------------------------------- */
+.t3-command-hero {
+  background: #0E1614;
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(184, 115, 51, 0.1) 0%, transparent 45%),
+    radial-gradient(circle at 90% 80%, rgba(16, 185, 129, 0.06) 0%, transparent 45%);
+  padding: 2rem 0 3.5rem;
+  border-bottom: 2px solid var(--t3-granite-border);
+}
+
+/* Flash Marquee Alert Ticker */
+.t3-flash-ticker {
+  background: rgba(24, 34, 31, 0.95);
+  border: 1px solid var(--t3-granite-border);
+  border-left: 4px solid var(--t3-amber);
+  border-radius: 4px;
+  padding: 0.6rem 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 1.75rem;
+  overflow: hidden;
+}
+
+.t3-flash-badge {
+  background: var(--t3-amber);
+  color: #000;
+  font-size: 0.7rem;
+  font-weight: 800;
+  padding: 0.25rem 0.6rem;
+  border-radius: 3px;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+}
+
+.t3-marquee {
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: 0.85rem;
+  color: #E2E8F0;
+  font-weight: 500;
+  animation: t3Marquee 38s linear infinite;
+}
+
+.t3-marquee:hover {
+  animation-play-state: paused;
+}
+
+@keyframes t3Marquee {
+  0% { transform: translateX(10%); }
+  100% { transform: translateX(-100%); }
+}
+
+/* 3-Panel Command Center Grid */
+.t3-command-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 1.6fr 1.05fr;
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+.t3-panel {
+  background: var(--t3-granite-card);
+  border: 1px solid var(--t3-granite-border);
+  border-radius: var(--t3-radius);
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  display: flex;
+  flex-direction: column;
+}
+
+.t3-panel-status {
+  border-top: 3px solid var(--t3-emerald);
+}
+
+.t3-panel-video {
+  border-top: 3px solid var(--t3-bronze);
+}
+
+.t3-panel-quota {
+  border-top: 3px solid #38BDF8;
+}
+
+.t3-panel-header {
+  background: #111816;
+  padding: 0.85rem 1.25rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: var(--t3-bronze-light);
+  letter-spacing: 0.04em;
+}
+
+.t3-dot-live {
+  color: var(--t3-emerald);
+  font-size: 0.725rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  animation: pulseLive 1.6s infinite;
+}
+
+@keyframes pulseLive {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.t3-badge-green {
+  background: rgba(16, 185, 129, 0.18);
+  color: var(--t3-emerald);
+  border: 1px solid var(--t3-emerald);
+  font-size: 0.675rem;
+  font-weight: 800;
+  padding: 0.2rem 0.55rem;
+  border-radius: 3px;
+  text-transform: uppercase;
+}
+
+.t3-badge-orange {
+  background: rgba(245, 158, 11, 0.18);
+  color: var(--t3-amber);
+  border: 1px solid var(--t3-amber);
+  font-size: 0.675rem;
+  font-weight: 800;
+  padding: 0.2rem 0.55rem;
+  border-radius: 3px;
+  text-transform: uppercase;
+}
+
+.t3-badge-blue {
+  background: rgba(56, 189, 248, 0.18);
+  color: #38BDF8;
+  border: 1px solid #38BDF8;
+  font-size: 0.675rem;
+  font-weight: 800;
+  padding: 0.2rem 0.55rem;
+  border-radius: 3px;
+  text-transform: uppercase;
+}
+
+.t3-panel-body {
+  padding: 1.5rem;
+  flex: 1;
+}
+
+/* Metric Rows in Panel 1 */
+.t3-metric-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  font-size: 0.85rem;
+}
+
+.t3-metric-row:last-child {
+  border-bottom: none;
+}
+
+.t3-m-label {
+  color: #94A3B8;
+  font-weight: 500;
+}
+
+.t3-m-val {
+  color: #F8FAFC;
+  font-weight: 800;
+  font-family: monospace;
+  font-size: 0.95rem;
+}
+
+.text-green {
+  color: var(--t3-emerald) !important;
+}
+
+.t3-panel-footer {
+  background: #0D1211;
+  padding: 0.6rem 1.25rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  font-size: 0.725rem;
+  color: #64748B;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Video Center Panel */
+.t3-video-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  background: #000;
+  overflow: hidden;
+}
+
+.t3-video-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.92;
+  transition: transform 0.6s ease;
+}
+
+.t3-panel:hover .t3-video-wrap img {
+  transform: scale(1.03);
+}
+
+.t3-vid-watermark {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: rgba(13, 18, 17, 0.85);
+  backdrop-filter: blur(6px);
+  padding: 0.35rem 0.85rem;
+  border-radius: 3px;
+  font-size: 0.725rem;
+  color: #F8FAFC;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.t3-vid-active-ritual {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  right: 12px;
+  background: linear-gradient(0deg, rgba(0,0,0,0.9) 0%, transparent 100%);
+  padding: 2rem 0.85rem 0.65rem;
+  color: var(--t3-bronze-light);
+  font-size: 0.825rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+}
+
+.t3-video-subbar {
+  background: #111816;
+  padding: 0.95rem 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.825rem;
+  color: #CBD5E1;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.t3-btn-sub {
+  color: #38BDF8;
+  font-weight: 800;
+  text-decoration: none;
+  font-size: 0.825rem;
+}
+
+.t3-btn-sub:hover {
+  text-decoration: underline;
+}
+
+/* Quota Panel 3 */
+.t3-action-full-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  background: linear-gradient(135deg, var(--t3-emerald-dark) 0%, #047857 100%);
+  color: #FFF;
+  text-align: center;
+  padding: 0.85rem;
+  border-radius: var(--t3-radius);
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 0.9rem;
+  border: 1px solid var(--t3-emerald);
+  box-shadow: 0 4px 16px rgba(16, 185, 129, 0.3);
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.t3-action-full-btn:hover {
+  background: #059669;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(16, 185, 129, 0.5);
+}
+
+/* -------------------------------------------------------------------------
+   3. HIGH-DENSITY 3x3 SERVICE MATRIX GRID (SRV-01 TO SRV-06)
+   ------------------------------------------------------------------------- */
+.t3-services-matrix-section {
+  padding: 4.5rem 0;
+  background: #FFFFFF;
+}
+
+.t3-matrix-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 2.25rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.t3-matrix-header span.tag {
+  font-size: 0.775rem;
+  color: var(--t3-bronze);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  display: block;
+}
+
+.t3-matrix-header h2 {
+  font-size: clamp(1.8rem, 3.2vw, 2.3rem);
+  color: var(--t3-granite);
+  margin-top: 0.2rem;
+}
+
+.t3-matrix-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+}
+
+.t3-matrix-tile {
+  background: #F8FAFC;
+  border: 1.5px solid #E2E8F0;
+  border-radius: var(--t3-radius);
+  padding: 1.75rem;
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-sm);
+}
+
+.t3-matrix-tile:hover {
+  border-color: var(--t3-bronze);
+  box-shadow: 0 10px 30px rgba(184, 115, 51, 0.16);
+  transform: translateY(-4px);
+  background: #FFF;
+}
+
+.t3-mt-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.85rem;
+}
+
+.t3-mt-code {
+  font-family: monospace;
+  font-size: 0.75rem;
+  font-weight: 800;
+  background: #E2E8F0;
+  color: #1E293B;
+  padding: 0.2rem 0.6rem;
+  border-radius: 3px;
+  letter-spacing: 0.05em;
+}
+
+.t3-matrix-tile h3 {
+  font-size: 1.2rem;
+  color: #0F172A;
+  margin-bottom: 0.5rem;
+}
+
+.t3-matrix-tile p {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: #64748B;
+  margin-bottom: 1.35rem;
+  flex: 1;
+}
+
+.t3-matrix-tile a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: var(--t3-bronze);
+  font-weight: 800;
+  font-size: 0.85rem;
+  text-decoration: none;
+  border-top: 1px solid #E2E8F0;
+  padding-top: 0.85rem;
+  transition: var(--transition);
+}
+
+.t3-matrix-tile a:hover {
+  color: #8A4B1A;
+  transform: translateX(3px);
+}
+
+/* -------------------------------------------------------------------------
+   4. OFFICIAL ARJITHA SEVA TIMETABLE TABLE
+   ------------------------------------------------------------------------- */
+.t3-schedule-table-section {
+  padding: 1.5rem 0 5rem;
+  background: var(--t3-slate-bg);
+}
+
+.t3-table-card {
+  background: #FFFFFF;
+  border: 1px solid #CBD5E1;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+
+.t3-tc-head {
+  background: var(--t3-granite);
+  padding: 1.35rem 2rem;
+  color: #FFF;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
+.t3-tc-head h3 {
+  font-size: 1.3rem;
+  color: #FFF;
+  margin: 0;
+}
+
+.t3-tc-head span {
+  font-size: 0.825rem;
+  color: var(--t3-bronze-light);
+  font-weight: 600;
+}
+
+.t3-official-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.885rem;
+}
+
+.t3-official-table th {
+  background: #F8FAFC;
+  color: #334155;
+  font-weight: 800;
+  padding: 1rem 1.35rem;
+  border-bottom: 2px solid #CBD5E1;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.t3-official-table td {
+  padding: 1.15rem 1.35rem;
+  border-bottom: 1px solid #E2E8F0;
+  color: #1E293B;
+  vertical-align: middle;
+}
+
+.t3-official-table tbody tr:hover {
+  background: #FFFDF9;
+}
+
+.t3-table-btn {
+  display: inline-block;
+  background: transparent;
+  color: var(--t3-granite);
+  border: 1.5px solid var(--t3-granite);
+  padding: 0.4rem 0.95rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.8rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.t3-table-btn:hover {
+  background: var(--t3-granite);
+  color: #FFF;
+}
+
+.t3-table-btn-solid {
+  display: inline-block;
+  background: var(--t3-bronze);
+  color: #FFF;
+  padding: 0.4rem 0.95rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.8rem;
+  font-weight: 800;
+  border: 1.5px solid var(--t3-bronze);
+  box-shadow: 0 2px 8px rgba(184, 115, 51, 0.3);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.t3-table-btn-solid:hover {
+  background: #8A4B1A;
+  border-color: #8A4B1A;
+  transform: translateY(-2px);
+}
+
+/* -------------------------------------------------------------------------
+   5. ENTERPRISE FOOTER
+   ------------------------------------------------------------------------- */
+.t3-enterprise-footer {
+  background: #0D1211;
+  border-top: 3px solid var(--t3-bronze);
+  padding: 3rem 0 2rem;
+  color: #94A3B8;
+}
+
+.t3-ef-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.t3-ef-brand h4 {
+  color: #FFF;
+  font-size: 1.2rem;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.35rem;
+}
+
+.t3-ef-brand p {
+  font-size: 0.825rem;
+  color: #94A3B8;
+  line-height: 1.5;
+}
+
+.t3-ef-nav {
+  display: flex;
+  gap: 1.75rem;
+  flex-wrap: wrap;
+}
+
+.t3-ef-nav a {
+  color: #CBD5E1;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.t3-ef-nav a:hover {
+  color: var(--t3-bronze-light);
+  text-decoration: underline;
+}
+
+.t3-ef-bottom {
+  text-align: center;
+  font-size: 0.775rem;
+  color: #64748B;
+}
+
+/* -------------------------------------------------------------------------
+   6. SUBPAGE ENHANCEMENTS: PROJECT, WORSHIP, COMMUNITY, DONATE
+   ------------------------------------------------------------------------- */
+.t3-subpage-hero {
+  background: #0E1614;
+  background-image: radial-gradient(circle at 10% 10%, rgba(184, 115, 51, 0.15) 0%, transparent 45%);
+  border-bottom: 2px solid var(--t3-bronze);
+  padding: 3.5rem 0 3rem;
+}
+
+.t3-hero-code {
+  font-family: monospace;
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: var(--t3-emerald);
+  letter-spacing: 0.06em;
+  background: rgba(16, 185, 129, 0.12);
+  padding: 0.25rem 0.75rem;
+  border-radius: 3px;
+  border: 1px solid rgba(16, 185, 129, 0.35);
+  display: inline-block;
+  margin-bottom: 0.65rem;
+}
+
+.t3-subpage-hero h1 {
+  color: #FFF;
+  font-size: clamp(2rem, 3.8vw, 2.6rem);
+  margin: 0.35rem 0 0.65rem;
+}
+
+.t3-subpage-hero p {
+  color: #CBD5E1;
+  max-width: 820px;
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+/* Telemetry Bar in Project */
+.t3-telemetry-bar {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+  margin: 1.5rem 0 2.5rem;
+}
+
+.t3-t-item {
+  background: #FFF;
+  border: 1px solid #CBD5E1;
+  border-left: 4px solid var(--t3-bronze);
+  padding: 1.35rem;
+  border-radius: 4px;
+  box-shadow: var(--shadow-sm);
+}
+
+.t3-t-val {
+  display: block;
+  font-size: 1.65rem;
+  font-weight: 800;
+  color: #0F172A;
+  font-family: monospace;
+  line-height: 1.1;
+}
+
+.t3-t-lbl {
+  font-size: 0.75rem;
+  color: #64748B;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 0.35rem;
+}
+
+/* Data Card */
+.t3-data-card {
+  background: #FFF;
+  border: 1px solid #CBD5E1;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  margin-bottom: 2.25rem;
+}
+
+.t3-dc-head {
+  background: var(--t3-granite);
+  padding: 1.15rem 1.75rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
+.t3-dc-head h3 {
+  font-size: 1.25rem;
+  color: #FFF;
+  letter-spacing: 0.03em;
+  margin: 0;
+}
+
+/* Audit Stream in Community */
+.t3-audit-stream {
+  padding: 1rem 1.75rem;
+}
+
+.t3-audit-row {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+  padding: 1.1rem 0;
+  border-bottom: 1px solid #E2E8F0;
+}
+
+.t3-audit-row:last-child { border-bottom: none; }
+
+.t3-ar-date {
+  font-family: monospace;
+  font-weight: 800;
+  font-size: 0.885rem;
+  color: var(--t3-bronze);
+  min-width: 85px;
+}
+
+.t3-ar-body { flex: 1; }
+.t3-ar-body h4 { font-size: 1.05rem; color: #0F172A; margin-bottom: 0.25rem; }
+.t3-ar-body p { font-size: 0.85rem; color: #64748B; }
+
+.t3-ar-status {
+  font-size: 0.725rem;
+  font-weight: 800;
+  padding: 0.25rem 0.65rem;
+  border-radius: 3px;
+  text-transform: uppercase;
+}
+
+.t3-ar-status.pass { background: #D1FAE5; color: #065F46; }
+.t3-ar-status.active { background: #FEF3C7; color: #92400E; }
+.t3-ar-status.pend { background: #E0E7FF; color: #3730A3; }
+
+/* Bronze Banner */
+.t3-bronze-banner {
+  background: linear-gradient(135deg, #18221F 0%, #111816 100%);
+  border: 1.5px solid var(--t3-bronze);
+  border-radius: 6px;
+  padding: 2.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.75rem;
+  flex-wrap: wrap;
+}
+
+/* Section Title Bar */
+.t3-section-title-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-bottom: 2px solid #CBD5E1;
+  padding-bottom: 0.85rem;
+  margin-bottom: 1.75rem;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
+.t3-section-title-bar h2 {
+  font-size: 1.7rem;
+  color: #0F172A;
+  margin: 0;
+}
+
+/* Deities Matrix in Worship */
+.t3-deities-matrix {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+  margin-bottom: 2.5rem;
+}
+
+.t3-deity-tile {
+  background: #FFF;
+  border: 1px solid #CBD5E1;
+  border-radius: 6px;
+  padding: 1.85rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.t3-deity-tile:hover {
+  border-color: var(--t3-bronze);
+  box-shadow: var(--shadow-md), var(--shadow-bronze);
+  transform: translateY(-3px);
+}
+
+.t3-dt-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.85rem;
+}
+
+.t3-dt-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 4px;
+  border: 1px solid #E2E8F0;
+  margin-bottom: 1rem;
+  transition: transform 0.4s ease;
+}
+
+.t3-deity-tile:hover .t3-dt-img {
+  transform: scale(1.02);
+}
+
+.t3-dt-code {
+  font-family: monospace;
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: var(--t3-bronze);
+}
+
+.t3-deity-tile h3 {
+  font-size: 1.3rem;
+  color: #0F172A;
+  margin-bottom: 0.75rem;
+}
+
+.t3-dt-signif {
+  font-size: 0.875rem;
+  color: #475569;
+  line-height: 1.55;
+  margin-bottom: 0.85rem;
+  flex: 1;
+}
+
+.t3-dt-rituals {
+  font-size: 0.825rem;
+  color: #334155;
+  background: #F8FAFC;
+  padding: 0.85rem;
+  border-radius: 4px;
+  border-left: 3px solid var(--t3-bronze);
+  margin-bottom: 1.15rem;
+}
+
+.t3-dt-footer {
+  font-size: 0.775rem;
+  font-family: monospace;
+  font-weight: 700;
+  color: #64748B;
+  border-top: 1px solid #E2E8F0;
+  padding-top: 0.75rem;
+}
+
+/* Executive Leadership Directory (Community Page) */
+.t3-leader-tile {
+  background: #FFF;
+  border: 1px solid #CBD5E1;
+  border-radius: 6px;
+  padding: 1.75rem 1.5rem;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+}
+
+.t3-leader-tile:hover {
+  transform: translateY(-3px);
+  border-color: var(--t3-bronze);
+  box-shadow: var(--shadow-md), var(--shadow-bronze);
+}
+
+.t3-lt-avatar {
+  font-size: 2.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.t3-leader-tile h4 {
+  font-size: 1.15rem;
+  color: var(--t3-granite);
+  margin-bottom: 0.25rem;
+}
+
+.t3-lt-role {
+  display: inline-block;
+  background: #F1F5F9;
+  color: var(--t3-bronze);
+  font-size: 0.75rem;
+  font-weight: 800;
+  padding: 0.2rem 0.65rem;
+  border-radius: 3px;
+  margin-bottom: 0.75rem;
+  align-self: flex-start;
+  border: 1px solid rgba(184, 115, 51, 0.25);
+}
+
+.t3-leader-tile p {
+  font-size: 0.825rem;
+  color: #64748B;
+  line-height: 1.55;
+}
+
+/* -------------------------------------------------------------------------
+   7. INTERACTIVE PILGRIM PASS GENERATOR MODAL
+   ------------------------------------------------------------------------- */
+.t3-pass-modal-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(13, 18, 17, 0.85);
+  backdrop-filter: blur(8px);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.t3-pass-modal-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.t3-pass-card {
+  background: #FFFFFF;
+  border: 2px solid var(--t3-bronze);
+  border-radius: 8px;
+  max-width: 600px;
+  width: 100%;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  animation: passPopIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes passPopIn {
+  0% { transform: scale(0.92); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.t3-pass-top {
+  background: var(--t3-granite);
+  padding: 1.25rem 1.75rem;
+  color: #FFF;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid var(--t3-bronze);
+}
+
+.t3-pass-top h3 {
+  font-size: 1.15rem;
+  color: #FFF;
+  margin: 0;
+}
+
+.t3-pass-close {
+  background: transparent;
+  border: none;
+  color: #CBD5E1;
+  font-size: 1.5rem;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.t3-pass-body {
+  padding: 2rem;
+}
+
+.t3-pass-barcode-box {
+  background: #F8FAFC;
+  border: 1.5px dashed #CBD5E1;
+  padding: 1.25rem;
+  text-align: center;
+  margin: 1.5rem 0;
+  border-radius: 4px;
+}
+
+.t3-barcode-lines {
+  font-family: monospace;
+  font-size: 1.75rem;
+  letter-spacing: 0.2em;
+  font-weight: 800;
+  color: #0F172A;
+}
+
+.t3-pass-serial {
+  font-family: monospace;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--t3-bronze);
+  margin-top: 0.35rem;
+}
+
+/* -------------------------------------------------------------------------
+   8. RESPONSIVENESS (MOBILE TO ULTRA-WIDE 4K)
+   ------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .t3-command-grid { grid-template-columns: 1fr; }
+  .t3-matrix-grid { grid-template-columns: repeat(2, 1fr); }
+  .t3-telemetry-bar { grid-template-columns: repeat(2, 1fr); }
+  .t3-deities-matrix { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .t3-matrix-grid { grid-template-columns: 1fr; }
+  .t3-telemetry-bar { grid-template-columns: 1fr; }
+  .t3-deities-matrix { grid-template-columns: 1fr; }
+  .t3-nav-split { flex-direction: column; align-items: flex-start; }
+  .t3-hotline-cluster { width: 100%; justify-content: space-between; }
+  .t3-hotline-item { text-align: left; border-right: none; padding-right: 0; }
+  .t3-subnav-flex { gap: 1rem; }
+  .t3-audit-row { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+  .t3-bronze-banner { flex-direction: column; align-items: flex-start; }
+  .t3-ef-flex { flex-direction: column; align-items: flex-start; }
+}

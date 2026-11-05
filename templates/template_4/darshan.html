@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>24/7 Live Sanctum Darshan & Priority Pass Booking | Sri Devalayam</title>
+  <meta name="description" content="Watch 24/7 live darshan of Sri Devalayam sanctum sanctorum. Offer virtual pushpanjali and aarti, inspect daily aarti schedules, and book Special Entry Darshan priority passes.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Top Utility Bar -->
+  <aside class="top-utility-bar">
+    <div class="container">
+      <div class="top-bar-inner">
+        <div class="panchang-live-badge">
+          <span class="badge-icon">☀️</span>
+          <span><strong>Current Darshan Queue:</strong> ~15 Minutes Wait | 3 Compartments Moving</span>
+        </div>
+        <div class="live-darshan-indicator">
+          <span class="pulse-dot"></span>
+          <span>Live HD Broadcast Online</span>
+        </div>
+        <div class="top-actions">
+          <a href="#" id="currency-toggle">🇦🇺 AUD ($)</a>
+          <span>|</span>
+          <a href="donate.html">e-Hundi Offering</a>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main Navigation Header -->
+  <header class="main-header">
+    <div class="container">
+      <nav class="navbar" aria-label="Main Navigation">
+        <a href="index.html" class="brand-wrapper">
+          <div class="brand-emblem">🕉️</div>
+          <div class="brand-text">
+            <h1>SRI DEVALAYAM</h1>
+            <p>Hindu Temple & Cultural Centre</p>
+          </div>
+        </a>
+
+        <ul class="nav-menu">
+          <li class="nav-item"><a href="index.html">Home</a></li>
+          <li class="nav-item"><a href="pujas.html">Sevas & Pujas</a></li>
+          <li class="nav-item active"><a href="darshan.html">Live Darshan</a></li>
+          <li class="nav-item"><a href="project.html">Temple Project</a></li>
+          <li class="nav-item"><a href="donate.html">e-Hundi & Donate</a></li>
+        </ul>
+
+        <div class="header-cta-group">
+          <button class="btn btn-primary btn-sm" onclick="document.getElementById('pass-booking-section').scrollIntoView({behavior:'smooth'})">
+            <span>🎫</span> Priority Pass
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Subpage Banner Hero -->
+  <section class="subpage-hero">
+    <div class="hero-background-art"></div>
+    <div class="container">
+      <div class="subpage-hero-inner">
+        <div class="breadcrumbs">
+          <a href="index.html">Home</a> <span>›</span> <span>Live Darshan & Passes</span>
+        </div>
+        <h1 class="subpage-title">24/7 Sanctum Broadcast & <span>Priority Darshan Passes</span></h1>
+        <p class="subpage-desc">
+          Experience the serene presence of the divine through continuous high-definition live feeds from the Garbhagriha. Offer virtual prayers or reserve your in-person Special Entry Darshan pass.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Live Broadcast Section -->
+  <main class="container" style="margin-top: 3.5rem;">
+    
+    <!-- Multi-Camera Broadcast Feed -->
+    <div class="camera-feed-container">
+      <div class="camera-screen" id="sanctum-feed-box">
+        <img id="active-cam-feed" src="https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&w=1400&q=80" alt="Main Sanctum Feed">
+        <div class="sanctum-overlay">
+          <span class="live-badge-glow">
+            <span class="pulse-dot" style="background:#FFF;"></span> LIVE FEED 1080p
+          </span>
+          <span style="font-size: 0.75rem; background: rgba(0,0,0,0.6); padding: 0.25rem 0.65rem; border-radius: 4px; color: #FFF;">
+            👥 2,140 Devotees Viewing Live
+          </span>
+        </div>
+      </div>
+
+      <!-- Camera Angle Controls & Devotee Offerings -->
+      <div class="camera-controls-bar">
+        <div class="cam-switch-group">
+          <span style="font-size: 0.8rem; color: #F3E5AB; font-weight: 700; margin-right: 0.5rem; align-self: center;">
+            CAMERA ANGLE:
+          </span>
+          <button class="cam-btn active" data-src="https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&w=1400&q=80">
+            Cam 1: Garbhagriha (Main)
+          </button>
+          <button class="cam-btn" data-src="https://images.unsplash.com/photo-1609137144822-2617f694e976?auto=format&fit=crop&w=1400&q=80">
+            Cam 2: Utsava Murti Altar
+          </button>
+          <button class="cam-btn" data-src="https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=1400&q=80">
+            Cam 3: Yajnashala Homa
+          </button>
+        </div>
+
+        <!-- Devotee Offerings Tray -->
+        <div style="display: flex; gap: 0.5rem;">
+          <button class="btn btn-outline-gold btn-sm" id="btn-offer-bell" style="color: #FFF; border-color: rgba(212,175,55,0.6);">
+            <span>🔔</span> Ring Sanctum Bell
+          </button>
+          <button class="btn btn-outline-gold btn-sm" id="btn-offer-deepam" style="color: #FFF; border-color: rgba(212,175,55,0.6);">
+            <span>🪔</span> Offer Diya
+          </button>
+          <button class="btn btn-gold btn-sm" id="btn-offer-flowers">
+            <span>🌸</span> Shower Flowers
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Daily Aarti Timetable with Live Indicator -->
+    <section style="background: #FFF; border-radius: var(--radius-lg); border: 1.5px solid var(--border-light); padding: 2.5rem; box-shadow: var(--shadow-sm); margin-bottom: 4rem;">
+      <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 2rem; flex-wrap: wrap; gap: 1rem;">
+        <div>
+          <span class="section-tag">Sanctum Agamic Schedule</span>
+          <h2 style="font-size: 1.85rem; margin: 0.25rem 0;">Today's Aarti & Darshan Schedule</h2>
+          <p style="color: var(--text-muted); font-size: 0.9rem;">Next ceremony: <strong>Sandhya Dhoop Aarti at 06:30 PM</strong></p>
+        </div>
+        <div style="background: #FFF8E1; border: 1px solid #FFE082; padding: 0.65rem 1.25rem; border-radius: var(--radius-sm); font-size: 0.85rem; color: #7B5200; font-weight: 600;">
+          ⏳ Next Aarti Countdown: <span id="ritual-countdown" style="font-weight: 700;">03h 42m 15s</span>
+        </div>
+      </div>
+
+      <div class="table-responsive">
+        <table class="timetable">
+          <thead>
+            <tr>
+              <th>Aarti Name</th>
+              <th>Timings</th>
+              <th>Offerings Allowed</th>
+              <th>Current Status</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Kakad / Suprabhatam</strong></td>
+              <td>05:30 AM - 06:15 AM</td>
+              <td>Pure cow milk, sweet butter, fresh Tulasi</td>
+              <td><span style="color: var(--text-muted);">Completed</span></td>
+              <td><button class="btn btn-outline-gold btn-sm" onclick="showToast('Morning recording saved in archive.')">Watch Replay</button></td>
+            </tr>
+            <tr style="background: #FFFDF7;">
+              <td><strong>Madhyanam Maha Aarti</strong></td>
+              <td>12:00 PM - 12:45 PM</td>
+              <td>Cooked Naivedyam, Payasam, seasonal fruits</td>
+              <td><span style="color: #10B981; font-weight: 700;">● Active in Sanctum</span></td>
+              <td><button class="btn btn-primary btn-sm" onclick="document.querySelector('.camera-feed-container').scrollIntoView({behavior:'smooth'})">Watch Live</button></td>
+            </tr>
+            <tr>
+              <td><strong>Sandhya Dhoop Aarti</strong></td>
+              <td>06:30 PM - 07:15 PM</td>
+              <td>Guggul, Sambrani, 108 Ghee Deepams</td>
+              <td><span style="color: var(--color-accent-saffron); font-weight: 700;">Upcoming (06:30 PM)</span></td>
+              <td><a href="pujas.html" class="btn btn-outline-gold btn-sm">Sponsor Aarti</a></td>
+            </tr>
+            <tr>
+              <td><strong>Shej Aarti & Ekanta Seva</strong></td>
+              <td>09:00 PM - 09:30 PM</td>
+              <td>Fragrant jasmine garlands, holy panchamritam</td>
+              <td><span style="color: var(--text-muted);">Night Closing</span></td>
+              <td><span style="font-size: 0.8rem; color: var(--text-muted);">Doors close 09:30 PM</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Priority Special Entry Darshan (SED) Pass Booking (TTD Style) -->
+    <section id="pass-booking-section" style="background: var(--bg-cream); border-radius: var(--radius-lg); border: 1.5px solid var(--border-light); padding: 3rem; margin-bottom: 4rem;">
+      <div style="text-align: center; max-width: 680px; margin: 0 auto 2.5rem;">
+        <span class="section-tag">TTD Style Express Queuing</span>
+        <h2 style="font-size: 2rem; margin: 0.5rem 0;">Book Special Entry Darshan (SED) Pass</h2>
+        <p style="color: var(--text-muted); font-size: 0.95rem;">
+          Guaranteed sanctum entry within 20 minutes. Free for children under 10 and senior citizens over 65 years.
+        </p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; align-items: start;">
+        
+        <!-- Booking Form -->
+        <form id="darshan-pass-form" style="background: #FFF; padding: 2rem; border-radius: var(--radius-md); border: 1px solid var(--border-light); box-shadow: var(--shadow-sm);">
+          <div class="form-group">
+            <label for="pass-devotee-name">Primary Devotee Name *</label>
+            <input type="text" id="pass-devotee-name" class="form-control" placeholder="e.g. Radhakrishnan Menon" required>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+            <div class="form-group">
+              <label for="pass-date">Preferred Date *</label>
+              <input type="date" id="pass-date" class="form-control" required value="2026-11-08">
+            </div>
+            <div class="form-group">
+              <label for="pass-slot">Time Slot *</label>
+              <select id="pass-slot" class="form-control">
+                <option value="07:00 AM - 09:00 AM">Morning Slot (07:00 AM - 09:00 AM)</option>
+                <option value="11:00 AM - 01:00 PM">Midday Slot (11:00 AM - 01:00 PM)</option>
+                <option value="05:00 PM - 07:00 PM" selected>Evening Slot (05:00 PM - 07:00 PM)</option>
+                <option value="08:00 PM - 09:30 PM">Night Slot (08:00 PM - 09:30 PM)</option>
+              </select>
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+            <div class="form-group">
+              <label for="pass-pilgrim-count">Devotee Count *</label>
+              <select id="pass-pilgrim-count" class="form-control">
+                <option value="1">1 Person ($10 AUD)</option>
+                <option value="2" selected>2 Persons ($20 AUD)</option>
+                <option value="4">Family 4 Persons ($35 AUD)</option>
+                <option value="6">Group 6 Persons ($50 AUD)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="pass-id-proof">Photo ID Reference *</label>
+              <input type="text" id="pass-id-proof" class="form-control" placeholder="Passport / DL / Aadhaar" required>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-lg" style="width: 100%; margin-top: 0.5rem;">
+            <span>🎟️</span> Generate Official QR Darshan Pass
+          </button>
+        </form>
+
+        <!-- Dynamic Live QR Pass Output Mockup -->
+        <div id="darshan-pass-result" class="darshan-pass-box">
+          <div class="pass-details">
+            <span style="font-size: 0.72rem; font-weight: 700; color: #10B981; text-transform: uppercase;">
+              ● CONFIRMED PRIORITY PASS
+            </span>
+            <h4 id="ticket-name">Radhakrishnan Menon</h4>
+            <div class="pass-meta-grid">
+              <div><span>Date:</span> <strong id="ticket-date">08 Nov 2026</strong></div>
+              <div><span>Slot:</span> <strong id="ticket-slot">05:00 PM - 07:00 PM</strong></div>
+              <div><span>Pilgrims:</span> <strong id="ticket-count">2 Persons</strong></div>
+              <div><span>Gate Entry:</span> <strong>North Gopuram Gate B</strong></div>
+            </div>
+            <div style="font-size: 0.75rem; color: var(--text-muted);">
+              Pass Ref: <strong id="ticket-ref">SED-894210</strong> • Please present this QR code along with photo ID at entrance.
+            </div>
+          </div>
+          <div class="qr-code-placeholder">
+            <span>🏁</span>
+            <span style="font-size: 0.65rem; font-weight: 700; color: #333; margin-top: 0.25rem;">SCAN QR</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Sanctum Etiquette & Dress Code (Shirdi & TTD Guidelines) -->
+    <section style="background: #FFF; border-radius: var(--radius-lg); border: 1.5px solid var(--border-light); padding: 2.5rem; margin-bottom: 4rem;">
+      <h3 style="font-size: 1.4rem; margin-bottom: 1rem;">Sanctum Pilgrimage Etiquette & Dress Code</h3>
+      <div class="pillars-grid" style="grid-template-columns: repeat(3, 1fr);">
+        <div style="background: var(--bg-cream); padding: 1.25rem; border-radius: var(--radius-sm);">
+          <h4 style="font-size: 1rem; color: var(--color-primary-dark); margin-bottom: 0.35rem;">Traditional Attire</h4>
+          <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5;">
+            Men: Dhoti, Kurta, or formal trousers with shirt. Women: Saree, Salwar Kameez, or traditional modest attire. Shorts and sleeveless tops are not permitted.
+          </p>
+        </div>
+        <div style="background: var(--bg-cream); padding: 1.25rem; border-radius: var(--radius-sm);">
+          <h4 style="font-size: 1rem; color: var(--color-primary-dark); margin-bottom: 0.35rem;">Electronics & Cameras</h4>
+          <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5;">
+            Mobile phones must be kept on silent mode. Photography and video recording inside the inner Garbhagriha sanctum are strictly prohibited.
+          </p>
+        </div>
+        <div style="background: var(--bg-cream); padding: 1.25rem; border-radius: var(--radius-sm);">
+          <h4 style="font-size: 1rem; color: var(--color-primary-dark); margin-bottom: 0.35rem;">Offerings & Prasadam</h4>
+          <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5;">
+            Only pure ghee, flowers, coconuts, and unpeeled fruits may be handed to the temple priests for Archana. No outside cooked food is permitted into the sanctum.
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="main-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
+            <span style="font-size: 1.5rem;">🕉️</span>
+            <h3 style="color: #FFF; font-size: 1.25rem;">Sri Devalayam</h3>
+          </div>
+          <p>Connecting the global Sanatana Dharma community through live spiritual streaming and express pilgrimage access.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Darshan Links</h4>
+          <ul class="footer-links">
+            <li><a href="darshan.html">24/7 Live Sanctum</a></li>
+            <li><a href="#pass-booking-section">Special Entry Pass</a></li>
+            <li><a href="pujas.html">Book Remote Seva</a></li>
+            <li><a href="donate.html">e-Hundi Offering</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Sanctum Hours</h4>
+          <p>Morning: 05:30 AM - 12:45 PM</p>
+          <p>Evening: 04:30 PM - 09:30 PM</p>
+          <p>Weekends: Open continuously 06:00 AM - 09:30 PM</p>
+        </div>
+        <div class="footer-col">
+          <h4>Devotee Assistance</h4>
+          <p>Emergency Helpline: +61 3 5300 0000</p>
+          <p>Priest Office: priests@devalayam.org.au</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Sri Devalayam & Cultural Centre. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+  <script>
+    // Multi-camera switcher logic
+    document.querySelectorAll('.cam-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.cam-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const src = btn.getAttribute('data-src');
+        if (src) {
+          document.getElementById('active-cam-feed').src = src;
+          showToast('Switched to ' + btn.textContent.trim());
+        }
+      });
+    });
+
+    // SED Pass Form logic
+    const passForm = document.getElementById('darshan-pass-form');
+    if (passForm) {
+      passForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const name = document.getElementById('pass-devotee-name').value;
+        const date = document.getElementById('pass-date').value;
+        const slot = document.getElementById('pass-slot').value;
+        const count = document.getElementById('pass-pilgrim-count').value;
+        const ref = 'SED-' + Math.floor(100000 + Math.random() * 900000);
+
+        document.getElementById('ticket-name').textContent = name;
+        document.getElementById('ticket-date').textContent = date;
+        document.getElementById('ticket-slot').textContent = slot;
+        document.getElementById('ticket-count').textContent = count + (count == 1 ? ' Person' : ' Persons');
+        document.getElementById('ticket-ref').textContent = ref;
+
+        showToast('Priority Darshan Pass Generated Successfully!');
+        document.getElementById('darshan-pass-result').scrollIntoView({behavior:'smooth'});
+      });
+    }
+  </script>
+</body>
+</html>

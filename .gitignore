@@ -1,0 +1,12 @@
+# Unwanted files and previous session binaries
+archives/
+
+# OS metadata
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs and runtime artifacts
+*.log
+*.tmp
+node_modules/

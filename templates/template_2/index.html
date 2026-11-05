@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BHTCC App | Ballarat Hindu Temple Devotee Portal | Template 2 (Saffron & Marigold)</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Modern App Sticky Header with In-Header Search -->
+  <header class="t2-app-navbar">
+    <div class="container t2-nav-container">
+      
+      <div class="t2-nav-left">
+        <a href="index.html" class="t2-app-brand">
+          <div class="t2-app-logo">🕉️</div>
+          <div>
+            <h2>BHTCC Ballarat</h2>
+            <span>Devotee App Portal</span>
+          </div>
+        </a>
+
+        <!-- In-Header Search Bar -->
+        <div class="t2-header-search">
+          <span>🔍</span>
+          <input type="text" placeholder="Search Pujas, Lord Ganesha, Gotra Sevas...">
+        </div>
+      </div>
+
+      <!-- Pill Nav -->
+      <nav class="t2-pill-nav">
+        <a href="index.html" class="active">Sanctum</a>
+        <a href="project.html">Ross Creek Masterplan</a>
+        <a href="worship.html">Book Pooja</a>
+        <a href="community.html">Programs</a>
+        <a href="donate.html">Tax-Deductible Fund</a>
+      </nav>
+
+      <!-- App User Actions -->
+      <div class="t2-nav-actions">
+        <a href="donate.html" class="t2-btn-e-hundi">
+          <span>🪔</span> e-Hundi
+        </a>
+        <a href="community.html" class="t2-user-badge">
+          <span>👤 My BHTCC</span>
+        </a>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Sri Mandir Inspired Circular Action Bubbles Tray -->
+  <section class="t2-bubbles-tray-section">
+    <div class="container">
+      <div class="t2-bubbles-wrapper">
+        <a href="worship.html" class="t2-bubble-item">
+          <div class="t2-bubble-circle active">🪔</div>
+          <span>Book Pooja</span>
+        </a>
+        <a href="#live" class="t2-bubble-item">
+          <div class="t2-bubble-circle" style="background:#EF4444; color:#FFF;">🎥</div>
+          <span>Live 24/7</span>
+        </a>
+        <a href="worship.html#sankalp-form" class="t2-bubble-item">
+          <div class="t2-bubble-circle">📜</div>
+          <span>Remote Sankalp</span>
+        </a>
+        <a href="donate.html" class="t2-bubble-item">
+          <div class="t2-bubble-circle">🍲</div>
+          <span>Annadanam</span>
+        </a>
+        <a href="project.html" class="t2-bubble-item">
+          <div class="t2-bubble-circle">🧱</div>
+          <span>Sponsor Brick</span>
+        </a>
+        <a href="community.html" class="t2-bubble-item">
+          <div class="t2-bubble-circle">🧘‍♀️</div>
+          <span>Yoga & Lang</span>
+        </a>
+        <a href="community.html#governance" class="t2-bubble-item">
+          <div class="t2-bubble-circle">🛡️</div>
+          <span>Child Safe WWCC</span>
+        </a>
+        <a href="donate.html#membership" class="t2-bubble-item">
+          <div class="t2-bubble-circle">✨</div>
+          <span>Membership</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sri Mandir Style Split Cockpit Hero (Instant Booking Form + Live Stream) -->
+  <section class="t2-split-hero-section">
+    <div class="container">
+      <div class="t2-split-grid">
+        
+        <!-- Left Column: 1-Click Fast Remote Sankalp Booking Form -->
+        <div class="t2-booking-card">
+          <div class="t2-form-badge">⚡ INSTANT REMOTE SANKALP • BHTCC ROSS CREEK</div>
+          <h3>Participate in Today's Special Temple Pooja</h3>
+          <p>Ordained Hindu priests chant your sacred Family Gotra & Name in the Ross Creek sanctum. Receive consecrated prasadam and 4K WhatsApp video proof.</p>
+
+          <form id="heroSankalpForm" onsubmit="handleQuickSankalp(event)">
+            <div class="t2-input-field">
+              <label>Select Auspicious Pooja</label>
+              <select id="quickPujaSelect">
+                <option value="ganapathi">Maha Ganapathi Homam (Housewarming & Prosperity) - $151 AUD</option>
+                <option value="archana">Daily Ashtothara Archana (108 Holy Names) - $31 AUD</option>
+                <option value="satyanarayana">Sri Satyanarayana Vratam (Thanksgiving & Harmony) - $101 AUD</option>
+                <option value="rudra">Pradosham Rudrabhishekam (Healing & Protection) - $51 AUD</option>
+              </select>
+            </div>
+
+            <div class="t2-form-row">
+              <div class="t2-input-field">
+                <label>Devotee Full Name</label>
+                <input type="text" id="qName" placeholder="e.g. Ramesh Kumar" required>
+              </div>
+              <div class="t2-input-field">
+                <label>Family Gotra & Nakshatra</label>
+                <input type="text" id="qGotra" placeholder="e.g. Kashyapa / Rohini">
+              </div>
+            </div>
+
+            <div class="t2-input-field">
+              <label>Mobile / WhatsApp Number (For Video Dispatch)</label>
+              <input type="tel" id="qPhone" placeholder="+61 400 000 000" required>
+            </div>
+
+            <button type="submit" class="t2-btn-submit-booking">
+              <span>🪔</span> Book with Sankalp Now
+            </button>
+
+            <div class="t2-trust-row">
+              <span>⭐ 4.9/5 Devotee Rating</span>
+              <span>👥 14,200+ Regional Devotees</span>
+              <span>🔒 100% Tax Deductible $2+</span>
+            </div>
+
+            <div id="quickSuccessMsg" style="display:none; margin-top: 1rem; background: #0F5132; color: #FFF; padding: 0.85rem; border-radius: 8px; font-size: 0.85rem; text-align: center;">
+              ✓ Remote Sankalp registered! Priest Mrs. Priya Rajan will confirm your timing.
+            </div>
+          </form>
+        </div>
+
+        <!-- Right Column: Vertical Live Aarti Stream with Upward Praying Ticker -->
+        <div class="t2-stream-card" id="live">
+          <div class="t2-stream-screen">
+            <img src="https://bhtcc.netlify.app/assets/interior.jpg" alt="BHTCC Live Sanctum">
+            
+            <div class="t2-live-indicator">
+              <span class="t2-dot">●</span> 24/7 LIVE SANCTUM • ROSS CREEK
+            </div>
+
+            <div class="t2-viewers-count">
+              <span>👥 842 Devotees Connected</span>
+            </div>
+
+            <!-- Upward Floating Prayer Comment Stream (Sri Mandir Style) -->
+            <div class="t2-ticker-stream">
+              <div class="t2-ticker-msg">
+                <span class="t2-msg-user">🌸 Naveen (Melbourne):</span>
+                <span>Offered Pushpanjali for family health</span>
+              </div>
+              <div class="t2-ticker-msg">
+                <span class="t2-msg-user">🪔 Priya S. (Ballarat):</span>
+                <span>Lighted a Diya for peace and abundance</span>
+              </div>
+              <div class="t2-ticker-msg">
+                <span class="t2-msg-user">🙏 Dr. Harish Kumar:</span>
+                <span>Om Gam Ganapataye Namaha! Bless our temple</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bottom Action Buttons -->
+          <div class="t2-stream-actions">
+            <button class="t2-action-pill" onclick="sendPrayer('🪔 Diya')"><span>🪔</span> Light Diya</button>
+            <button class="t2-action-pill" onclick="sendPrayer('🔔 Bell')"><span>🔔</span> Ring Bell</button>
+            <button class="t2-action-pill" onclick="sendPrayer('🌸 Pushpam')"><span>🌸</span> Pushpam</button>
+            <a href="worship.html" class="t2-action-pill highlight"><span>↗</span> Full Pooja</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Sri Mandir Style D2C Puja Grid with Countdown Urgency -->
+  <section class="t2-puja-grid-section">
+    <div class="container">
+      <div class="t2-section-header">
+        <div>
+          <span class="t2-sub-label">Auspicious Festival Sevas</span>
+          <h2>Upcoming Poojas Available for Booking</h2>
+        </div>
+        <a href="worship.html" class="t2-view-all-link">View All 18 Poojas ↗</a>
+      </div>
+
+      <div class="t2-cards-grid">
+        
+        <!-- Card 1 -->
+        <article class="t2-product-card">
+          <div class="t2-card-thumb">
+            <img src="https://bhtcc.netlify.app/assets/interior.jpg?auto=format&fit=crop&w=600&q=80" alt="Sankatahara Chaturthi">
+            <span class="t2-urgency-badge">🔥 3 Hours Left</span>
+          </div>
+          <div class="t2-card-content">
+            <span class="t2-card-tag">Lord Ganesha • Obstacle Removal</span>
+            <h3>Sankatahara Chaturthi Maha Pooja</h3>
+            <p>108 Modak offering and family Gotra Sankalp in the central granite Moolasthanam at 110 Vaggs Rd.</p>
+            <div class="t2-card-proof">
+              <span>👥 482 Devotees booked today</span>
+            </div>
+            <div class="t2-card-footer">
+              <div class="t2-price-tag">
+                <span class="t2-p-label">Dakshina</span>
+                <span class="t2-p-val">$51 AUD</span>
+              </div>
+              <a href="worship.html" class="t2-btn-book-sm">Book Pooja</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="t2-product-card">
+          <div class="t2-card-thumb">
+            <img src="https://bhtcc.netlify.app/assets/site-plan.jpg?auto=format&fit=crop&w=600&q=80" alt="Ganapathi Homam">
+            <span class="t2-urgency-badge">✨ Most Popular</span>
+          </div>
+          <div class="t2-card-content">
+            <span class="t2-card-tag">New Home & Business • Prosperity</span>
+            <h3>Maha Ganapathi Homam & Havanam</h3>
+            <p>Sacred fire oblation chanting 1008 Atharvashirsha mantras. Consecrated dry fruit prasad box delivered globally.</p>
+            <div class="t2-card-proof">
+              <span>📦 Free Doorstep Prasad Delivery</span>
+            </div>
+            <div class="t2-card-footer">
+              <div class="t2-price-tag">
+                <span class="t2-p-label">Dakshina</span>
+                <span class="t2-p-val">$151 AUD</span>
+              </div>
+              <a href="worship.html" class="t2-btn-book-sm">Book Pooja</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="t2-product-card">
+          <div class="t2-card-thumb">
+            <img src="https://bhtcc.netlify.app/assets/interior.jpg?auto=format&fit=crop&w=600&q=80" alt="Rudrabhishekam">
+            <span class="t2-urgency-badge">🌙 Pradosham Special</span>
+          </div>
+          <div class="t2-card-content">
+            <span class="t2-card-tag">Lord Shiva • Health & Healing</span>
+            <h3>Pradosham Bilva Rudrabhishekam</h3>
+            <p>11 rounds of Sri Rudram chanting with Panchamritam abhishekam for family health, peace, and longevity.</p>
+            <div class="t2-card-proof">
+              <span>📹 4K Video Proof Guaranteed</span>
+            </div>
+            <div class="t2-card-footer">
+              <div class="t2-price-tag">
+                <span class="t2-p-label">Dakshina</span>
+                <span class="t2-p-val">$101 AUD</span>
+              </div>
+              <a href="worship.html" class="t2-btn-book-sm">Book Pooja</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Kickstarter Style Brick Crowdfunding Progress Bar -->
+  <section class="t2-crowdfund-section">
+    <div class="container">
+      <div class="t2-crowdfund-card">
+        <div class="t2-cf-header">
+          <span class="t2-cf-badge">ROSS CREEK TEMPLE CAPITAL CAMPAIGN</span>
+          <h2>Constructing Regional Victoria's First Traditional Hindu Temple</h2>
+          <p>Every consecrated stone and brick is funded by devotee patrons. Supported by a <strong>$900k+ Victorian Government grant</strong> and 5-acre property at 110 Vaggs Rd.</p>
+        </div>
+
+        <div class="t2-cf-stats-row">
+          <div class="t2-cf-stat">
+            <span class="t2-cf-num">$612,400</span>
+            <span class="t2-cf-lbl">Devotee Pledges Raised</span>
+          </div>
+          <div class="t2-cf-stat">
+            <span class="t2-cf-num">68%</span>
+            <span class="t2-cf-lbl">Target Funded</span>
+          </div>
+          <div class="t2-cf-stat">
+            <span class="t2-cf-num">1,840</span>
+            <span class="t2-cf-lbl">Devotee Backers</span>
+          </div>
+          <div class="t2-cf-stat">
+            <span class="t2-cf-num">Phase 1</span>
+            <span class="t2-cf-lbl">Slab & Frames Active</span>
+          </div>
+        </div>
+
+        <div class="t2-cf-progress">
+          <div class="t2-cf-bar" style="width: 68%;"></div>
+        </div>
+
+        <div class="t2-cf-cta-row">
+          <a href="donate.html" class="t2-btn-sponsor-brick">🧱 Sponsor a Foundation Brick ($101 AUD)</a>
+          <a href="project.html" class="t2-btn-view-blueprints">Inspect 3D Masterplan Blueprints ↗</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DevTech App Footer -->
+  <footer class="t2-app-footer">
+    <div class="container">
+      <div class="t2-footer-split">
+        <div class="t2-f-left">
+          <div class="t2-app-brand">
+            <div class="t2-app-logo">🕉️</div>
+            <div>
+              <h3>BALLARAT HINDU TEMPLE & CULTURAL CENTRE</h3>
+              <p>Incorporated Association (Victoria) • ABN: 13 397 829 440</p>
+              <p>110 Vaggs Rd, Ross Creek VIC 3351 • Phone: +61 3 5300 0000</p>
+            </div>
+          </div>
+        </div>
+        <div class="t2-f-nav">
+          <a href="index.html">Sanctum</a>
+          <a href="project.html">Masterplan</a>
+          <a href="worship.html">Book Pooja</a>
+          <a href="community.html">Programs & Governance</a>
+          <a href="donate.html">Tax Invoicing ($2+)</a>
+        </div>
+      </div>
+      <div class="t2-footer-sub">
+        <p>© 2026 Ballarat Hindu Temple & Cultural Centre Inc. All rights reserved. • Template 2: Modern DevTech App Architecture</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

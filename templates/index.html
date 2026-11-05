@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Temple Templates Design Studio | Launch in New Tab</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      /* Sacred Temple Light Design System Tokens */
+      --bg-page: #FAF7F2;
+      --bg-page-alt: #F4EFE6;
+      --bg-card: #FFFFFF;
+      --bg-card-hover: #FFFDF9;
+      --bg-card-subtle: #FDFBF7;
+      
+      --border-gold: rgba(212, 175, 55, 0.35);
+      --border-crimson: rgba(88, 17, 26, 0.15);
+      --border-subtle: rgba(0, 0, 0, 0.08);
+      
+      --color-crimson: #58111A;
+      --color-maroon: #7E1C27;
+      --color-gold: #B8860B;
+      --color-gold-foil: #D4AF37;
+      --color-saffron: #D9480F;
+      --color-amber: #F59F00;
+      --color-emerald: #0F5132;
+      
+      --text-main: #2C1810;
+      --text-title: #3C0A11;
+      --text-muted: #6B5B55;
+      --text-light: #8C7871;
+      
+      --shadow-sm: 0 2px 8px rgba(88, 17, 26, 0.05), 0 1px 3px rgba(0, 0, 0, 0.04);
+      --shadow-md: 0 10px 30px rgba(88, 17, 26, 0.07), 0 2px 8px rgba(212, 175, 55, 0.12);
+      --shadow-lg: 0 18px 45px rgba(88, 17, 26, 0.12), 0 4px 14px rgba(212, 175, 55, 0.22);
+      
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --radius-full: 9999px;
+      --transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      background-color: var(--bg-page);
+      color: var(--text-main);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
+      background-image: 
+        radial-gradient(circle at 10% 15%, rgba(245, 158, 11, 0.08) 0%, transparent 45%),
+        radial-gradient(circle at 90% 85%, rgba(126, 28, 39, 0.06) 0%, transparent 50%),
+        linear-gradient(180deg, #FAF7F2 0%, #F5EFE6 50%, #FAF7F2 100%);
+    }
+
+    /* Container */
+    .container {
+      width: 100%;
+      max-width: 1380px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Top Studio Header */
+    .studio-header {
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(14px);
+      border-bottom: 1.5px solid var(--border-gold);
+      padding: 0.9rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 4px 20px rgba(88, 17, 26, 0.05);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .brand-wrap {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+    }
+
+    .brand-icon {
+      width: 44px;
+      height: 44px;
+      background: linear-gradient(135deg, #FF9900, #D9480F);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      color: #FFF;
+      box-shadow: 0 4px 14px rgba(217, 72, 15, 0.28);
+    }
+
+    .brand-text h1 {
+      font-family: 'Cinzel', serif;
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--color-crimson);
+      letter-spacing: 0.02em;
+    }
+
+    .brand-text p {
+      font-size: 0.725rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-weight: 700;
+    }
+
+    .quick-launch-tabs {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      flex-wrap: wrap;
+    }
+
+    .quick-tab-link {
+      background: #FFFFFF;
+      border: 1.5px solid rgba(212, 175, 55, 0.35);
+      color: var(--text-title);
+      padding: 0.5rem 1rem;
+      border-radius: var(--radius-full);
+      font-size: 0.825rem;
+      font-weight: 700;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      transition: var(--transition);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .quick-tab-link:hover {
+      background: var(--color-crimson);
+      color: #FFFDF9;
+      border-color: var(--color-crimson);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(88, 17, 26, 0.25);
+    }
+
+    .quick-tab-link.pill-flagship {
+      background: rgba(212, 175, 55, 0.15);
+      border-color: #D4AF37;
+      color: var(--color-crimson);
+      font-weight: 800;
+    }
+
+    .dot-indicator {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+    }
+
+    .dot-flagship { background: #D4AF37; }
+    .dot-t1 { background: linear-gradient(135deg, #58111A, #D4AF37); }
+    .dot-t2 { background: linear-gradient(135deg, #D9480F, #F59F00); }
+    .dot-t3 { background: linear-gradient(135deg, #1E2825, #0F5132); }
+    .dot-t4 { background: linear-gradient(135deg, #58111A, #D4AF37); }
+
+    /* Hero Headline */
+    .hero-banner {
+      text-align: center;
+      padding: 3.5rem 0 2.25rem;
+    }
+
+    .badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(217, 72, 15, 0.08);
+      border: 1.5px solid rgba(217, 72, 15, 0.3);
+      color: var(--color-saffron);
+      padding: 0.35rem 1rem;
+      border-radius: var(--radius-full);
+      font-size: 0.8rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 1.25rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .hero-banner h2 {
+      font-family: 'Cinzel', serif;
+      font-size: 2.85rem;
+      color: var(--text-title);
+      margin-bottom: 0.85rem;
+      line-height: 1.2;
+    }
+
+    .hero-banner h2 span {
+      background: linear-gradient(135deg, #D9480F 0%, #B8860B 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-banner p {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      max-width: 720px;
+      margin: 0 auto 1.5rem;
+      line-height: 1.6;
+    }
+
+    .launch-all-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      background: linear-gradient(135deg, #D9480F, #C2410C);
+      color: #FFFFFF;
+      padding: 0.85rem 2rem;
+      border-radius: var(--radius-full);
+      font-size: 0.985rem;
+      font-weight: 800;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 6px 20px rgba(217, 72, 15, 0.35);
+      transition: var(--transition);
+    }
+
+    .launch-all-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(88, 17, 26, 0.35);
+      background: linear-gradient(135deg, #7E1C27, #58111A);
+      color: #FFF;
+    }
+
+    /* Flagship Masterpiece Banner */
+    .flagship-master-banner {
+      background: linear-gradient(135deg, #FFFFFF 0%, #FAF4EB 100%);
+      border: 2px solid var(--color-gold-foil);
+      border-radius: var(--radius-lg);
+      padding: 2.25rem;
+      margin-bottom: 3.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      flex-wrap: wrap;
+      box-shadow: 0 12px 35px rgba(88, 17, 26, 0.08), 0 2px 10px rgba(212, 175, 55, 0.15);
+      position: relative;
+    }
+
+    .flagship-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--color-crimson);
+      color: #FDE68A;
+      font-size: 0.75rem;
+      font-weight: 800;
+      padding: 0.3rem 0.85rem;
+      border-radius: var(--radius-full);
+      text-transform: uppercase;
+      margin-bottom: 0.85rem;
+      letter-spacing: 0.04em;
+    }
+
+    .flagship-title {
+      font-family: 'Cinzel', serif;
+      font-size: 1.65rem;
+      color: var(--text-title);
+      margin-bottom: 0.5rem;
+    }
+
+    .flagship-desc {
+      color: #5C4A42;
+      font-size: 0.925rem;
+      line-height: 1.6;
+      max-width: 750px;
+    }
+
+    .flagship-links {
+      display: flex;
+      gap: 1.25rem;
+      margin-top: 1.25rem;
+      flex-wrap: wrap;
+    }
+
+    .flagship-links a {
+      color: var(--color-crimson);
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 700;
+      transition: color 0.2s;
+    }
+
+    .flagship-links a:hover {
+      color: var(--color-saffron);
+    }
+
+    .flagship-cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: linear-gradient(135deg, #D4AF37 0%, #AA820A 100%);
+      color: #1E070A;
+      padding: 1rem 2rem;
+      border-radius: var(--radius-full);
+      font-weight: 800;
+      font-size: 1rem;
+      text-decoration: none;
+      box-shadow: 0 4px 18px rgba(212, 175, 55, 0.4);
+      transition: var(--transition);
+      white-space: nowrap;
+    }
+
+    .flagship-cta-btn:hover {
+      background: var(--color-crimson);
+      color: #FFFDF9;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(88, 17, 26, 0.35);
+    }
+
+    /* Template Cards Grid */
+    .templates-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2.25rem;
+      margin: 2.5rem 0 4rem;
+    }
+
+    .template-card {
+      background: #FFFFFF;
+      border: 1.5px solid var(--border-gold);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: var(--transition);
+      box-shadow: var(--shadow-md);
+      position: relative;
+    }
+
+    .template-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--color-gold-foil);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .card-preview-thumb {
+      width: 100%;
+      height: 250px;
+      overflow: hidden;
+      position: relative;
+      background: #F4EFE6;
+      border-bottom: 1.5px solid var(--border-gold);
+    }
+
+    .card-preview-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      transition: transform 0.5s ease;
+    }
+
+    .template-card:hover .card-preview-thumb img {
+      transform: scale(1.03);
+    }
+
+    .preview-badge-overlay {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      padding: 0.35rem 0.85rem;
+      border-radius: var(--radius-full);
+      font-size: 0.72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+    }
+
+    .badge-t1 { background: #58111A; color: #FDE68A; border: 1.5px solid #D4AF37; }
+    .badge-t2 { background: #D9480F; color: #FFFFFF; border: 1.5px solid #FAB005; }
+    .badge-t3 { background: #1E2825; color: #EAD5C5; border: 1.5px solid #C2845B; }
+    .badge-t4 { background: #3C0A11; color: #FDE68A; border: 1.5px solid #D4AF37; }
+
+    .card-body {
+      padding: 1.75rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .card-title {
+      font-family: 'Cinzel', serif;
+      font-size: 1.35rem;
+      color: var(--text-title);
+      margin-bottom: 0.5rem;
+    }
+
+    .card-desc {
+      font-size: 0.885rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 1.25rem;
+    }
+
+    /* Swatches Palette Row */
+    .swatches-row {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 1.35rem;
+      padding: 0.65rem 0.85rem;
+      background: #FAF7F2;
+      border-radius: var(--radius-sm);
+      border: 1px solid rgba(212, 175, 55, 0.25);
+    }
+
+    .swatches-label {
+      font-size: 0.725rem;
+      color: var(--color-crimson);
+      font-weight: 800;
+      text-transform: uppercase;
+      margin-right: 0.35rem;
+    }
+
+    .swatch-chip {
+      width: 22px;
+      height: 22px;
+      border-radius: 4px;
+      border: 1px solid rgba(0, 0, 0, 0.15);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    }
+
+    .features-list {
+      list-style: none;
+      margin-bottom: 1.25rem;
+    }
+
+    .features-list li {
+      font-size: 0.85rem;
+      color: #3D2D29;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.45rem;
+      font-weight: 500;
+    }
+
+    .features-list li span {
+      color: var(--color-saffron);
+      font-weight: 800;
+    }
+
+    /* Subpages Links Inside Card */
+    .card-subpages-list {
+      background: #FDFBF7;
+      border: 1px solid rgba(212, 175, 55, 0.25);
+      border-radius: var(--radius-sm);
+      padding: 0.85rem 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .subpages-title {
+      font-size: 0.725rem;
+      font-weight: 800;
+      color: var(--color-crimson);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .card-subpages-list a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: #4A3A36;
+      text-decoration: none;
+      font-size: 0.825rem;
+      font-weight: 600;
+      padding: 0.4rem 0.25rem;
+      border-bottom: 1px solid rgba(88, 17, 26, 0.06);
+      transition: color 0.2s, background 0.2s;
+      border-radius: 4px;
+    }
+
+    .card-subpages-list a:last-child {
+      border-bottom: none;
+    }
+
+    .card-subpages-list a:hover {
+      color: var(--color-saffron);
+      background: rgba(217, 72, 15, 0.06);
+      padding-left: 0.5rem;
+    }
+
+    /* Big Launch Button */
+    .btn-launch-tab {
+      width: 100%;
+      padding: 0.85rem 1.5rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.95rem;
+      font-weight: 800;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      transition: var(--transition);
+      cursor: pointer;
+    }
+
+    .btn-t1 {
+      background: linear-gradient(135deg, #7E1C27, #58111A);
+      color: #FFFDF9;
+      border: 1.5px solid #D4AF37;
+      box-shadow: 0 4px 14px rgba(88, 17, 26, 0.25);
+    }
+
+    .btn-t1:hover {
+      background: #D4AF37;
+      color: #2D080D;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(212, 175, 55, 0.4);
+    }
+
+    .btn-t2 {
+      background: linear-gradient(135deg, #F76707, #D9480F);
+      color: #FFF;
+      border: 1.5px solid #FAB005;
+      box-shadow: 0 4px 14px rgba(217, 72, 15, 0.25);
+    }
+
+    .btn-t2:hover {
+      background: #FAB005;
+      color: #1A0D02;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(250, 176, 5, 0.45);
+    }
+
+    .btn-t3 {
+      background: linear-gradient(135deg, #2D3A36, #1E2825);
+      color: #FFF;
+      border: 1.5px solid #C2845B;
+      box-shadow: 0 4px 14px rgba(30, 40, 37, 0.25);
+    }
+
+    .btn-t3:hover {
+      background: #C2845B;
+      color: #0F1413;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(194, 132, 91, 0.4);
+    }
+
+    .btn-t4 {
+      background: linear-gradient(135deg, #991B1B, #58111A);
+      color: #FFF;
+      border: 1.5px solid #D4AF37;
+      box-shadow: 0 4px 14px rgba(88, 17, 26, 0.25);
+    }
+
+    .btn-t4:hover {
+      background: #D4AF37;
+      color: #2D080D;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(212, 175, 55, 0.4);
+    }
+
+    /* Comparison Matrix Section */
+    .matrix-section {
+      background: #FFFFFF;
+      border-radius: var(--radius-lg);
+      border: 1.5px solid var(--border-gold);
+      padding: 2.5rem;
+      margin-bottom: 4rem;
+      box-shadow: var(--shadow-md);
+    }
+
+    .matrix-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      margin-top: 1.5rem;
+    }
+
+    .matrix-table th {
+      padding: 1rem 1.25rem;
+      background: #FAF5EC;
+      color: var(--color-crimson);
+      font-family: 'Cinzel', serif;
+      font-size: 0.85rem;
+      letter-spacing: 0.04em;
+      border-bottom: 2px solid var(--border-gold);
+    }
+
+    .matrix-table td {
+      padding: 1.15rem 1.25rem;
+      border-bottom: 1px solid rgba(88, 17, 26, 0.08);
+      font-size: 0.875rem;
+      color: #3D2D29;
+    }
+
+    .matrix-table tr:hover td {
+      background: #FDF9F3;
+    }
+
+    .matrix-launch-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      color: var(--color-crimson);
+      font-weight: 800;
+      text-decoration: none;
+      padding: 0.35rem 0.85rem;
+      border-radius: var(--radius-sm);
+      background: rgba(88, 17, 26, 0.06);
+      border: 1px solid rgba(88, 17, 26, 0.15);
+      transition: var(--transition);
+    }
+
+    .matrix-launch-link:hover {
+      background: var(--color-crimson);
+      color: #FFF;
+      border-color: var(--color-crimson);
+    }
+
+    /* Footer */
+    .studio-footer {
+      background: #F5EFE6;
+      border-top: 1.5px solid var(--border-gold);
+      padding: 2rem 0;
+      text-align: center;
+      font-size: 0.85rem;
+      color: #7A6963;
+      font-weight: 500;
+    }
+
+    @media (max-width: 1024px) {
+      .templates-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Studio Header -->
+  <header class="studio-header">
+    <div class="container">
+      <div class="header-inner">
+        
+        <div class="brand-wrap">
+          <div class="brand-icon">🕉️</div>
+          <div class="brand-text">
+            <h1>TEMPLE DESIGN SYSTEM SUITE</h1>
+            <p>Master Template Selector & Direct Launchpad</p>
+          </div>
+        </div>
+
+        <!-- Quick Launch Pills (Open directly in New Tab) -->
+        <div class="quick-launch-tabs">
+          <a href="../index.html" target="_blank" class="quick-tab-link pill-flagship" title="Open Original Flagship Masterpiece">
+            <span class="dot-indicator dot-flagship"></span>
+            <span>⭐ Flagship Original ↗</span>
+          </a>
+          <a href="template_1/index.html" target="_blank" class="quick-tab-link" title="Open Template 1 in a brand new tab">
+            <span class="dot-indicator dot-t1"></span>
+            <span>Template 1 (Crimson) ↗</span>
+          </a>
+          <a href="template_2/index.html" target="_blank" class="quick-tab-link" title="Open Template 2 in a brand new tab">
+            <span class="dot-indicator dot-t2"></span>
+            <span>Template 2 (Saffron) ↗</span>
+          </a>
+          <a href="template_3/index.html" target="_blank" class="quick-tab-link" title="Open Template 3 in a brand new tab">
+            <span class="dot-indicator dot-t3"></span>
+            <span>Template 3 (Granite) ↗</span>
+          </a>
+          <a href="template_4/index.html" target="_blank" class="quick-tab-link" title="Open Template 4 in a brand new tab">
+            <span class="dot-indicator dot-t4"></span>
+            <span>Template 4 (Unified Grand) ↗</span>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Headline -->
+  <section class="hero-banner">
+    <div class="container">
+      <div class="badge-pill">
+        <span>✨</span> 4 Complete Production-Grade Themes Ready
+      </div>
+      <h2>Select a Template to Open in a <span>New Tab Completely</span></h2>
+      <p>
+        Every template uses authentic cultural design patterns with distinct architectural positioning, sacred harmony, and fluid responsiveness. Click any card below to launch full-screen in a new tab.
+      </p>
+
+      <button class="launch-all-btn" onclick="launchAllTemplates()">
+        <span>🚀</span> Launch All 4 Templates in New Tabs
+      </button>
+    </div>
+  </section>
+
+  <!-- Main Showcase Content -->
+  <main class="container">
+    
+    <!-- Flagship Masterpiece Banner -->
+    <div class="flagship-master-banner">
+      <div style="flex: 1; min-width: 300px;">
+        <div class="flagship-badge">
+          👑 ORIGINAL FLAGSHIP MASTERPIECE
+        </div>
+        <h3 class="flagship-title">
+          Unified Flagship Master Template (Dual Hero & 8-Tile Portal)
+        </h3>
+        <p class="flagship-desc">
+          The original 2,000-line sacred design system synthesized from BHTCC, Sri Mandir, TTD, and Shirdi. Featuring the iconic Dual Hero (Narrative + Live Altar Player with Web Audio Bell), 8-tile Pilgrim Dashboard, filterable Puja catalog, live Brick crowdfunding meter, and interactive Sankalp booking modal.
+        </p>
+        <div class="flagship-links">
+          <a href="../index.html" target="_blank">🏠 Flagship Home ↗</a>
+          <a href="../pujas.html" target="_blank">🪔 Sevas & Pujas ↗</a>
+          <a href="../darshan.html" target="_blank">🎥 24/7 Live Darshan ↗</a>
+          <a href="../project.html" target="_blank">📐 3D Masterplan ↗</a>
+          <a href="../donate.html" target="_blank">🍲 e-Hundi & Annadanam ↗</a>
+        </div>
+      </div>
+      <div>
+        <a href="../index.html" target="_blank" class="flagship-cta-btn">
+          <span>🚀</span> Open Flagship Masterpiece ↗
+        </a>
+      </div>
+    </div>
+
+    <!-- 4 Templates Showcase Grid (2x2) -->
+    <div class="templates-grid">
+      
+      <!-- Card 1: Template 1 -->
+      <article class="template-card">
+        <div class="card-preview-thumb">
+          <img src="../screenshot_t1.png" alt="Template 1: Royal Crimson & Gold Preview">
+          <span class="preview-badge-overlay badge-t1">TEMPLATE 1</span>
+        </div>
+        <div class="card-body">
+          <div>
+            <h3 class="card-title">Royal Crimson & Temple Gold</h3>
+            <p class="card-desc">
+              Inspired by classical mandir majesty, BHTCC Australian heritage, and Shirdi Sansthan. Deep ceremonial maroons, antique gold foil borders, and serene sandalwood neutrals.
+            </p>
+
+            <div class="swatches-row">
+              <span class="swatches-label">Palette:</span>
+              <div class="swatch-chip" style="background: #58111A;" title="Deep Crimson #58111A"></div>
+              <div class="swatch-chip" style="background: #3C0A11;" title="Royal Maroon #3C0A11"></div>
+              <div class="swatch-chip" style="background: #D4AF37;" title="Temple Gold #D4AF37"></div>
+              <div class="swatch-chip" style="background: #E65100;" title="Sacred Saffron #E65100"></div>
+              <div class="swatch-chip" style="background: #FAF7F2;" title="Sandalwood Ivory #FAF7F2"></div>
+            </div>
+
+            <ul class="features-list">
+              <li><span>✓</span> Classical regal serif typography (Cinzel)</li>
+              <li><span>✓</span> Ornate gold borders & glowing mandala motifs</li>
+              <li><span>✓</span> Sacred halo card shadows and ceremonial buttons</li>
+              <li><span>✓</span> Web Audio API temple bell acoustic synth</li>
+            </ul>
+
+            <div class="card-subpages-list">
+              <span class="subpages-title">All 5 Complete Pages (Template 1):</span>
+              <a href="template_1/index.html" target="_blank">1. Sanctum Home <span>↗</span></a>
+              <a href="template_1/project.html" target="_blank">2. Ross Creek Project & Blueprints <span>↗</span></a>
+              <a href="template_1/worship.html" target="_blank">3. Worship & Enshrined Deities <span>↗</span></a>
+              <a href="template_1/community.html" target="_blank">4. Community Programs & Governance <span>↗</span></a>
+              <a href="template_1/donate.html" target="_blank">5. Tax-Deductible Donation Checkout <span>↗</span></a>
+            </div>
+          </div>
+
+          <a href="template_1/index.html" target="_blank" class="btn-launch-tab btn-t1">
+            <span>🚀 Open Template 1 Home in New Tab ↗</span>
+          </a>
+        </div>
+      </article>
+
+      <!-- Card 2: Template 2 -->
+      <article class="template-card">
+        <div class="card-preview-thumb">
+          <img src="../screenshot_t2.png" alt="Template 2: Vedic Saffron & Marigold Preview">
+          <span class="preview-badge-overlay badge-t2">TEMPLATE 2</span>
+        </div>
+        <div class="card-body">
+          <div>
+            <h3 class="card-title">Vedic Saffron & Marigold</h3>
+            <p class="card-desc">
+              Inspired by Sri Mandir's high-conversion modern DevTech ecosystem. Vibrant sacred saffron, auspicious haldi marigold, sunrise glow gradients, and pill-shaped geometry.
+            </p>
+
+            <div class="swatches-row">
+              <span class="swatches-label">Palette:</span>
+              <div class="swatch-chip" style="background: #D9480F;" title="Sacred Saffron #D9480F"></div>
+              <div class="swatch-chip" style="background: #9A3412;" title="Terracotta #9A3412"></div>
+              <div class="swatch-chip" style="background: #F59F00;" title="Marigold Gold #F59F00"></div>
+              <div class="swatch-chip" style="background: #FAB005;" title="Sunset Amber #FAB005"></div>
+              <div class="swatch-chip" style="background: #FFFDF9;" title="Warm Pearl #FFFDF9"></div>
+            </div>
+
+            <ul class="features-list">
+              <li><span>✓</span> Ultra-crisp warm pearl cards with soft saffron glow</li>
+              <li><span>✓</span> Modern pill-shaped buttons & category tags</li>
+              <li><span>✓</span> High-conversion devotional D2C layout</li>
+              <li><span>✓</span> Interactive Gotra & Sankalp booking workflow</li>
+            </ul>
+
+            <div class="card-subpages-list">
+              <span class="subpages-title">All 5 Complete Pages (Template 2):</span>
+              <a href="template_2/index.html" target="_blank">1. Devotee App Sanctum Home <span>↗</span></a>
+              <a href="template_2/project.html" target="_blank">2. Ross Creek Masterplan & Specs <span>↗</span></a>
+              <a href="template_2/worship.html" target="_blank">3. Fast Pooja Booking & Sankalp Cart <span>↗</span></a>
+              <a href="template_2/community.html" target="_blank">4. Community Programs & WWCC Status <span>↗</span></a>
+              <a href="template_2/donate.html" target="_blank">5. Digital e-Hundi & Giving Portal <span>↗</span></a>
+            </div>
+          </div>
+
+          <a href="template_2/index.html" target="_blank" class="btn-launch-tab btn-t2">
+            <span>🚀 Open Template 2 Home in New Tab ↗</span>
+          </a>
+        </div>
+      </article>
+
+      <!-- Card 3: Template 3 -->
+      <article class="template-card">
+        <div class="card-preview-thumb">
+          <img src="../screenshot_t3.png" alt="Template 3: Dravidian Granite & Bronze Preview">
+          <span class="preview-badge-overlay badge-t3">TEMPLATE 3</span>
+        </div>
+        <div class="card-body">
+          <div>
+            <h3 class="card-title">Dravidian Granite & Bronze</h3>
+            <p class="card-desc">
+              Inspired by ancient South-Indian temple stone architecture and TTD Tirumala. Deep obsidian granite, hand-chiselled stone borders, polished bronze spires, and sacred Tulasi emerald.
+            </p>
+
+            <div class="swatches-row">
+              <span class="swatches-label">Palette:</span>
+              <div class="swatch-chip" style="background: #1E2825;" title="Temple Granite #1E2825"></div>
+              <div class="swatch-chip" style="background: #111816;" title="Obsidian Stone #111816"></div>
+              <div class="swatch-chip" style="background: #C2845B;" title="Ancient Bronze #C2845B"></div>
+              <div class="swatch-chip" style="background: #0F5132;" title="Tulasi Emerald #0F5132"></div>
+              <div class="swatch-chip" style="background: #F8FAFC;" title="Sandstone Mist #F8FAFC"></div>
+            </div>
+
+            <ul class="features-list">
+              <li><span>✓</span> Chiselled architectural card borders & stone slate</li>
+              <li><span>✓</span> Metallic copper & bronze gradients</li>
+              <li><span>✓</span> Sacred Tulasi emerald status badges & active indicators</li>
+              <li><span>✓</span> TTD-style Express Queuing & QR Pass Generator</li>
+            </ul>
+
+            <div class="card-subpages-list">
+              <span class="subpages-title">All 5 Complete Pages (Template 3):</span>
+              <a href="template_3/index.html" target="_blank">1. Operations Command Center Home <span>↗</span></a>
+              <a href="template_3/project.html" target="_blank">2. Civil Masterplan & Engineering Specs <span>↗</span></a>
+              <a href="template_3/worship.html" target="_blank">3. Agamic Rituals Directory & Roster <span>↗</span></a>
+              <a href="template_3/community.html" target="_blank">4. Statutory Governance & Child Safety <span>↗</span></a>
+              <a href="template_3/donate.html" target="_blank">5. Official e-Hundi & DGR Tax Exemption <span>↗</span></a>
+            </div>
+          </div>
+
+          <a href="template_3/index.html" target="_blank" class="btn-launch-tab btn-t3">
+            <span>🚀 Open Template 3 Home in New Tab ↗</span>
+          </a>
+        </div>
+      </article>
+
+      <!-- Card 4: Template 4 -->
+      <article class="template-card">
+        <div class="card-preview-thumb">
+          <img src="../screenshot_t4.png" alt="Template 4: Unified Flagship Masterpiece Preview">
+          <span class="preview-badge-overlay badge-t4">TEMPLATE 4</span>
+        </div>
+        <div class="card-body">
+          <div>
+            <h3 class="card-title">Grand Unified Temple Portal (Original Masterpiece)</h3>
+            <p class="card-desc">
+              The flagship synthesis combining BHTCC community vision, Sri Mandir D2C pujas, TTD 8-tile pilgrim command hub, and Shirdi live darshan. Complete dual hero, brick crowdfunding meter, and instant Sankalp booking.
+            </p>
+
+            <div class="swatches-row">
+              <span class="swatches-label">Palette:</span>
+              <div class="swatch-chip" style="background: #58111A;" title="Sacred Kumkum Crimson #58111A"></div>
+              <div class="swatch-chip" style="background: #3C0A11;" title="Royal Maroon #3C0A11"></div>
+              <div class="swatch-chip" style="background: #D4AF37;" title="Classic Temple Gold #D4AF37"></div>
+              <div class="swatch-chip" style="background: #E65100;" title="Sacred Saffron #E65100"></div>
+              <div class="swatch-chip" style="background: #FAF7F2;" title="Sandalwood Ivory #FAF7F2"></div>
+            </div>
+
+            <ul class="features-list">
+              <li><span>✓</span> Dual Hero: Narrative vision + Interactive Live Altar player</li>
+              <li><span>✓</span> Web Audio API acoustic temple bell overtone synthesizer</li>
+              <li><span>✓</span> 8-Tile Pilgrim Services Dashboard (Darshan, Homam, e-Hundi, etc.)</li>
+              <li><span>✓</span> Capital project brick crowdfunding progress tracker</li>
+            </ul>
+
+            <div class="card-subpages-list">
+              <span class="subpages-title">All Complete Pages (Template 4):</span>
+              <a href="template_4/index.html" target="_blank">1. Grand Unified Home <span>↗</span></a>
+              <a href="template_4/pujas.html" target="_blank">2. Sevas & Pujas Catalog <span>↗</span></a>
+              <a href="template_4/darshan.html" target="_blank">3. 24/7 Live Sanctum Darshan <span>↗</span></a>
+              <a href="template_4/project.html" target="_blank">4. Temple Project & 3D Masterplan <span>↗</span></a>
+              <a href="template_4/donate.html" target="_blank">5. e-Hundi & Annadanam Checkout <span>↗</span></a>
+            </div>
+          </div>
+
+          <a href="template_4/index.html" target="_blank" class="btn-launch-tab btn-t4">
+            <span>🚀 Open Template 4 Home in New Tab ↗</span>
+          </a>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- Architectural Comparison Matrix -->
+    <section class="matrix-section">
+      <div style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 1rem;">
+        <div>
+          <span style="font-size: 0.75rem; color: var(--color-saffron); font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em;">
+            Architectural Comparison
+          </span>
+          <h3 style="font-family: 'Cinzel', serif; font-size: 1.65rem; color: var(--text-title); margin-top: 0.25rem;">
+            Design System Comparison Matrix
+          </h3>
+        </div>
+        <span style="font-size: 0.85rem; color: var(--text-muted);">
+          All 4 templates are 100% responsive, zero external dependencies, ready for deployment.
+        </span>
+      </div>
+
+      <div style="overflow-x: auto;">
+        <table class="matrix-table">
+          <thead>
+            <tr>
+              <th>Template System</th>
+              <th>Primary Palette</th>
+              <th>Typography</th>
+              <th>Design Mood</th>
+              <th>Best Used For</th>
+              <th>Direct Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Template 1</strong></td>
+              <td>Crimson `#58111A` + Gold `#D4AF37`</td>
+              <td>Cinzel Serif + Jakarta</td>
+              <td>Royal, Ceremonial, Traditional</td>
+              <td>Heritage temples, ashrams, trust foundations</td>
+              <td><a href="template_1/index.html" target="_blank" class="matrix-launch-link">Launch ↗</a></td>
+            </tr>
+            <tr>
+              <td><strong>Template 2</strong></td>
+              <td>Saffron `#D9480F` + Marigold `#F59F00`</td>
+              <td>Playfair + Plus Jakarta</td>
+              <td>Warm, Inviting, Modern DevTech</td>
+              <td>Puja booking apps, digital sevas, youth community</td>
+              <td><a href="template_2/index.html" target="_blank" class="matrix-launch-link">Launch ↗</a></td>
+            </tr>
+            <tr>
+              <td><strong>Template 3</strong></td>
+              <td>Granite `#1E2825` + Bronze `#C2845B` + Emerald `#0F5132`</td>
+              <td>Cinzel Architectural + Jakarta</td>
+              <td>Ancient Stone, Formal, Monumental</td>
+              <td>Major pilgrimage shrines, stone temple construction</td>
+              <td><a href="template_3/index.html" target="_blank" class="matrix-launch-link">Launch ↗</a></td>
+            </tr>
+            <tr>
+              <td><strong>Template 4</strong></td>
+              <td>Crimson `#58111A` + Gold `#D4AF37` + Saffron `#E65100`</td>
+              <td>Cinzel + Plus Jakarta</td>
+              <td>Monumental Synthesis, High-Utility Pilgrim Portal</td>
+              <td>Flagship temple foundation, all-in-one pilgrimage portal</td>
+              <td><a href="template_4/index.html" target="_blank" class="matrix-launch-link">Launch ↗</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer class="studio-footer">
+    <div class="container">
+      <p>© 2026 Sri Devalayam Design System Studio • All 4 templates crafted with sacred architectural standards</p>
+    </div>
+  </footer>
+
+  <script>
+    function launchAllTemplates() {
+      window.open('template_1/index.html', '_blank');
+      setTimeout(() => { window.open('template_2/index.html', '_blank'); }, 150);
+      setTimeout(() => { window.open('template_3/index.html', '_blank'); }, 300);
+      setTimeout(() => { window.open('template_4/index.html', '_blank'); }, 450);
+    }
+  </script>
+</body>
+</html>

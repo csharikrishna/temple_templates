@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Online Sevas & Remote Sankalp Booking | Sri Devalayam</title>
+  <meta name="description" content="Book personalized Vedic sevas, Abhishekam, Archana, and festival pujas. Priests chant your family Gotra & Name with sacred video proof and blessed prasad delivery.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- 1. Top Utility Bar -->
+  <aside class="top-utility-bar" aria-label="Auspicious updates">
+    <div class="container">
+      <div class="top-bar-inner">
+        <div class="panchang-live-badge">
+          <span class="badge-icon">☀️</span>
+          <span><strong>Today's Panchang:</strong> Shukla Ekadashi | Abhijit Muhurat: 11:45 AM - 12:35 PM</span>
+        </div>
+        <div class="live-darshan-indicator">
+          <span class="pulse-dot"></span>
+          <span>Sanctum Open: 06:00 AM - 09:30 PM</span>
+        </div>
+        <div class="top-actions">
+          <a href="#" id="currency-toggle">🇦🇺 AUD ($)</a>
+          <span>|</span>
+          <a href="donate.html">Tax Deductible DGR/80G</a>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- 2. Main Navigation Header -->
+  <header class="main-header">
+    <div class="container">
+      <nav class="navbar" aria-label="Main Navigation">
+        <a href="index.html" class="brand-wrapper">
+          <div class="brand-emblem">🕉️</div>
+          <div class="brand-text">
+            <h1>SRI DEVALAYAM</h1>
+            <p>Hindu Temple & Cultural Centre</p>
+          </div>
+        </a>
+
+        <ul class="nav-menu">
+          <li class="nav-item"><a href="index.html">Home</a></li>
+          <li class="nav-item active"><a href="pujas.html">Sevas & Pujas</a></li>
+          <li class="nav-item"><a href="darshan.html">Live Darshan</a></li>
+          <li class="nav-item"><a href="project.html">Temple Project</a></li>
+          <li class="nav-item"><a href="donate.html">e-Hundi & Donate</a></li>
+        </ul>
+
+        <div class="header-cta-group">
+          <a href="donate.html" class="btn btn-outline-gold btn-sm">
+            <span>🪔</span> e-Hundi
+          </a>
+          <button class="btn btn-primary btn-sm open-puja-modal" data-seva="General Sanctum Archana">
+            <span>🎫</span> Quick Booking
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 3. Subpage Banner Hero -->
+  <section class="subpage-hero">
+    <div class="hero-background-art"></div>
+    <div class="container">
+      <div class="subpage-hero-inner">
+        <div class="breadcrumbs">
+          <a href="index.html">Home</a> <span>›</span> <span>Online Sevas & Sankalp</span>
+        </div>
+        <h1 class="subpage-title">Sacred Vedic Sevas & <span>Personalized Sankalp</span></h1>
+        <p class="subpage-desc">
+          Participate in authentic temple rituals from anywhere in the world. Our Vedic priests recite your specific family Gotra, Nakshatra, and Names in the main sanctum. Receive personalized HD video proof and sanctified prasad at your doorstep.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Interactive Filter Toolbar -->
+  <div class="container">
+    <div class="filter-toolbar">
+      <div class="search-input-box">
+        <span class="search-icon-inside">🔍</span>
+        <input type="text" id="seva-search-input" placeholder="Search by Deity, Ritual, or Life Benefit (e.g. Health, Shiva, Homa)...">
+      </div>
+      <div class="filter-pills-row">
+        <button class="filter-tab active" data-filter="all">All Deities</button>
+        <button class="filter-tab" data-filter="shiva">Lord Shiva</button>
+        <button class="filter-tab" data-filter="ganesha">Lord Ganesha</button>
+        <button class="filter-tab" data-filter="vishnu">Lord Venkateswara</button>
+        <button class="filter-tab" data-filter="devi">Maha Devi</button>
+        <button class="filter-tab" data-filter="navagraha">Navagraha Shanti</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. Seva Catalog Grid -->
+  <main class="container" style="margin-bottom: 5rem;">
+    <div class="pujas-grid" id="sevas-grid">
+      
+      <!-- Seva 1: Maha Rudrabhishekam -->
+      <article class="puja-card" data-category="shiva">
+        <div class="puja-image-container">
+          <img src="https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=600&q=80" alt="Maha Rudrabhishekam">
+          <span class="puja-festival-badge">Daily Pradosham</span>
+          <div class="puja-devotees-count"><span>👥</span> 1,840+ Devotees</div>
+        </div>
+        <div class="puja-card-body">
+          <div>
+            <h3>Maha Rudrabhishekam (108 Bilva Patra)</h3>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.75rem;">
+              Sacred cleansing bath with milk, honey, panchamritam, and tender coconut water accompanied by Sri Rudram Vedic recitation.
+            </p>
+            <div class="puja-benefit-pills">
+              <span class="benefit-pill">Health & Recovery</span>
+              <span class="benefit-pill">Planetary Relief</span>
+            </div>
+            <ul class="puja-inclusions">
+              <li><span>✓</span> Name & Gotra chanting in Sanctum</li>
+              <li><span>✓</span> 4K Recorded Video Link via WhatsApp</li>
+              <li><span>✓</span> Sanctified Vibhuti & Kumkum shipped</li>
+            </ul>
+          </div>
+          <div class="puja-card-footer">
+            <div class="puja-price">
+              <span>Seva Dakshina</span>
+              <strong class="price-val" data-aud="51" data-inr="501">$51</strong>
+            </div>
+            <button class="btn btn-primary open-puja-modal" data-seva="Maha Rudrabhishekam (108 Bilva Patra)">
+              Book with Sankalp
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Seva 2: Sankatahara Ganesha Homa -->
+      <article class="puja-card" data-category="ganesha">
+        <div class="puja-image-container">
+          <img src="https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&w=600&q=80" alt="Ganesha Homa">
+          <span class="puja-festival-badge">Chaturthi Special</span>
+          <div class="puja-devotees-count"><span>👥</span> 2,120+ Devotees</div>
+        </div>
+        <div class="puja-card-body">
+          <div>
+            <h3>Sankatahara Ganapati Homa & Modaka Archana</h3>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.75rem;">
+              Auspicious fire ceremony to remove career and business obstacles, attract auspicious beginnings, and clear legal delays.
+            </p>
+            <div class="puja-benefit-pills">
+              <span class="benefit-pill">Obstacle Removal</span>
+              <span class="benefit-pill">New Ventures</span>
+            </div>
+            <ul class="puja-inclusions">
+              <li><span>✓</span> 21 Modaka & Durva Grass Offerings</li>
+              <li><span>✓</span> Consecrated Raksha Thread shipped</li>
+              <li><span>✓</span> Dedicated Priest consultation</li>
+            </ul>
+          </div>
+          <div class="puja-card-footer">
+            <div class="puja-price">
+              <span>Seva Dakshina</span>
+              <strong class="price-val" data-aud="75" data-inr="750">$75</strong>
+            </div>
+            <button class="btn btn-primary open-puja-modal" data-seva="Sankatahara Ganapati Homa & Modaka Archana">
+              Book with Sankalp
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Seva 3: Sri Venkateswara Kalyanotsavam -->
+      <article class="puja-card" data-category="vishnu">
+        <div class="puja-image-container">
+          <img src="https://images.unsplash.com/photo-1609137144822-2617f694e976?auto=format&fit=crop&w=600&q=80" alt="Venkateswara Kalyanotsavam">
+          <span class="puja-festival-badge">Shravana Saturday</span>
+          <div class="puja-devotees-count"><span>👥</span> 3,450+ Devotees</div>
+        </div>
+        <div class="puja-card-body">
+          <div>
+            <h3>Sri Venkateswara Divya Kalyanotsavam</h3>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.75rem;">
+              Celestial wedding ceremony of Lord Balaji and Goddess Padmavati. Highly recommended for family harmony, marital bliss, and prosperity.
+            </p>
+            <div class="puja-benefit-pills">
+              <span class="benefit-pill">Family Harmony</span>
+              <span class="benefit-pill">Marital Blessings</span>
+            </div>
+            <ul class="puja-inclusions">
+              <li><span>✓</span> Sankalp for entire immediate family</li>
+              <li><span>✓</span> Consecrated Akshatas & Silk Angavastram</li>
+              <li><span>✓</span> Laddu Prasadam Box couriered</li>
+            </ul>
+          </div>
+          <div class="puja-card-footer">
+            <div class="puja-price">
+              <span>Seva Dakshina</span>
+              <strong class="price-val" data-aud="151" data-inr="1500">$151</strong>
+            </div>
+            <button class="btn btn-primary open-puja-modal" data-seva="Sri Venkateswara Divya Kalyanotsavam">
+              Book with Sankalp
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Seva 4: Sri Lalitha Sahasranama & Chandi Homa -->
+      <article class="puja-card" data-category="devi">
+        <div class="puja-image-container">
+          <img src="https://images.unsplash.com/photo-1514894780887-121968d00567?auto=format&fit=crop&w=600&q=80" alt="Chandi Homa">
+          <span class="puja-festival-badge">Navratri Auspicious</span>
+          <div class="puja-devotees-count"><span>👥</span> 1,290+ Devotees</div>
+        </div>
+        <div class="puja-card-body">
+          <div>
+            <h3>Sri Lalitha Sahasranama Kumkumarchana & Chandi Homa</h3>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.75rem;">
+              Invoking the divine mother for protection, mental clarity, warding off the evil eye, and achieving spiritual victory.
+            </p>
+            <div class="puja-benefit-pills">
+              <span class="benefit-pill">Divine Protection</span>
+              <span class="benefit-pill">Inner Strength</span>
+            </div>
+            <ul class="puja-inclusions">
+              <li><span>✓</span> Continuous chanting of 1,000 Divine Names</li>
+              <li><span>✓</span> Sanctified Silver Yantra talisman</li>
+              <li><span>✓</span> Full video recording of fire ceremony</li>
+            </ul>
+          </div>
+          <div class="puja-card-footer">
+            <div class="puja-price">
+              <span>Seva Dakshina</span>
+              <strong class="price-val" data-aud="101" data-inr="1100">$101</strong>
+            </div>
+            <button class="btn btn-primary open-puja-modal" data-seva="Sri Lalitha Sahasranama Kumkumarchana & Chandi Homa">
+              Book with Sankalp
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Seva 5: Navagraha Shanti & Dosha Nivarana -->
+      <article class="puja-card" data-category="navagraha">
+        <div class="puja-image-container">
+          <img src="https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=600&q=80" alt="Navagraha Homa">
+          <span class="puja-festival-badge">Amavasya Special</span>
+          <div class="puja-devotees-count"><span>👥</span> 980+ Devotees</div>
+        </div>
+        <div class="puja-card-body">
+          <div>
+            <h3>Navagraha Preeti Homa & Shani Shanti Seva</h3>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.75rem;">
+              Pacifying planetary afflictions (Sade Sati, Rahu-Ketu, Kuja Dosha) through traditional grain and samidha offerings.
+            </p>
+            <div class="puja-benefit-pills">
+              <span class="benefit-pill">Planetary Relief</span>
+              <span class="benefit-pill">Career Stability</span>
+            </div>
+            <ul class="puja-inclusions">
+              <li><span>✓</span> 9 planetary wood samidhas offered</li>
+              <li><span>✓</span> Personalized astrological muhurat</li>
+              <li><span>✓</span> Energized Black Sesame amulet</li>
+            </ul>
+          </div>
+          <div class="puja-card-footer">
+            <div class="puja-price">
+              <span>Seva Dakshina</span>
+              <strong class="price-val" data-aud="81" data-inr="850">$81</strong>
+            </div>
+            <button class="btn btn-primary open-puja-modal" data-seva="Navagraha Preeti Homa & Shani Shanti Seva">
+              Book with Sankalp
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Seva 6: Sri Hanuman Chalisa 108 Avartana -->
+      <article class="puja-card" data-category="ganesha">
+        <div class="puja-image-container">
+          <img src="https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&w=600&q=80" alt="Hanuman Seva">
+          <span class="puja-festival-badge">Tuesday Special</span>
+          <div class="puja-devotees-count"><span>👥</span> 2,400+ Devotees</div>
+        </div>
+        <div class="puja-card-body">
+          <div>
+            <h3>Sri Hanuman Sindoor Archana & 108 Chalisa Path</h3>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.75rem;">
+              Invoking the strength, courage, and unconditional protection of Lord Veer Hanuman through continuous chanting and sacred sindoor abhishek.
+            </p>
+            <div class="puja-benefit-pills">
+              <span class="benefit-pill">Courage & Fearlessness</span>
+              <span class="benefit-pill">Health Vitality</span>
+            </div>
+            <ul class="puja-inclusions">
+              <li><span>✓</span> Betel leaf garland offering (Aku Pooja)</li>
+              <li><span>✓</span> Blessed sanctum sindoor shipped</li>
+              <li><span>✓</span> Digital Hanuman protective wallpaper</li>
+            </ul>
+          </div>
+          <div class="puja-card-footer">
+            <div class="puja-price">
+              <span>Seva Dakshina</span>
+              <strong class="price-val" data-aud="45" data-inr="451">$45</strong>
+            </div>
+            <button class="btn btn-primary open-puja-modal" data-seva="Sri Hanuman Sindoor Archana & 108 Chalisa Path">
+              Book with Sankalp
+            </button>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </main>
+
+  <!-- 6. Step-by-Step Remote Sankalp Workflow (Sri Mandir Style) -->
+  <section style="background: #FFF; padding: 4.5rem 0; border-top: 1px solid var(--border-light);">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-tag">Authentic Vedic Process</span>
+        <h2 class="section-title">How Remote Sankalp Puja Works</h2>
+        <p class="section-subtitle">A transparent, scripturally compliant workflow connecting devotees across continents to the temple sanctum.</p>
+      </div>
+
+      <div class="pillars-grid">
+        <div class="pillar-card">
+          <div class="pillar-icon">1</div>
+          <h3>Enter Family Details</h3>
+          <p>Submit your primary Gotra, Birth Nakshatra, and names of family members during booking.</p>
+        </div>
+        <div class="pillar-card">
+          <div class="pillar-icon">2</div>
+          <h3>Vedic Recitation</h3>
+          <p>Head Priests chant your exact name and Gotra directly before the deity during the auspicious muhurat.</p>
+        </div>
+        <div class="pillar-card">
+          <div class="pillar-icon">3</div>
+          <h3>WhatsApp Proof</h3>
+          <p>Receive a personalized high-definition video excerpt showing your name read during the ritual.</p>
+        </div>
+        <div class="pillar-card">
+          <div class="pillar-icon">4</div>
+          <h3>Doorstep Prasad</h3>
+          <p>Consecrated dry fruits, sacred threads, and deity raksha boxes are couriered to your home address.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. Footer -->
+  <footer class="main-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
+            <span style="font-size: 1.5rem;">🕉️</span>
+            <h3 style="color: #FFF; font-size: 1.25rem;">Sri Devalayam</h3>
+          </div>
+          <p>Registered Non-Profit Hindu Religious Trust serving the global community through Vedic worship and charity.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="pujas.html">Seva Catalog</a></li>
+            <li><a href="darshan.html">Live Darshan</a></li>
+            <li><a href="project.html">Temple Project</a></li>
+            <li><a href="donate.html">Tax-Exempt Donations</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Devotee Helpdesk</h4>
+          <p>📞 Phone: +61 3 5300 0000</p>
+          <p>📱 WhatsApp: +61 400 108 108</p>
+          <p>✉️ Email: sevas@devalayam.org.au</p>
+        </div>
+        <div class="footer-col">
+          <h4>Charity Compliance</h4>
+          <p>Australian Charity ABN: 13 397 829 440</p>
+          <p>Indian Section 80G Certified Trust</p>
+          <p>100% Tax Deductible Receipts Issued Automatically</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Sri Devalayam. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Reusable Modals -->
+  <div id="puja-modal" class="modal-overlay">
+    <div class="modal-container">
+      <div class="modal-header">
+        <div>
+          <h3>Book Personalized Seva with Sankalp</h3>
+          <span id="modal-puja-name" style="font-size: 0.8rem; color: #F3E5AB;">Maha Rudrabhishek with 108 Bilva Patra</span>
+        </div>
+        <button class="modal-close-btn" id="close-puja-modal">×</button>
+      </div>
+      <div class="modal-body">
+        <form id="puja-booking-form">
+          <div class="form-group">
+            <label for="devotee-name">Primary Devotee Full Name *</label>
+            <input type="text" id="devotee-name" class="form-control" placeholder="e.g. Ramesh Chandra" required>
+          </div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+            <div class="form-group">
+              <label for="devotee-gotra">Family Gotra *</label>
+              <input type="text" id="devotee-gotra" class="form-control" placeholder="e.g. Kashyapa" required>
+            </div>
+            <div class="form-group">
+              <label for="devotee-rashi">Nakshatra / Rashi</label>
+              <input type="text" id="devotee-rashi" class="form-control" placeholder="e.g. Rohini / Vrishabha">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="devotee-family">Family Members for Sankalp</label>
+            <input type="text" id="devotee-family" class="form-control" placeholder="Spouse & children names">
+          </div>
+          <div class="form-group">
+            <label for="devotee-phone">WhatsApp Mobile Number for Video Proof *</label>
+            <input type="tel" id="devotee-phone" class="form-control" placeholder="+61 400 000 000 or +91 98000 00000" required>
+          </div>
+          <div class="form-group">
+            <label for="devotee-address">Delivery Address for Blessed Prasad Box</label>
+            <textarea id="devotee-address" class="form-control" rows="2" placeholder="Full postal address for courier dispatch"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">
+            Confirm Seva & Proceed to Sankalp ($51)
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

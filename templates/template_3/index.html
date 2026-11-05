@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BHTCC Devasthanams | Official Pilgrim Booking Portal | Template 3 (Granite & Bronze)</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Official Government / Trust Multi-Tier Header (3 Tiers) -->
+  <header class="t3-enterprise-header">
+    <!-- Tier 1: Top Gov Ribbon -->
+    <div class="t3-top-gov-ribbon">
+      <div class="container t3-gov-flex">
+        <div class="t3-gov-left">
+          <span>🏛️ OFFICIAL VICTORIAN DEVASTHANAMS & PILGRIM PORTAL</span>
+          <span>|</span>
+          <span>ABN: 13 397 829 440 • <span class="t3-gov-ssl-tag">🔒 Security Verified SSL 256-Bit</span></span>
+        </div>
+        <div class="t3-lang-switcher" id="t3LangSwitcher">
+          <span style="color: #94A3B8; margin-right: 0.25rem;">Language:</span>
+          <button class="active" onclick="switchLanguage('EN', this)">English</button>
+          <button onclick="switchLanguage('TE', this)">తెలుగు</button>
+          <button onclick="switchLanguage('HI', this)">हिन्दी</button>
+          <button onclick="switchLanguage('TA', this)">தமிழ்</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tier 2: Main Navigation Bar -->
+    <div class="t3-main-nav-bar">
+      <div class="container t3-nav-split">
+        <a href="index.html" class="t3-official-seal-brand">
+          <div class="t3-seal-crest">🕉️</div>
+          <div>
+            <h1>BALLARAT HINDU TEMPLE & CULTURAL CENTRE</h1>
+            <p>Trust Management Board • Official Pilgrim Services Portal • Ross Creek Site</p>
+          </div>
+        </a>
+
+        <div class="t3-hotline-cluster">
+          <div class="t3-hotline-item">
+            <span class="t3-hl-label">PILGRIM HELPLINE</span>
+            <span class="t3-hl-val">+61 3 5300 0000</span>
+          </div>
+          <div class="t3-hotline-item">
+            <span class="t3-hl-label">ROSS CREEK SITE</span>
+            <span class="t3-hl-val">110 VAGGS RD</span>
+          </div>
+          <a href="donate.html" class="t3-btn-pass">
+            <span>🎫</span> e-Hundi Trust Offering
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tier 3: Official Subnav Bar -->
+    <nav class="t3-subnav-bar">
+      <div class="container t3-subnav-flex">
+        <a href="index.html" class="active">Operations Dashboard</a>
+        <a href="project.html">Civil Masterplan Specs</a>
+        <a href="worship.html">Agamic Rituals Directory</a>
+        <a href="community.html">Child Safety & Governance</a>
+        <a href="donate.html">DGR Tax Exemption ($2+)</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- High-Throughput Command Center Dashboard Hero (3-Panel Operations Command) -->
+  <section class="t3-command-hero">
+    <div class="container">
+      
+      <!-- Scrolling Flash Marquee Alert Ticker -->
+      <div class="t3-flash-ticker">
+        <span class="t3-flash-badge">FLASH NOTIFICATION</span>
+        <div class="t3-marquee">
+          <span>⚠️ Victorian Government $900k+ Grant Construction Progress Active • Ganesha Moolasthanam Granite Slabs Scheduled • Special Entry Seva Slots Open for Weekend Sanctum Darshan • ABN: 13 397 829 440</span>
+        </div>
+      </div>
+
+      <!-- 3-Panel Command Center Grid -->
+      <div class="t3-command-grid">
+        
+        <!-- Panel 1: Live Hill Shrine Operational Status (Queue Monitor) -->
+        <div class="t3-panel t3-panel-status">
+          <div class="t3-panel-header">
+            <span>📊 ROSS CREEK SITE TELEMETRY</span>
+            <span class="t3-dot-live">● REAL-TIME</span>
+          </div>
+          <div class="t3-panel-body">
+            <div class="t3-metric-row">
+              <span class="t3-m-label">Current Darshan Queue:</span>
+              <span class="t3-m-val text-green" id="teleQueue">10 - 15 Mins (Free Flow)</span>
+            </div>
+            <div class="t3-metric-row">
+              <span class="t3-m-label">Parking Bays Occupied:</span>
+              <span class="t3-m-val" id="teleParking">24 of 75 Bays Available</span>
+            </div>
+            <div class="t3-metric-row">
+              <span class="t3-m-label">Pilgrims Welcomed Today:</span>
+              <span class="t3-m-val" id="telePilgrims">1,240 Devotees</span>
+            </div>
+            <div class="t3-metric-row">
+              <span class="t3-m-label">Free Annadanam Served:</span>
+              <span class="t3-m-val" id="telePrasad">680 Sacred Plates</span>
+            </div>
+            <div class="t3-metric-row">
+              <span class="t3-m-label">Weather at Ross Creek:</span>
+              <span class="t3-m-val">19°C • Clear & Auspicious</span>
+            </div>
+          </div>
+          <div class="t3-panel-footer">
+            <span id="teleUpdateStamp">Telemetry refreshed just now</span>
+          </div>
+        </div>
+
+        <!-- Panel 2: Official Live Sanctum Broadcaster Feed (1080p HD) -->
+        <div class="t3-panel t3-panel-video">
+          <div class="t3-video-wrap">
+            <img src="https://bhtcc.netlify.app/assets/interior.jpg" alt="Live Sanctum Stream">
+            <div class="t3-vid-watermark">
+              OFFICIAL MOOLASTHANAM BROADCAST • 1080p HD
+            </div>
+            <div class="t3-vid-active-ritual">
+              NOW PERFORMING: SRI GANAPATHI MAHA AARTI
+            </div>
+          </div>
+          <div class="t3-video-subbar">
+            <span>🔔 Next Ritual: <strong>Sandhya Dhoop (06:30 PM)</strong></span>
+            <a href="worship.html" class="t3-btn-sub">Open Full Seva Schedule ↗</a>
+          </div>
+        </div>
+
+        <!-- Panel 3: Quota Release Countdown & Electronic DIP -->
+        <div class="t3-panel t3-panel-quota">
+          <div class="t3-panel-header">
+            <span>🎟️ DEVASTHANAMS QUOTA</span>
+            <span class="t3-badge-green">SLOTS OPEN</span>
+          </div>
+          <div class="t3-panel-body">
+            <h4 style="font-size: 1.15rem; color: #FFF; margin-bottom: 0.35rem;">Special Entry Darshan (SED)</h4>
+            <p style="font-size: 0.8rem; color: #94A3B8; margin-bottom: 1.15rem; line-height: 1.5;">
+              Daily $10 AUD priority passes for seniors, wheelchair pilgrims, and families with infants.
+            </p>
+            
+            <button onclick="openPassModal('Special Entry Darshan (SED)', '$10 AUD', 'Express Sanctum Queue')" class="t3-action-full-btn">
+              <span>🎫</span> Issue SED Express Pass Slot
+            </button>
+
+            <div style="border-top: 1px solid rgba(255,255,255,0.1); margin-top: 1.25rem; padding-top: 1rem;">
+              <h5 style="color: var(--t3-bronze-light); font-size: 0.9rem; margin-bottom: 0.25rem;">Ross Creek Capital Campaign</h5>
+              <p style="font-size: 0.775rem; color: #94A3B8; margin-bottom: 0.5rem;">Pillar copper inscriptions and sacred stone sponsorships are open.</p>
+              <a href="donate.html" style="color: #38BDF8; font-size: 0.825rem; font-weight: 700; text-decoration: none;">Sponsor a Pillar ($5,000 AUD) ↗</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- High-Density Enterprise 3x3 Service Grid Matrix (SRV-01 to SRV-06) -->
+  <section class="t3-services-matrix-section">
+    <div class="container">
+      <div class="t3-matrix-header">
+        <div>
+          <span class="tag">Direct Online Services</span>
+          <h2>Official Pilgrim Service Directory</h2>
+        </div>
+        <span style="font-size: 0.825rem; color: #64748B;">Registered Charity ABN: 13 397 829 440 • Statutory Victoria</span>
+      </div>
+
+      <div class="t3-matrix-grid">
+        
+        <!-- SRV-01 -->
+        <div class="t3-matrix-tile">
+          <div class="t3-mt-header">
+            <span class="t3-mt-code">SRV-01</span>
+            <span class="t3-badge-green">AVAILABLE</span>
+          </div>
+          <h3>Special Entry Darshan ($10)</h3>
+          <p>Priority lane sanctum access for seniors, wheelchair pilgrims, and infant parents visiting Ross Creek.</p>
+          <a href="javascript:void(0)" onclick="openPassModal('Special Entry Darshan', '$10 AUD', 'Priority Lane 1')">Issue Booking Pass ↗</a>
+        </div>
+
+        <!-- SRV-02 -->
+        <div class="t3-matrix-tile">
+          <div class="t3-mt-header">
+            <span class="t3-mt-code">SRV-02</span>
+            <span class="t3-badge-orange">FAST FILLING</span>
+          </div>
+          <h3>Arjitha Sevas & Homam</h3>
+          <p>Ganapathi Homam ($151), Rudrabhishekam ($51), and Satyanarayana Vratam ($101) with ordained Vedic priests.</p>
+          <a href="worship.html">View Seva Slots ↗</a>
+        </div>
+
+        <!-- SRV-03 -->
+        <div class="t3-matrix-tile">
+          <div class="t3-mt-header">
+            <span class="t3-mt-code">SRV-03</span>
+            <span class="t3-badge-green">ACTIVE</span>
+          </div>
+          <h3>Civil Engineering Masterplan</h3>
+          <p>Inspect approved Golden Plains Shire blueprints, 5-acre site layouts, and 75-bay parking civil drawings.</p>
+          <a href="project.html">Examine Masterplan ↗</a>
+        </div>
+
+        <!-- SRV-04 -->
+        <div class="t3-matrix-tile">
+          <div class="t3-mt-header">
+            <span class="t3-mt-code">SRV-04</span>
+            <span class="t3-badge-green">100% TAX EXEMPT</span>
+          </div>
+          <h3>e-Hundi & Building Fund</h3>
+          <p>DGR-certified tax-deductible contributions for concrete slabs, steel framing, and commercial kitchen setups.</p>
+          <a href="donate.html">Make Offering ↗</a>
+        </div>
+
+        <!-- SRV-05 -->
+        <div class="t3-matrix-tile">
+          <div class="t3-mt-header">
+            <span class="t3-mt-code">SRV-05</span>
+            <span class="t3-badge-blue">VOLUNTEER</span>
+          </div>
+          <h3>Community Sevadal Volunteers</h3>
+          <p>Weekend volunteer deployments in festival logistics, parking marshaling, Annadanam serving, and gardens.</p>
+          <a href="community.html">Register Sevadal ↗</a>
+        </div>
+
+        <!-- SRV-06 -->
+        <div class="t3-matrix-tile">
+          <div class="t3-mt-header">
+            <span class="t3-mt-code">SRV-06</span>
+            <span class="t3-badge-green">EXPRESS</span>
+          </div>
+          <h3>Doorstep Blessed Prasadam</h3>
+          <p>Sanctified dry fruit prasad packets and sacred Raksha threads couriered across Victoria and interstate Australia.</p>
+          <a href="worship.html">Order Prasad ↗</a>
+        </div>
+
+        <!-- SRV-07 -->
+        <div class="t3-matrix-tile">
+          <div class="t3-mt-header">
+            <span class="t3-mt-code">SRV-07</span>
+            <span class="t3-badge-orange">PRIEST ROSTER</span>
+          </div>
+          <h3>Home Poojas & Griha Pravesh</h3>
+          <p>Certified Agamic priests dispatched across Ballarat, Western Victoria, and Melbourne for housewarmings and milestone family sanskars.</p>
+          <a href="worship.html#priest-booking">Requisition Priest ↗</a>
+        </div>
+
+        <!-- SRV-08 -->
+        <div class="t3-matrix-tile">
+          <div class="t3-mt-header">
+            <span class="t3-mt-code">SRV-08</span>
+            <span class="t3-badge-green">ANNADANAM</span>
+          </div>
+          <h3>Commercial Kitchen & Feast Trust</h3>
+          <p>Sponsor daily sacred prasadams and large-scale festival feasts prepared to commercial health standards for 800+ pilgrims.</p>
+          <a href="donate.html">Sponsor Kitchen ↗</a>
+        </div>
+
+        <!-- SRV-09 -->
+        <div class="t3-matrix-tile">
+          <div class="t3-mt-header">
+            <span class="t3-mt-code">SRV-09</span>
+            <span class="t3-badge-blue">GURUKULAM</span>
+          </div>
+          <h3>Sanskrit & Language School</h3>
+          <p>Victorian Child Safe compliant heritage classes in Sanskrit grammar, sacred chanting, and conversational Hindi & Tamil.</p>
+          <a href="community.html">Enroll Devotees ↗</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Official Arjitha Seva Agamic Timetable Table -->
+  <section class="t3-schedule-table-section">
+    <div class="container">
+      <div class="t3-table-card">
+        <div class="t3-tc-head">
+          <h3>Daily Arjitha Seva Official Timetable & Quota</h3>
+          <span>BHTCC Approved Agamic Schedule • Ross Creek Sanctum</span>
+        </div>
+
+        <div style="overflow-x: auto;">
+          <table class="t3-official-table">
+            <thead>
+              <tr>
+                <th>Seva Code</th>
+                <th>Seva Name</th>
+                <th>Reporting Time</th>
+                <th>Capacity</th>
+                <th>Dress Code</th>
+                <th>Dakshina</th>
+                <th>Booking Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>SEVA-01</strong></td>
+                <td>Suprabhata Seva (Morning Awakening)</td>
+                <td>06:00 AM</td>
+                <td>120 Pilgrims</td>
+                <td>Traditional Dhoti / Saree</td>
+                <td>$31 AUD</td>
+                <td><button onclick="openPassModal('Suprabhata Seva', '$31 AUD', 'Morning Queue A')" class="t3-table-btn">Book Slot</button></td>
+              </tr>
+              <tr>
+                <td><strong>SEVA-02</strong></td>
+                <td>Maha Ganapathi Homam (Obstacle Removal)</td>
+                <td>08:00 AM</td>
+                <td>50 Devotees</td>
+                <td>White Dhoti / Saree</td>
+                <td>$151 AUD</td>
+                <td><button onclick="openPassModal('Maha Ganapathi Homam', '$151 AUD', 'Sanctum Yagashala')" class="t3-table-btn-solid">Book Direct Pass</button></td>
+              </tr>
+              <tr>
+                <td><strong>SEVA-03</strong></td>
+                <td>Maha Rudrabhishekam (108 Bilva Patra)</td>
+                <td>10:30 AM</td>
+                <td>60 Devotees</td>
+                <td>Formal Traditional</td>
+                <td>$51 AUD</td>
+                <td><button onclick="openPassModal('Maha Rudrabhishekam', '$51 AUD', 'Shiva Sanctum')" class="t3-table-btn-solid">Book Direct Pass</button></td>
+              </tr>
+              <tr>
+                <td><strong>SEVA-04</strong></td>
+                <td>Sandhya Dhoop & Deeparadhana Aarti</td>
+                <td>06:30 PM</td>
+                <td>300 Pilgrims</td>
+                <td>Traditional Modest</td>
+                <td>Free Entry</td>
+                <td><button onclick="openPassModal('Sandhya Dhoop Aarti', 'Free Entry', 'General Queue')" class="t3-table-btn">Open for Today</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Enterprise Footer -->
+  <footer class="t3-enterprise-footer">
+    <div class="container">
+      <div class="t3-ef-flex">
+        <div class="t3-ef-brand">
+          <h4>BALLARAT HINDU TEMPLE & CULTURAL CENTRE INC.</h4>
+          <p>Incorporated Association (Victoria) • ABN: 13 397 829 440 • 110 Vaggs Rd, Ross Creek VIC 3351</p>
+          <p>Template 3: Operations Command Center & Pilgrimage Hub Architecture (TTD Tirupati Style)</p>
+        </div>
+        <div class="t3-ef-nav">
+          <a href="index.html">Operations Home</a>
+          <a href="project.html">Civil Masterplan</a>
+          <a href="worship.html">Agamic Rituals</a>
+          <a href="community.html">Governance & WWCC</a>
+          <a href="donate.html">e-Hundi Trust</a>
+        </div>
+      </div>
+      <div class="t3-ef-bottom">
+        <p>© 2026 Ballarat Hindu Temple & Cultural Centre Inc. All rights reserved. • Statutory Victorian Devasthanams Directorate</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Interactive Victorian Devasthanams Pilgrim Pass Modal -->
+  <div id="passModal" class="t3-pass-modal-overlay">
+    <div class="t3-pass-card">
+      <div class="t3-pass-top">
+        <h3>🏛️ OFFICIAL DEVASTHANAMS PILGRIM ENTRY PASS</h3>
+        <button class="t3-pass-close" onclick="closePassModal()">&times;</button>
+      </div>
+      <div class="t3-pass-body">
+        <div style="text-align: center; margin-bottom: 1.25rem;">
+          <div style="font-size: 2rem;">🕉️</div>
+          <h4 style="color: #0F172A; font-size: 1.15rem; margin-top: 0.25rem;" id="modalPassTitle">Special Entry Darshan</h4>
+          <p style="font-size: 0.8rem; color: #64748B;">Ballarat Hindu Temple & Cultural Centre • Ross Creek Sanctum</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.85rem; font-size: 0.85rem; background: #F8FAFC; padding: 1rem; border-radius: 4px; border: 1px solid #E2E8F0;">
+          <div><strong>Pilgrim Pass ID:</strong> <span id="modalPassId" style="font-family: monospace; color: #B87333;">PASS-2026-9812</span></div>
+          <div><strong>Date:</strong> <span id="modalPassDate"></span></div>
+          <div><strong>Allocated Queue:</strong> <span id="modalPassQueue">Express Lane</span></div>
+          <div><strong>Dakshina / Fee:</strong> <span id="modalPassFee" style="font-weight: 800; color: #10B981;">$10 AUD</span></div>
+          <div style="grid-column: span 2;"><strong>Reporting Address:</strong> 110 Vaggs Rd, Ross Creek VIC 3351</div>
+        </div>
+
+        <div class="t3-pass-barcode-box">
+          <div class="t3-barcode-lines">||| | |||| | ||||| ||| ||</div>
+          <div class="t3-pass-serial" id="modalBarcodeSerial">BHTCC-SECURE-SCAN-VERIFIED</div>
+        </div>
+
+        <div style="display: flex; gap: 1rem;">
+          <button onclick="window.print()" class="t3-table-btn-solid" style="flex: 1; text-align: center; padding: 0.65rem;">🖨️ Print Pilgrim Pass</button>
+          <button onclick="closePassModal()" class="t3-table-btn" style="flex: 1; text-align: center; padding: 0.65rem;">Close Window</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
