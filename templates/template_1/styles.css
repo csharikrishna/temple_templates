@@ -2191,3 +2191,76 @@ a {
   25% { left: 140%; }
   100% { left: 140%; }
 }
+
+/* -------------------------------------------------------------------------
+   SUBPAGE PRECISION RESPONSIVE SAFETY
+   ------------------------------------------------------------------------- */
+html, body {
+  overflow-x: hidden !important;
+  max-width: 100vw !important;
+  width: 100% !important;
+  position: relative !important;
+}
+
+.t1-form-card {
+  width: 100% !important;
+  max-width: 920px !important;
+  box-sizing: border-box !important;
+}
+
+.t1-form-grid {
+  width: 100% !important;
+}
+
+.t1-input-group {
+  min-width: 0 !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.t1-input-group input,
+.t1-input-group select,
+.t1-input-group textarea {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  box-sizing: border-box !important;
+}
+
+.t1-timetable-wrapper {
+  overflow-x: auto !important;
+  max-width: 100% !important;
+  width: 100% !important;
+  -webkit-overflow-scrolling: touch !important;
+}
+
+.t1-sponsor-banner {
+  box-sizing: border-box !important;
+  max-width: 100% !important;
+}
+
+@media (max-width: 768px) {
+  .t1-form-card {
+    padding: 1.5rem 1rem !important;
+  }
+  .t1-form-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .t1-sponsor-banner {
+    padding: 1.5rem 1rem !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    text-align: center !important;
+  }
+  .t1-sponsor-right {
+    width: 100% !important;
+  }
+  .t1-sponsor-right a, .t1-sponsor-right .btn-t1-gold {
+    width: 100% !important;
+    justify-content: center !important;
+    text-align: center !important;
+    white-space: normal !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+  }
+}
