@@ -48,8 +48,16 @@
 
     *, *::before, *::after {
       box-sizing: border-box;
+      max-width: 100%;
       margin: 0;
       padding: 0;
+    }
+
+    html, body {
+      overflow-x: hidden !important;
+      max-width: 100vw;
+      width: 100%;
+      position: relative;
     }
 
     body {
@@ -59,7 +67,6 @@
       min-height: 100vh;
       display: flex;
       flex-direction: column;
-      overflow-x: hidden;
       background-image: 
         radial-gradient(circle at 10% 15%, rgba(245, 158, 11, 0.08) 0%, transparent 45%),
         radial-gradient(circle at 90% 85%, rgba(126, 28, 39, 0.06) 0%, transparent 50%),
@@ -71,7 +78,7 @@
       width: 100%;
       max-width: 1380px;
       margin: 0 auto;
-      padding: 0 1.5rem;
+      padding: 0 1.25rem;
     }
 
     /* Top Studio Header */
@@ -111,14 +118,16 @@
       font-size: 1.5rem;
       color: #FFF;
       box-shadow: 0 4px 14px rgba(217, 72, 15, 0.28);
+      flex-shrink: 0;
     }
 
     .brand-text h1 {
       font-family: 'Cinzel', serif;
-      font-size: 1.15rem;
+      font-size: clamp(0.95rem, 3.5vw, 1.15rem);
       font-weight: 800;
       color: var(--color-crimson);
       letter-spacing: 0.02em;
+      line-height: 1.2;
     }
 
     .brand-text p {
@@ -150,6 +159,7 @@
       gap: 0.45rem;
       transition: var(--transition);
       box-shadow: var(--shadow-sm);
+      white-space: nowrap;
     }
 
     .quick-tab-link:hover {
@@ -171,6 +181,7 @@
       width: 9px;
       height: 9px;
       border-radius: 50%;
+      flex-shrink: 0;
     }
 
     .dot-flagship { background: #D4AF37; }
@@ -204,10 +215,12 @@
 
     .hero-banner h2 {
       font-family: 'Cinzel', serif;
-      font-size: 2.85rem;
+      font-size: clamp(1.65rem, 5vw, 2.85rem);
       color: var(--text-title);
       margin-bottom: 0.85rem;
-      line-height: 1.2;
+      line-height: 1.22;
+      overflow-wrap: break-word;
+      word-break: normal;
     }
 
     .hero-banner h2 span {
@@ -217,7 +230,7 @@
     }
 
     .hero-banner p {
-      font-size: 1.05rem;
+      font-size: clamp(0.9rem, 2.5vw, 1.05rem);
       color: var(--text-muted);
       max-width: 720px;
       margin: 0 auto 1.5rem;
@@ -232,7 +245,7 @@
       color: #FFFFFF;
       padding: 0.85rem 2rem;
       border-radius: var(--radius-full);
-      font-size: 0.985rem;
+      font-size: clamp(0.875rem, 2.5vw, 0.985rem);
       font-weight: 800;
       border: none;
       cursor: pointer;
@@ -280,9 +293,10 @@
 
     .flagship-title {
       font-family: 'Cinzel', serif;
-      font-size: 1.65rem;
+      font-size: clamp(1.25rem, 4vw, 1.65rem);
       color: var(--text-title);
       margin-bottom: 0.5rem;
+      line-height: 1.3;
     }
 
     .flagship-desc {
@@ -432,6 +446,7 @@
       background: #FAF7F2;
       border-radius: var(--radius-sm);
       border: 1px solid rgba(212, 175, 55, 0.25);
+      flex-wrap: wrap;
     }
 
     .swatches-label {
@@ -448,6 +463,7 @@
       border-radius: 4px;
       border: 1px solid rgba(0, 0, 0, 0.15);
       box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+      flex-shrink: 0;
     }
 
     .features-list {
@@ -593,13 +609,23 @@
       padding: 2.5rem;
       margin-bottom: 4rem;
       box-shadow: var(--shadow-md);
+      max-width: 100%;
+      overflow: hidden;
+    }
+
+    .table-responsive-wrapper {
+      overflow-x: auto;
+      width: 100%;
+      max-width: 100%;
+      -webkit-overflow-scrolling: touch;
+      margin-top: 1.5rem;
     }
 
     .matrix-table {
       width: 100%;
+      min-width: 600px;
       border-collapse: collapse;
       text-align: left;
-      margin-top: 1.5rem;
     }
 
     .matrix-table th {
@@ -635,6 +661,7 @@
       background: rgba(88, 17, 26, 0.06);
       border: 1px solid rgba(88, 17, 26, 0.15);
       transition: var(--transition);
+      white-space: nowrap;
     }
 
     .matrix-launch-link:hover {
@@ -654,8 +681,163 @@
       font-weight: 500;
     }
 
+    /* -------------------------------------------------------------------------
+       FLUID RESPONSIVENESS (MOBILE TO ULTRA-WIDE 4K)
+       ------------------------------------------------------------------------- */
     @media (max-width: 1024px) {
       .templates-grid { grid-template-columns: 1fr; }
+      .container { padding: 0 1.25rem; }
+    }
+
+    @media (max-width: 768px) {
+      .header-inner {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.85rem;
+      }
+
+      .brand-wrap {
+        justify-content: flex-start;
+      }
+
+      .quick-launch-tabs {
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        padding-bottom: 0.4rem;
+        -webkit-overflow-scrolling: touch;
+        gap: 0.5rem;
+        max-width: 100%;
+        width: 100%;
+      }
+
+      .quick-tab-link {
+        white-space: nowrap;
+        padding: 0.45rem 0.85rem;
+        font-size: 0.775rem;
+        flex-shrink: 0;
+      }
+
+      .hero-banner {
+        padding: 2rem 0 1.5rem;
+      }
+
+      .hero-banner h2 {
+        font-size: clamp(1.35rem, 5.5vw, 2.1rem);
+        line-height: 1.25;
+        overflow-wrap: break-word;
+      }
+
+      .hero-banner p {
+        font-size: 0.9rem;
+      }
+
+      .launch-all-btn {
+        width: 100%;
+        max-width: 340px;
+        justify-content: center;
+        padding: 0.8rem 1rem;
+        font-size: 0.875rem;
+        margin: 0 auto;
+      }
+
+      .flagship-master-banner {
+        padding: 1.5rem;
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .flagship-links {
+        flex-direction: column;
+        gap: 0.65rem;
+      }
+
+      .flagship-cta-btn {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+      }
+
+      .card-body {
+        padding: 1.25rem;
+      }
+
+      .card-preview-thumb {
+        height: 200px;
+      }
+
+      .matrix-section {
+        padding: 1.5rem 1rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container { padding: 0 0.85rem; }
+      .brand-text h1 { font-size: 0.95rem; }
+      .brand-text p { font-size: 0.65rem; }
+      .brand-icon { width: 36px; height: 36px; font-size: 1.15rem; }
+      .hero-banner h2 { font-size: 1.325rem; }
+      .hero-banner p { font-size: 0.85rem; }
+      .badge-pill { font-size: 0.7rem; padding: 0.25rem 0.65rem; max-width: 100%; white-space: normal; }
+      .launch-all-btn { font-size: 0.85rem; padding: 0.75rem 1.25rem; }
+      .card-title { font-size: 1.15rem; }
+    }
+
+    /* Floating Toast Guidance */
+    .launch-toast-container {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 9999;
+      max-width: 440px;
+      width: calc(100% - 48px);
+      background: #FFFFFF;
+      border: 1.5px solid var(--color-gold-foil);
+      border-radius: var(--radius-md);
+      box-shadow: 0 12px 35px rgba(88, 17, 26, 0.2), 0 4px 14px rgba(212, 175, 55, 0.3);
+      padding: 1.15rem 1.35rem;
+      display: none;
+      align-items: flex-start;
+      gap: 0.85rem;
+      animation: slideUpToast 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    @keyframes slideUpToast {
+      from { transform: translateY(40px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    .toast-icon {
+      font-size: 1.5rem;
+      flex-shrink: 0;
+      line-height: 1;
+    }
+
+    .toast-body h4 {
+      font-family: 'Cinzel', serif;
+      font-size: 0.95rem;
+      color: var(--color-crimson);
+      margin-bottom: 0.25rem;
+    }
+
+    .toast-body p {
+      font-size: 0.825rem;
+      color: var(--text-muted);
+      line-height: 1.45;
+    }
+
+    .toast-close-btn {
+      background: none;
+      border: none;
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      cursor: pointer;
+      margin-left: auto;
+      padding: 0.2rem;
+      transition: color 0.2s;
+    }
+
+    .toast-close-btn:hover {
+      color: var(--color-crimson);
     }
   </style>
 </head>
@@ -713,7 +895,7 @@
         Every template uses authentic cultural design patterns with distinct architectural positioning, sacred harmony, and fluid responsiveness. Click any card below to launch full-screen in a new tab.
       </p>
 
-      <button class="launch-all-btn" onclick="launchAllTemplates()">
+      <button class="launch-all-btn" id="launch-all-button" onclick="launchAllTemplates()">
         <span>🚀</span> Launch All 4 Templates in New Tabs
       </button>
     </div>
@@ -724,7 +906,7 @@
     
     <!-- Flagship Masterpiece Banner -->
     <div class="flagship-master-banner">
-      <div style="flex: 1; min-width: 300px;">
+      <div style="flex: 1; min-width: 0; width: 100%;">
         <div class="flagship-badge">
           👑 ORIGINAL FLAGSHIP MASTERPIECE
         </div>
@@ -950,7 +1132,7 @@
         </span>
       </div>
 
-      <div style="overflow-x: auto;">
+      <div class="table-responsive-wrapper">
         <table class="matrix-table">
           <thead>
             <tr>
@@ -1007,12 +1189,56 @@
     </div>
   </footer>
 
+  <!-- Floating Toast Notification for Multi-Tab Guidance -->
+  <div id="launch-toast" class="launch-toast-container">
+    <div class="toast-icon">🪔</div>
+    <div class="toast-body">
+      <h4>Opening Templates in New Tabs</h4>
+      <p>Template 1 has been launched. If your browser blocked multi-tab popups, tap any template card below to open directly!</p>
+    </div>
+    <button class="toast-close-btn" onclick="dismissToast()" title="Close notification">✕</button>
+  </div>
+
   <script>
     function launchAllTemplates() {
-      window.open('templates/template_1/index.html', '_blank');
-      setTimeout(() => { window.open('templates/template_2/index.html', '_blank'); }, 150);
-      setTimeout(() => { window.open('templates/template_3/index.html', '_blank'); }, 300);
-      setTimeout(() => { window.open('templates/template_4/index.html', '_blank'); }, 450);
+      // Determine correct relative prefix
+      const isSubfolder = window.location.pathname.includes('/templates/');
+      const prefix = isSubfolder ? '' : 'templates/';
+
+      // 1. Synchronous launch of Template 1 (always permitted as direct user action)
+      window.open(prefix + 'template_1/index.html', '_blank');
+
+      // 2. Attempt launching the remaining 3 templates synchronously
+      try {
+        window.open(prefix + 'template_2/index.html', '_blank');
+        window.open(prefix + 'template_3/index.html', '_blank');
+        window.open(prefix + 'template_4/index.html', '_blank');
+      } catch (err) {
+        console.warn('Popup blocked for additional tabs:', err);
+      }
+
+      // 3. Show guidance toast
+      showLaunchNotification();
+
+      // 4. Smooth scroll to cards grid
+      const grid = document.querySelector('.templates-grid');
+      if (grid) {
+        grid.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+
+    function showLaunchNotification() {
+      const toast = document.getElementById('launch-toast');
+      if (!toast) return;
+      toast.style.display = 'flex';
+      setTimeout(() => {
+        dismissToast();
+      }, 7000);
+    }
+
+    function dismissToast() {
+      const toast = document.getElementById('launch-toast');
+      if (toast) toast.style.display = 'none';
     }
   </script>
 </body>

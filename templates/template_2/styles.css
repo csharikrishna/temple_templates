@@ -2224,3 +2224,17 @@ a {
   .t2-gov-app-card { padding: 1.5rem; }
   .t2-brick-sponsor-card { padding: 1.75rem; }
 }
+
+/* Mobile Ultra-Refined Responsiveness (<= 480px) */
+@media (max-width: 480px) {
+  .t2-container { padding: 0 0.85rem; }
+  .t2-bubble-circle { width: 52px; height: 52px; font-size: 1.35rem; }
+  .t2-bubble-item { font-size: 0.72rem; }
+  .t2-hero-title { font-size: clamp(1.5rem, 5.5vw, 1.95rem); }
+  .t2-amounts-row { grid-template-columns: repeat(2, 1fr); }
+  .t2-booking-card, .t2-quick-book-card { padding: 1.25rem 0.85rem; }
+  .t2-stream-actions, .t2-stream-action-bar { grid-template-columns: 1fr; }
+  .t2-crowdfund-card, .t2-campaign-card { padding: 1.25rem 0.85rem; }
+  .t2-brick-sponsor-card { padding: 1.25rem 0.85rem; }
+  .t2-pill-btn { font-size: 0.825rem; padding: 0.65rem 1.25rem; }
+}

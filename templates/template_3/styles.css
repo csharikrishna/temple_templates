@@ -1296,3 +1296,17 @@ a {
   .t3-bronze-banner { flex-direction: column; align-items: flex-start; }
   .t3-ef-flex { flex-direction: column; align-items: flex-start; }
 }
+
+/* Mobile Ultra-Refined Responsiveness (<= 480px) */
+@media (max-width: 480px) {
+  .t3-container { padding: 0 0.85rem; }
+  .t3-headline-main { font-size: clamp(1.5rem, 5.5vw, 1.95rem); }
+  .t3-topbar-inner { flex-direction: column; align-items: flex-start; gap: 0.4rem; }
+  .t3-lang-picker { flex-wrap: wrap; }
+  .t3-subnav-flex { overflow-x: auto; flex-wrap: nowrap; -webkit-overflow-scrolling: touch; padding-bottom: 0.4rem; }
+  .t3-subnav-flex a { white-space: nowrap; font-size: 0.8rem; }
+  .t3-telemetry-item { padding: 1rem 0.85rem; }
+  .t3-telemetry-val { font-size: 1.4rem; }
+  .t3-action-btn-row { flex-direction: column; align-items: stretch; }
+  .t3-btn-monumental, .t3-btn-bronze { width: 100%; text-align: center; }
+}

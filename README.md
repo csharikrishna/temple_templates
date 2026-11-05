@@ -68,9 +68,11 @@ Temple/
 3. Select branch **`main`** and folder **`/ (root)`**.
 4. Click **Save**.
 5. Your temple website and switcher studio will be live at:
-   `https://csharikrishna.github.io/TEMPLE_TEMPLATES/`
+   `https://csharikrishna.github.io/temple_templates/`
    and
-   `https://csharikrishna.github.io/TEMPLE_TEMPLATES/switcher.html`
+   `https://csharikrishna.github.io/temple_templates/switcher.html`
+   and
+   `https://csharikrishna.github.io/temple_templates/templates/`
 
 ---
 

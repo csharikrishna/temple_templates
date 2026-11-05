@@ -2106,3 +2106,21 @@ a {
   .t1-amounts-grid { grid-template-columns: repeat(3, 1fr); }
   .t1-footer-inner { grid-template-columns: 1fr; }
 }
+
+/* Mobile Ultra-Refined Responsiveness (<= 480px) */
+@media (max-width: 480px) {
+  .t1-container { padding: 0 0.85rem; }
+  .t1-hero-headline { font-size: clamp(1.65rem, 6vw, 2.1rem); }
+  .t1-hero-section { padding: 3.5rem 0 6.5rem; }
+  .t1-hero-sub { font-size: 0.925rem; }
+  .t1-hero-btn-row { flex-direction: column; align-items: stretch; }
+  .t1-hero-btn-row .t1-btn { width: 100%; justify-content: center; }
+  .t1-amounts-grid { grid-template-columns: repeat(2, 1fr); }
+  .t1-nav-ribbon { gap: 0.85rem; font-size: 0.825rem; }
+  .t1-altar-footer { flex-direction: column; align-items: stretch; gap: 1rem; }
+  .t1-altar-actions { justify-content: stretch; width: 100%; }
+  .t1-altar-actions button { flex: 1; }
+  .t1-stats-ribbon { padding: 1.15rem 0.85rem; }
+  .t1-stat-num { font-size: 1.75rem; }
+  .t1-stat-lbl { font-size: 0.75rem; }
+}
