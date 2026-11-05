@@ -3,6 +3,13 @@
   "version": 2,
   "cleanUrls": true,
   "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/",
+      "destination": "/templates",
+      "permanent": false
+    }
+  ],
   "headers": [
     {
       "source": "/assets/(.*)",
@@ -47,6 +54,26 @@
     {
       "source": "/switcher",
       "destination": "/switcher.html"
+    },
+    {
+      "source": "/flagship",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/template_1/:path*",
+      "destination": "/templates/template_1/:path*"
+    },
+    {
+      "source": "/template_2/:path*",
+      "destination": "/templates/template_2/:path*"
+    },
+    {
+      "source": "/template_3/:path*",
+      "destination": "/templates/template_3/:path*"
+    },
+    {
+      "source": "/template_4/:path*",
+      "destination": "/templates/template_4/:path*"
     }
   ]
 }
