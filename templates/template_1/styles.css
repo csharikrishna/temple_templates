@@ -2124,3 +2124,70 @@ a {
   .t1-stat-num { font-size: 1.75rem; }
   .t1-stat-lbl { font-size: 0.75rem; }
 }
+
+/* -------------------------------------------------------------------------
+   WORLD-CLASS VISUAL FIDELITY ENHANCEMENTS (TEMPLATE 1)
+   ------------------------------------------------------------------------- */
+.t1-hero-section {
+  background: radial-gradient(circle at 50% 15%, #4A0E16 0%, #30080E 55%, #180306 100%) !important;
+}
+
+.t1-hero-headline {
+  background: linear-gradient(135deg, #FFFFFF 0%, #FFF7E6 40%, #E8C96C 80%, #D4AF37 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  filter: drop-shadow(0 4px 16px rgba(0, 0, 0, 0.45));
+}
+
+.t1-stats-ribbon {
+  box-shadow: 0 24px 50px rgba(60, 10, 17, 0.14), 0 0 0 5px rgba(212, 175, 55, 0.12) !important;
+}
+
+.t1-stat-num {
+  background: linear-gradient(135deg, #58111A 0%, #7E1C27 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+.t1-bento-card {
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.t1-bento-card:hover {
+  transform: translateY(-6px) !important;
+  box-shadow: 0 22px 50px rgba(60, 10, 17, 0.12), 0 0 25px rgba(212, 175, 55, 0.22) !important;
+  border-color: var(--t1-gold) !important;
+}
+
+.t1-seva-ledger-card {
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.t1-seva-ledger-card:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 18px 40px rgba(60, 10, 17, 0.12), 0 0 20px rgba(212, 175, 55, 0.2) !important;
+  border-color: var(--t1-gold) !important;
+}
+
+.t1-btn-gold {
+  position: relative;
+  overflow: hidden;
+}
+
+.t1-btn-gold::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -60%;
+  width: 40%;
+  height: 200%;
+  background: rgba(255, 255, 255, 0.35);
+  transform: rotate(30deg);
+  animation: t1GoldSheen 4.5s infinite;
+}
+
+@keyframes t1GoldSheen {
+  0% { left: -60%; }
+  25% { left: 140%; }
+  100% { left: 140%; }
+}
