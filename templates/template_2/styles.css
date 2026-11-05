@@ -2379,3 +2379,93 @@ html, body {
     font-size: 0.7rem !important;
   }
 }
+
+
+/* -------------------------------------------------------------------------
+   IOS SAFARI & MOBILE FIRST PERFECTION (TEMPLATE 2)
+   ------------------------------------------------------------------------- */
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media (max-width: 768px) {
+  /* Prevent iOS Safari Form Auto-Zoom Bug */
+  input, select, textarea,
+  .t2-input, .t2-select, .t2-quick-book-card input, .t2-quick-book-card select {
+    font-size: 16px !important;
+    min-height: 48px !important;
+  }
+  
+  /* App Header Safe Area */
+  .t2-app-header {
+    padding-top: max(0.65rem, env(safe-area-inset-top, 0px)) !important;
+    padding-left: max(0.75rem, env(safe-area-inset-left, 0px)) !important;
+    padding-right: max(0.75rem, env(safe-area-inset-right, 0px)) !important;
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 100 !important;
+    background: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(14px) !important;
+    -webkit-backdrop-filter: blur(14px) !important;
+  }
+  
+  /* Story Bubbles Touch-Snap Carousel */
+  .t2-bubbles-wrapper {
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    scroll-snap-type: x mandatory !important;
+    scrollbar-width: none !important;
+  }
+  .t2-bubbles-wrapper::-webkit-scrollbar {
+    display: none !important;
+  }
+  .t2-bubble-item {
+    scroll-snap-align: start !important;
+    flex-shrink: 0 !important;
+    min-width: 68px !important;
+  }
+  
+  /* Native App Fixed Bottom Navigation with iOS Home-Bar Safe Area */
+  .t2-mobile-bottom-bar {
+    position: fixed !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    background: rgba(255, 255, 255, 0.96) !important;
+    backdrop-filter: blur(14px) !important;
+    -webkit-backdrop-filter: blur(14px) !important;
+    border-top: 1.5px solid #FFD8A8 !important;
+    display: flex !important;
+    justify-content: space-around !important;
+    align-items: center !important;
+    padding: 0.55rem 0.75rem calc(0.55rem + env(safe-area-inset-bottom, 0px)) !important;
+    z-index: 9999 !important;
+    box-shadow: 0 -4px 20px rgba(217, 72, 15, 0.12) !important;
+  }
+  body {
+    padding-bottom: calc(75px + env(safe-area-inset-bottom, 0px)) !important;
+  }
+  .t2-mb-action {
+    min-height: 44px !important;
+    min-width: 44px !important;
+    justify-content: center !important;
+  }
+  
+  /* Buttons */
+  .t2-pill-btn, .t2-btn {
+    min-height: 48px !important;
+  }
+  
+  /* Tactile press states */
+  a:active, button:active, .t2-pill-btn:active, .t2-mb-action:active {
+    transform: scale(0.97) !important;
+    opacity: 0.92 !important;
+  }
+}

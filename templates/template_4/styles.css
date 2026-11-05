@@ -2126,3 +2126,160 @@ html, body {
     text-align: center !important;
   }
 }
+
+
+/* -------------------------------------------------------------------------
+   IOS SAFARI & MOBILE FIRST PERFECTION (TEMPLATE 4)
+   ------------------------------------------------------------------------- */
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media (max-width: 768px) {
+  /* Prevent iOS Safari Form Auto-Zoom Bug */
+  input, select, textarea,
+  .form-control, .input-text, .search-box input, .donation-form input {
+    font-size: 16px !important;
+    min-height: 48px !important;
+  }
+  
+  /* Top Bar Safe Area */
+  .top-bar {
+    padding-top: max(0.4rem, env(safe-area-inset-top, 0px)) !important;
+    padding-left: max(0.5rem, env(safe-area-inset-left, 0px)) !important;
+    padding-right: max(0.5rem, env(safe-area-inset-right, 0px)) !important;
+  }
+  .top-bar-inner {
+    flex-direction: column !important;
+    gap: 0.25rem !important;
+    text-align: center !important;
+  }
+  .live-darshan-indicator {
+    font-size: 0.75rem !important;
+  }
+  
+  /* Header Sticky & Clean Layout */
+  .main-header {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 100 !important;
+    padding: 0.65rem 0 !important;
+    background: rgba(255, 255, 255, 0.96) !important;
+    backdrop-filter: blur(14px) !important;
+    -webkit-backdrop-filter: blur(14px) !important;
+    box-shadow: 0 4px 16px rgba(88, 17, 26, 0.08) !important;
+  }
+  .navbar {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 0.5rem !important;
+    padding: 0 !important;
+  }
+  .brand-wrapper {
+    margin-bottom: 0.2rem !important;
+  }
+  .brand-text h1 {
+    font-size: 1.25rem !important;
+    line-height: 1.2 !important;
+  }
+  
+  /* Modern Horizontal Navigation Pill Bar */
+  .nav-menu {
+    display: flex !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: none !important;
+    flex-wrap: nowrap !important;
+    gap: 0.5rem !important;
+    padding: 0.35rem 0.25rem !important;
+    width: 100% !important;
+  }
+  .nav-menu::-webkit-scrollbar {
+    display: none !important;
+  }
+  .nav-item {
+    flex-shrink: 0 !important;
+  }
+  .nav-item a {
+    min-height: 38px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    padding: 0.45rem 0.85rem !important;
+    border-radius: var(--radius-full) !important;
+    background: rgba(88, 17, 26, 0.05) !important;
+    font-size: 0.82rem !important;
+    color: var(--text-dark) !important;
+    font-weight: 700 !important;
+    transition: all 0.2s ease !important;
+  }
+  .nav-item.active a {
+    background: #58111A !important;
+    color: #FFF !important;
+    box-shadow: 0 2px 8px rgba(88, 17, 26, 0.25) !important;
+  }
+  
+  /* Hero Actions Full-Width Buttons */
+  .hero-actions {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 0.65rem !important;
+    width: 100% !important;
+  }
+  .hero-actions .btn {
+    width: 100% !important;
+    min-height: 48px !important;
+    justify-content: center !important;
+    text-align: center !important;
+    font-size: 0.95rem !important;
+  }
+  
+  /* Buttons min-height */
+  .btn {
+    min-height: 48px !important;
+  }
+  
+  /* Touch target tactile press states */
+  a:active, button:active, .btn:active {
+    transform: scale(0.97) !important;
+    opacity: 0.92 !important;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .top-bar-inner {
+    flex-direction: row !important;
+    justify-content: center !important;
+    align-items: center !important;
+    flex-wrap: wrap !important;
+    gap: 0.4rem !important;
+    padding: 0.2rem 0 !important;
+  }
+  .panchang-live-badge {
+    display: inline-flex !important;
+    font-size: 0.72rem !important;
+  }
+  .live-darshan-indicator {
+    display: none !important;
+  }
+  .ticker-wrapper, .top-actions {
+    display: none !important;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .top-utility-bar, .top-bar {
+    display: none !important;
+  }
+  .main-header {
+    padding-top: max(0.65rem, env(safe-area-inset-top, 0px)) !important;
+  }
+}

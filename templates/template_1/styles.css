@@ -2309,3 +2309,147 @@ html, body {
     justify-content: center !important;
   }
 }
+
+
+/* -------------------------------------------------------------------------
+   IOS SAFARI & MOBILE FIRST PERFECTION (TEMPLATE 1)
+   ------------------------------------------------------------------------- */
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media (max-width: 768px) {
+  /* Prevent iOS Safari Form Auto-Zoom Bug */
+  input, select, textarea,
+  .t1-input-group input, .t1-input-group select, .t1-input-group textarea,
+  .t1-form-control, .t1-input {
+    font-size: 16px !important;
+    min-height: 48px !important;
+  }
+  
+  /* Compact Sacred Top Bar */
+  .t1-top-bar {
+    padding: max(0.4rem, env(safe-area-inset-top, 0px)) max(0.5rem, env(safe-area-inset-right, 0px)) 0.4rem max(0.5rem, env(safe-area-inset-left, 0px)) !important;
+  }
+  .t1-top-inner {
+    flex-direction: column !important;
+    gap: 0.25rem !important;
+    text-align: center !important;
+  }
+  .t1-panchang-text {
+    font-size: 0.72rem !important;
+  }
+  .t1-status-pill, .t1-dgr-badge {
+    font-size: 0.7rem !important;
+    padding: 0.2rem 0.6rem !important;
+  }
+  
+  /* Compact Centered Header & Horizontal Nav Ribbon */
+  .t1-grand-header {
+    padding: 0.85rem 0 0.5rem !important;
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 100 !important;
+    box-shadow: 0 4px 16px rgba(60, 10, 17, 0.08) !important;
+  }
+  .t1-om-emblem {
+    width: 44px !important;
+    height: 44px !important;
+    font-size: 1.35rem !important;
+    margin-bottom: 0.35rem !important;
+  }
+  .t1-temple-name {
+    font-size: clamp(1.2rem, 5vw, 1.55rem) !important;
+    letter-spacing: 0.04em !important;
+    line-height: 1.2 !important;
+  }
+  .t1-subtitle {
+    font-size: 0.68rem !important;
+    letter-spacing: 0.05em !important;
+  }
+  .t1-brand-crest {
+    margin-bottom: 0.65rem !important;
+  }
+  
+  /* Silky Smooth Horizontal Navigation Ribbon */
+  .t1-nav-ribbon {
+    display: flex !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    flex-wrap: nowrap !important;
+    justify-content: flex-start !important;
+    gap: 0.55rem !important;
+    padding: 0.5rem 0.75rem 0.35rem !important;
+    scrollbar-width: none !important;
+    width: 100% !important;
+  }
+  .t1-nav-ribbon::-webkit-scrollbar {
+    display: none !important;
+  }
+  .t1-nav-ribbon a {
+    flex-shrink: 0 !important;
+    white-space: nowrap !important;
+    padding: 0.45rem 0.85rem !important;
+    min-height: 38px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    border-radius: var(--radius-full) !important;
+    background: rgba(88, 17, 26, 0.05) !important;
+    font-size: 0.82rem !important;
+    color: var(--t1-crimson-dark) !important;
+    transition: all 0.2s ease !important;
+  }
+  .t1-nav-ribbon a.active {
+    background: var(--t1-crimson) !important;
+    color: #FFF !important;
+    box-shadow: 0 2px 8px rgba(88, 17, 26, 0.25) !important;
+  }
+  .t1-nav-ribbon a.t1-donate-btn {
+    background: linear-gradient(135deg, var(--t1-crimson), var(--t1-crimson-light)) !important;
+    color: #FFF !important;
+    font-weight: 700 !important;
+  }
+  
+  /* Touch target heights & tactile feedback */
+  a:active, button:active, .t1-btn:active {
+    transform: scale(0.98) !important;
+    opacity: 0.92 !important;
+  }
+  
+  /* Timetable Horizontal Touch Scrolling */
+  .t1-timetable-wrapper {
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    position: relative !important;
+  }
+  
+  /* Full-width buttons on mobile */
+  .t1-btn {
+    min-height: 48px !important;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .t1-top-inner {
+    flex-direction: row !important;
+    justify-content: center !important;
+    align-items: center !important;
+    flex-wrap: wrap !important;
+    gap: 0.4rem !important;
+    padding: 0.15rem 0 !important;
+  }
+  .t1-status-pill {
+    display: none !important;
+  }
+  .t1-top-inner .t1-lotus-icon:nth-of-type(2) {
+    display: none !important;
+  }
+}
