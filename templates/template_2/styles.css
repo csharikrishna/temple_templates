@@ -2319,3 +2319,63 @@ html, body {
   .t2-brand { font-size: 1.05rem; }
   .t2-app-header-inner { padding: 0 0.75rem; }
 }
+
+/* -------------------------------------------------------------------------
+   ADVANCED LAPTOP & MOBILE ELEVATIONS (TEMPLATE 2)
+   ------------------------------------------------------------------------- */
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .t2-hero-split-grid { gap: 2rem !important; }
+  .t2-quick-book-card { padding: 1.85rem 2rem !important; }
+  .t2-stream-card { max-height: 540px !important; }
+}
+
+@media (max-width: 768px) {
+  .t2-mobile-bottom-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(12px);
+    border-top: 1.5px solid #FFD8A8;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0.5rem 0.75rem;
+    z-index: 999;
+    box-shadow: 0 -4px 20px rgba(217, 72, 15, 0.12);
+  }
+  .t2-mb-action {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #495057;
+    font-size: 0.7rem;
+    font-weight: 700;
+    gap: 0.2rem;
+  }
+  .t2-mb-action.active, .t2-mb-action:hover {
+    color: var(--t2-saffron);
+  }
+  .t2-mb-icon {
+    font-size: 1.25rem;
+    line-height: 1;
+  }
+  body { padding-bottom: 60px !important; }
+}
+
+@media (max-width: 480px) {
+  .t2-bubbles-wrapper {
+    gap: 0.85rem !important;
+    padding: 0.2rem 0.25rem !important;
+  }
+  .t2-bubble-circle {
+    width: 54px !important;
+    height: 54px !important;
+    font-size: 1.35rem !important;
+  }
+  .t2-bubble-item {
+    font-size: 0.7rem !important;
+  }
+}

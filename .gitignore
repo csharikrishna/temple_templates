@@ -11,3 +11,4 @@ desktop.ini
 *.tmp
 node_modules/
 audit_shots/
+device_shots/

@@ -1389,3 +1389,37 @@ html, body {
     padding: 0.35rem 0.5rem;
   }
 }
+
+/* -------------------------------------------------------------------------
+   ADVANCED LAPTOP & MOBILE ELEVATIONS (TEMPLATE 3)
+   ------------------------------------------------------------------------- */
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .t3-command-grid { gap: 1.75rem !important; }
+  .t3-telemetry-item { padding: 1.25rem 1.15rem !important; }
+  .t3-matrix-grid { gap: 1.25rem !important; }
+}
+
+@media (max-width: 640px) {
+  .t3-telemetry-bar, .t3-telemetry-grid {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 0.75rem !important;
+  }
+  .t3-telemetry-item, .t3-t-item {
+    padding: 1rem 0.85rem !important;
+  }
+  .t3-telemetry-val, .t3-t-val {
+    font-size: 1.35rem !important;
+  }
+  .t3-telemetry-lbl, .t3-t-lbl {
+    font-size: 0.68rem !important;
+  }
+  .t3-matrix-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 0.85rem !important;
+  }
+  .t3-matrix-card {
+    padding: 1.25rem 1rem !important;
+  }
+}

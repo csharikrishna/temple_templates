@@ -2082,3 +2082,47 @@ html, body {
   .hero-title { font-size: 1.75rem !important; }
   .ticker-item { font-size: 0.75rem; }
 }
+
+/* -------------------------------------------------------------------------
+   ADVANCED LAPTOP & MOBILE ELEVATIONS (FLAGSHIP & TEMPLATE 4)
+   ------------------------------------------------------------------------- */
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .hero-grid { gap: 2.25rem !important; }
+  .hero-title { font-size: 2.5rem !important; }
+  .tiles-dashboard-grid { gap: 1.15rem !important; }
+  .tile-card { padding: 1.25rem 1rem !important; }
+}
+
+@media (max-width: 640px) {
+  .tiles-dashboard-grid {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 0.85rem !important;
+  }
+  .tile-card {
+    padding: 1.15rem 0.85rem !important;
+  }
+  .tile-icon-wrap {
+    width: 44px !important;
+    height: 44px !important;
+    font-size: 1.35rem !important;
+  }
+  .tile-title {
+    font-size: 0.85rem !important;
+  }
+  .tile-desc {
+    font-size: 0.72rem !important;
+  }
+  .altar-actions {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 0.4rem !important;
+    width: 100% !important;
+  }
+  .altar-actions button {
+    padding: 0.5rem 0.2rem !important;
+    font-size: 0.72rem !important;
+    justify-content: center !important;
+    text-align: center !important;
+  }
+}
