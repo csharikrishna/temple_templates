@@ -603,6 +603,10 @@ a {
   box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
 }
 
+.t1-badge-compact {
+  display: none;
+}
+
 .t1-live-dot {
   color: #10B981;
   font-size: 0.85rem;
@@ -4339,17 +4343,25 @@ html {
   }
 
   /* Live Darshan Badge on Mobile */
+  .t1-badge-full {
+    display: none !important;
+  }
+  .t1-badge-compact {
+    display: inline !important;
+  }
   .t1-live-badge-glow {
-    top: 10px !important;
-    left: 10px !important;
-    padding: 4px 8px !important;
-    font-size: 0.62rem !important;
-    letter-spacing: 0.05em !important;
-    border-radius: 6px !important;
-    background: rgba(18, 3, 6, 0.85) !important;
-    border: 1px solid rgba(255, 208, 0, 0.4) !important;
-    backdrop-filter: blur(6px) !important;
-    max-width: 140px !important;
+    top: 8px !important;
+    left: 8px !important;
+    padding: 2.5px 7px !important;
+    font-size: 0.58rem !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.06em !important;
+    border-radius: 4px !important;
+    gap: 0.3rem !important;
+    background: rgba(18, 3, 6, 0.92) !important;
+    border: 1px solid rgba(255, 208, 0, 0.5) !important;
+    backdrop-filter: blur(8px) !important;
+    max-width: 80px !important;
     white-space: nowrap !important;
     z-index: 20 !important;
   }
