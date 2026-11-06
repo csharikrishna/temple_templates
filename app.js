@@ -24,6 +24,8 @@ if (typeof document !== 'undefined') {
     initGotraSankalpGenerator();
     initCampusZoneExplorer();
     initPujaFilters();
+    initInstagramCarousel();
+    initMobileDrawer();
     initModals();
     initCurrencyToggle();
   });
@@ -1258,6 +1260,161 @@ function updatePrices(currency) {
 }
 
 // Global window exposure for tests and inline handlers
+
+/* -------------------------------------------------------------------------
+   12. Instagram-Style Deity Story Carousel & Mobile Controls
+   ------------------------------------------------------------------------- */
+function initInstagramCarousel() {
+  const track = document.getElementById('pujasTrack');
+  const prevBtn = document.getElementById('puja-prev-btn');
+  const nextBtn = document.getElementById('puja-next-btn');
+  const dots = document.querySelectorAll('#pujaDots .dot');
+  const cards = document.querySelectorAll('.puja-story-card');
+
+  if (!track || cards.length === 0) return;
+
+  // Track scroll position to update active dot
+  track.addEventListener('scroll', () => {
+    const scrollLeft = track.scrollLeft;
+    const cardWidth = cards[0].offsetWidth + 20; // width + gap
+    const activeIndex = Math.round(scrollLeft / cardWidth);
+
+    dots.forEach((dot, idx) => {
+      if (idx === activeIndex) {
+        dot.classList.add('active');
+      } else {
+        dot.classList.remove('active');
+      }
+    });
+  }, { passive: true });
+
+  // Arrow buttons
+  if (prevBtn) {
+    prevBtn.addEventListener('click', () => {
+      const cardWidth = cards[0].offsetWidth + 20;
+      track.scrollBy({ left: -cardWidth, behavior: 'smooth' });
+    });
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener('click', () => {
+      const cardWidth = cards[0].offsetWidth + 20;
+      track.scrollBy({ left: cardWidth, behavior: 'smooth' });
+    });
+  }
+
+  // Dots click navigation
+  dots.forEach((dot, idx) => {
+    dot.addEventListener('click', () => {
+      if (cards[idx]) {
+        cards[idx].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+      }
+    });
+  });
+
+  // Category filter tabs
+  const filterTabs = document.querySelectorAll('.puja-filter-tabs .filter-tab');
+  filterTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      filterTabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+
+      const filter = tab.getAttribute('data-filter');
+      let firstMatch = null;
+
+      cards.forEach(card => {
+        const cat = card.getAttribute('data-category');
+        if (filter === 'all' || cat === filter) {
+          card.style.display = 'flex';
+          card.style.opacity = '1';
+          if (!firstMatch) firstMatch = card;
+        } else {
+          card.style.display = 'none';
+          card.style.opacity = '0';
+        }
+      });
+
+      if (firstMatch) {
+        firstMatch.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+      }
+    });
+  });
+}
+
+function initMobileDrawer() {
+  const menuBtn = document.getElementById('mobileMenuBtn');
+  const drawerOverlay = document.getElementById('mobileDrawerOverlay');
+  const closeBtn = document.getElementById('drawerCloseBtn');
+  const drawerLinks = document.querySelectorAll('.drawer-link');
+
+  if (!menuBtn || !drawerOverlay) return;
+
+  function openDrawer() {
+    drawerOverlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeDrawer() {
+    drawerOverlay.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  menuBtn.addEventListener('click', openDrawer);
+  if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
+
+  drawerOverlay.addEventListener('click', (e) => {
+    if (e.target === drawerOverlay) closeDrawer();
+  });
+
+  drawerLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      closeDrawer();
+    });
+  });
+
+  // Mobile Panchang Modal Trigger
+  const panchangTrigger = document.getElementById('mobilePanchangTrigger');
+  const panchangModal = document.getElementById('mobile-panchang-modal');
+  const closePanchangModal = document.getElementById('close-panchang-modal');
+
+  if (panchangTrigger && panchangModal) {
+    panchangTrigger.addEventListener('click', () => {
+      panchangModal.classList.add('active');
+    });
+
+    if (closePanchangModal) {
+      closePanchangModal.addEventListener('click', () => {
+        panchangModal.classList.remove('active');
+      });
+    }
+
+    panchangModal.addEventListener('click', (e) => {
+      if (e.target === panchangModal) {
+        panchangModal.classList.remove('active');
+      }
+    });
+  }
+
+  // Active Bottom Nav Highlight on Scroll
+  const bottomNavItems = document.querySelectorAll('.native-bottom-bar .bottom-nav-item');
+  const sectionIds = ['sanctum', 'pujas', 'sankalp-generator', 'brick-tax-matrix', 'timetable'];
+
+  window.addEventListener('scroll', () => {
+    const scrollPos = window.scrollY + 200;
+    sectionIds.forEach((id, index) => {
+      const el = document.getElementById(id);
+      if (el) {
+        const top = el.offsetTop;
+        const height = el.offsetHeight;
+        if (scrollPos >= top && scrollPos < top + height) {
+          bottomNavItems.forEach(item => item.classList.remove('active'));
+          if (bottomNavItems[index]) bottomNavItems[index].classList.add('active');
+        }
+      }
+    });
+  }, { passive: true });
+}
+
 if (typeof window !== 'undefined') {
   window.playTempleBellChime = playTempleBellChime;
   window.showToast = showToast;

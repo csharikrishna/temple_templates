@@ -68,6 +68,18 @@
           <a href="#brick-tax-matrix" title="Charity Tax Status">DGR Item 1 ($2+ Tax-Deductible)</a>
         </div>
 
+            <!-- Mobile Consolidated Micro-Bar (Single 34px Line) -->
+      <div class="mobile-micro-bar">
+        <button type="button" class="mobile-panchang-pill" id="mobilePanchangTrigger" aria-label="View Auspicious Ballarat Panchang Telemetry">
+          <span class="pulse-dot"></span>
+          <span><strong>Sanctum:</strong> 06:00 AM – 09:00 PM</span>
+          <span class="pill-divider">•</span>
+          <span id="mobile-clock-time">07:38 PM AEDT</span>
+          <span class="pill-expand">▾</span>
+        </button>
+        <div class="mobile-dgr-pill">
+          <span>🏛️ ATO DGR $2+</span>
+        </div>
       </div>
     </div>
   </aside>
@@ -107,6 +119,18 @@
           </a>
           <button type="button" class="btn btn-gold btn-sm open-donation-modal">
             <span>🪔</span> e-Hundi / Donate
+          </button>
+        </div>
+
+        <!-- Mobile Header Touch Controls -->
+        <div class="mobile-header-controls">
+          <button type="button" class="btn btn-gold btn-xs open-donation-modal" aria-label="Make an offering">
+            <span>🪔</span> Donate
+          </button>
+          <button type="button" class="mobile-hamburger-btn" id="mobileMenuBtn" aria-label="Open Navigation Menu" aria-expanded="false">
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
           </button>
         </div>
 
@@ -355,144 +379,254 @@
         </p>
       </div>
 
-      <!-- Filter Tabs -->
-      <div class="puja-filter-tabs">
-        <button type="button" class="filter-tab active" data-filter="all">All Sevas (6)</button>
-        <button type="button" class="filter-tab" data-filter="daily">Daily Agamic</button>
-        <button type="button" class="filter-tab" data-filter="abhishekam">Abhishekams</button>
-        <button type="button" class="filter-tab" data-filter="homa">Homas & Yagnas</button>
-        <button type="button" class="filter-tab" data-filter="special">Special Occasions</button>
+      <!-- Instagram-Style Reel Controls (Desktop & Mobile) -->
+      <div class="carousel-nav-header">
+        <!-- Filter Tabs -->
+        <div class="puja-filter-tabs">
+          <button type="button" class="filter-tab active" data-filter="all">All Sevas (6)</button>
+          <button type="button" class="filter-tab" data-filter="daily">Daily Agamic</button>
+          <button type="button" class="filter-tab" data-filter="abhishekam">Abhishekams</button>
+          <button type="button" class="filter-tab" data-filter="homa">Homas & Yagnas</button>
+          <button type="button" class="filter-tab" data-filter="special">Special Occasions</button>
+        </div>
+
+        <div class="carousel-arrow-buttons" aria-label="Carousel navigation">
+          <button type="button" class="carousel-arrow-btn prev-btn" id="puja-prev-btn" aria-label="Previous seva card">‹</button>
+          <button type="button" class="carousel-arrow-btn next-btn" id="puja-next-btn" aria-label="Next seva card">›</button>
+        </div>
       </div>
 
-      <!-- Pujas Grid -->
-      <div class="pujas-grid">
-        
-        <!-- Puja 1 -->
-        <article class="puja-card" data-category="abhishekam">
-          <div class="puja-card-img-wrap">
-            <img src="/assets/ganesha_shrine.jpg" alt="Maha Ganapati Sankatahara Abhishekam">
-            <span class="puja-badge">Moolasthanam</span>
-          </div>
-          <div class="puja-card-body">
-            <h3>Maha Ganapati Sankatahara Abhishekam</h3>
-            <div class="puja-duration-deity">Lord Sri Ganesha • 45 Mins • Fresh Panchamritam</div>
-            <p class="puja-desc">
-              Sacred cleansing abhishekam with milk, curd, honey, ghee, and tender coconut water to dissolve obstacles and invoke auspicious prosperity.
-            </p>
-            <div class="puja-price-row">
-              <span class="price-val" data-aud="101" data-inr="5500">$101 AUD</span>
-              <button type="button" class="btn btn-gold btn-sm open-puja-modal" data-seva="Maha Ganapati Sankatahara Abhishekam">
-                Book with Sankalp
-              </button>
+      <!-- Instagram Story Reel Track (4:5 Portrait Murti Vigraha Display) -->
+      <div class="pujas-carousel-wrapper">
+        <div class="pujas-carousel-track" id="pujasTrack">
+          
+          <!-- Card 1: Ganesha -->
+          <article class="puja-story-card" data-category="abhishekam">
+            <div class="story-image-frame">
+              <img src="/assets/ganesha_shrine.jpg" alt="Maha Ganapati Sankatahara Abhishekam" loading="lazy">
+              <div class="story-badge-top">
+                <span class="story-badge-pill">Moolasthanam</span>
+                <span class="story-heart-pill">🌸 108 Offered</span>
+              </div>
+              <div class="story-sloka-scrim">
+                <span class="sloka-sanskrit">॥ ॐ गं गणपतये नमः ॥</span>
+                <span class="sloka-translit">Vakratunda Mahakaya Koti Surya Samaprabha</span>
+              </div>
             </div>
-          </div>
-        </article>
-
-        <!-- Puja 2 -->
-        <article class="puja-card" data-category="abhishekam">
-          <div class="puja-card-img-wrap">
-            <img src="/assets/shiva_abhishekam.jpg" alt="Maha Rudrabhishek with 108 Bilva Patra">
-            <span class="puja-badge">Pradosham</span>
-          </div>
-          <div class="puja-card-body">
-            <h3>Maha Rudrabhishek with 108 Bilva Patra</h3>
-            <div class="puja-duration-deity">Lord Sri Shiva • 60 Mins • Sri Rudram Chanting</div>
-            <p class="puja-desc">
-              Consecrated chanting of Namakam and Chamakam with continuous holy water libations and 108 sacred Bilva leaves for peace, longevity, and health.
-            </p>
-            <div class="puja-price-row">
-              <span class="price-val" data-aud="151" data-inr="8200">$151 AUD</span>
-              <button type="button" class="btn btn-gold btn-sm open-puja-modal" data-seva="Maha Rudrabhishek with 108 Bilva Patra">
-                Book with Sankalp
-              </button>
+            <div class="story-card-content">
+              <div class="story-title-row">
+                <h3>Maha Ganapati Abhishekam</h3>
+                <span class="story-price" data-aud="101" data-inr="5500">$101 AUD</span>
+              </div>
+              <div class="story-meta-tags">
+                <span>Lord Sri Ganesha</span>
+                <span>•</span>
+                <span>45 Mins</span>
+                <span>•</span>
+                <span>Panchamritam</span>
+              </div>
+              <p class="story-desc">
+                Sacred cleansing abhishekam with milk, honey, and tender coconut water to dissolve obstacles and invoke auspicious prosperity.
+              </p>
+              <div class="story-action-row">
+                <button type="button" class="btn btn-primary btn-sm open-puja-modal" data-seva="Maha Ganapati Sankatahara Abhishekam">
+                  <span>🪔</span> Book with Sankalp ↗
+                </button>
+              </div>
             </div>
-          </div>
-        </article>
+          </article>
 
-        <!-- Puja 3 -->
-        <article class="puja-card" data-category="daily">
-          <div class="puja-card-img-wrap">
-            <img src="/assets/lakshmi_puja.jpg" alt="Sri Mahalakshmi Sahasranama Kumkumarchana">
-            <span class="puja-badge">Friday Special</span>
-          </div>
-          <div class="puja-card-body">
-            <h3>Sri Mahalakshmi Sahasranama Kumkumarchana</h3>
-            <div class="puja-duration-deity">Goddess Sri Mahalakshmi • 45 Mins • 1008 Sacred Names</div>
-            <p class="puja-desc">
-              Chanting the 1,008 auspicious names of Goddess Lakshmi with vermillion kumkum offerings for family peace, wealth, and maternal grace.
-            </p>
-            <div class="puja-price-row">
-              <span class="price-val" data-aud="101" data-inr="5500">$101 AUD</span>
-              <button type="button" class="btn btn-gold btn-sm open-puja-modal" data-seva="Sri Mahalakshmi Sahasranama Kumkumarchana">
-                Book with Sankalp
-              </button>
+          <!-- Card 2: Shiva -->
+          <article class="puja-story-card" data-category="abhishekam">
+            <div class="story-image-frame">
+              <img src="/assets/shiva_abhishekam.jpg" alt="Maha Rudrabhishek with 108 Bilva Patra" loading="lazy">
+              <div class="story-badge-top">
+                <span class="story-badge-pill">Pradosham</span>
+                <span class="story-heart-pill">🌿 Bilva Sacred</span>
+              </div>
+              <div class="story-sloka-scrim">
+                <span class="sloka-sanskrit">॥ ॐ नमः शिवाय ॥</span>
+                <span class="sloka-translit">Tryambakam Yajamahe Sugandhim Pushtivardhanam</span>
+              </div>
             </div>
-          </div>
-        </article>
-
-        <!-- Puja 4 -->
-        <article class="puja-card" data-category="homa">
-          <div class="puja-card-img-wrap">
-            <img src="/assets/vedic_homa.jpg" alt="Navagraha Shanti & Ayushya Maha Yajna">
-            <span class="puja-badge">Sacred Agni</span>
-          </div>
-          <div class="puja-card-body">
-            <h3>Navagraha Shanti & Ayushya Maha Yajna</h3>
-            <div class="puja-duration-deity">Nine Planetary Deities • 90 Mins • Pure Ghee Homa</div>
-            <p class="puja-desc">
-              Powerful fire ritual invoking the blessings of the nine celestial planetary guardians and Ayur Devata for removing doshas and radiant longevity.
-            </p>
-            <div class="puja-price-row">
-              <span class="price-val" data-aud="251" data-inr="13500">$251 AUD</span>
-              <button type="button" class="btn btn-gold btn-sm open-puja-modal" data-seva="Navagraha Shanti & Ayushya Maha Yajna">
-                Book with Sankalp
-              </button>
+            <div class="story-card-content">
+              <div class="story-title-row">
+                <h3>Maha Rudrabhishek</h3>
+                <span class="story-price" data-aud="151" data-inr="8200">$151 AUD</span>
+              </div>
+              <div class="story-meta-tags">
+                <span>Lord Sri Shiva</span>
+                <span>•</span>
+                <span>60 Mins</span>
+                <span>•</span>
+                <span>Sri Rudram</span>
+              </div>
+              <p class="story-desc">
+                Namakam and Chamakam Vedic chanting with continuous holy libations and 108 Bilva leaves for peace, longevity, and health.
+              </p>
+              <div class="story-action-row">
+                <button type="button" class="btn btn-primary btn-sm open-puja-modal" data-seva="Maha Rudrabhishek with 108 Bilva Patra">
+                  <span>🪔</span> Book with Sankalp ↗
+                </button>
+              </div>
             </div>
-          </div>
-        </article>
+          </article>
 
-        <!-- Puja 5 -->
-        <article class="puja-card" data-category="special">
-          <div class="puja-card-img-wrap">
-            <img src="/assets/granite_architecture.jpg" alt="Sri Venkateswara Kalyanotsavam">
-            <span class="puja-badge">Celestial Wedding</span>
-          </div>
-          <div class="puja-card-body">
-            <h3>Sri Venkateswara Balaji Kalyanotsavam</h3>
-            <div class="puja-duration-deity">Lord Srinivasa & Padmavathi • 75 Mins • Agamic Rites</div>
-            <p class="puja-desc">
-              Participate in the divine celestial wedding ceremony of Lord Balaji. Devotees receive blessed Akshata, sacred Raksha thread, and sanctum Laddu.
-            </p>
-            <div class="puja-price-row">
-              <span class="price-val" data-aud="301" data-inr="16500">$301 AUD</span>
-              <button type="button" class="btn btn-gold btn-sm open-puja-modal" data-seva="Sri Venkateswara Balaji Kalyanotsavam">
-                Book with Sankalp
-              </button>
+          <!-- Card 3: Mahalakshmi -->
+          <article class="puja-story-card" data-category="daily">
+            <div class="story-image-frame">
+              <img src="/assets/lakshmi_puja.jpg" alt="Sri Mahalakshmi Sahasranama Kumkumarchana" loading="lazy">
+              <div class="story-badge-top">
+                <span class="story-badge-pill">Friday Special</span>
+                <span class="story-heart-pill">🌺 Kumkum Sacred</span>
+              </div>
+              <div class="story-sloka-scrim">
+                <span class="sloka-sanskrit">॥ ॐ श्रीं महालक्ष्म्यै नमः ॥</span>
+                <span class="sloka-translit">Namastestu Mahamaye Sripithe Surapujite</span>
+              </div>
             </div>
-          </div>
-        </article>
-
-        <!-- Puja 6 -->
-        <article class="puja-card" data-category="daily">
-          <div class="puja-card-img-wrap">
-            <img src="/assets/t1_sanctum_altar_epic.jpg" alt="Nitya Archana & Deepa Aradhana">
-            <span class="puja-badge">Daily Vidhi</span>
-          </div>
-          <div class="puja-card-body">
-            <h3>Nitya Archana & Deepa Aradhana</h3>
-            <div class="puja-duration-deity">All Presiding Deities • 20 Mins • Daily Morning & Evening</div>
-            <p class="puja-desc">
-              Daily personal family Archana chanting your Gotra, Nakshatra, and names during morning Kakad or evening Sandhya Deepa Aradhana.
-            </p>
-            <div class="puja-price-row">
-              <span class="price-val" data-aud="51" data-inr="2800">$51 AUD</span>
-              <button type="button" class="btn btn-gold btn-sm open-puja-modal" data-seva="Nitya Archana & Deepa Aradhana">
-                Book with Sankalp
-              </button>
+            <div class="story-card-content">
+              <div class="story-title-row">
+                <h3>Sri Mahalakshmi Archana</h3>
+                <span class="story-price" data-aud="101" data-inr="5500">$101 AUD</span>
+              </div>
+              <div class="story-meta-tags">
+                <span>Goddess Mahalakshmi</span>
+                <span>•</span>
+                <span>45 Mins</span>
+                <span>•</span>
+                <span>1008 Names</span>
+              </div>
+              <p class="story-desc">
+                Chanting 1,008 auspicious names of Goddess Lakshmi with vermillion kumkum for family harmony, wealth, and maternal grace.
+              </p>
+              <div class="story-action-row">
+                <button type="button" class="btn btn-primary btn-sm open-puja-modal" data-seva="Sri Mahalakshmi Sahasranama Kumkumarchana">
+                  <span>🪔</span> Book with Sankalp ↗
+                </button>
+              </div>
             </div>
-          </div>
-        </article>
+          </article>
 
+          <!-- Card 4: Navagraha Yajna -->
+          <article class="puja-story-card" data-category="homa">
+            <div class="story-image-frame">
+              <img src="/assets/vedic_homa.jpg" alt="Navagraha Shanti & Ayushya Maha Yajna" loading="lazy">
+              <div class="story-badge-top">
+                <span class="story-badge-pill">Sacred Agni</span>
+                <span class="story-heart-pill">🔥 9 Planets</span>
+              </div>
+              <div class="story-sloka-scrim">
+                <span class="sloka-sanskrit">॥ ॐ नवग्रहाय नमः ॥</span>
+                <span class="sloka-translit">Brahma Muraris Tripurantakari Bhanuh Shashi</span>
+              </div>
+            </div>
+            <div class="story-card-content">
+              <div class="story-title-row">
+                <h3>Navagraha Shanti Yajna</h3>
+                <span class="story-price" data-aud="251" data-inr="13500">$251 AUD</span>
+              </div>
+              <div class="story-meta-tags">
+                <span>Nine Planetary Deities</span>
+                <span>•</span>
+                <span>90 Mins</span>
+                <span>•</span>
+                <span>Ghee Homa</span>
+              </div>
+              <p class="story-desc">
+                Vedic fire ritual invoking the celestial planetary guardians and Ayur Devata for removing doshas and radiant longevity.
+              </p>
+              <div class="story-action-row">
+                <button type="button" class="btn btn-primary btn-sm open-puja-modal" data-seva="Navagraha Shanti & Ayushya Maha Yajna">
+                  <span>🪔</span> Book with Sankalp ↗
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 5: Balaji Kalyanotsavam -->
+          <article class="puja-story-card" data-category="special">
+            <div class="story-image-frame">
+              <img src="/assets/granite_architecture.jpg" alt="Sri Venkateswara Balaji Kalyanotsavam" loading="lazy">
+              <div class="story-badge-top">
+                <span class="story-badge-pill">Celestial Wedding</span>
+                <span class="story-heart-pill">✨ Tirupati Vidhi</span>
+              </div>
+              <div class="story-sloka-scrim">
+                <span class="sloka-sanskrit">॥ ॐ नमो नारायणाय ॥</span>
+                <span class="sloka-translit">Srinivasa Parabrahma Kalyana Guna Varidhi</span>
+              </div>
+            </div>
+            <div class="story-card-content">
+              <div class="story-title-row">
+                <h3>Sri Balaji Kalyanotsavam</h3>
+                <span class="story-price" data-aud="301" data-inr="16500">$301 AUD</span>
+              </div>
+              <div class="story-meta-tags">
+                <span>Lord Srinivasa</span>
+                <span>•</span>
+                <span>75 Mins</span>
+                <span>•</span>
+                <span>Agamic Rites</span>
+              </div>
+              <p class="story-desc">
+                Celestial wedding ceremony of Lord Balaji with blessed Akshata, sacred Raksha thread, and sanctum Laddu dispatched.
+              </p>
+              <div class="story-action-row">
+                <button type="button" class="btn btn-primary btn-sm open-puja-modal" data-seva="Sri Venkateswara Balaji Kalyanotsavam">
+                  <span>🪔</span> Book with Sankalp ↗
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 6: Nitya Archana -->
+          <article class="puja-story-card" data-category="daily">
+            <div class="story-image-frame">
+              <img src="/assets/t1_sanctum_altar_epic.jpg" alt="Nitya Archana & Deepa Aradhana" loading="lazy">
+              <div class="story-badge-top">
+                <span class="story-badge-pill">Daily Vidhi</span>
+                <span class="story-heart-pill">🪔 Morning & Eve</span>
+              </div>
+              <div class="story-sloka-scrim">
+                <span class="sloka-sanskrit">॥ दीपं ज्योतिः परब्रह्म ॥</span>
+                <span class="sloka-translit">Deepam Sarvatamopaham Shubhakaroti Kalyanam</span>
+              </div>
+            </div>
+            <div class="story-card-content">
+              <div class="story-title-row">
+                <h3>Nitya Archana & Aradhana</h3>
+                <span class="story-price" data-aud="51" data-inr="2800">$51 AUD</span>
+              </div>
+              <div class="story-meta-tags">
+                <span>All Presiding Deities</span>
+                <span>•</span>
+                <span>20 Mins</span>
+                <span>•</span>
+                <span>Daily Vidhi</span>
+              </div>
+              <p class="story-desc">
+                Daily family Archana with your Gotra and Janma Nakshatra chanted during morning Kakad or evening Sandhya Aradhana.
+              </p>
+              <div class="story-action-row">
+                <button type="button" class="btn btn-primary btn-sm open-puja-modal" data-seva="Nitya Archana & Deepa Aradhana">
+                  <span>🪔</span> Book with Sankalp ↗
+                </button>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+
+      <!-- Instagram Story Pagination Dots -->
+      <div class="carousel-dots-indicator" id="pujaDots">
+        <span class="dot active" data-index="0"></span>
+        <span class="dot" data-index="1"></span>
+        <span class="dot" data-index="2"></span>
+        <span class="dot" data-index="3"></span>
+        <span class="dot" data-index="4"></span>
+        <span class="dot" data-index="5"></span>
       </div>
 
       <!-- Priest Verification & Safeguard Banner -->
@@ -1321,6 +1455,119 @@
             <span>🌸</span> Complete Tax-Deductible Contribution
           </button>
         </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Fixed Native App Mobile Bottom Navigation Bar -->
+  <nav class="native-bottom-bar" aria-label="Mobile Bottom Navigation">
+    <a href="#sanctum" class="bottom-nav-item active">
+      <span class="nav-glyph">🕉️</span>
+      <span class="nav-label">Sanctum</span>
+    </a>
+    <a href="#pujas" class="bottom-nav-item">
+      <span class="nav-glyph">🪔</span>
+      <span class="nav-label">Sevas</span>
+    </a>
+    <a href="#sankalp-generator" class="bottom-nav-item">
+      <span class="nav-glyph">📜</span>
+      <span class="nav-label">Sankalp</span>
+    </a>
+    <a href="#brick-tax-matrix" class="bottom-nav-item">
+      <span class="nav-glyph">🧱</span>
+      <span class="nav-label">Brick DGR</span>
+    </a>
+    <a href="#timetable" class="bottom-nav-item">
+      <span class="nav-glyph">⏰</span>
+      <span class="nav-label">Aarti</span>
+    </a>
+  </nav>
+
+  <!-- Mobile Navigation Slide-Out Drawer -->
+  <div class="mobile-drawer-overlay" id="mobileDrawerOverlay">
+    <div class="mobile-drawer-panel" id="mobileDrawerPanel" role="dialog" aria-modal="true" aria-label="Navigation Menu">
+      <div class="mobile-drawer-header">
+        <div class="brand-wrapper">
+          <div class="brand-emblem">🕉️</div>
+          <div class="brand-text">
+            <h2 style="font-size: 1.1rem; color: var(--color-maroon); font-family: var(--font-display); margin:0;">BALLARAT HINDU TEMPLE</h2>
+            <p style="font-size: 0.72rem; color: var(--color-gold); font-weight:700; margin:0;">110 Vaggs Rd, Ross Creek VIC</p>
+          </div>
+        </div>
+        <button type="button" class="drawer-close-btn" id="drawerCloseBtn" aria-label="Close menu">✕</button>
+      </div>
+
+      <div class="mobile-drawer-body">
+        <ul class="drawer-nav-list">
+          <li><a href="#sanctum" class="drawer-link"><span class="nav-icon">🕉️</span> Sacred Sanctum</a></li>
+          <li><a href="#pujas" class="drawer-link"><span class="nav-icon">🪔</span> Consecrated Sevas & Pujas</a></li>
+          <li><a href="#sankalp-generator" class="drawer-link"><span class="nav-icon">📜</span> Gotra Sankalp Studio</a></li>
+          <li><a href="#campus-explorer" class="drawer-link"><span class="nav-icon">🏛️</span> 5-Acre Campus Masterplan</a></li>
+          <li><a href="#brick-tax-matrix" class="drawer-link"><span class="nav-icon">🧱</span> Sponsor a Brick (DGR $2+)</a></li>
+          <li><a href="#timetable" class="drawer-link"><span class="nav-icon">⏰</span> Daily Aarti Timetable</a></li>
+          <li><a href="#governance" class="drawer-link"><span class="nav-icon">⚖️</span> Governance & ABN</a></li>
+        </ul>
+
+        <div class="drawer-action-block">
+          <a href="#brick-tax-matrix" class="btn btn-primary btn-block drawer-link">
+            <span>🧱</span> Sponsor a Granite Brick
+          </a>
+          <button type="button" class="btn btn-gold btn-block open-donation-modal">
+            <span>🪔</span> General e-Hundi Offering
+          </button>
+        </div>
+
+        <div class="drawer-community-card">
+          <h4>Join BHTCC Devotee Community</h4>
+          <p>Receive auspicious festival announcements & daily darshan photos.</p>
+          <a href="https://chat.whatsapp.com" target="_blank" rel="noopener noreferrer" class="btn-whatsapp">
+            <span>💬</span> WhatsApp Devotee Group ↗
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Ballarat Panchang Popover Modal -->
+  <div class="modal-overlay" id="mobile-panchang-modal" role="dialog" aria-modal="true" aria-label="Ballarat Panchang Details">
+    <div class="modal-container" style="max-width: 440px;">
+      <div class="modal-header">
+        <div class="modal-title-block">
+          <h3>☀️ Auspicious Ballarat Panchang</h3>
+          <span style="font-size: 0.8rem; color: var(--color-gold);">110 Vaggs Rd, Ross Creek VIC (-37.6433°, 143.8153°)</span>
+        </div>
+        <button class="modal-close-btn" id="close-panchang-modal" aria-label="Close Modal">&times;</button>
+      </div>
+      <div class="modal-body" style="padding: 1.5rem;">
+        <div style="background: var(--bg-surface-2); padding: 1.25rem; border-radius: 12px; border: 1px solid var(--border-subtle); display: flex; flex-direction: column; gap: 0.85rem;">
+          <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--border-light); padding-bottom: 0.5rem;">
+            <strong>Melbourne Time:</strong>
+            <span id="panchang-modal-clock" style="color: var(--color-maroon); font-weight: 700;">Loading...</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--border-light); padding-bottom: 0.5rem;">
+            <strong>Vedic Tithi:</strong>
+            <span id="panchang-modal-tithi">Kartika Shukla Ekadashi</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--border-light); padding-bottom: 0.5rem;">
+            <strong>Sunrise (NOAA):</strong>
+            <span id="panchang-modal-sunrise" style="color: #E65100; font-weight: 700;">06:13 AM</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--border-light); padding-bottom: 0.5rem;">
+            <strong>Sunset (NOAA):</strong>
+            <span id="panchang-modal-sunset" style="color: #E65100; font-weight: 700;">08:03 PM</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--border-light); padding-bottom: 0.5rem;">
+            <strong>Rahu Kalam:</strong>
+            <span id="panchang-modal-rahu" style="color: #B91C1C; font-weight: 700;">11:24 AM - 01:08 PM</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; padding-top: 0.25rem;">
+            <strong>Sandhya Aarti:</strong>
+            <span id="panchang-modal-countdown" style="color: var(--color-emerald); font-weight: 800;">Ticking...</span>
+          </div>
+        </div>
+        <p style="font-size: 0.78rem; color: var(--text-tertiary); margin-top: 1rem; line-height: 1.4; text-align: center;">
+          * Computed strictly from solar celestial mechanics for Ballarat regional coordinates (UTC+11 AEDT).
+        </p>
       </div>
     </div>
   </div>
