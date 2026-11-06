@@ -3848,3 +3848,840 @@ body {
     animation: none !important;
   }
 }
+
+/* =========================================================================
+   MOBILE-FIRST ARCHITECTURAL TRANSFORMATION (TEMPLATE 1)
+   BHTCC Classical Ceremonial Mandir - Awwwards & Native-Caliber Mobile UX
+   ========================================================================= */
+
+/* --- A. Base Fluid Typography & Touch Optimization --- */
+:root {
+  --t1-touch-min: 44px;
+}
+
+html {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* --- B. Mobile Header Top Row & Drawer Toggle --- */
+.t1-header-top-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+}
+
+.t1-mobile-menu-toggle {
+  display: none;
+}
+
+/* --- C. Off-Canvas Mobile Navigation Drawer & Backdrop --- */
+.t1-mobile-drawer-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(14, 2, 5, 0.78);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 9998;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.t1-mobile-drawer-overlay.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.t1-mobile-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: min(320px, 86vw);
+  height: 100%;
+  height: 100dvh;
+  background: linear-gradient(180deg, #180306 0%, #0D0204 100%);
+  border-left: 1.5px solid var(--t1-gold);
+  box-shadow: -10px 0 35px rgba(0, 0, 0, 0.85);
+  z-index: 9999;
+  transform: translateX(100%);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem 1.25rem;
+  overflow-y: auto;
+}
+
+.t1-mobile-drawer.is-open {
+  transform: translateX(0);
+}
+
+.t1-drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(255, 208, 0, 0.2);
+  margin-bottom: 1.5rem;
+}
+
+.t1-drawer-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.t1-drawer-seal {
+  width: 40px;
+  height: 40px;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.6));
+}
+
+.t1-drawer-title {
+  font-family: var(--t1-font-cinzel);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--t1-gold);
+  margin: 0;
+  letter-spacing: 0.05em;
+  line-height: 1.2;
+}
+
+.t1-drawer-sanskrit {
+  display: block;
+  font-size: 0.68rem;
+  color: #D4AF37;
+  letter-spacing: 0.08em;
+  margin-bottom: 2px;
+}
+
+.t1-drawer-close-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 208, 0, 0.35);
+  color: var(--t1-gold);
+  font-size: 1.15rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.t1-drawer-close-btn:active {
+  background: rgba(255, 208, 0, 0.25);
+  transform: scale(0.92);
+}
+
+.t1-drawer-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  flex: 1;
+}
+
+.t1-drawer-nav a {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.85rem 1rem;
+  font-family: var(--t1-font-cinzel);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #F0E8E2;
+  text-decoration: none;
+  border-radius: 8px;
+  border-left: 3px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.t1-drawer-nav a:hover,
+.t1-drawer-nav a.active {
+  background: rgba(255, 208, 0, 0.12);
+  color: var(--t1-gold);
+  border-left-color: var(--t1-gold);
+}
+
+.t1-nav-icon {
+  font-size: 1.15rem;
+  width: 24px;
+  text-align: center;
+}
+
+.t1-drawer-donate-btn {
+  margin-top: 1.25rem !important;
+  background: linear-gradient(135deg, #B8860B 0%, #FFD700 50%, #D4AF37 100%) !important;
+  color: #120205 !important;
+  font-weight: 700 !important;
+  text-align: center;
+  justify-content: center !important;
+  border-radius: 999px !important;
+  box-shadow: 0 4px 15px rgba(255, 208, 0, 0.3);
+}
+
+.t1-drawer-footer {
+  border-top: 1px solid rgba(255, 208, 0, 0.15);
+  padding-top: 1rem;
+  font-size: 0.72rem;
+  color: rgba(240, 232, 226, 0.6);
+  text-align: center;
+  line-height: 1.5;
+}
+
+.t1-drawer-addr {
+  margin-bottom: 0.25rem;
+  color: #D4AF37;
+}
+
+.t1-drawer-abn {
+  margin: 0;
+}
+
+/* --- D. Sticky Mobile Devotional Dock --- */
+.t1-mobile-dock {
+  display: none;
+}
+
+/* --- E. Tactile Mobile Japa Touch Pod --- */
+.t1-japa-touch-pod {
+  display: none;
+}
+
+/* =========================================================================
+   RESPONSIVE MOBILE BREAKPOINTS (<= 768px & <= 480px)
+   ========================================================================= */
+@media (max-width: 768px) {
+  /* Safe Area Bottom Padding for body */
+  body {
+    padding-bottom: calc(68px + env(safe-area-inset-bottom, 0px)) !important;
+  }
+
+  /* 1. Slim Top Auspicious Ribbon */
+  .t1-top-bar {
+    padding: 0.35rem 0.5rem !important;
+    font-size: 0.7rem !important;
+  }
+  .t1-top-inner {
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 0.35rem 0.75rem !important;
+  }
+  .t1-panchang-text {
+    font-size: 0.68rem !important;
+  }
+  .t1-status-pill, .t1-lotus-icon {
+    display: none !important;
+  }
+  .t1-dgr-badge {
+    padding: 2px 8px !important;
+    font-size: 0.65rem !important;
+  }
+
+  /* 2. Sleek Sticky Header with Mobile Menu Toggle */
+  .t1-grand-header {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 900 !important;
+    background: rgba(255, 255, 255, 0.98) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08) !important;
+    padding: 0.5rem 0 !important;
+  }
+  .t1-header-top-row {
+    justify-content: space-between !important;
+    padding: 0 0.5rem !important;
+  }
+  .t1-brand-crest {
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.65rem !important;
+    text-align: left !important;
+  }
+  .t1-header-seal-img {
+    width: 42px !important;
+    height: 42px !important;
+  }
+  .t1-title-block .t1-sanskrit-tag {
+    display: none !important;
+  }
+  .t1-temple-name {
+    font-size: 1.05rem !important;
+    letter-spacing: 0.04em !important;
+    margin: 0 !important;
+    line-height: 1.15 !important;
+  }
+  .t1-subtitle {
+    font-size: 0.62rem !important;
+    letter-spacing: 0.04em !important;
+    margin: 0 !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    max-width: 220px !important;
+  }
+
+  /* Royal Hamburger Menu Toggle Button */
+  .t1-mobile-menu-toggle {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 5px !important;
+    width: 44px !important;
+    height: 44px !important;
+    background: #8A1A2B !important;
+    border: 1.5px solid #FFD700 !important;
+    border-radius: 8px !important;
+    cursor: pointer !important;
+    padding: 8px !important;
+    box-shadow: 0 2px 10px rgba(138, 26, 43, 0.4) !important;
+    transition: all 0.2s ease !important;
+  }
+  .t1-mobile-menu-toggle:active {
+    background: #6D1422 !important;
+    transform: scale(0.94) !important;
+  }
+  .t1-hamburger-bar {
+    width: 22px !important;
+    height: 2.5px !important;
+    background: #FFD700 !important;
+    border-radius: 2px !important;
+    transition: all 0.25s ease !important;
+  }
+  .t1-mobile-menu-toggle.is-active .t1-hamburger-bar:nth-child(1) {
+    transform: translateY(7.5px) rotate(45deg) !important;
+  }
+  .t1-mobile-menu-toggle.is-active .t1-hamburger-bar:nth-child(2) {
+    opacity: 0 !important;
+  }
+  .t1-mobile-menu-toggle.is-active .t1-hamburger-bar:nth-child(3) {
+    transform: translateY(-7.5px) rotate(-45deg) !important;
+  }
+
+  /* Hide Desktop Nav Ribbon on Mobile */
+  .t1-nav-ribbon {
+    display: none !important;
+  }
+
+  /* 3. Sticky Mobile Devotional Dock */
+  .t1-mobile-dock {
+    display: flex !important;
+    position: fixed !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    height: calc(58px + env(safe-area-inset-bottom, 0px)) !important;
+    padding-bottom: env(safe-area-inset-bottom, 0px) !important;
+    background: rgba(18, 4, 7, 0.96) !important;
+    backdrop-filter: blur(16px) !important;
+    -webkit-backdrop-filter: blur(16px) !important;
+    border-top: 1.5px solid var(--t1-gold) !important;
+    z-index: 9900 !important;
+    justify-content: space-around !important;
+    align-items: center !important;
+    box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.6) !important;
+  }
+  .t1-dock-item {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 2px !important;
+    color: #D5C7B8 !important;
+    text-decoration: none !important;
+    background: none !important;
+    border: none !important;
+    padding: 6px 8px !important;
+    min-width: 52px !important;
+    min-height: 44px !important;
+    font-size: 0.65rem !important;
+    font-family: var(--t1-font-sans) !important;
+    font-weight: 600 !important;
+    cursor: pointer !important;
+    transition: transform 0.15s ease, color 0.15s ease !important;
+    -webkit-tap-highlight-color: transparent !important;
+  }
+  .t1-dock-item:active {
+    transform: scale(0.9) !important;
+    color: var(--t1-gold) !important;
+  }
+  .t1-dock-icon {
+    font-size: 1.25rem !important;
+    line-height: 1 !important;
+  }
+  .t1-dock-donate {
+    color: #FFD000 !important;
+    font-weight: 700 !important;
+  }
+
+  /* 4. Hero Section Fluid Scaling */
+  .t1-hero-section {
+    padding: 2.5rem 0 3.5rem !important;
+  }
+  .t1-hero-headline {
+    font-size: clamp(1.65rem, 6.5vw, 2.35rem) !important;
+    line-height: 1.2 !important;
+    margin-bottom: 0.75rem !important;
+  }
+  .t1-hero-sub {
+    font-size: 0.88rem !important;
+    line-height: 1.5 !important;
+    margin-bottom: 1.25rem !important;
+  }
+  .t1-hero-btn-row {
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 0.75rem !important;
+  }
+  .t1-hero-btn-row .btn-t1-gold,
+  .t1-hero-btn-row .btn-t1-outline {
+    width: 100% !important;
+    min-height: 48px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+  }
+
+  /* 5. Mobile Sanctum Altar Frame & Layout */
+  .t1-broadcast-stage {
+    padding: 2.5rem 0 !important;
+  }
+  .t1-altar-frame {
+    border-width: 1px !important;
+    border-radius: 12px !important;
+    overflow: hidden !important;
+  }
+  .t1-video-screen {
+    aspect-ratio: 4/5 !important;
+    min-height: 380px !important;
+    max-height: 520px !important;
+    position: relative !important;
+    overflow: hidden !important;
+  }
+  #t1SanctumImage {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center 25% !important;
+  }
+
+  /* Bell Rig on Mobile: Scaled and centered at top */
+  .t1-hanging-bell-rig {
+    width: 78px !important;
+    height: 115px !important;
+    top: 0 !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+  }
+  .t1-hanging-bell-rig.swinging {
+    transform-origin: 50% 0 !important;
+  }
+  .t1-bell-mount {
+    width: 44px !important;
+    height: 8px !important;
+  }
+  .t1-bell-chain {
+    width: 10px !important;
+    height: 36px !important;
+  }
+  .t1-bell-crown {
+    width: 22px !important;
+    height: 10px !important;
+  }
+  .t1-bell-body {
+    width: 54px !important;
+    height: 42px !important;
+  }
+  .t1-bell-rope-pull {
+    bottom: -32px !important;
+  }
+  .t1-rope-tassel {
+    padding: 3px 8px !important;
+    font-size: 0.6rem !important;
+    letter-spacing: 0.04em !important;
+    white-space: nowrap !important;
+  }
+
+  /* Akhanda Deepam on Mobile: Docked neatly at bottom right corner */
+  .t1-akhanda-deepam-widget {
+    bottom: 12px !important;
+    right: 12px !important;
+    padding: 6px 10px !important;
+    width: auto !important;
+    max-width: 110px !important;
+    border-radius: 10px !important;
+    background: rgba(18, 3, 6, 0.88) !important;
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+    border: 1px solid var(--t1-gold) !important;
+    z-index: 30 !important;
+  }
+  .t1-deepam-flame-wrapper {
+    width: 24px !important;
+    height: 34px !important;
+    margin: 0 auto 3px !important;
+  }
+  .t1-deepam-brass-vessel {
+    width: 32px !important;
+    height: 16px !important;
+    margin: 0 auto !important;
+  }
+  .t1-deepam-tag {
+    font-size: 0.58rem !important;
+    letter-spacing: 0.03em !important;
+    margin-top: 2px !important;
+    white-space: nowrap !important;
+  }
+
+  /* Live Darshan Badge on Mobile */
+  .t1-live-badge-glow {
+    top: 10px !important;
+    left: 10px !important;
+    padding: 4px 8px !important;
+    font-size: 0.62rem !important;
+    letter-spacing: 0.05em !important;
+    border-radius: 6px !important;
+    background: rgba(18, 3, 6, 0.85) !important;
+    border: 1px solid rgba(255, 208, 0, 0.4) !important;
+    backdrop-filter: blur(6px) !important;
+    max-width: 140px !important;
+    white-space: nowrap !important;
+    z-index: 20 !important;
+  }
+
+  /* Altar Caption on Mobile */
+  .t1-altar-caption {
+    bottom: 10px !important;
+    left: 10px !important;
+    max-width: calc(100% - 130px) !important;
+    font-size: 0.68rem !important;
+    padding: 4px 8px !important;
+    background: rgba(18, 3, 6, 0.85) !important;
+    backdrop-filter: blur(6px) !important;
+    border-radius: 6px !important;
+    border: 1px solid rgba(255, 208, 0, 0.25) !important;
+    line-height: 1.3 !important;
+    z-index: 20 !important;
+  }
+
+  /* Altar Controls 2x2 Grid on Mobile */
+  .t1-altar-controls {
+    padding: 1.25rem 1rem !important;
+  }
+  .t1-altar-info {
+    text-align: center !important;
+    margin-bottom: 0.75rem !important;
+  }
+  .t1-altar-info h4 {
+    font-size: 1.15rem !important;
+  }
+  .t1-altar-info p {
+    font-size: 0.82rem !important;
+  }
+  .t1-altar-btns {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 0.65rem !important;
+  }
+  .t1-altar-btns .t1-btn-altar,
+  .t1-altar-btns .t1-btn-altar-gold {
+    min-height: 48px !important;
+    font-size: 0.78rem !important;
+    padding: 0.5rem !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    border-radius: 8px !important;
+    white-space: normal !important;
+    line-height: 1.2 !important;
+  }
+
+  /* 6. Mobile 108 Rudraksha Mala Tracker */
+  .t1-japa-mala-bar {
+    padding: 1.25rem 1rem !important;
+    margin-top: 1rem !important;
+    border-radius: 12px !important;
+  }
+  .t1-japa-header {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 0.65rem !important;
+  }
+  .t1-japa-title h4 {
+    font-size: 1.05rem !important;
+  }
+  .t1-sanskrit-sloka-glow {
+    font-size: 0.82rem !important;
+  }
+  .t1-japa-stats {
+    display: flex !important;
+    gap: 0.5rem !important;
+    width: 100% !important;
+    justify-content: space-between !important;
+  }
+  .t1-japa-count-badge, .t1-mala-rounds-badge {
+    flex: 1 !important;
+    text-align: center !important;
+    padding: 4px 8px !important;
+    font-size: 0.72rem !important;
+  }
+
+  /* Tactile Mobile Japa Touch Pod */
+  .t1-japa-touch-pod {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 1rem 0 0.5rem !important;
+  }
+  .t1-tactile-bead-wrap {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 0.4rem !important;
+  }
+  .t1-tactile-bead-btn {
+    position: relative !important;
+    width: 72px !important;
+    height: 72px !important;
+    border-radius: 50% !important;
+    background: radial-gradient(circle at 35% 35%, #D48C46 0%, #7A3B12 70%, #301306 100%) !important;
+    border: 3px solid var(--t1-gold) !important;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.65), 0 0 24px rgba(255, 208, 0, 0.4) !important;
+    cursor: pointer !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    outline: none !important;
+    transition: transform 0.12s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.12s ease !important;
+    -webkit-tap-highlight-color: transparent !important;
+  }
+  .t1-tactile-bead-btn:active,
+  .t1-tactile-bead-btn.pulse-tap {
+    transform: scale(0.92) !important;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.8), 0 0 35px rgba(255, 208, 0, 0.75) !important;
+  }
+  .t1-tactile-bead-core {
+    width: 26px !important;
+    height: 26px !important;
+    border-radius: 50% !important;
+    background: radial-gradient(circle, #FFE27A 0%, #A66822 100%) !important;
+    opacity: 0.8 !important;
+  }
+  .t1-tactile-tap-hint {
+    font-size: 0.68rem !important;
+    font-family: var(--t1-font-cinzel) !important;
+    font-weight: 700 !important;
+    color: var(--t1-gold) !important;
+    letter-spacing: 0.08em !important;
+  }
+  .t1-tactile-current-chant {
+    font-size: 0.82rem !important;
+    color: #F0E8E2 !important;
+  }
+  .t1-tactile-current-chant strong {
+    color: var(--t1-gold) !important;
+    font-size: 1.05rem !important;
+  }
+
+  /* Single-Row Horizontal Swipe Carousel for Beads on Mobile */
+  .t1-mala-beads-strand {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory !important;
+    -webkit-overflow-scrolling: touch !important;
+    gap: 8px !important;
+    padding: 10px 8px !important;
+    max-height: none !important;
+    border: 1px solid rgba(255, 208, 0, 0.25) !important;
+    border-radius: 10px !important;
+    background: rgba(14, 2, 5, 0.7) !important;
+    scrollbar-width: none !important;
+    margin-bottom: 0.75rem !important;
+  }
+  .t1-mala-beads-strand::-webkit-scrollbar {
+    display: none !important;
+  }
+  .t1-mala-bead {
+    flex: 0 0 30px !important;
+    width: 30px !important;
+    height: 30px !important;
+    scroll-snap-align: center !important;
+    border-radius: 50% !important;
+    margin: 0 !important;
+  }
+  .t1-mala-bead.bead-current {
+    width: 36px !important;
+    height: 36px !important;
+    border: 2px solid #FFD700 !important;
+    box-shadow: 0 0 16px #FFD700 !important;
+  }
+
+  /* Japa Controls on Mobile */
+  .t1-japa-controls {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.5rem !important;
+    margin-top: 0.75rem !important;
+  }
+  .t1-btn-japa {
+    width: 100% !important;
+    min-height: 52px !important;
+    font-size: 0.95rem !important;
+    font-weight: 700 !important;
+    border-radius: 999px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  .t1-japa-controls .t1-btn-japa-audio,
+  .t1-japa-controls .t1-btn-japa-reset {
+    min-height: 44px !important;
+    font-size: 0.78rem !important;
+  }
+
+  /* 7. Section B Architectural Masterplan on Mobile */
+  .t1-editorial-hero-feature {
+    border-radius: 12px !important;
+    overflow: hidden !important;
+    margin-bottom: 1.5rem !important;
+  }
+  .t1-editorial-specs-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.65rem !important;
+    margin-top: 1.25rem !important;
+  }
+  .t1-spec-pod {
+    padding: 0.85rem 0.6rem !important;
+    border-radius: 8px !important;
+  }
+  .t1-spec-pod-num {
+    font-size: 1.25rem !important;
+  }
+  .t1-spec-pod-lbl {
+    font-size: 0.65rem !important;
+  }
+  .t1-editorial-split-row {
+    flex-direction: column !important;
+    gap: 1.5rem !important;
+  }
+  .t1-editorial-split-col {
+    width: 100% !important;
+  }
+  .t1-split-img-box {
+    aspect-ratio: 16/10 !important;
+    border-radius: 10px !important;
+    overflow: hidden !important;
+  }
+
+  /* 8. Section C Seva Ledgers on Mobile */
+  .t1-horizontal-cards-list {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1.25rem !important;
+  }
+  .t1-seva-ledger-card {
+    display: flex !important;
+    flex-direction: column !important;
+    border-radius: 12px !important;
+    overflow: hidden !important;
+    padding: 1.25rem !important;
+    gap: 1rem !important;
+    border-width: 1.5px !important;
+  }
+  .t1-ledger-seal-col {
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+    border-right: none !important;
+    border-bottom: 1px dashed rgba(255, 208, 0, 0.3) !important;
+    padding: 0 0 0.75rem 0 !important;
+    background: transparent !important;
+  }
+  .t1-wax-seal-wrapper {
+    margin: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.65rem !important;
+  }
+  .t1-wax-seal-img {
+    width: 44px !important;
+    height: 44px !important;
+  }
+  .t1-seal-caption {
+    font-size: 0.62rem !important;
+    letter-spacing: 0.05em !important;
+  }
+  .t1-ledger-code {
+    font-size: 0.75rem !important;
+    padding: 3px 8px !important;
+  }
+  .t1-ledger-body {
+    padding: 0 !important;
+  }
+  .t1-ledger-body h4 {
+    font-size: 1.15rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+  .t1-ledger-body p {
+    font-size: 0.82rem !important;
+    line-height: 1.5 !important;
+    margin-bottom: 0.75rem !important;
+  }
+  .t1-ledger-inclusions {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 0.4rem !important;
+  }
+  .t1-ledger-inclusions span {
+    font-size: 0.72rem !important;
+    padding: 3px 8px !important;
+  }
+  .t1-ledger-action {
+    width: 100% !important;
+    border-left: none !important;
+    border-top: 1px dashed rgba(255, 208, 0, 0.3) !important;
+    padding: 0.75rem 0 0 0 !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 0.5rem !important;
+  }
+  .t1-ledger-price {
+    font-size: 1.5rem !important;
+    text-align: center !important;
+  }
+  .t1-ledger-dakshina-lbl {
+    text-align: center !important;
+    font-size: 0.68rem !important;
+  }
+  .t1-ledger-tax-badge, .t1-ledger-tax-sub {
+    text-align: center !important;
+  }
+  .t1-ledger-action .btn-t1-gold-sm {
+    min-height: 48px !important;
+    width: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 0.9rem !important;
+    border-radius: 8px !important;
+  }
+
+  /* 9. Grand Footer on Mobile */
+  .t1-grand-footer {
+    padding: 2.5rem 0 calc(75px + env(safe-area-inset-bottom, 0px)) !important;
+  }
+  .t1-footer-inner {
+    flex-direction: column !important;
+    text-align: center !important;
+    gap: 1.5rem !important;
+  }
+}

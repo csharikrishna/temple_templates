@@ -10,6 +10,9 @@ document.addEventListener('DOMContentLoaded', () => {
   try { if (typeof initDiyaOfferingT1 === 'function') initDiyaOfferingT1(); } catch(e){}
   try { if (typeof initPriestBookingT1 === 'function') initPriestBookingT1(); } catch(e){}
   try { if (typeof initJapaMalaCounter === 'function') initJapaMalaCounter(); } catch(e){}
+  try { if (typeof initMobileNavDrawer === 'function') initMobileNavDrawer(); } catch(e){}
+  try { if (typeof initMobileDock === 'function') initMobileDock(); } catch(e){}
+  try { if (typeof initTactileJapaPod === 'function') initTactileJapaPod(); } catch(e){}
 });
 
 /* -------------------------------------------------------------------------
@@ -441,6 +444,8 @@ function initJapaMalaCounter() {
     }
 
     if (countDisplay) countDisplay.textContent = t1MalaCount;
+    const tactileNum = document.getElementById('t1TactileBeadNum');
+    if (tactileNum) tactileNum.textContent = t1MalaCount;
     if (progressFill) progressFill.style.width = ((t1MalaCount / 108) * 100) + '%';
     if (progressTrack) progressTrack.setAttribute('aria-valuenow', t1MalaCount);
 
@@ -488,6 +493,8 @@ function initJapaMalaCounter() {
       e.preventDefault();
       t1MalaCount = 0;
       if (countDisplay) countDisplay.textContent = '0';
+      const tactileNumReset = document.getElementById('t1TactileBeadNum');
+      if (tactileNumReset) tactileNumReset.textContent = '0';
       if (progressFill) progressFill.style.width = '0%';
       if (progressTrack) progressTrack.setAttribute('aria-valuenow', 0);
       if (completionCard) completionCard.style.display = 'none';
@@ -511,6 +518,8 @@ function initJapaMalaCounter() {
       e.preventDefault();
       t1MalaCount = 0;
       if (countDisplay) countDisplay.textContent = '0';
+      const tactileNumReset = document.getElementById('t1TactileBeadNum');
+      if (tactileNumReset) tactileNumReset.textContent = '0';
       if (progressFill) progressFill.style.width = '0%';
       if (progressTrack) progressTrack.setAttribute('aria-valuenow', 0);
       if (completionCard) completionCard.style.display = 'none';
@@ -586,3 +595,128 @@ window.playTempleBellChime = playTempleBellChime;
 window.triggerPushpaShower = triggerPushpaShower;
 window.triggerAkhandaDeepamOffering = triggerAkhandaDeepamOffering;
 window.showToast = showToast;
+
+
+/* -------------------------------------------------------------------------
+   7. Mobile-First Off-Canvas Navigation Drawer & Touch Dock
+   ------------------------------------------------------------------------- */
+function initMobileNavDrawer() {
+  const menuBtn = document.getElementById('t1MobileMenuBtn');
+  const drawer = document.getElementById('t1MobileNavDrawer');
+  const overlay = document.getElementById('t1DrawerOverlay');
+  const closeBtn = document.getElementById('t1DrawerCloseBtn');
+
+  if (!menuBtn || !drawer || !overlay) return;
+
+  function openDrawer() {
+    drawer.classList.add('is-open');
+    overlay.classList.add('is-open');
+    menuBtn.classList.add('is-active');
+    menuBtn.setAttribute('aria-expanded', 'true');
+    drawer.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeDrawer() {
+    drawer.classList.remove('is-open');
+    overlay.classList.remove('is-open');
+    menuBtn.classList.remove('is-active');
+    menuBtn.setAttribute('aria-expanded', 'false');
+    drawer.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  menuBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    if (drawer.classList.contains('is-open')) {
+      closeDrawer();
+    } else {
+      openDrawer();
+    }
+  });
+
+  if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
+  overlay.addEventListener('click', closeDrawer);
+
+  drawer.querySelectorAll('.t1-drawer-nav a').forEach(link => {
+    link.addEventListener('click', closeDrawer);
+  });
+
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && drawer.classList.contains('is-open')) {
+      closeDrawer();
+    }
+  });
+}
+
+function initMobileDock() {
+  const dockBell = document.getElementById('t1DockBell');
+  const dockDeepam = document.getElementById('t1DockDeepam');
+  const dockFlower = document.getElementById('t1DockFlower');
+  const dockDarshan = document.getElementById('t1DockDarshan');
+  const dockMala = document.getElementById('t1DockMala');
+
+  if (dockBell) {
+    dockBell.addEventListener('click', (e) => {
+      e.preventDefault();
+      playTempleBellChime();
+      const bellRig = document.querySelector('.t1-hanging-bell-rig');
+      if (bellRig) {
+        bellRig.classList.remove('swinging');
+        void bellRig.offsetWidth;
+        bellRig.classList.add('swinging');
+        setTimeout(() => bellRig.classList.remove('swinging'), 2400);
+      }
+    });
+  }
+
+  if (dockDeepam) {
+    dockDeepam.addEventListener('click', (e) => {
+      e.preventDefault();
+      triggerAkhandaDeepamOffering();
+    });
+  }
+
+  if (dockFlower) {
+    dockFlower.addEventListener('click', (e) => {
+      e.preventDefault();
+      triggerPushpaShower();
+    });
+  }
+
+  if (dockDarshan) {
+    dockDarshan.addEventListener('click', (e) => {
+      const broadcast = document.getElementById('broadcast');
+      if (broadcast) {
+        e.preventDefault();
+        broadcast.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  }
+
+  if (dockMala) {
+    dockMala.addEventListener('click', (e) => {
+      const mala = document.getElementById('t1MalaStrand') || document.querySelector('.t1-japa-mala-bar');
+      if (mala) {
+        e.preventDefault();
+        mala.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    });
+  }
+}
+
+function initTactileJapaPod() {
+  const tactileBtn = document.getElementById('t1TactileBeadBtn');
+  const japaBtn = document.getElementById('t1JapaBtn');
+  if (!tactileBtn) return;
+
+  tactileBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    if (japaBtn) {
+      japaBtn.click();
+    }
+    tactileBtn.classList.remove('pulse-tap');
+    void tactileBtn.offsetWidth;
+    tactileBtn.classList.add('pulse-tap');
+  });
+}

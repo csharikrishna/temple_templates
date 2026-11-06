@@ -13,7 +13,7 @@
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2•family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/templates/template_1/styles.css">
 </head>
 <body>
@@ -30,18 +30,27 @@
   </aside>
 
   <!-- Centered Grand Traditional Header -->
+    <!-- Centered Grand Traditional Header with Mobile Drawer Toggle -->
   <header class="t1-grand-header">
     <div class="container t1-header-center">
-      <div class="t1-brand-crest">
-        <div class="t1-om-emblem"><img src="/assets/t1_wax_seal_crest.png" alt="Ballarat Hindu Temple Consecrated Wax Seal" class="t1-header-seal-img" width="56" height="56" fetchpriority="high"></div>
-        <div class="t1-title-block">
-          <span class="t1-sanskrit-tag">॥ धर्मो रक्षति रक्षितः ॥</span>
-          <h1 class="t1-temple-name">BALLARAT HINDU TEMPLE</h1>
-          <p class="t1-subtitle">& CULTURAL CENTRE INCORPORATED (BHTCC)</p>
+      <div class="t1-header-top-row">
+        <div class="t1-brand-crest">
+          <div class="t1-om-emblem"><img src="/assets/t1_wax_seal_crest.png" alt="Ballarat Hindu Temple Consecrated Wax Seal" class="t1-header-seal-img" width="56" height="56" fetchpriority="high"></div>
+          <div class="t1-title-block">
+            <span class="t1-sanskrit-tag">|| ॐ नमः शिवाय ||</span>
+            <h1 class="t1-temple-name">BALLARAT HINDU TEMPLE</h1>
+            <p class="t1-subtitle">& CULTURAL CENTRE INCORPORATED (BHTCC)</p>
+          </div>
         </div>
+
+        <button class="t1-mobile-menu-toggle" id="t1MobileMenuBtn" type="button" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="t1MobileNavDrawer">
+          <span class="t1-hamburger-bar"></span>
+          <span class="t1-hamburger-bar"></span>
+          <span class="t1-hamburger-bar"></span>
+        </button>
       </div>
 
-      <nav class="t1-nav-ribbon">
+      <nav class="t1-nav-ribbon" aria-label="Main Navigation">
         <a href="index.html" class="active">Sanctum Home</a>
         <a href="project.html">Ross Creek Project</a>
         <a href="worship.html">Worship & Deities</a>
@@ -50,6 +59,32 @@
       </nav>
     </div>
   </header>
+
+  <!-- Off-Canvas Mobile Navigation Drawer -->
+  <div class="t1-mobile-drawer-overlay" id="t1DrawerOverlay" aria-hidden="true"></div>
+  <aside class="t1-mobile-drawer" id="t1MobileNavDrawer" aria-hidden="true" role="dialog" aria-label="Mobile Navigation">
+    <div class="t1-drawer-header">
+      <div class="t1-drawer-brand">
+        <img src="/assets/t1_wax_seal_crest.png" alt="BHTCC Seal" class="t1-drawer-seal" width="40" height="40">
+        <div>
+          <span class="t1-drawer-sanskrit">|| ॐ नमः शिवाय ||</span>
+          <h4 class="t1-drawer-title">BALLARAT HINDU TEMPLE</h4>
+        </div>
+      </div>
+      <button class="t1-drawer-close-btn" id="t1DrawerCloseBtn" type="button" aria-label="Close navigation menu">✕</button>
+    </div>
+    <nav class="t1-drawer-nav">
+      <a href="index.html" class="active"><span class="t1-nav-icon">🛕</span> Sanctum Home</a>
+      <a href="project.html"><span class="t1-nav-icon">🏛️</span> Ross Creek Project</a>
+      <a href="worship.html"><span class="t1-nav-icon">🙏</span> Worship & Deities</a>
+      <a href="community.html"><span class="t1-nav-icon">🤝</span> Community & Culture</a>
+      <a href="donate.html" class="t1-drawer-donate-btn"><span class="t1-nav-icon">❤️</span> Support BHTCC (Tax-Deductible)</a>
+    </nav>
+    <div class="t1-drawer-footer">
+      <p class="t1-drawer-addr">📍 110 Vaggs Rd, Ross Creek VIC 3351</p>
+      <p class="t1-drawer-abn">ABN: 13 397 829 440 • DGR Subdivision 30-B</p>
+    </div>
+  </aside>
 
   <!-- Centered Panoramic Master Hero -->
   <section class="t1-hero-section">
@@ -185,6 +220,20 @@
               <span class="t1-mala-rounds-badge">Completed Malas: <strong id="t1MalaRounds">0</strong></span>
             </div>
           </div>
+          <!-- Tactile Mobile Japa Touch Pod -->
+          <div class="t1-japa-touch-pod" id="t1JapaTouchPod">
+            <div class="t1-tactile-bead-wrap">
+              <button type="button" class="t1-tactile-bead-btn" id="t1TactileBeadBtn" aria-label="Tap to Chant 1 Rudraksha Bead">
+                <span class="t1-tactile-bead-core"></span>
+                <span class="t1-tactile-ripple" aria-hidden="true"></span>
+              </button>
+              <div class="t1-tactile-bead-meta">
+                <span class="t1-tactile-tap-hint">TAP CENTRAL BEAD TO CHANT</span>
+                <span class="t1-tactile-current-chant">Bead <strong id="t1TactileBeadNum">0</strong> of 108</span>
+              </div>
+            </div>
+          </div>
+
           <div class="t1-mala-beads-strand" id="t1MalaStrand" role="region" aria-label="108 Sacred Rudraksha Beads Strand"></div>
           
           <!-- 108 Completion Celebration Banner -->
@@ -713,5 +762,33 @@
   </footer>
 
   <script src="/templates/template_1/app.js"></script>
+  <!-- Sticky Mobile Devotional Action Dock -->
+  <nav class="t1-mobile-dock" aria-label="Mobile Quick Devotional Actions">
+    <a href="#broadcast" class="t1-dock-item" id="t1DockDarshan">
+      <span class="t1-dock-icon">🛕</span>
+      <span class="t1-dock-lbl">Darshan</span>
+    </a>
+    <button type="button" class="t1-dock-item" id="t1DockBell" aria-label="Ring Mandir Bell">
+      <span class="t1-dock-icon">🔔</span>
+      <span class="t1-dock-lbl">Ring Bell</span>
+    </button>
+    <button type="button" class="t1-dock-item" id="t1DockDeepam" aria-label="Offer Sacred Deepam">
+      <span class="t1-dock-icon">🪔</span>
+      <span class="t1-dock-lbl">Deepam</span>
+    </button>
+    <button type="button" class="t1-dock-item" id="t1DockFlower" aria-label="Offer Pushpa Flowers">
+      <span class="t1-dock-icon">🌸</span>
+      <span class="t1-dock-lbl">Pushpa</span>
+    </button>
+    <a href="#t1MalaStrand" class="t1-dock-item" id="t1DockMala">
+      <span class="t1-dock-icon">📿</span>
+      <span class="t1-dock-lbl">108 Japa</span>
+    </a>
+    <a href="donate.html" class="t1-dock-item t1-dock-donate" id="t1DockDonate">
+      <span class="t1-dock-icon">❤️</span>
+      <span class="t1-dock-lbl">Donate</span>
+    </a>
+  </nav>
+
 </body>
 </html>
