@@ -20,16 +20,6 @@
       "permanent": true
     },
     {
-      "source": "/templates/template_2",
-      "destination": "/templates/template_2/",
-      "permanent": true
-    },
-    {
-      "source": "/templates/template_3",
-      "destination": "/templates/template_3/",
-      "permanent": true
-    },
-    {
       "source": "/templates/template_4",
       "destination": "/templates/template_4/",
       "permanent": true
@@ -40,19 +30,29 @@
       "permanent": true
     },
     {
-      "source": "/template_2",
-      "destination": "/templates/template_2/",
-      "permanent": true
-    },
-    {
-      "source": "/template_3",
-      "destination": "/templates/template_3/",
-      "permanent": true
-    },
-    {
       "source": "/template_4",
       "destination": "/templates/template_4/",
       "permanent": true
+    },
+    {
+      "source": "/templates/template_2/:path*",
+      "destination": "/templates/template_1/",
+      "permanent": false
+    },
+    {
+      "source": "/templates/template_3/:path*",
+      "destination": "/templates/template_4/",
+      "permanent": false
+    },
+    {
+      "source": "/template_2/:path*",
+      "destination": "/templates/template_1/",
+      "permanent": false
+    },
+    {
+      "source": "/template_3/:path*",
+      "destination": "/templates/template_4/",
+      "permanent": false
     }
   ],
   "headers": [
@@ -91,14 +91,6 @@
     {
       "source": "/template_1/:path*",
       "destination": "/templates/template_1/:path*"
-    },
-    {
-      "source": "/template_2/:path*",
-      "destination": "/templates/template_2/:path*"
-    },
-    {
-      "source": "/template_3/:path*",
-      "destination": "/templates/template_3/:path*"
     },
     {
       "source": "/template_4/:path*",
