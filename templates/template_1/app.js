@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
   try { if (typeof initMobileDock === 'function') initMobileDock(); } catch(e){}
   try { if (typeof initTactileJapaPod === 'function') initTactileJapaPod(); } catch(e){}
   try { if (typeof initMobileCampusCarousel === 'function') initMobileCampusCarousel(); } catch(e){}
+  try { if (typeof initMobileMilestoneTimeline === 'function') initMobileMilestoneTimeline(); } catch(e){}
 });
 
 /* -------------------------------------------------------------------------
@@ -817,6 +818,131 @@ function initMobileCampusCarousel() {
   }
 
   // Scroll event listener with requestAnimationFrame debounce
+  let isScrolling = false;
+  track.addEventListener('scroll', () => {
+    if (isProgrammatic) return;
+    if (!isScrolling) {
+      window.requestAnimationFrame(() => {
+        const scrollPos = track.scrollLeft;
+        let closestIndex = 0;
+        let minDiff = Infinity;
+
+        slides.forEach((slide, i) => {
+          const diff = Math.abs(slide.offsetLeft - track.offsetLeft - scrollPos);
+          if (diff < minDiff) {
+            minDiff = diff;
+            closestIndex = i;
+          }
+        });
+
+        if (closestIndex !== currentIndex) {
+          updateActiveState(closestIndex);
+        }
+        isScrolling = false;
+      });
+      isScrolling = true;
+    }
+  }, { passive: true });
+}
+
+/* -------------------------------------------------------------------------
+   10. Mobile Milestone Historical Journey Interactive Stepper Deck
+   Synchronized year scrubber, animated gold progress line, and cards track
+   ------------------------------------------------------------------------- */
+function initMobileMilestoneTimeline() {
+  const track = document.getElementById('t1TimelineCardsTrack');
+  if (!track) return;
+
+  const slides = track.querySelectorAll('.t1-timeline-slide');
+  const yearBtns = document.querySelectorAll('.t1-year-btn');
+  const dots = document.querySelectorAll('#t1TimelinePagination .t1-carousel-dot');
+  const counter = document.getElementById('t1TimelineCounter');
+  const prevBtn = document.getElementById('t1TimelinePrevBtn');
+  const nextBtn = document.getElementById('t1TimelineNextBtn');
+  const progressBar = document.getElementById('t1ScrubberProgress');
+
+  if (!slides.length) return;
+
+  let currentIndex = 0;
+  const totalSlides = slides.length;
+  let isProgrammatic = false;
+  let programmaticTimer = null;
+
+  function updateActiveState(index) {
+    currentIndex = Math.max(0, Math.min(index, totalSlides - 1));
+
+    yearBtns.forEach((btn, i) => {
+      const isActive = (i === currentIndex);
+      btn.classList.toggle('active', isActive);
+      btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
+    });
+
+    dots.forEach((dot, i) => {
+      dot.classList.toggle('active', i === currentIndex);
+    });
+
+    if (progressBar && totalSlides > 1) {
+      const pct = (currentIndex / (totalSlides - 1)) * 100;
+      progressBar.style.width = pct + '%';
+    }
+
+    if (counter) {
+      const curStr = String(currentIndex + 1).padStart(2, '0');
+      const totStr = String(totalSlides).padStart(2, '0');
+      counter.textContent = curStr + ' / ' + totStr;
+    }
+  }
+
+  function scrollToSlide(index) {
+    if (index < 0 || index >= totalSlides) return;
+    const targetSlide = slides[index];
+    if (targetSlide) {
+      isProgrammatic = true;
+      clearTimeout(programmaticTimer);
+      programmaticTimer = setTimeout(() => { isProgrammatic = false; }, 600);
+
+      track.scrollTo({
+        left: targetSlide.offsetLeft - track.offsetLeft,
+        behavior: 'smooth'
+      });
+      updateActiveState(index);
+    }
+  }
+
+  // Year button clicks
+  yearBtns.forEach((btn, i) => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      scrollToSlide(i);
+    });
+  });
+
+  // Dot clicks
+  dots.forEach((dot, i) => {
+    dot.addEventListener('click', (e) => {
+      e.preventDefault();
+      scrollToSlide(i);
+    });
+  });
+
+  // Prev / Next button clicks
+  if (prevBtn) {
+    prevBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const prev = (currentIndex - 1 + totalSlides) % totalSlides;
+      scrollToSlide(prev);
+    });
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const next = (currentIndex + 1) % totalSlides;
+      scrollToSlide(next);
+    });
+  }
+
+  // Swipe scroll listener
   let isScrolling = false;
   track.addEventListener('scroll', () => {
     if (isProgrammatic) return;
