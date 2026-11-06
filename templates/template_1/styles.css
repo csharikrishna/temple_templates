@@ -1,3 +1,8 @@
+/* --- Campus Architectural Mobile Carousel (Hidden on Desktop) --- */
+.t1-campus-mobile-carousel {
+  display: none;
+}
+
 /* ==========================================================================
    TEMPLATE 1: ROYAL KUMKUM & TEMPLE GOLD - CLASSICAL CEREMONIAL ARCHITECTURE
    Architectural Archetype: Grand Ashram Foundation & Centered Mandir Heritage
@@ -4559,7 +4564,318 @@ html {
     font-size: 0.78rem !important;
   }
 
-  /* 7. Section B Architectural Masterplan on Mobile */
+  /* 7. Section B Architectural Masterplan on Mobile: High-Impact Carousel Deck */
+  .t1-campus-desktop-grid {
+    display: none !important;
+  }
+  .t1-campus-mobile-carousel {
+    display: block !important;
+    margin-top: 1.25rem !important;
+  }
+
+  /* Story Tabs Bar */
+  .t1-campus-tabs-bar {
+    display: flex !important;
+    gap: 0.5rem !important;
+    overflow-x: auto !important;
+    scrollbar-width: none !important;
+    -webkit-overflow-scrolling: touch !important;
+    padding: 0.25rem 0.1rem 0.85rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+  .t1-campus-tabs-bar::-webkit-scrollbar {
+    display: none !important;
+  }
+  .t1-campus-tab {
+    background: rgba(88, 17, 26, 0.08) !important;
+    border: 1px solid rgba(212, 175, 55, 0.35) !important;
+    border-radius: 999px !important;
+    padding: 6px 14px !important;
+    font-size: 0.75rem !important;
+    font-weight: 700 !important;
+    color: #4A0E17 !important;
+    white-space: nowrap !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 0.35rem !important;
+    cursor: pointer !important;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    flex-shrink: 0 !important;
+  }
+  .t1-campus-tab.active {
+    background: #58111A !important;
+    color: #FFF !important;
+    border-color: var(--t1-gold) !important;
+    box-shadow: 0 4px 12px rgba(88, 17, 26, 0.35) !important;
+  }
+
+  /* Carousel Track */
+  .t1-campus-carousel-track {
+    display: flex !important;
+    gap: 0.85rem !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory !important;
+    scrollbar-width: none !important;
+    -webkit-overflow-scrolling: touch !important;
+    padding: 0.25rem 0.2rem 0.5rem !important;
+    outline: none !important;
+  }
+  .t1-campus-carousel-track::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  /* Individual Carousel Card Slide */
+  .t1-campus-slide {
+    flex: 0 0 calc(100% - 4px) !important;
+    max-width: calc(100% - 4px) !important;
+    scroll-snap-align: center !important;
+    background: #FFFFFF !important;
+    border: 1px solid rgba(212, 175, 55, 0.35) !important;
+    border-radius: 14px !important;
+    overflow: hidden !important;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    box-sizing: border-box !important;
+  }
+
+  .t1-slide-media {
+    position: relative !important;
+    width: 100% !important;
+    aspect-ratio: 16/10 !important;
+    overflow: hidden !important;
+    background: #140807 !important;
+  }
+  .t1-slide-img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
+  }
+
+  .t1-slide-badge {
+    position: absolute !important;
+    top: 10px !important;
+    left: 10px !important;
+    background: rgba(30, 4, 8, 0.88) !important;
+    backdrop-filter: blur(6px) !important;
+    -webkit-backdrop-filter: blur(6px) !important;
+    color: #FFD700 !important;
+    font-size: 0.58rem !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.05em !important;
+    padding: 3px 8px !important;
+    border-radius: 4px !important;
+    border: 1px solid rgba(212, 175, 55, 0.45) !important;
+    z-index: 2 !important;
+  }
+
+  .t1-slide-loc {
+    position: absolute !important;
+    bottom: 10px !important;
+    left: 10px !important;
+    background: rgba(0, 0, 0, 0.82) !important;
+    backdrop-filter: blur(6px) !important;
+    -webkit-backdrop-filter: blur(6px) !important;
+    color: #FFFFFF !important;
+    font-size: 0.65rem !important;
+    padding: 2.5px 8px !important;
+    border-radius: 4px !important;
+    z-index: 2 !important;
+  }
+
+  .t1-slide-media-sanctuary {
+    background: linear-gradient(135deg, #0E2416 0%, #2E1810 100%) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.3) !important;
+  }
+  .t1-sanctuary-banner {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 1.5rem !important;
+  }
+  .t1-sanctuary-icon-wrap {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 0.35rem !important;
+  }
+  .t1-sanctuary-icon {
+    font-size: 2.25rem !important;
+    filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.5)) !important;
+  }
+  .t1-sanctuary-label {
+    font-family: 'Cinzel', serif !important;
+    font-size: 0.72rem !important;
+    font-weight: 700 !important;
+    color: #FFD700 !important;
+    letter-spacing: 0.05em !important;
+    text-transform: uppercase !important;
+  }
+  .t1-sanctuary-plus {
+    font-size: 1.5rem !important;
+    font-weight: 700 !important;
+    color: var(--t1-gold) !important;
+  }
+
+  .t1-slide-content {
+    padding: 1.15rem 1rem !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.6rem !important;
+  }
+
+  .t1-slide-pills {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 0.4rem !important;
+  }
+
+  .t1-slide-title {
+    font-family: 'Cinzel', serif !important;
+    font-size: 1.05rem !important;
+    font-weight: 700 !important;
+    color: #58111A !important;
+    line-height: 1.3 !important;
+    margin: 0 !important;
+  }
+
+  .t1-slide-desc {
+    font-size: 0.8rem !important;
+    color: #4A5568 !important;
+    line-height: 1.45 !important;
+    margin: 0 !important;
+  }
+
+  .t1-slide-stats-grid {
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 0.35rem !important;
+    margin: 0.25rem 0 !important;
+    background: rgba(88, 17, 26, 0.03) !important;
+    border: 1px solid rgba(212, 175, 55, 0.22) !important;
+    border-radius: 8px !important;
+    padding: 0.6rem 0.35rem !important;
+    text-align: center !important;
+  }
+  .t1-slide-stat strong {
+    display: block !important;
+    font-size: 0.88rem !important;
+    font-weight: 800 !important;
+    color: #58111A !important;
+    line-height: 1.15 !important;
+  }
+  .t1-slide-stat span {
+    font-size: 0.58rem !important;
+    color: #718096 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.02em !important;
+    white-space: nowrap !important;
+  }
+
+  .t1-slide-chips {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 0.35rem !important;
+    margin: 0.2rem 0 !important;
+  }
+  .t1-slide-chips span {
+    background: rgba(212, 175, 55, 0.12) !important;
+    color: #785408 !important;
+    font-size: 0.68rem !important;
+    font-weight: 600 !important;
+    padding: 2.5px 7px !important;
+    border-radius: 4px !important;
+    border: 1px solid rgba(212, 175, 55, 0.3) !important;
+  }
+
+  .t1-slide-actions {
+    display: flex !important;
+    gap: 0.5rem !important;
+    margin-top: 0.35rem !important;
+  }
+  .t1-slide-actions .btn-t1-gold-sm,
+  .t1-slide-actions .btn-t1-outline-sm {
+    flex: 1 !important;
+    text-align: center !important;
+    justify-content: center !important;
+    padding: 0.55rem 0.75rem !important;
+    font-size: 0.75rem !important;
+    border-radius: 6px !important;
+    min-height: 42px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    text-decoration: none !important;
+  }
+
+  /* Carousel Controls Bar */
+  .t1-campus-carousel-controls {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    margin-top: 1rem !important;
+    padding: 0.4rem 0.6rem !important;
+    background: rgba(88, 17, 26, 0.04) !important;
+    border: 1px solid rgba(212, 175, 55, 0.25) !important;
+    border-radius: 999px !important;
+  }
+  .t1-carousel-arrow-btn {
+    width: 38px !important;
+    height: 38px !important;
+    border-radius: 50% !important;
+    background: #58111A !important;
+    color: #FFD700 !important;
+    border: 1px solid var(--t1-gold) !important;
+    font-size: 1.25rem !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    cursor: pointer !important;
+    transition: transform 0.15s ease, background 0.15s ease !important;
+    line-height: 1 !important;
+    padding: 0 !important;
+  }
+  .t1-carousel-arrow-btn:active {
+    transform: scale(0.92) !important;
+    background: #400B13 !important;
+  }
+  .t1-carousel-pagination {
+    display: flex !important;
+    gap: 0.45rem !important;
+    align-items: center !important;
+  }
+  .t1-carousel-dot {
+    width: 8px !important;
+    height: 8px !important;
+    border-radius: 50% !important;
+    background: rgba(88, 17, 26, 0.25) !important;
+    border: none !important;
+    padding: 0 !important;
+    cursor: pointer !important;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  }
+  .t1-carousel-dot.active {
+    width: 22px !important;
+    border-radius: 999px !important;
+    background: #58111A !important;
+  }
+  .t1-carousel-counter {
+    font-family: 'Cinzel', serif !important;
+    font-size: 0.78rem !important;
+    font-weight: 700 !important;
+    color: #58111A !important;
+    letter-spacing: 0.05em !important;
+  }
+  .t1-carousel-hint {
+    text-align: center !important;
+    font-size: 0.7rem !important;
+    color: #718096 !important;
+    margin-top: 0.45rem !important;
+    letter-spacing: 0.02em !important;
+  }
   .t1-editorial-hero-feature {
     border-radius: 12px !important;
     overflow: hidden !important;

@@ -276,7 +276,7 @@
       </div>
 
       <!-- Architectural Master Showcase Grid -->
-      <div class="t1-editorial-campus-layout">
+      <div class="t1-editorial-campus-layout t1-campus-desktop-grid">
         
         <!-- Primary Architectural Anchor: The Ross Creek Visualization -->
         <article class="t1-editorial-hero-feature">
@@ -418,6 +418,196 @@
               </div>
             </div>
           </div>
+        </div>
+
+      </div>
+
+      <!-- Mobile View: Interactive Architectural Story Carousel (Visible <= 768px) -->
+      <div class="t1-campus-mobile-carousel" id="t1CampusCarousel">
+        
+        <!-- Story Selection Tabs -->
+        <div class="t1-campus-tabs-bar" role="tablist" aria-label="Campus masterplan stories">
+          <button type="button" class="t1-campus-tab active" data-index="0" role="tab" aria-selected="true">
+            <span class="t1-tab-icon">🏛️</span> Masterplan
+          </button>
+          <button type="button" class="t1-campus-tab" data-index="1" role="tab" aria-selected="false">
+            <span class="t1-tab-icon">🔨</span> Stonemasonry
+          </button>
+          <button type="button" class="t1-campus-tab" data-index="2" role="tab" aria-selected="false">
+            <span class="t1-tab-icon">🍲</span> Annadanam
+          </button>
+          <button type="button" class="t1-campus-tab" data-index="3" role="tab" aria-selected="false">
+            <span class="t1-tab-icon">🌿</span> Sanctuary
+          </button>
+        </div>
+
+        <!-- Horizontal Scroll-Snap Carousel Track -->
+        <div class="t1-campus-carousel-track" id="t1CampusCarouselTrack" tabindex="0" aria-label="Campus architectural features carousel">
+          
+          <!-- Slide 1: Masterplan Visualization -->
+          <article class="t1-campus-slide" data-slide="0">
+            <div class="t1-slide-media">
+              <img src="/assets/t1_ross_creek_architectural_render.jpg" alt="Architectural Concept Visualization of Ballarat Hindu Temple Campus at Ross Creek Victoria" class="t1-slide-img" width="1600" height="1000" loading="lazy">
+              <span class="t1-slide-badge">🏛️ CONCEPT VISUALIZATION</span>
+              <span class="t1-slide-loc">📍 110 Vaggs Rd, Ross Creek VIC</span>
+            </div>
+            <div class="t1-slide-content">
+              <div class="t1-slide-pills">
+                <span class="t1-pill-gold">Dravidian Stone Vimana</span>
+                <span class="t1-pill-grant">🏛️ $900k+ State Support</span>
+              </div>
+              <h4 class="t1-slide-title">Harmonizing Ancient Temple Geometry with Regional Victoria</h4>
+              <p class="t1-slide-desc">
+                Set on 5 freehold acres of native eucalyptus and golden wattle, the campus synthesizes an authentic hand-carved Dravidian black granite vimana with a contemporary entry pavilion.
+              </p>
+              
+              <div class="t1-slide-stats-grid">
+                <div class="t1-slide-stat">
+                  <strong>5 Acres</strong>
+                  <span>Freehold Land</span>
+                </div>
+                <div class="t1-slide-stat">
+                  <strong>350</strong>
+                  <span>Prayer Hall Cap</span>
+                </div>
+                <div class="t1-slide-stat">
+                  <strong>75 Bays</strong>
+                  <span>DDA Parking</span>
+                </div>
+                <div class="t1-slide-stat">
+                  <strong>Phase 1</strong>
+                  <span>65% Earthworks</span>
+                </div>
+              </div>
+
+              <div class="t1-slide-actions">
+                <a href="project.html" class="btn-t1-gold-sm">📐 View Blueprints</a>
+                <a href="donate.html" class="btn-t1-outline-sm">🪔 Sponsor Bricks ($2+ DGR)</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Slide 2: Shilpi Stonemasonry -->
+          <article class="t1-campus-slide" data-slide="1">
+            <div class="t1-slide-media">
+              <img src="/assets/t1_granite_stonemasonry_craft.jpg" alt="Master Shilpi temple stonemason hand-carving sacred lotus motif into black granite pillar" class="t1-slide-img" width="1200" height="900" loading="lazy">
+              <span class="t1-slide-badge">AGAMIC SHILPA SHASTRA</span>
+              <span class="t1-slide-loc">MONOLITHIC BLACK GRANITE</span>
+            </div>
+            <div class="t1-slide-content">
+              <div class="t1-slide-pills">
+                <span class="t1-pill-gold">Brihadeeswarar Heritage</span>
+                <span class="t1-pill-phase">Vastu Proportions</span>
+              </div>
+              <h4 class="t1-slide-title">The Living Heritage of Temple Stonemasonry</h4>
+              <p class="t1-slide-desc">
+                Built to endure for centuries through Shilpa Shastra. Master sculptors employ hand-forged chisels to carve monolithic black granite into sacred lotus reliefs, ornate kumudam bases, and sanctum lintels.
+              </p>
+              
+              <div class="t1-slide-chips">
+                <span>Hand-Forged Chisels</span>
+                <span>Lotus Reliefs</span>
+                <span>Centuries of Permanence</span>
+              </div>
+
+              <div class="t1-slide-actions">
+                <a href="worship.html" class="btn-t1-gold-sm">Explore Sanctum Deities ↗</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Slide 3: Maha Annadanam -->
+          <article class="t1-campus-slide" data-slide="2">
+            <div class="t1-slide-media">
+              <img src="/assets/t1_sacred_annadanam_kitchen.jpg" alt="Community volunteers preparing consecrated hot prasadam in commercial temple Annadanam kitchen" class="t1-slide-img" width="1200" height="900" loading="lazy">
+              <span class="t1-slide-badge">MAHA ANNADANAM SEVA</span>
+              <span class="t1-slide-loc">COMMERCIAL KITCHEN</span>
+            </div>
+            <div class="t1-slide-content">
+              <div class="t1-slide-pills">
+                <span class="t1-pill-grant">Food Safety Compliant</span>
+                <span class="t1-pill-gold">500-Seat Banquets</span>
+              </div>
+              <h4 class="t1-slide-title">500-Seat Maha Annadanam Facility</h4>
+              <p class="t1-slide-desc">
+                In Hindu temple tradition, sharing sanctified food (Prasadam) is the highest form of community seva. Designed to Victorian commercial food safety standards, serving 500 seated devotees during festival banquets.
+              </p>
+              
+              <div class="t1-slide-chips">
+                <span>Food Safety Compliant</span>
+                <span>Pure Vegetarian</span>
+                <span>Community Seva</span>
+              </div>
+
+              <div class="t1-slide-actions">
+                <a href="project.html" class="btn-t1-gold-sm">Commercial Kitchen Specs ↗</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Slide 4: Peace Groves & Youth Academy -->
+          <article class="t1-campus-slide" data-slide="3">
+            <div class="t1-slide-media t1-slide-media-sanctuary">
+              <div class="t1-sanctuary-banner">
+                <div class="t1-sanctuary-icon-wrap">
+                  <span class="t1-sanctuary-icon">🌿</span>
+                  <span class="t1-sanctuary-label">Peace Groves</span>
+                </div>
+                <span class="t1-sanctuary-plus">+</span>
+                <div class="t1-sanctuary-icon-wrap">
+                  <span class="t1-sanctuary-icon">📚</span>
+                  <span class="t1-sanctuary-label">Youth Academy</span>
+                </div>
+              </div>
+              <span class="t1-slide-badge">COMMUNITY & BOTANY</span>
+              <span class="t1-slide-loc">2 CONSECRATED ACRES</span>
+            </div>
+            <div class="t1-slide-content">
+              <div class="t1-slide-pills">
+                <span class="t1-pill-gold">Sacred Indian Botanicals</span>
+                <span class="t1-pill-phase">WWCC Compliant</span>
+              </div>
+              <h4 class="t1-slide-title">Peace Groves & Cultural Youth Academy</h4>
+              <p class="t1-slide-desc">
+                2 acres of sacred Indian flora (Tulasi, Bilva, Neem) interwoven with native Australian eucalyptus, alongside a cultural library offering language learning in Sanskrit, Tamil, and Hindi under Victorian Child Safe Standards.
+              </p>
+              
+              <div class="t1-slide-chips">
+                <span>Tulasi & Bilva Groves</span>
+                <span>Language Classes</span>
+                <span>Victorian Child Safe</span>
+              </div>
+
+              <div class="t1-slide-actions">
+                <a href="community.html" class="btn-t1-gold-sm">Youth & Community Programs ↗</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- Carousel Pagination & Navigation Controls -->
+        <div class="t1-campus-carousel-controls">
+          <button type="button" class="t1-carousel-arrow-btn" id="t1CampusPrevBtn" aria-label="Previous campus feature">
+            ‹
+          </button>
+          
+          <div class="t1-carousel-pagination" id="t1CampusPagination">
+            <button type="button" class="t1-carousel-dot active" data-index="0" aria-label="Go to Slide 1"></button>
+            <button type="button" class="t1-carousel-dot" data-index="1" aria-label="Go to Slide 2"></button>
+            <button type="button" class="t1-carousel-dot" data-index="2" aria-label="Go to Slide 3"></button>
+            <button type="button" class="t1-carousel-dot" data-index="3" aria-label="Go to Slide 4"></button>
+          </div>
+
+          <span class="t1-carousel-counter" id="t1CampusCounter">01 / 04</span>
+
+          <button type="button" class="t1-carousel-arrow-btn" id="t1CampusNextBtn" aria-label="Next campus feature">
+            ›
+          </button>
+        </div>
+
+        <div class="t1-carousel-hint">
+          <span>👈 Swipe or tap tabs to explore campus features 👉</span>
         </div>
 
       </div>

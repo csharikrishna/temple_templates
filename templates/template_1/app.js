@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
   try { if (typeof initMobileNavDrawer === 'function') initMobileNavDrawer(); } catch(e){}
   try { if (typeof initMobileDock === 'function') initMobileDock(); } catch(e){}
   try { if (typeof initTactileJapaPod === 'function') initTactileJapaPod(); } catch(e){}
+  try { if (typeof initMobileCampusCarousel === 'function') initMobileCampusCarousel(); } catch(e){}
 });
 
 /* -------------------------------------------------------------------------
@@ -720,3 +721,126 @@ function initTactileJapaPod() {
     tactileBtn.classList.add('pulse-tap');
   });
 }
+
+/* -------------------------------------------------------------------------
+   9. Mobile Campus Architecture Interactive Story Deck Carousel
+   Smooth scroll-snap, synchronized category tabs, dots, and swipe telemetry
+   ------------------------------------------------------------------------- */
+function initMobileCampusCarousel() {
+  const track = document.getElementById('t1CampusCarouselTrack');
+  if (!track) return;
+
+  const slides = track.querySelectorAll('.t1-campus-slide');
+  const tabs = document.querySelectorAll('.t1-campus-tab');
+  const dots = document.querySelectorAll('.t1-carousel-dot');
+  const counter = document.getElementById('t1CampusCounter');
+  const prevBtn = document.getElementById('t1CampusPrevBtn');
+  const nextBtn = document.getElementById('t1CampusNextBtn');
+
+  if (!slides.length) return;
+
+  let currentIndex = 0;
+  const totalSlides = slides.length;
+  let isProgrammatic = false;
+  let programmaticTimer = null;
+
+  function updateActiveState(index) {
+    currentIndex = Math.max(0, Math.min(index, totalSlides - 1));
+
+    tabs.forEach((tab, i) => {
+      const isActive = (i === currentIndex);
+      tab.classList.toggle('active', isActive);
+      tab.setAttribute('aria-selected', isActive ? 'true' : 'false');
+      if (isActive) {
+        tab.scrollIntoView({ behavior: 'smooth', inline: 'nearest', block: 'nearest' });
+      }
+    });
+
+    dots.forEach((dot, i) => {
+      dot.classList.toggle('active', i === currentIndex);
+    });
+
+    if (counter) {
+      const curStr = String(currentIndex + 1).padStart(2, '0');
+      const totStr = String(totalSlides).padStart(2, '0');
+      counter.textContent = curStr + ' / ' + totStr;
+    }
+  }
+
+  function scrollToSlide(index) {
+    if (index < 0 || index >= totalSlides) return;
+    const targetSlide = slides[index];
+    if (targetSlide) {
+      isProgrammatic = true;
+      clearTimeout(programmaticTimer);
+      programmaticTimer = setTimeout(() => { isProgrammatic = false; }, 600);
+
+      track.scrollTo({
+        left: targetSlide.offsetLeft - track.offsetLeft,
+        behavior: 'smooth'
+      });
+      updateActiveState(index);
+    }
+  }
+
+  // Tab clicks
+  tabs.forEach((tab, i) => {
+    tab.addEventListener('click', (e) => {
+      e.preventDefault();
+      scrollToSlide(i);
+    });
+  });
+
+  // Dot clicks
+  dots.forEach((dot, i) => {
+    dot.addEventListener('click', (e) => {
+      e.preventDefault();
+      scrollToSlide(i);
+    });
+  });
+
+  // Prev / Next button clicks
+  if (prevBtn) {
+    prevBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const prev = (currentIndex - 1 + totalSlides) % totalSlides;
+      scrollToSlide(prev);
+    });
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const next = (currentIndex + 1) % totalSlides;
+      scrollToSlide(next);
+    });
+  }
+
+  // Scroll event listener with requestAnimationFrame debounce
+  let isScrolling = false;
+  track.addEventListener('scroll', () => {
+    if (isProgrammatic) return;
+    if (!isScrolling) {
+      window.requestAnimationFrame(() => {
+        const scrollPos = track.scrollLeft;
+        let closestIndex = 0;
+        let minDiff = Infinity;
+
+        slides.forEach((slide, i) => {
+          const diff = Math.abs(slide.offsetLeft - track.offsetLeft - scrollPos);
+          if (diff < minDiff) {
+            minDiff = diff;
+            closestIndex = i;
+          }
+        });
+
+        if (closestIndex !== currentIndex) {
+          updateActiveState(closestIndex);
+        }
+        isScrolling = false;
+      });
+      isScrolling = true;
+    }
+  }, { passive: true });
+}
+
