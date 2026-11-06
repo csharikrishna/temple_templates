@@ -5,12 +5,14 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-  initBellSynthesizer();
-  initPushpaFlowerShower();
-  initDiyaOfferingT1();
-  initDonationFormT1();
-  initPriestBookingT1();
+  try { if (typeof initBellSynthesizer === 'function') initBellSynthesizer(); } catch(e){}
+  try { if (typeof initPushpaFlowerShower === 'function') initPushpaFlowerShower(); } catch(e){}
+  try { if (typeof initDiyaOfferingT1 === 'function') initDiyaOfferingT1(); } catch(e){}
+  try { if (typeof initPriestBookingT1 === 'function') initPriestBookingT1(); } catch(e){}
+  try { if (typeof initJapaMalaCounter === 'function') initJapaMalaCounter(); } catch(e){}
 });
+
+function initDonationFormT1() {}
 
 /* -------------------------------------------------------------------------
    1. Web Audio API Temple Bell Synthesizer (Harmonic Bell Synth)
@@ -295,3 +297,142 @@ window.clearAmtBtns = clearAmtBtns;
 window.processDonation = processDonation;
 window.handleVolSubmit = handleVolSubmit;
 window.handlePriestSubmit = handlePriestSubmit;
+
+/* -------------------------------------------------------------------------
+   6. Vedic Japa Mala Counter & Sacred Drone Synthesizer (Feature)
+   ------------------------------------------------------------------------- */
+let t1MalaCount = 0;
+let t1DroneCtx = null;
+let t1DroneGain = null;
+let t1DroneActive = false;
+
+function playBeadChime() {
+  try {
+    const AudioContext = window.AudioContext || window.webkitAudioContext;
+    if (!AudioContext) return;
+    const ctx = new AudioContext();
+    const now = ctx.currentTime;
+    const osc = ctx.createOscillator();
+    const gain = ctx.createGain();
+
+    osc.type = 'sine';
+    osc.frequency.setValueAtTime(528, now); // Solfeggio 528 Hz transformational frequency
+    osc.frequency.exponentialRampToValueAtTime(1056, now + 0.15);
+
+    gain.gain.setValueAtTime(0.2, now);
+    gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.6);
+
+    osc.connect(gain);
+    gain.connect(ctx.destination);
+    osc.start(now);
+    osc.stop(now + 0.6);
+  } catch (e) {
+    console.warn("AudioContext error: ", e);
+  }
+}
+
+function toggleTanpuraDrone(btn) {
+  try {
+    const AudioContext = window.AudioContext || window.webkitAudioContext;
+    if (!AudioContext) return;
+
+    if (t1DroneActive) {
+      if (t1DroneGain && t1DroneCtx) {
+        t1DroneGain.gain.exponentialRampToValueAtTime(0.0001, t1DroneCtx.currentTime + 0.5);
+        setTimeout(() => {
+          if (t1DroneCtx && t1DroneCtx.state !== 'closed') t1DroneCtx.close();
+          t1DroneActive = false;
+        }, 550);
+      }
+      t1DroneActive = false;
+      if (btn) btn.classList.remove('drone-active');
+      showToast('🪕 Sacred Drone Paused.');
+      return;
+    }
+
+    t1DroneCtx = new AudioContext();
+    const now = t1DroneCtx.currentTime;
+
+    const osc1 = t1DroneCtx.createOscillator(); // Root Sa (D3 146.83 Hz)
+    const osc2 = t1DroneCtx.createOscillator(); // Fifth Pa (A3 220.00 Hz)
+    const filter = t1DroneCtx.createBiquadFilter();
+    t1DroneGain = t1DroneCtx.createGain();
+
+    osc1.type = 'sawtooth';
+    osc1.frequency.setValueAtTime(146.83, now);
+
+    osc2.type = 'triangle';
+    osc2.frequency.setValueAtTime(220.00, now);
+
+    filter.type = 'lowpass';
+    filter.frequency.setValueAtTime(450, now);
+
+    t1DroneGain.gain.setValueAtTime(0.001, now);
+    t1DroneGain.gain.exponentialRampToValueAtTime(0.12, now + 1.2);
+
+    osc1.connect(filter);
+    osc2.connect(filter);
+    filter.connect(t1DroneGain);
+    t1DroneGain.connect(t1DroneCtx.destination);
+
+    osc1.start(now);
+    osc2.start(now);
+
+    t1DroneActive = true;
+    if (btn) btn.classList.add('drone-active');
+    showToast('🪕 Sacred 432 Hz Tanpura Drone Active. Meditate with Sri Ganesha.');
+  } catch (e) {
+    console.warn("Drone error: ", e);
+  }
+}
+
+function initJapaMalaCounter() {
+  const japaBtn = document.getElementById('t1JapaBtn');
+  const countDisplay = document.getElementById('t1MalaCount');
+  const progressFill = document.getElementById('t1JapaProgress');
+  const slokaEl = document.getElementById('t1SanskritSloka');
+  const droneBtn = document.getElementById('t1DroneBtn');
+  const resetBtn = document.getElementById('t1JapaResetBtn');
+
+  if (japaBtn) {
+    japaBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      t1MalaCount++;
+      if (t1MalaCount > 108) t1MalaCount = 1;
+
+      if (countDisplay) countDisplay.textContent = t1MalaCount;
+      if (progressFill) progressFill.style.width = ((t1MalaCount / 108) * 100) + '%';
+
+      if (slokaEl) {
+        slokaEl.classList.remove('glow-active');
+        void slokaEl.offsetWidth;
+        slokaEl.classList.add('glow-active');
+      }
+
+      playBeadChime();
+
+      if (t1MalaCount === 108) {
+        triggerPushpaShower();
+        playTempleBellChime();
+        showToast('🙏 108 Sacred Beads Consecrated! Full Ganesha Moola Mantra Mala Complete.');
+      }
+    });
+  }
+
+  if (droneBtn) {
+    droneBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      toggleTanpuraDrone(droneBtn);
+    });
+  }
+
+  if (resetBtn) {
+    resetBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      t1MalaCount = 0;
+      if (countDisplay) countDisplay.textContent = '0';
+      if (progressFill) progressFill.style.width = '0%';
+      showToast('↺ Japa Mala Reset to 0.');
+    });
+  }
+}
