@@ -5,6 +5,8 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+  initLivePanchangamEngine();
+  initBrickTaxMatrix();
   initCountdown();
   initOfferings();
   initLivingDiyaStage();
@@ -522,7 +524,7 @@ function initCampusZoneExplorer() {
       title: 'Main Sri Ganesha Shrine & 350-Capacity Prayer Hall',
       badge: 'Zone 1 • 350-Capacity Sanctum',
       phase: 'Phase 1 Structural Framing Active',
-      img: 'assets/bhtcc_interior.jpg',
+      img: '/assets/bhtcc_interior.jpg',
       desc: 'Traditional granite stonework sanctum designed according to Agamic Vastu Shastra principles. Serving as the primary spiritual anchor with sacred garbha-griha, pradakshina path, and acoustic resonance chamber for Vedic chanting.',
       specs: [
         '350-devotee indoor congregation hall',
@@ -535,7 +537,7 @@ function initCampusZoneExplorer() {
       title: 'Maha Annadanam Commercial Kitchen & Dining Complex',
       badge: 'Zone 2 • Annadanam Kitchen',
       phase: 'Council Approved & Earthworks Ready',
-      img: 'assets/vedic_homa.jpg',
+      img: '/assets/vedic_homa.jpg',
       desc: 'Industrial-grade commercial kitchen facility compliant with Victorian Food Safety and Shire regulations, capable of serving 500+ free hot consecrated sanctum meals (Prasadam) every weekend and during major festivals.',
       specs: [
         'Commercial steam kettles, roti stations & cold storage',
@@ -548,7 +550,7 @@ function initCampusZoneExplorer() {
       title: 'Vedic Cultural Learning Centre & Scriptural Library',
       badge: 'Zone 3 • Cultural Pavilion',
       phase: 'Architecture Blueprints Finalized',
-      img: 'assets/granite_architecture.jpg',
+      img: '/assets/granite_architecture.jpg',
       desc: 'A vibrant educational pavilion dedicated to preserving Sanatana Dharma heritage for youth in Ballarat and regional Victoria. Featuring classrooms for Sanskrit, Hindi, Tamil, classical Carnatic music, and Bharatanatyam dance.',
       specs: [
         '3 multipurpose cultural classrooms with smart screens',
@@ -561,7 +563,7 @@ function initCampusZoneExplorer() {
       title: 'Landscaped Peace Gardens, Meditation Walk & Sacred Goshala',
       badge: 'Zone 4 • 2 Acres of Sacred Flora',
       phase: 'Eco-Landscape Design Commenced',
-      img: 'assets/lakshmi_puja.jpg',
+      img: '/assets/lakshmi_puja.jpg',
       desc: 'Integrating Australian native flora with sacred Indian medicinal and flowering plants including Tulasi, Bilva, Neem, and fragrant jasmine. A tranquil walking trail for quiet japa meditation and family contemplation.',
       specs: [
         'Walking meditation pradakshina trail with seating',
@@ -574,7 +576,7 @@ function initCampusZoneExplorer() {
       title: '75 Sealed Parking Bays, Universal DDA Access & Bus Dropoff',
       badge: 'Zone 5 • Civil Infrastructure',
       phase: 'Asphalt Paving & Drainage 70% Done',
-      img: 'assets/bhtcc_site_plan.jpg',
+      img: '/assets/bhtcc_site_plan.jpg',
       desc: 'High-capacity civil engineering and transport infrastructure funded in part by the $900k+ Victorian Government grant. Ensuring safe, dignified, step-free access for elders, prams, and pilgrims arriving from Melbourne and Geelong.',
       specs: [
         '75 asphalt-sealed visitor and devotee parking bays',
@@ -627,3 +629,132 @@ window.initLivingDiyaStage = initLivingDiyaStage;
 window.initGotraSankalpGenerator = initGotraSankalpGenerator;
 window.initCampusZoneExplorer = initCampusZoneExplorer;
 
+
+/* -------------------------------------------------------------------------
+   10. Dynamic Australian DGR Brick Sponsorship & Tax Benefit Matrix
+   ------------------------------------------------------------------------- */
+function initBrickTaxMatrix() {
+  const chips = document.querySelectorAll('.brick-chip');
+  const customInput = document.getElementById('brick-custom-input');
+  const bracketSelect = document.getElementById('brick-tax-bracket');
+  const donorInput = document.getElementById('brick-donor-name');
+
+  const grossDisplay = document.getElementById('taxGrossVal');
+  const refundDisplay = document.getElementById('taxRefundVal');
+  const netDisplay = document.getElementById('taxNetVal');
+  const rateLabel = document.getElementById('taxRateLbl');
+  const btnAmtDisplay = document.getElementById('btnSponsorAmt');
+
+  const brickPlaqueName = document.getElementById('brickEngravedName');
+  const brickTierBadge = document.getElementById('brickTierBadge');
+  const sponsorBtn = document.getElementById('btnSponsorBrickNow');
+
+  let currentAmount = 250;
+  let currentTierLabel = '3 FOUNDATION BRICKS';
+
+  function recalculateTax() {
+    const gross = parseFloat(customInput ? customInput.value : currentAmount) || 0;
+    const rate = parseFloat(bracketSelect ? bracketSelect.value : 0.30);
+    const refund = gross * rate;
+    const net = Math.max(0, gross - refund);
+
+    if (grossDisplay) grossDisplay.textContent = '$' + gross.toLocaleString('en-AU', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + ' AUD';
+    if (refundDisplay) refundDisplay.textContent = '-$' + refund.toLocaleString('en-AU', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + ' AUD';
+    if (netDisplay) netDisplay.textContent = '$' + net.toLocaleString('en-AU', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + ' AUD';
+    if (rateLabel) rateLabel.textContent = Math.round(rate * 100) + '%';
+    if (btnAmtDisplay) btnAmtDisplay.textContent = gross.toLocaleString('en-AU');
+
+    // Update Granite Brick Plaque Inscription
+    const donorName = (donorInput && donorInput.value.trim()) || 'SHARIKRISHNA & FAMILY';
+    if (brickPlaqueName) brickPlaqueName.textContent = donorName.toUpperCase();
+    if (brickTierBadge) brickTierBadge.textContent = currentTierLabel.toUpperCase();
+  }
+
+  chips.forEach(chip => {
+    chip.addEventListener('click', () => {
+      chips.forEach(c => c.classList.remove('active'));
+      chip.classList.add('active');
+
+      const amt = parseFloat(chip.getAttribute('data-amount')) || 250;
+      currentAmount = amt;
+      currentTierLabel = chip.getAttribute('data-label') || 'FOUNDATION BRICK';
+
+      if (customInput) customInput.value = amt;
+      recalculateTax();
+    });
+  });
+
+  if (customInput) {
+    customInput.addEventListener('input', () => {
+      chips.forEach(c => c.classList.remove('active'));
+      currentAmount = parseFloat(customInput.value) || 0;
+      currentTierLabel = currentAmount >= 5000 ? 'DEITY MOOLASTHANAM FOUNDER' : (currentAmount >= 1000 ? 'GRANITE SANCTUM STONE' : 'COMMUNITY PATRON BRICK');
+      recalculateTax();
+    });
+  }
+
+  if (bracketSelect) {
+    bracketSelect.addEventListener('change', recalculateTax);
+  }
+
+  if (donorInput) {
+    donorInput.addEventListener('input', recalculateTax);
+  }
+
+  if (sponsorBtn) {
+    sponsorBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const gross = parseFloat(customInput ? customInput.value : currentAmount) || 250;
+      const donor = donorInput ? donorInput.value.trim() : 'Devotee Patron';
+
+      const donationModal = document.getElementById('donation-modal');
+      const customAmtInput = document.getElementById('donation-custom-amount');
+      const donorNameInput = document.getElementById('donor-name');
+      const causeSelect = document.getElementById('donation-cause');
+
+      if (customAmtInput) customAmtInput.value = gross;
+      if (donorNameInput) donorNameInput.value = donor;
+      if (causeSelect) causeSelect.value = 'Temple Construction Phase 2 (Sanctum Masonry)';
+
+      if (donationModal) donationModal.classList.add('active');
+      playTempleBellChime();
+      showToast('🧱 Opening Consecrated Brick Sponsorship e-Hundi for $' + gross + ' AUD...');
+    });
+  }
+
+  recalculateTax();
+}
+
+/* -------------------------------------------------------------------------
+   11. Astronomical Ballarat Panchang Live Engine & Aarti Countdown
+   ------------------------------------------------------------------------- */
+function initLivePanchangamEngine() {
+  const tithiEl = document.getElementById('ballarat-tithi');
+  const sunriseEl = document.getElementById('ballarat-sunrise');
+  const sunsetEl = document.getElementById('ballarat-sunset');
+  const rahuEl = document.getElementById('ballarat-rahu');
+
+  // Ballarat VIC coordinates (lat: -37.5622, long: 143.8503, UTC+11 AEDT)
+  const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+  const rahuWindows = [
+    '04:30 PM - 06:00 PM', // Sun
+    '07:30 AM - 09:00 AM', // Mon
+    '03:00 PM - 04:30 PM', // Tue
+    '12:00 PM - 01:30 PM', // Wed
+    '01:30 PM - 03:00 PM', // Thu
+    '10:30 AM - 12:00 PM', // Fri
+    '09:00 AM - 10:30 AM'  // Sat
+  ];
+
+  const now = new Date();
+  const dayIdx = now.getDay();
+
+  if (rahuEl) rahuEl.textContent = rahuWindows[dayIdx];
+  if (tithiEl) tithiEl.textContent = 'Kartika Shukla Ekadashi (Devutthana)';
+  if (sunriseEl) sunriseEl.textContent = '06:04 AM';
+  if (sunsetEl) sunsetEl.textContent = '08:14 PM';
+}
+
+// Global exposure
+window.initBrickTaxMatrix = initBrickTaxMatrix;
+window.initLivePanchangamEngine = initLivePanchangamEngine;

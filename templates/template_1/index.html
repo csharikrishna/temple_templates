@@ -13,7 +13,7 @@
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/templates/template_1/styles.css">
 </head>
 <body>
@@ -55,6 +55,7 @@
   <section class="t1-hero-section">
     <div class="t1-hero-overlay"></div>
     <div class="container t1-hero-content">
+      <div class="t1-hero-sanskrit-crest">॥ धर्मो रक्षति रक्षितः ॥</div>
       <div class="t1-hero-crest-badge">
         <span>🏛️</span> Regional Victoria's First Traditional Hindu Temple & Cultural Centre
       </div>
@@ -106,7 +107,48 @@
 
       <div class="t1-altar-frame">
         <div class="t1-video-screen" id="altarVideoScreen">
-          <img src="/assets/ganesha_shrine.jpg" alt="Lord Sri Ganesha Moolasthanam Sanctum">
+          <img src="/assets/ganesha_shrine.jpg" alt="Lord Sri Ganesha Moolasthanam Sanctum" id="t1SanctumImage">
+          <div class="t1-sanctum-glow-overlay" id="t1SanctumGlowOverlay"></div>
+
+          <!-- Hanging Temple Bell (Physical Pendulum Physics) -->
+          <div class="t1-hanging-bell-rig" id="t1HangingBellRig" title="Tap or pull rope to ring sacred Mandir Bell">
+            <div class="t1-bell-mount"></div>
+            <div class="t1-bell-chain">
+              <span class="chain-link"></span>
+              <span class="chain-link"></span>
+              <span class="chain-link"></span>
+              <span class="chain-link"></span>
+            </div>
+            <div class="t1-bell-crown"></div>
+            <div class="t1-bell-body">
+              <div class="t1-bell-dome"></div>
+              <div class="t1-bell-lip"></div>
+              <div class="t1-bell-clapper" id="t1BellClapper"></div>
+            </div>
+            <div class="t1-bell-rope-pull" id="t1BellRope">
+              <div class="t1-rope-strand"></div>
+              <div class="t1-rope-tassel">🔔 PULL TO CHIME</div>
+            </div>
+            <div class="t1-bell-sound-waves" id="t1BellWaves"></div>
+          </div>
+
+          <!-- Living Akhanda Deepam (Sacred Flame) -->
+          <div class="t1-akhanda-deepam-widget" id="t1AkhandaDeepam" title="Click to offer sacred ghee & rekindle Akhanda Deepam">
+            <div class="t1-deepam-flame-wrapper">
+              <div class="t1-flame-aura"></div>
+              <div class="t1-flame-outer"></div>
+              <div class="t1-flame-inner"></div>
+              <div class="t1-flame-spark"></div>
+            </div>
+            <div class="t1-deepam-brass-vessel">
+              <div class="t1-deepam-rim"></div>
+              <div class="t1-deepam-oil"></div>
+              <div class="t1-deepam-body"></div>
+              <div class="t1-deepam-pedestal"></div>
+            </div>
+            <div class="t1-deepam-tag">🪔 AKHANDA DEEPAM</div>
+          </div>
+
           <div class="t1-live-badge-glow">
             <span class="t1-live-dot">●</span> 1080p HD VIRTUAL SANCTUM
           </div>
@@ -140,8 +182,10 @@
             </div>
             <div class="t1-japa-stats">
               <span class="t1-japa-count-badge">Mala Count: <strong id="t1MalaCount">0</strong> / 108</span>
+              <span class="t1-mala-rounds-badge">Completed Malas: <strong id="t1MalaRounds">0</strong></span>
             </div>
           </div>
+          <div class="t1-mala-beads-strand" id="t1MalaStrand" aria-label="108 Sacred Beads Strand"></div>
           <div class="t1-japa-controls">
             <button type="button" class="t1-btn-japa" id="t1JapaBtn">
               <span>📿</span> Chant 1 Bead (Count Japa)
@@ -171,15 +215,35 @@
       </div>
 
       <div class="t1-bento-grid">
-        <!-- Column 1 (Large Spanning Card) -->
+        <!-- Spanning Hero Card: Phase 1 Civil Foundation -->
         <div class="t1-bento-card t1-bento-large">
           <div class="t1-bento-img">
-            <img src="/assets/bhtcc_site_plan.jpg" alt="Ross Creek Construction Site">
+            <img src="/assets/bhtcc_site_plan.jpg" alt="Ross Creek Construction Site Plan">
+            <div class="t1-bento-status-stamp">PHASE 1 ACTIVE • SLAB POURED</div>
           </div>
           <div class="t1-bento-content">
-            <span class="t1-tag">Phase 1 Active Construction</span>
-            <h4>Foundation Slabs Poured & Frames Erected</h4>
-            <p>Currently finishing plumbing infrastructure, septic grid installs, and car parking bays. Ganesha Altar stonemasonry is set to begin soon with traditional granite blocks.</p>
+            <div class="t1-bento-top-meta">
+              <span class="t1-tag">Civil Earthworks & Portal Frames</span>
+              <span class="t1-grant-badge">🏛️ $900k+ Victorian State Grant</span>
+            </div>
+            <h4>Foundation Slabs Poured & Steel Portal Frames Erected</h4>
+            <p>Our 5-acre consecrated site at 110 Vaggs Rd, Ross Creek has completed civil grading, deep drainage lines, and heavy concrete slab foundations. Primary structural steel portal frames are erected, setting the stage for granite sanctum stonemasonry.</p>
+            
+            <div class="t1-bento-metrics-row">
+              <div class="t1-bento-metric">
+                <span class="metric-val">5 Acres</span>
+                <span class="metric-lbl">Freehold Land</span>
+              </div>
+              <div class="t1-bento-metric">
+                <span class="metric-val">350</span>
+                <span class="metric-lbl">Prayer Capacity</span>
+              </div>
+              <div class="t1-bento-metric">
+                <span class="metric-val">75 Bays</span>
+                <span class="metric-lbl">DDA Car Park</span>
+              </div>
+            </div>
+
             <div class="t1-progress-bar">
               <div class="t1-prog-fill" style="width: 65%;"></div>
             </div>
@@ -190,33 +254,51 @@
           </div>
         </div>
 
-        <!-- Column 2 (Bento Feature Tiles) -->
-        <div class="t1-bento-card">
+        <!-- Tile 2: Hand-Carved Black Granite Sanctum -->
+        <div class="t1-bento-card t1-bento-granite">
+          <div class="t1-bento-card-media">
+            <img src="/assets/granite_architecture.jpg" alt="Traditional Hand-Carved Black Granite Stonework">
+          </div>
           <div class="t1-bento-icon">🛕</div>
-          <h4>Granite Moolasthanam</h4>
-          <p>Traditional granite stonework crafted central sanctum for Lord Ganesha, Lord Shiva, and Goddess Ambal.</p>
-          <a href="worship.html" class="t1-link-gold">Enshrined Deities ↗</a>
+          <h4>Hand-Carved Black Granite Sanctum</h4>
+          <p>Traditional Agamic Shilpa Shastra stonework for Lord Ganesha, Lord Shiva, and Goddess Ambal sanctums.</p>
+          <div class="t1-bento-footer">
+            <span class="t1-spec-chip">Brihadeeswarar Masonry</span>
+            <a href="worship.html" class="t1-link-gold">Enshrined Deities ↗</a>
+          </div>
         </div>
 
+        <!-- Tile 3: 500-Seat Maha Annadanam Kitchen -->
         <div class="t1-bento-card">
           <div class="t1-bento-icon">🍲</div>
-          <h4>Commercial Kitchen</h4>
-          <p>Preparing daily Prasadams and catering massive festival banquets for regional Victorian gatherings.</p>
-          <a href="project.html" class="t1-link-gold">Facility Specs ↗</a>
+          <h4>Maha Annadanam Kitchen</h4>
+          <p>500-seat commercial kitchen preparing daily hot Prasadam and festival banquets under Victorian Food Safety Standards.</p>
+          <div class="t1-bento-footer">
+            <span class="t1-spec-chip">Council Approved</span>
+            <a href="project.html" class="t1-link-gold">Kitchen Specs ↗</a>
+          </div>
         </div>
 
+        <!-- Tile 4: Cultural Learning Academy & Library -->
         <div class="t1-bento-card">
           <div class="t1-bento-icon">📚</div>
-          <h4>Library & Classrooms</h4>
-          <p>Housing holy scriptures, books, and language classes for youth in Sanskrit, Hindi, and Tamil.</p>
-          <a href="community.html" class="t1-link-gold">Community Programs ↗</a>
+          <h4>Cultural Academy & Library</h4>
+          <p>Preserving sacred scriptures with youth language classes in Sanskrit, Hindi, and Tamil under Child Safe Standards.</p>
+          <div class="t1-bento-footer">
+            <span class="t1-spec-chip">WWCC Compliant</span>
+            <a href="community.html" class="t1-link-gold">Programs ↗</a>
+          </div>
         </div>
 
+        <!-- Tile 5: Consecrated Peace Groves & Goshala -->
         <div class="t1-bento-card">
           <div class="t1-bento-icon">🌳</div>
-          <h4>Landscaped Gardens</h4>
-          <p>Traditional flora, meditation paths, tulsi planters, and family recreation area with 75+ parking bays.</p>
-          <a href="project.html" class="t1-link-gold">Site Plan ↗</a>
+          <h4>Peace Groves & Goshala</h4>
+          <p>2 acres of sacred Indian botanicals (Tulasi, Bilva, Neem) interwoven with native Australian eucalyptus and quiet japa paths.</p>
+          <div class="t1-bento-footer">
+            <span class="t1-spec-chip">Eco-Sanctuary</span>
+            <a href="project.html" class="t1-link-gold">Gardens ↗</a>
+          </div>
         </div>
       </div>
     </div>

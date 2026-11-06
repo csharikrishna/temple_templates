@@ -2625,3 +2625,525 @@ body {
   transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   box-shadow: 0 0 10px rgba(255, 208, 0, 0.6);
 }
+
+/* ==========================================================================
+   TEMPLATE 1: ELEVATED AWWWARDS ENHANCEMENTS
+   - Monumental Typography & Atmospheric Torch-Lit Ambience
+   - Physical Pendulum Hanging Bell & Acoustic Ripples
+   - Living Akhanda Deepam Sacred Flame Physics
+   - 108 Sacred Rudraksha Mala Beads Strand
+   - Asymmetric Architectural Bento & Gold-Embossed Wax Seals
+   ========================================================================== */
+
+/* 1. Monumental Hero Typography & Atmospheric Ambience */
+.t1-hero-section {
+  background: 
+    radial-gradient(circle at 50% 20%, rgba(212, 175, 55, 0.18) 0%, transparent 60%),
+    radial-gradient(circle at 10% 80%, rgba(230, 81, 0, 0.12) 0%, transparent 50%),
+    radial-gradient(circle at 90% 80%, rgba(230, 81, 0, 0.12) 0%, transparent 50%),
+    linear-gradient(180deg, #380A0E 0%, #1A0306 100%) !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.t1-hero-sanskrit-crest {
+  font-family: 'Cinzel Decorative', 'Cinzel', serif;
+  font-size: clamp(1.2rem, 3.5vw, 1.85rem);
+  font-weight: 900;
+  color: #FFD000;
+  letter-spacing: 0.15em;
+  text-shadow: 0 0 20px rgba(255, 208, 0, 0.6), 0 0 40px rgba(255, 106, 0, 0.35);
+  margin-bottom: 1.25rem;
+  animation: t1SanskritBreathe 4s ease-in-out infinite;
+}
+
+@keyframes t1SanskritBreathe {
+  0%, 100% {
+    text-shadow: 0 0 20px rgba(255, 208, 0, 0.6), 0 0 40px rgba(255, 106, 0, 0.35);
+    opacity: 0.95;
+  }
+  50% {
+    text-shadow: 0 0 32px rgba(255, 208, 0, 0.9), 0 0 65px rgba(255, 106, 0, 0.6);
+    opacity: 1;
+    transform: scale(1.02);
+  }
+}
+
+.t1-hero-headline {
+  font-family: 'Cinzel Decorative', 'Cinzel', serif !important;
+  letter-spacing: 0.02em;
+}
+
+/* 2. Physical Hanging Temple Bell (Pendulum Mechanics) */
+.t1-hanging-bell-rig {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 45;
+  cursor: pointer;
+  user-select: none;
+  touch-action: manipulation;
+}
+
+.t1-bell-mount {
+  width: 48px;
+  height: 8px;
+  background: linear-gradient(180deg, #8B6508, #5A4205);
+  border-radius: 0 0 4px 4px;
+  border: 1px solid rgba(255, 215, 0, 0.4);
+}
+
+.t1-bell-chain {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1px;
+}
+
+.chain-link {
+  width: 7px;
+  height: 10px;
+  border: 2px solid #D4AF37;
+  border-radius: 4px;
+  background: #3A2803;
+  box-shadow: inset 0 1px 2px rgba(255,255,255,0.4);
+}
+
+.t1-bell-crown {
+  width: 20px;
+  height: 10px;
+  background: linear-gradient(180deg, #FFE066, #B8860B);
+  border-radius: 6px 6px 0 0;
+  border: 1px solid #8B6508;
+}
+
+.t1-bell-body {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.t1-bell-dome {
+  width: 58px;
+  height: 48px;
+  background: radial-gradient(circle at 35% 30%, #FFF3B0 0%, #D4AF37 35%, #8B6508 75%, #4A3503 100%);
+  clip-path: polygon(25% 0%, 75% 0%, 95% 75%, 100% 100%, 0% 100%, 5% 75%);
+  border-radius: 6px 6px 0 0;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6), inset 0 0 10px rgba(255, 230, 120, 0.5);
+  position: relative;
+}
+
+.t1-bell-lip {
+  width: 68px;
+  height: 10px;
+  background: linear-gradient(180deg, #FFDF79, #996515);
+  border-radius: 5px;
+  border: 1px solid #5A3E08;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.5);
+}
+
+.t1-bell-clapper {
+  width: 14px;
+  height: 14px;
+  background: radial-gradient(circle at 35% 35%, #FFEAA7, #8B6508);
+  border-radius: 50%;
+  margin-top: -3px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.6);
+  transition: transform 0.2s ease;
+}
+
+.t1-bell-rope-pull {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: -2px;
+}
+
+.t1-rope-strand {
+  width: 4px;
+  height: 38px;
+  background: repeating-linear-gradient(
+    45deg,
+    #8B1E29,
+    #8B1E29 4px,
+    #B72836 4px,
+    #B72836 8px
+  );
+  box-shadow: 0 2px 5px rgba(0,0,0,0.4);
+}
+
+.t1-rope-tassel {
+  background: linear-gradient(135deg, #7E1C27, #58111A);
+  color: #FFD000;
+  border: 1px solid #D4AF37;
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), background 0.2s;
+}
+
+.t1-hanging-bell-rig:hover .t1-rope-tassel {
+  transform: scale(1.08);
+  background: #B8860B;
+  color: #1A0306;
+}
+
+.t1-hanging-bell-rig.swinging {
+  animation: t1BellSway 1.8s cubic-bezier(0.28, 0.84, 0.42, 1);
+  transform-origin: 50% 0;
+}
+
+@keyframes t1BellSway {
+  0% { transform: translateX(-50%) rotate(0deg); }
+  15% { transform: translateX(-50%) rotate(18deg); }
+  32% { transform: translateX(-50%) rotate(-14deg); }
+  50% { transform: translateX(-50%) rotate(9deg); }
+  70% { transform: translateX(-50%) rotate(-5deg); }
+  85% { transform: translateX(-50%) rotate(2deg); }
+  100% { transform: translateX(-50%) rotate(0deg); }
+}
+
+.t1-bell-sound-waves {
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.t1-bell-sound-waves.wave-active {
+  animation: t1WaveExpand 1.4s ease-out forwards;
+}
+
+@keyframes t1WaveExpand {
+  0% {
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255, 208, 0, 0.9);
+    opacity: 1;
+  }
+  100% {
+    width: 380px;
+    height: 380px;
+    border: 1px solid rgba(255, 208, 0, 0);
+    opacity: 0;
+    transform: translate(-50%, -50%);
+  }
+}
+
+/* 3. Living Akhanda Deepam Widget */
+.t1-akhanda-deepam-widget {
+  position: absolute;
+  bottom: 24px;
+  right: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 45;
+  cursor: pointer;
+  background: rgba(30, 4, 8, 0.82);
+  padding: 10px 14px 6px;
+  border-radius: 12px;
+  border: 1.5px solid rgba(212, 175, 55, 0.6);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6), 0 0 20px rgba(255, 143, 0, 0.25);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s;
+}
+
+.t1-akhanda-deepam-widget:hover {
+  transform: translateY(-3px) scale(1.04);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.7), 0 0 35px rgba(255, 208, 0, 0.45);
+}
+
+.t1-deepam-flame-wrapper {
+  position: relative;
+  width: 24px;
+  height: 36px;
+  margin-bottom: 2px;
+}
+
+.t1-flame-aura {
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  width: 40px;
+  height: 52px;
+  background: radial-gradient(ellipse at center, rgba(255, 140, 0, 0.55) 0%, rgba(255, 70, 0, 0) 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  animation: t1AuraPulse 2s ease-in-out infinite;
+}
+
+.t1-flame-outer {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 22px;
+  height: 34px;
+  background: linear-gradient(180deg, #FF4500 0%, #FF8C00 45%, #FFD700 85%);
+  border-radius: 50% 50% 35% 35% / 60% 60% 40% 40%;
+  filter: drop-shadow(0 0 10px #FF8C00);
+  animation: t1FlameDance 1.6s ease-in-out infinite alternate;
+}
+
+.t1-flame-inner {
+  position: absolute;
+  bottom: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 10px;
+  height: 18px;
+  background: linear-gradient(180deg, #FFF9D2 0%, #FFFFFF 100%);
+  border-radius: 50% 50% 35% 35% / 60% 60% 40% 40%;
+}
+
+@keyframes t1FlameDance {
+  0% {
+    transform: translateX(-50%) rotate(-2deg) scale(0.96, 1.02);
+  }
+  50% {
+    transform: translateX(-50%) rotate(2deg) scale(1.04, 0.96);
+  }
+  100% {
+    transform: translateX(-50%) rotate(-1deg) scale(1, 1.05);
+  }
+}
+
+@keyframes t1AuraPulse {
+  0%, 100% { opacity: 0.6; transform: scale(0.95); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+.t1-deepam-brass-vessel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.t1-deepam-rim {
+  width: 32px;
+  height: 7px;
+  background: linear-gradient(180deg, #FFE066, #B8860B);
+  border-radius: 4px;
+  border: 1px solid #7A5703;
+}
+
+.t1-deepam-body {
+  width: 26px;
+  height: 14px;
+  background: radial-gradient(circle at 40% 30%, #FFE066, #996515);
+  border-radius: 0 0 14px 14px;
+  border: 1px solid #7A5703;
+  margin-top: -1px;
+}
+
+.t1-deepam-pedestal {
+  width: 22px;
+  height: 6px;
+  background: linear-gradient(180deg, #B8860B, #5A4205);
+  border-radius: 3px;
+  margin-top: 1px;
+}
+
+.t1-deepam-tag {
+  color: #FFD000;
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  margin-top: 4px;
+}
+
+.t1-sanctum-glow-overlay {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  pointer-events: none;
+  background: radial-gradient(circle at 50% 60%, rgba(255, 180, 0, 0.12) 0%, transparent 65%);
+  opacity: 0.6;
+  transition: opacity 0.8s ease;
+  mix-blend-mode: screen;
+}
+
+.t1-sanctum-glow-overlay.glow-boost {
+  opacity: 1;
+  background: radial-gradient(circle at 50% 60%, rgba(255, 208, 0, 0.28) 0%, transparent 75%);
+}
+
+/* 4. Visual 108 Rudraksha Mala Beads Strand */
+.t1-mala-beads-strand {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  padding: 8px 10px;
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  max-height: 80px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+}
+
+.t1-mala-beads-strand::-webkit-scrollbar {
+  width: 4px;
+}
+
+.t1-mala-beads-strand::-webkit-scrollbar-thumb {
+  background: var(--t1-gold);
+  border-radius: 4px;
+}
+
+.t1-mala-bead {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #8B4513, #4A2508);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.2);
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+.t1-mala-bead.bead-chanted {
+  background: radial-gradient(circle at 35% 35%, #FFD700, #B8860B);
+  border-color: #FFF;
+  box-shadow: 0 0 8px rgba(255, 215, 0, 0.7);
+}
+
+.t1-mala-bead.bead-current {
+  background: radial-gradient(circle at 35% 35%, #FFFFFF, #FF8F00);
+  border-color: #FF4500;
+  box-shadow: 0 0 14px #FFD000;
+  transform: scale(1.35);
+}
+
+.t1-mala-rounds-badge {
+  background: rgba(16, 185, 129, 0.15);
+  border: 1px solid #10B981;
+  color: #D1FAE5;
+  padding: 0.35rem 0.95rem;
+  border-radius: var(--radius-full);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.t1-mala-rounds-badge strong {
+  color: #34D399;
+}
+
+/* 5. Asymmetrical Bento Enhancements */
+.t1-bento-status-stamp {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: rgba(88, 17, 26, 0.9);
+  border: 1.5px solid var(--t1-gold);
+  color: #FFF;
+  font-size: 0.725rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-full);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.4);
+}
+
+.t1-bento-top-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.75rem;
+}
+
+.t1-grant-badge {
+  background: rgba(212, 175, 55, 0.15);
+  border: 1px solid var(--t1-gold);
+  color: var(--t1-crimson-dark);
+  font-size: 0.75rem;
+  font-weight: 800;
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+}
+
+.t1-bento-metrics-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  margin: 1.25rem 0 1.5rem;
+  padding: 1rem;
+  background: var(--t1-sand);
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+}
+
+.t1-bento-metric {
+  text-align: center;
+}
+
+.t1-bento-metric .metric-val {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--t1-crimson-dark);
+}
+
+.t1-bento-metric .metric-lbl {
+  font-size: 0.725rem;
+  color: var(--t1-text-muted);
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.t1-bento-granite .t1-bento-card-media {
+  height: 120px;
+  overflow: hidden;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+
+.t1-bento-granite .t1-bento-card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.t1-bento-granite:hover .t1-bento-card-media img {
+  transform: scale(1.08);
+}
+
+.t1-bento-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(88, 17, 26, 0.08);
+}
+
+.t1-spec-chip {
+  font-size: 0.7rem;
+  font-weight: 700;
+  background: #FFF3E0;
+  color: #D9480F;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+}

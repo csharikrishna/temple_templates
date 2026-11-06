@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Ballarat Hindu Temple & Cultural Centre (BHTCC) | Universal Spiritual Sanctuary</title>
   <meta name="description" content="A synthesis of traditional sanctity and modern digital convenience — online darshan passes, personalized sankalp sevas, live aarti broadcasts, capital construction masterplan, and transparent charity.">
   
@@ -24,9 +25,9 @@
       <div class="top-bar-inner">
         
         <!-- Live Hindu Panchang Ticker -->
-        <div class="panchang-live-badge">
+        <div class="panchang-live-badge" id="panchang-engine-bar">
           <span class="badge-icon">☀️</span>
-          <span><strong>Today's Panchang:</strong> Kartika Shukla Ekadashi | Sunrise: 05:48 AM | Rahu Kalam: 01:30 PM - 03:00 PM</span>
+          <span><strong>Ballarat Panchang:</strong> <span id="ballarat-tithi">Kartika Shukla Ekadashi</span> | Sunrise: <span id="ballarat-sunrise">06:04 AM</span> | Sunset: <span id="ballarat-sunset">08:14 PM</span> | Rahu: <span id="ballarat-rahu">01:30 PM - 03:00 PM</span></span>
         </div>
 
         <!-- Live Darshan Wait & Queue Status (TTD / Shirdi Style) -->
@@ -73,7 +74,7 @@
         <!-- Navigation Links -->
         <ul class="nav-menu">
           <li class="nav-item active"><a href="index.html">Home</a></li>
-          <li class="nav-item"><a href="switcher.html" style="color: #D4AF37; font-weight: 800;">🎨 Switcher Studio</a></li>
+          <li class="nav-item"><a href="templates/" style="color: #D4AF37; font-weight: 800;">🎨 Pitch Deck</a></li>
           <li class="nav-item"><a href="pujas.html">Sevas & Pujas</a></li>
           <li class="nav-item"><a href="darshan.html">Live Darshan</a></li>
           <li class="nav-item"><a href="project.html">Temple Project</a></li>
@@ -155,7 +156,7 @@
             
             <div class="sanctum-media-box" id="sanctum-feed-box">
               <!-- High-res authentic sanctum photo with fallback -->
-              <img src="assets/ganesha_shrine.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&w=800&q=80'" alt="Sacred Lord Sri Ganesha Sanctum Sanctorum Live Feed">
+              <img src="/assets/ganesha_shrine.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&w=800&q=80'" alt="Sacred Lord Sri Ganesha Sanctum Sanctorum Live Feed">
               
               <div class="sanctum-overlay">
                 <span class="live-badge-glow">
@@ -710,7 +711,7 @@
 
         <!-- Right: Interactive Sponsorship Tiers & Blueprint Preview -->
         <div class="project-media-side">
-          <img src="assets/bhtcc_site_plan.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=800&q=80'" alt="Masterplan Aerial Blueprint">
+          <img src="/assets/bhtcc_site_plan.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=800&q=80'" alt="Masterplan Aerial Blueprint">
           
           <div class="project-media-content">
             <span class="badge-icon" style="font-size: 1.5rem;">🏛️</span>
@@ -740,6 +741,127 @@
           </div>
         </div>
 
+      </div>
+
+      <!-- ======================================================================
+           SIGNATURE ARTIFACT 3: DGR TAX-DEDUCTIBLE BRICK SPONSORSHIP MATRIX & AUSTRALIAN TAX BENEFIT CALCULATOR
+           ====================================================================== -->
+      <div class="brick-matrix-calculator-card" id="brick-tax-matrix" style="margin-top: 2.75rem;">
+        <div class="matrix-card-header">
+          <div class="matrix-badge">
+            <span>🇦🇺</span> ATO DGR $2+ Item 1 Tax-Deductible Charity (Victoria) • ABN 13 397 829 440
+          </div>
+          <h3 class="matrix-title">Australian DGR Tax-Deductible Brick Sponsorship Matrix</h3>
+          <p class="matrix-subtitle">
+            All donations over $2 to Ballarat Hindu Temple & Cultural Centre Inc. are 100% tax-deductible under Australian Taxation Office rules. Use our dynamic calculator below to determine your estimated ATO tax refund and net out-of-pocket investment.
+          </p>
+
+          <!-- Brick Crowdfunding Live Progress Bar -->
+          <div class="brick-crowdfund-meter">
+            <div class="meter-labels-row">
+              <span class="meter-lbl-left">🧱 <strong>4,280 of 7,000</strong> Sacred Granite Bricks Consecrated</span>
+              <span class="meter-lbl-right"><strong>61.1%</strong> Funded ($552,000 of $900,000 Community Milestone)</span>
+            </div>
+            <div class="brick-meter-track">
+              <div class="brick-meter-fill" style="width: 61.1%;"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="matrix-calculator-grid">
+          <!-- Left: Tier Selector & Family Inscription Configurator -->
+          <div class="matrix-config-col">
+            <label class="matrix-label">1. Choose Sponsorship Tier</label>
+            <div class="brick-tier-chips" id="brickTierChips">
+              <button type="button" class="brick-chip" data-amount="101" data-label="1 Sacred Foundation Brick">
+                <span class="chip-qty">1 Brick</span>
+                <span class="chip-amt">$101 AUD</span>
+              </button>
+              <button type="button" class="brick-chip active" data-amount="250" data-label="3 Foundation Bricks (Pillar Tier)">
+                <span class="chip-qty">3 Bricks (Pillar)</span>
+                <span class="chip-amt">$250 AUD</span>
+              </button>
+              <button type="button" class="brick-chip" data-amount="500" data-label="5 Foundation Bricks (Wall Tier)">
+                <span class="chip-qty">5 Bricks (Wall)</span>
+                <span class="chip-amt">$500 AUD</span>
+              </button>
+              <button type="button" class="brick-chip" data-amount="1000" data-label="Hand-Carved Granite Sanctum Stone">
+                <span class="chip-qty">Sanctum Stone</span>
+                <span class="chip-amt">$1,000 AUD</span>
+              </button>
+              <button type="button" class="brick-chip" data-amount="2500" data-label="Gold-Plated Kalasam Patron">
+                <span class="chip-qty">Gold Kalasam</span>
+                <span class="chip-amt">$2,500 AUD</span>
+              </button>
+              <button type="button" class="brick-chip" data-amount="5000" data-label="Deity Moolasthanam Shrine Founder">
+                <span class="chip-qty">Shrine Founder</span>
+                <span class="chip-amt">$5,000 AUD</span>
+              </button>
+            </div>
+
+            <div class="matrix-form-row">
+              <div class="matrix-field">
+                <label for="brick-custom-input">Gift Amount ($ AUD)</label>
+                <div class="input-prefix-wrap">
+                  <span class="prefix">$</span>
+                  <input type="number" id="brick-custom-input" class="matrix-input" value="250" min="2" step="10">
+                </div>
+              </div>
+              <div class="matrix-field">
+                <label for="brick-tax-bracket">Australian Resident Tax Bracket</label>
+                <select id="brick-tax-bracket" class="matrix-input">
+                  <option value="0.16">16% ($18,201 – $45,000)</option>
+                  <option value="0.30" selected>30% Middle Income ($45,001 – $135,000)</option>
+                  <option value="0.37">37% Upper Income ($135,001 – $190,000)</option>
+                  <option value="0.45">45% Top Marginal Rate ($190,001+)</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="matrix-field" style="margin-top: 1.15rem;">
+              <label for="brick-donor-name">Devotee / Family Name for Granite Plaque Inscription</label>
+              <input type="text" id="brick-donor-name" class="matrix-input" placeholder="e.g. Ramesh & Sunita Sharma" value="Sharikrishna & Family">
+            </div>
+          </div>
+
+          <!-- Right: Dynamic Australian Tax Breakdown & 3D Granite Brick Inscription Preview -->
+          <div class="matrix-output-col">
+            <div class="tax-breakdown-card">
+              <div class="tax-row">
+                <span class="tax-lbl">Gross Charitable Gift (DGR Item 1)</span>
+                <span class="tax-val" id="taxGrossVal">$250.00 AUD</span>
+              </div>
+              <div class="tax-row tax-refund-row">
+                <span class="tax-lbl">Estimated ATO Tax Refund (<span id="taxRateLbl">30%</span> bracket)</span>
+                <span class="tax-val text-green" id="taxRefundVal">-$75.00 AUD</span>
+              </div>
+              <div class="tax-divider"></div>
+              <div class="tax-row tax-net-row">
+                <div>
+                  <span class="tax-net-lbl">Net Effective Cost to Devotee</span>
+                  <div class="tax-net-sub">Your actual out-of-pocket investment after tax</div>
+                </div>
+                <span class="tax-net-val" id="taxNetVal">$175.00 AUD</span>
+              </div>
+            </div>
+
+            <!-- Virtual Carved Granite Brick Plaque Preview -->
+            <div class="granite-brick-preview" id="graniteBrickPlaque">
+              <div class="brick-chiseled-border">
+                <div class="brick-header-om">🕉️</div>
+                <div class="brick-temple-tag">BALLARAT HINDU TEMPLE • FOUNDER'S BRICK WALL</div>
+                <div class="brick-engraved-name" id="brickEngravedName">SHARIKRISHNA & FAMILY</div>
+                <div class="brick-footer-meta">
+                  <span id="brickTierBadge">3 FOUNDATION BRICKS</span> • <span>110 VAGGS RD, ROSS CREEK</span>
+                </div>
+              </div>
+            </div>
+
+            <button type="button" class="btn btn-gold btn-block btn-lg" id="btnSponsorBrickNow">
+              <span>🧱</span> Sponsor Brick Now with ATO Receipt ($<span id="btnSponsorAmt">250</span> AUD)
+            </button>
+          </div>
+        </div>
       </div>
 
       <!-- Interactive 5-Acre Ross Creek Campus Zone Explorer (Feature 3) -->
@@ -772,7 +894,7 @@
         <!-- Zone Spotlight Display -->
         <div class="zone-spotlight-display" id="zone-spotlight-card">
           <div class="zone-visual-box">
-            <img id="zone-spotlight-img" src="assets/bhtcc_interior.jpg" alt="Zone 1: Main Ganesha Sanctum & Prayer Hall">
+            <img id="zone-spotlight-img" src="/assets/bhtcc_interior.jpg" alt="Zone 1: Main Ganesha Sanctum & Prayer Hall">
             <div class="zone-badge-overlay" id="zone-spotlight-badge">Zone 1 • 350-Capacity Sanctum</div>
           </div>
           <div class="zone-info-box">
