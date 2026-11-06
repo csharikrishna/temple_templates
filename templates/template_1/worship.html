@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <base href="/templates/template_1/">
   <script>
     if (!location.pathname.endsWith('/') && !location.pathname.endsWith('.html')) {
       location.replace(location.pathname + '/' + location.search + location.hash);
@@ -13,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="/templates/template_1/styles.css">
 </head>
 <body>
 
@@ -76,7 +77,7 @@
         <!-- Deity 1: Ganesha -->
         <article class="t1-deity-card">
           <div class="t1-dc-image">
-            <img src="../../assets/ganesha_shrine.jpg" alt="Lord Sri Ganesha Moolasthanam Sanctum">
+            <img src="/assets/ganesha_shrine.jpg" alt="Lord Sri Ganesha Moolasthanam Sanctum">
             <span class="t1-dc-badge">Central Deity</span>
           </div>
           <div class="t1-dc-content">
@@ -103,7 +104,7 @@
         <!-- Deity 2: Shiva -->
         <article class="t1-deity-card">
           <div class="t1-dc-image">
-            <img src="../../assets/shiva_abhishekam.jpg" alt="Lord Sri Shiva Linga Abhishekam">
+            <img src="/assets/shiva_abhishekam.jpg" alt="Lord Sri Shiva Linga Abhishekam">
             <span class="t1-dc-badge">Cosmic Preserver</span>
           </div>
           <div class="t1-dc-content">
@@ -130,7 +131,7 @@
         <!-- Deity 3: Ambal -->
         <article class="t1-deity-card">
           <div class="t1-dc-image">
-            <img src="../../assets/lakshmi_puja.jpg" alt="Goddess Sri Mahalakshmi & Ambal Sanctum">
+            <img src="/assets/lakshmi_puja.jpg" alt="Goddess Sri Mahalakshmi & Ambal Sanctum">
             <span class="t1-dc-badge">Divine Mother</span>
           </div>
           <div class="t1-dc-content">
@@ -312,6 +313,6 @@
     </div>
   </footer>
 
-  <script src="app.js"></script>
+  <script src="/templates/template_1/app.js"></script>
 </body>
 </html>

@@ -85,4 +85,4 @@ Temple/
 
 ---
 
-© 2026 Sri Devalayam & BHTCC Design System Suite. All rights reserved.
+© 2026 Ballarat Hindu Temple & Cultural Centre Inc. (BHTCC) Design System Suite. All rights reserved.

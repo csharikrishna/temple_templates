@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <base href="/templates/template_3/">
   <script>
     if (!location.pathname.endsWith('/') && !location.pathname.endsWith('.html')) {
       location.replace(location.pathname + '/' + location.search + location.hash);
@@ -13,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="/templates/template_3/styles.css">
 </head>
 <body>
 
@@ -127,7 +128,7 @@
         <!-- Panel 2: Official Live Sanctum Broadcaster Feed (1080p HD) -->
         <div class="t3-panel t3-panel-video">
           <div class="t3-video-wrap">
-            <img src="../../assets/bhtcc_interior.jpg" alt="Live Sanctum Stream">
+            <img src="/assets/bhtcc_interior.jpg" alt="Live Sanctum Stream">
             <div class="t3-vid-watermark">
               OFFICIAL MOOLASTHANAM BROADCAST • 1080p HD
             </div>
@@ -409,6 +410,6 @@
     </div>
   </div>
 
-  <script src="app.js"></script>
+  <script src="/templates/template_3/app.js"></script>
 </body>
 </html>

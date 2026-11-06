@@ -2126,3 +2126,657 @@ html, body {
     text-align: center !important;
   }
 }
+
+
+/* -------------------------------------------------------------------------
+   IOS SAFARI & MOBILE FIRST PERFECTION (TEMPLATE 4)
+   ------------------------------------------------------------------------- */
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media (max-width: 768px) {
+  /* Prevent iOS Safari Form Auto-Zoom Bug */
+  input, select, textarea,
+  .form-control, .input-text, .search-box input, .donation-form input {
+    font-size: 16px !important;
+    min-height: 48px !important;
+  }
+  
+  /* Top Bar Safe Area */
+  .top-bar {
+    padding-top: max(0.4rem, env(safe-area-inset-top, 0px)) !important;
+    padding-left: max(0.5rem, env(safe-area-inset-left, 0px)) !important;
+    padding-right: max(0.5rem, env(safe-area-inset-right, 0px)) !important;
+  }
+  .top-bar-inner {
+    flex-direction: column !important;
+    gap: 0.25rem !important;
+    text-align: center !important;
+  }
+  .live-darshan-indicator {
+    font-size: 0.75rem !important;
+  }
+  
+  /* Header Sticky & Clean Layout */
+  .main-header {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 100 !important;
+    padding: 0.65rem 0 !important;
+    background: rgba(255, 255, 255, 0.96) !important;
+    backdrop-filter: blur(14px) !important;
+    -webkit-backdrop-filter: blur(14px) !important;
+    box-shadow: 0 4px 16px rgba(88, 17, 26, 0.08) !important;
+  }
+  .navbar {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 0.5rem !important;
+    padding: 0 !important;
+  }
+  .brand-wrapper {
+    margin-bottom: 0.2rem !important;
+  }
+  .brand-text h1 {
+    font-size: 1.25rem !important;
+    line-height: 1.2 !important;
+  }
+  
+  /* Modern Horizontal Navigation Pill Bar */
+  .nav-menu {
+    display: flex !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: none !important;
+    flex-wrap: nowrap !important;
+    gap: 0.5rem !important;
+    padding: 0.35rem 0.25rem !important;
+    width: 100% !important;
+  }
+  .nav-menu::-webkit-scrollbar {
+    display: none !important;
+  }
+  .nav-item {
+    flex-shrink: 0 !important;
+  }
+  .nav-item a {
+    min-height: 38px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    padding: 0.45rem 0.85rem !important;
+    border-radius: var(--radius-full) !important;
+    background: rgba(88, 17, 26, 0.05) !important;
+    font-size: 0.82rem !important;
+    color: var(--text-dark) !important;
+    font-weight: 700 !important;
+    transition: all 0.2s ease !important;
+  }
+  .nav-item.active a {
+    background: #58111A !important;
+    color: #FFF !important;
+    box-shadow: 0 2px 8px rgba(88, 17, 26, 0.25) !important;
+  }
+  
+  /* Hero Actions Full-Width Buttons */
+  .hero-actions {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 0.65rem !important;
+    width: 100% !important;
+  }
+  .hero-actions .btn {
+    width: 100% !important;
+    min-height: 48px !important;
+    justify-content: center !important;
+    text-align: center !important;
+    font-size: 0.95rem !important;
+  }
+  
+  /* Buttons min-height */
+  .btn {
+    min-height: 48px !important;
+  }
+  
+  /* Touch target tactile press states */
+  a:active, button:active, .btn:active {
+    transform: scale(0.97) !important;
+    opacity: 0.92 !important;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .top-bar-inner {
+    flex-direction: row !important;
+    justify-content: center !important;
+    align-items: center !important;
+    flex-wrap: wrap !important;
+    gap: 0.4rem !important;
+    padding: 0.2rem 0 !important;
+  }
+  .panchang-live-badge {
+    display: inline-flex !important;
+    font-size: 0.72rem !important;
+  }
+  .live-darshan-indicator {
+    display: none !important;
+  }
+  .ticker-wrapper, .top-actions {
+    display: none !important;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .top-utility-bar, .top-bar {
+    display: none !important;
+  }
+  .main-header {
+    padding-top: max(0.65rem, env(safe-area-inset-top, 0px)) !important;
+  }
+}
+
+
+/* ==========================================================================
+   FEATURE 1: LIVING SANCTUM ALTAR & INTERACTIVE DIYA PHYSICS
+   ========================================================================== */
+.sanctum-media-box {
+  position: relative;
+  overflow: hidden;
+}
+
+.living-diya-stage {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  pointer-events: none;
+  z-index: 15;
+  padding-bottom: 8px;
+}
+
+.brass-diya-lamp {
+  position: relative;
+  width: 80px;
+  height: 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease;
+  filter: drop-shadow(0 0 16px rgba(245, 159, 0, 0.8));
+}
+
+.diya-flame {
+  width: 20px;
+  height: 32px;
+  background: radial-gradient(ellipse at 50% 80%, #FFFDF0 0%, #FFD000 40%, #FF6A00 70%, transparent 100%);
+  border-radius: 50% 50% 35% 35% / 80% 80% 35% 35%;
+  animation: flameFlicker 1.8s infinite alternate ease-in-out;
+  box-shadow: 0 0 25px #FF9900, 0 -8px 30px #FFAA00;
+  transform-origin: 50% 90%;
+}
+
+@keyframes flameFlicker {
+  0% { transform: scale(1) rotate(-1deg); opacity: 0.95; }
+  25% { transform: scale(1.08, 0.95) rotate(2deg); opacity: 1; }
+  50% { transform: scale(0.96, 1.05) rotate(-2deg); opacity: 0.9; }
+  75% { transform: scale(1.04, 0.98) rotate(1deg); opacity: 0.98; }
+  100% { transform: scale(1) rotate(0deg); opacity: 0.95; }
+}
+
+.brass-vessel {
+  width: 68px;
+  height: 20px;
+  background: linear-gradient(180deg, #E5A93C 0%, #B8860B 60%, #7A5806 100%);
+  border-radius: 0 0 30px 30px;
+  border-top: 2px solid #FDF0CD;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+}
+
+.live-diya-counter-pill {
+  margin-top: 0.85rem;
+  background: rgba(212, 175, 55, 0.15);
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  padding: 0.5rem 0.85rem;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 0.825rem;
+  color: #F3E5AB;
+  font-weight: 600;
+  animation: pulseDiya 3s infinite;
+}
+
+@keyframes pulseDiya {
+  0% { box-shadow: 0 0 0 rgba(212, 175, 55, 0); }
+  50% { box-shadow: 0 0 12px rgba(212, 175, 55, 0.35); }
+  100% { box-shadow: 0 0 0 rgba(212, 175, 55, 0); }
+}
+
+.bell-swinging {
+  animation: bellSwing 0.9s ease-in-out;
+  transform-origin: 50% 0%;
+}
+
+@keyframes bellSwing {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(18deg); }
+  50% { transform: rotate(-14deg); }
+  75% { transform: rotate(8deg); }
+  100% { transform: rotate(0deg); }
+}
+
+/* ==========================================================================
+   FEATURE 2: DIGITAL GOTRA SANKALP GENERATOR & CERTIFICATE
+   ========================================================================== */
+.sankalp-generator-section {
+  padding: 5rem 0;
+  background: radial-gradient(circle at 50% 0%, rgba(212, 175, 55, 0.08) 0%, transparent 60%), #FAF7F2;
+}
+
+.sankalp-generator-card {
+  display: grid;
+  grid-template-columns: 1.1fr 1.3fr;
+  gap: 2.5rem;
+  background: #FFFFFF;
+  border: 1.5px solid rgba(212, 175, 55, 0.35);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+  box-shadow: 0 16px 45px rgba(88, 17, 26, 0.08);
+}
+
+.sankalp-form-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.sankalp-step-title {
+  font-size: 1.25rem;
+  color: var(--color-primary-dark);
+  font-family: var(--font-serif);
+  border-bottom: 2px solid rgba(212, 175, 55, 0.3);
+  padding-bottom: 0.65rem;
+}
+
+.form-group-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.form-group-item label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.sankalp-input {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border: 1.5px solid rgba(88, 17, 26, 0.2);
+  border-radius: var(--radius-sm);
+  font-size: 1rem;
+  font-family: var(--font-sans);
+  background: #FFFDF9;
+  color: var(--text-dark);
+  transition: var(--transition);
+}
+
+.sankalp-input:focus {
+  outline: none;
+  border-color: var(--color-accent-gold);
+  box-shadow: 0 0 12px rgba(212, 175, 55, 0.3);
+}
+
+.form-row-duo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.btn-generate-sankalp {
+  width: 100%;
+  padding: 0.95rem;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 0.5rem;
+}
+
+/* Consecrated Certificate Frame */
+.sankalp-preview-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.sankalp-card-frame {
+  background: linear-gradient(135deg, #3C0A11 0%, #200508 100%);
+  color: #FAF7F2;
+  border-radius: var(--radius-md);
+  padding: 1.75rem;
+  box-shadow: 0 12px 35px rgba(60, 10, 17, 0.35);
+  position: relative;
+  overflow: hidden;
+}
+
+.card-filigree-border {
+  border: 2px solid #D4AF37;
+  border-radius: 8px;
+  padding: 1.5rem;
+  position: relative;
+  background: radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.06) 0%, transparent 70%);
+}
+
+.card-filigree-border::before, .card-filigree-border::after {
+  content: '✦';
+  position: absolute;
+  color: #D4AF37;
+  font-size: 1.2rem;
+}
+.card-filigree-border::before { top: 6px; left: 8px; }
+.card-filigree-border::after { bottom: 6px; right: 8px; }
+
+.cert-header {
+  text-align: center;
+  border-bottom: 1px dashed rgba(212, 175, 55, 0.35);
+  padding-bottom: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.cert-om {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.cert-sloka {
+  font-size: 0.8rem;
+  color: #D4AF37;
+  letter-spacing: 0.15em;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 0.35rem;
+}
+
+.cert-temple-title {
+  font-size: 1.2rem;
+  font-family: var(--font-serif);
+  color: #FFFDF0;
+  letter-spacing: 0.06em;
+  margin: 0;
+}
+
+.cert-temple-sub {
+  font-size: 0.72rem;
+  color: #D6C2B4;
+  letter-spacing: 0.05em;
+  margin: 0.15rem 0 0.35rem;
+}
+
+.cert-site-tag {
+  font-size: 0.68rem;
+  color: #E5A93C;
+}
+
+.cert-body {
+  text-align: center;
+  padding: 0.5rem 0 1rem;
+}
+
+.cert-badge {
+  display: inline-block;
+  background: rgba(212, 175, 55, 0.2);
+  color: #F3E5AB;
+  border: 1px solid #D4AF37;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-full);
+  margin-bottom: 0.65rem;
+}
+
+.cert-deity {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #FCD34D;
+  margin-bottom: 0.85rem;
+}
+
+.cert-devotee-block {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  border-radius: 6px;
+  padding: 0.85rem 1rem;
+  margin-bottom: 0.85rem;
+}
+
+.cert-label {
+  font-size: 0.65rem;
+  color: #D6C2B4;
+  letter-spacing: 0.1em;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.cert-name {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #FFFDF0;
+}
+
+.cert-gotra {
+  font-size: 0.85rem;
+  color: #E5A93C;
+  font-weight: 600;
+}
+
+.cert-sankalp-text {
+  font-size: 0.825rem;
+  color: #E2E8F0;
+  font-style: italic;
+  line-height: 1.45;
+}
+
+.cert-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px dashed rgba(212, 175, 55, 0.35);
+  padding-top: 0.85rem;
+  font-size: 0.72rem;
+  color: #D6C2B4;
+}
+
+.cert-seal {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: #F3E5AB;
+  font-weight: 700;
+  text-align: left;
+}
+
+.cert-meta {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+  gap: 0.2rem;
+}
+
+.sankalp-actions-row {
+  display: flex;
+  gap: 0.85rem;
+}
+
+.btn-whatsapp {
+  flex: 1;
+  background: #25D366;
+  color: #FFF;
+  font-weight: 700;
+  border-radius: var(--radius-sm);
+  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.3);
+}
+
+.btn-whatsapp:hover {
+  background: #20BA5A;
+  transform: translateY(-1px);
+}
+
+/* ==========================================================================
+   FEATURE 3: 5-ACRE ROSS CREEK CAMPUS ZONE EXPLORER
+   ========================================================================== */
+.masterplan-zones-tabs {
+  display: flex;
+  gap: 0.65rem;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding-bottom: 0.85rem;
+  margin-bottom: 1.5rem;
+}
+
+.masterplan-zones-tabs::-webkit-scrollbar { display: none; }
+
+.zone-tab-btn {
+  flex-shrink: 0;
+  background: #FFF;
+  border: 1.5px solid rgba(88, 17, 26, 0.15);
+  padding: 0.75rem 1.25rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--color-primary-dark);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: var(--transition);
+}
+
+.zone-tab-btn.active, .zone-tab-btn:hover {
+  background: var(--color-primary);
+  color: #FFF;
+  border-color: var(--color-primary);
+  box-shadow: 0 6px 18px rgba(88, 17, 26, 0.2);
+}
+
+.zone-spotlight-display {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 2rem;
+  background: #FFF;
+  border-radius: var(--radius-md);
+  border: 1.5px solid rgba(212, 175, 55, 0.3);
+  padding: 1.75rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  margin-bottom: 2rem;
+}
+
+.zone-visual-box {
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  position: relative;
+  height: 280px;
+}
+
+.zone-visual-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.zone-badge-overlay {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: rgba(30, 10, 12, 0.85);
+  color: #F3E5AB;
+  border: 1px solid #D4AF37;
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 700;
+  backdrop-filter: blur(8px);
+}
+
+.zone-info-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.zone-info-box h3 {
+  font-size: 1.5rem;
+  color: var(--color-primary-dark);
+  margin-bottom: 0.65rem;
+}
+
+.zone-specs-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin: 1rem 0;
+  font-size: 0.875rem;
+}
+
+.zone-specs-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-dark);
+}
+
+.zone-specs-list li span {
+  color: #10B981;
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .sankalp-generator-card {
+    grid-template-columns: 1fr;
+    padding: 1.25rem 1rem;
+    gap: 1.5rem;
+  }
+  .form-row-duo {
+    grid-template-columns: 1fr;
+    gap: 0.85rem;
+  }
+  .sankalp-card-frame {
+    padding: 1rem;
+  }
+  .card-filigree-border {
+    padding: 1rem 0.75rem;
+  }
+  .cert-name {
+    font-size: 1.2rem;
+  }
+  .sankalp-actions-row {
+    flex-direction: column;
+  }
+  .zone-spotlight-display {
+    grid-template-columns: 1fr;
+    padding: 1.25rem 1rem;
+  }
+  .zone-visual-box {
+    height: 200px;
+  }
+}
