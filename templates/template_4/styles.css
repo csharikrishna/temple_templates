@@ -584,7 +584,9 @@ h1, h2, h3, h4, h5, .font-serif {
 
 .hero-trust-metrics {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  width: 100%;
+  box-sizing: border-box;
   gap: 1.5rem;
   border-top: 1px solid var(--border-subtle);
   padding-top: 1.75rem;
@@ -842,7 +844,9 @@ h1, h2, h3, h4, h5, .font-serif {
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  width: 100%;
+  box-sizing: border-box;
   gap: 1.5rem;
 }
 
@@ -941,7 +945,9 @@ h1, h2, h3, h4, h5, .font-serif {
 
 .pujas-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  width: 100%;
+  box-sizing: border-box;
   gap: 2rem;
 }
 
@@ -1235,6 +1241,2188 @@ h1, h2, h3, h4, h5, .font-serif {
 
 /* Authentic Antique Gold Filigree Frame Overlay using assets/t4_certificate_filigree_frame.png */
 .sankalp-card-frame::before {
+  display: none !important;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('/assets/t4_certificate_filigree_frame.png') no-repeat center center;
+  background-size: 100% 100%;
+  pointer-events: none;
+  z-index: 2;
+  opacity: 0.95;
+}
+
+.card-filigree-border {
+  position: relative;
+  z-index: 3;
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.cert-header {
+  text-align: center;
+  border-bottom: 1px dashed rgba(212, 175, 55, 0.35);
+  padding-bottom: 0.85rem;
+  margin-bottom: 1.15rem;
+}
+
+.cert-om {
+  font-size: 2.2rem;
+  display: block;
+  margin-bottom: 0.2rem;
+  color: var(--color-gold);
+}
+
+.cert-sloka {
+  font-size: 0.85rem;
+  color: var(--color-gold);
+  letter-spacing: 0.15em;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 0.35rem;
+}
+
+.cert-temple-title {
+  font-size: 1.15rem;
+  font-family: var(--font-serif);
+  color: #FFFDF0;
+  letter-spacing: 0.06em;
+  margin: 0;
+}
+
+.cert-temple-sub {
+  font-size: 0.7rem;
+  color: #D6C2B4;
+  letter-spacing: 0.05em;
+  margin: 0.15rem 0 0.45rem;
+}
+
+.cert-site-tag {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--color-gold);
+  background: rgba(212, 175, 55, 0.12);
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  display: inline-block;
+  letter-spacing: 0.05em;
+}
+
+.cert-body {
+  text-align: center;
+  padding: 0.5rem 0 1rem;
+}
+
+.cert-badge {
+  display: inline-block;
+  background: rgba(212, 175, 55, 0.15);
+  color: #F3E5AB;
+  border: 1px solid var(--color-gold);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  padding: 0.2rem 0.75rem;
+  border-radius: var(--radius-full);
+  margin-bottom: 0.75rem;
+}
+
+.cert-deity {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #FFD700;
+  margin-bottom: 0.85rem;
+}
+
+.cert-devotee-block {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  border-radius: 6px;
+  padding: 0.85rem 1rem;
+  margin-bottom: 0.85rem;
+}
+
+.cert-label {
+  font-size: 0.65rem;
+  color: var(--color-gold);
+  letter-spacing: 0.1em;
+  display: block;
+  margin-bottom: 0.2rem;
+  font-weight: 700;
+}
+
+.cert-name {
+  font-family: var(--font-serif);
+  font-size: clamp(1.2rem, 2.5vw, 1.45rem);
+  font-weight: 800;
+  color: #FFFDF0;
+  letter-spacing: 0.02em;
+}
+
+.cert-gotra {
+  font-size: 0.85rem;
+  color: #F3E5AB;
+  font-weight: 600;
+  margin-top: 0.2rem;
+}
+
+.cert-sankalp-text {
+  font-size: 0.85rem;
+  color: #E2E8F0;
+  font-style: italic;
+  line-height: 1.5;
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+.cert-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px dashed rgba(212, 175, 55, 0.35);
+  padding-top: 0.85rem;
+  font-size: 0.72rem;
+  color: #D6C2B4;
+  margin-top: 0.5rem;
+}
+
+.cert-seal {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #F3E5AB;
+  font-weight: 700;
+  text-align: left;
+}
+
+.cert-meta {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+  gap: 0.2rem;
+}
+
+.sankalp-actions-row {
+  display: flex;
+  gap: 0.85rem;
+}
+
+.btn-whatsapp {
+  flex: 1;
+  background: #25D366;
+  color: #FFF;
+  font-weight: 700;
+  border-radius: var(--radius-sm);
+  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.35);
+}
+
+.btn-whatsapp:hover {
+  background: #20BA5A;
+  transform: translateY(-1px);
+}
+
+.sankalp-privacy-note {
+  font-size: 0.72rem;
+  color: var(--text-tertiary);
+  text-align: center;
+  margin-top: 0.5rem;
+  line-height: 1.4;
+}
+
+/* ==========================================================================
+   7. SIGNATURE ARTIFACT 2: 5-ACRE ROSS CREEK CAMPUS INTERACTIVE ZONE EXPLORER
+   Uses assets/t4_campus_blueprint_render.jpg
+   ========================================================================== */
+.masterplan-campus-explorer {
+  background: var(--bg-surface-2);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+  box-shadow: var(--shadow-md);
+}
+
+.masterplan-viewer-box {
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--border-gold);
+  margin-bottom: 1.75rem;
+  background: #0A0D12;
+}
+
+.masterplan-viewer-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  max-height: 540px;
+}
+
+/* Masterplan Interactive Hotspots */
+.masterplan-hotspot {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(212, 175, 55, 0.95);
+  color: #0B0E14;
+  font-weight: 900;
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.7);
+  transition: var(--transition-fast);
+  z-index: 10;
+  border: 2px solid #FFF;
+}
+
+.masterplan-hotspot:hover, .masterplan-hotspot.active {
+  background: #FFF;
+  color: #3C0A11;
+  transform: translate(-50%, -50%) scale(1.3);
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.9);
+  animation: hotspot-pulse 1.8s infinite;
+}
+
+@keyframes hotspot-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.7); }
+  70% { box-shadow: 0 0 0 14px rgba(212, 175, 55, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
+}
+
+.masterplan-zones-tabs {
+  display: flex;
+  gap: 0.65rem;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.zone-tab-btn {
+  background: var(--bg-surface-3);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  padding: 0.65rem 1.25rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.zone-tab-btn:hover, .zone-tab-btn.active {
+  background: var(--color-gold-subtle);
+  border-color: var(--color-gold);
+  color: var(--color-gold);
+}
+
+.zone-spotlight-display {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 2rem;
+  background: var(--bg-surface-1);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 1.75rem;
+  align-items: center;
+}
+
+.zone-visual-box {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  background: #0E121A;
+  border: 1px solid var(--border-subtle);
+}
+
+.zone-visual-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.3s ease;
+}
+
+.zone-badge-overlay {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  background: rgba(11, 14, 20, 0.85);
+  color: var(--color-gold);
+  border: 1px solid var(--border-gold);
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.25rem 0.65rem;
+  border-radius: 4px;
+}
+
+.zone-info-box {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.zone-specs-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.zone-specs-list li {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  line-height: 1.45;
+}
+
+.spec-check {
+  color: var(--color-gold);
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
+   8. SIGNATURE ARTIFACT 3: DGR BRICK SPONSORSHIP MATRIX & AUSTRALIAN PROGRESSIVE TAX CALCULATOR
+   Uses assets/t4_granite_brick_texture.jpg
+   Progressive Bracket Calculation for FY 2024-25 & 2025-26
+   ========================================================================== */
+/* ==========================================================================
+   AUTHENTIC CONSECRATED GRANITE BRICK SPONSORSHIP & TAX MATRIX (ANTI-SLOP ARCHITECTURE)
+   ========================================================================== */
+
+.brick-matrix-calculator-card {
+  background: var(--bg-surface) !important;
+  border: 1.5px solid var(--border-gold) !important;
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+  box-shadow: 0 12px 36px rgba(60, 10, 17, 0.06), 0 2px 8px rgba(184, 134, 11, 0.12);
+  margin-top: 2rem;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.matrix-card-header {
+  margin-bottom: 2rem;
+}
+
+/* Institutional ATO DGR Australian Charity Endorsement Badge */
+.matrix-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #F4EFE6 !important;
+  border: 1.5px solid var(--color-gold) !important;
+  color: var(--color-maroon) !important;
+  font-size: 0.78rem;
+  font-weight: 800;
+  padding: 0.35rem 0.95rem;
+  border-radius: var(--radius-full);
+  margin-bottom: 0.85rem;
+  letter-spacing: 0.04em;
+  box-shadow: 0 1px 4px rgba(60, 10, 17, 0.06);
+}
+
+.matrix-title {
+  font-size: clamp(1.6rem, 3.2vw, 2.25rem);
+  color: var(--color-maroon) !important;
+  margin-bottom: 0.65rem;
+  line-height: 1.25;
+}
+
+.matrix-subtitle {
+  font-size: 0.95rem;
+  color: #4A3E39 !important;
+  line-height: 1.65;
+  max-width: 900px;
+}
+
+/* Dual Progress Visualization */
+.brick-crowdfund-meter {
+  background: var(--bg-surface-2) !important;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 1.25rem 1.5rem;
+  margin-top: 1.5rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.meter-labels-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  color: #4A3E39 !important;
+  margin-bottom: 0.75rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.meter-labels-row strong {
+  color: var(--color-maroon) !important;
+}
+
+.brick-meter-track {
+  width: 100%;
+  height: 12px;
+  background: rgba(60, 10, 17, 0.08) !important;
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  position: relative;
+}
+
+.brick-meter-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #B8860B 0%, #D4AF37 50%, #2E7D32 100%) !important;
+  border-radius: var(--radius-full);
+  transition: width 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.matrix-calculator-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  width: 100%;
+  box-sizing: border-box;
+  gap: 2.5rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.matrix-config-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.matrix-label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--color-maroon) !important;
+  margin-bottom: 0.25rem;
+  display: block;
+}
+
+.brick-tier-chips {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  width: 100%;
+  box-sizing: border-box;
+  gap: 0.65rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.brick-chip {
+  background: #FFFFFF !important;
+  border: 1.5px solid var(--border-subtle) !important;
+  border-radius: var(--radius-sm);
+  padding: 0.75rem 0.5rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  box-sizing: border-box;
+}
+
+.brick-chip:hover {
+  background: #FAF7F2 !important;
+  border-color: var(--color-gold) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(184, 134, 11, 0.15);
+}
+
+.brick-chip.active {
+  background: var(--color-maroon) !important;
+  border-color: var(--color-maroon) !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 4px 14px rgba(60, 10, 17, 0.25);
+  transform: translateY(-2px);
+}
+
+.brick-chip.active .chip-qty {
+  color: #F3E5AB !important;
+}
+
+.brick-chip.active .chip-amt {
+  color: #FFD700 !important;
+}
+
+.chip-qty {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.chip-amt {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--color-gold);
+}
+
+.matrix-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.matrix-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.matrix-field label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--color-maroon);
+}
+
+.input-prefix-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.input-prefix-wrap .prefix {
+  position: absolute;
+  left: 12px;
+  font-weight: 700;
+  color: var(--color-gold);
+  pointer-events: none;
+}
+
+.input-prefix-wrap .matrix-input {
+  padding-left: 1.85rem;
+}
+
+.matrix-input {
+  width: 100%;
+  padding: 0.75rem 0.85rem;
+  border: 1.5px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  background: #FFFFFF;
+  color: var(--text-primary);
+  font-size: 0.95rem;
+  font-weight: 600;
+  box-sizing: border-box;
+  transition: all 0.2s ease;
+}
+
+.matrix-input:focus {
+  outline: none;
+  border-color: var(--color-gold);
+  box-shadow: 0 0 0 3px rgba(184, 134, 11, 0.15);
+}
+
+.income-chips-tray {
+  display: flex;
+  gap: 0.45rem;
+  margin-top: 0.35rem;
+}
+
+.income-preset-chip {
+  background: var(--bg-surface-2);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.25rem 0.55rem;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.income-preset-chip:hover, .income-preset-chip.active {
+  background: var(--color-maroon);
+  color: #FFFFFF;
+  border-color: var(--color-maroon);
+}
+
+.checkbox-label-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  cursor: pointer;
+  user-select: none;
+}
+
+/* ==========================================================================
+   AUTHENTIC CHISELED GRANITE WALL TILES (NO NEON GREEN SLOP)
+   ========================================================================== */
+
+.virtual-brick-wall-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  width: 100%;
+  box-sizing: border-box;
+  gap: 0.65rem;
+  margin: 0.5rem 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.virtual-brick-tile {
+  background: #141416 url('/assets/t4_granite_brick_texture.jpg') no-repeat center center;
+  background-size: cover;
+  border: 1.5px solid rgba(212, 175, 55, 0.4);
+  border-radius: 6px;
+  padding: 0.65rem 0.4rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+  min-height: 64px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  box-sizing: border-box;
+  box-shadow: inset 0 0 14px rgba(0, 0, 0, 0.85), 0 2px 6px rgba(0, 0, 0, 0.25);
+}
+
+/* Dark granite protective tint - reveals genuine stone texture */
+.virtual-brick-tile::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(12, 10, 11, 0.68);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.virtual-brick-tile:hover {
+  transform: translateY(-2px);
+  border-color: #D4AF37;
+  box-shadow: 0 4px 14px rgba(212, 175, 55, 0.35);
+}
+
+.virtual-brick-tile.selected {
+  border: 2px solid #FFD700 !important;
+  box-shadow: 0 0 16px rgba(212, 175, 55, 0.7) !important;
+}
+
+.virtual-brick-tile.selected::before {
+  background: rgba(35, 18, 10, 0.35) !important;
+}
+
+/* Consecrated / Sponsored Tiles - Zero Slop, Architectural Black Granite & Gold Leaf */
+.virtual-brick-tile {
+  background: #141315 url('/assets/t4_granite_brick_texture.jpg') no-repeat center center !important;
+  background-size: cover !important;
+  border: 1px solid rgba(212, 175, 55, 0.35) !important;
+  border-radius: 6px !important;
+  padding: 0.55rem 0.35rem !important;
+  text-align: center !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+  position: relative !important;
+  min-height: 60px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  overflow: hidden !important;
+  box-sizing: border-box !important;
+  box-shadow: inset 0 0 16px rgba(0, 0, 0, 0.85), 0 2px 6px rgba(0, 0, 0, 0.2) !important;
+}
+
+.virtual-brick-tile::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important; left: 0 !important; right: 0 !important; bottom: 0 !important;
+  background: rgba(12, 10, 12, 0.72) !important;
+  pointer-events: none !important;
+  z-index: 1 !important;
+}
+
+.virtual-brick-tile:hover {
+  transform: translateY(-2px) !important;
+  border-color: #D4AF37 !important;
+  box-shadow: 0 4px 14px rgba(212, 175, 55, 0.35) !important;
+}
+
+.virtual-brick-tile.selected {
+  border: 2px solid #FFD700 !important;
+  box-shadow: 0 0 16px rgba(212, 175, 55, 0.7) !important;
+}
+
+.virtual-brick-tile.selected::before {
+  background: rgba(40, 20, 10, 0.4) !important;
+}
+
+.virtual-brick-tile.funded {
+  border-color: rgba(184, 134, 11, 0.45) !important;
+  cursor: default !important;
+}
+
+.virtual-brick-tile.funded::before {
+  background: rgba(10, 8, 10, 0.78) !important;
+}
+
+.tile-number {
+  font-family: var(--font-mono) !important;
+  font-size: 0.62rem !important;
+  font-weight: 700 !important;
+  color: #D4AF37 !important;
+  position: relative !important;
+  z-index: 2 !important;
+  letter-spacing: 0.06em !important;
+  margin-bottom: 2px !important;
+}
+
+.tile-engraving {
+  font-family: var(--font-serif) !important;
+  font-size: 0.72rem !important;
+  font-weight: 700 !important;
+  color: #FFFDF0 !important;
+  letter-spacing: 0.04em !important;
+  position: relative !important;
+  z-index: 2 !important;
+  text-transform: uppercase !important;
+  line-height: 1.25 !important;
+  white-space: normal !important;
+  word-break: break-word !important;
+}
+
+.virtual-brick-tile.funded .tile-number::before {
+  content: '⚜ ' !important;
+  color: #D4AF37 !important;
+}
+
+.virtual-brick-tile.funded .tile-engraving {
+  color: #F3E5AB !important;
+}
+
+.virtual-brick-tile.selected .tile-engraving {
+  color: #FFD700 !important;
+  text-shadow: 0 0 8px rgba(255, 215, 0, 0.6) !important;
+}
+
+/* Output Column */
+.matrix-output-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.tax-breakdown-card {
+  background: var(--bg-surface-2) !important;
+  border: 1.5px solid var(--border-gold) !important;
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  box-shadow: var(--shadow-sm);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.tax-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  gap: 0.5rem;
+}
+
+.tax-val {
+  font-weight: 700;
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+}
+
+.text-green {
+  color: #2E7D32 !important;
+  font-weight: 800;
+}
+
+.tax-refund-row {
+  padding-top: 0.35rem;
+}
+
+.tax-refund-row .tax-lbl {
+  font-weight: 700;
+  color: var(--color-maroon);
+}
+
+.tax-divider {
+  height: 1.5px;
+  background: var(--border-subtle);
+  margin: 0.25rem 0;
+}
+
+.tax-net-row {
+  align-items: flex-start;
+  padding-top: 0.25rem;
+}
+
+.tax-net-lbl {
+  font-weight: 800;
+  font-size: 0.95rem;
+  color: var(--color-maroon);
+}
+
+.tax-net-sub {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+.tax-net-val {
+  font-size: 1.45rem;
+  font-weight: 900;
+  color: var(--color-maroon);
+  font-family: var(--font-mono);
+}
+
+/* 3D Carved Granite Plaque Preview */
+.granite-brick-preview {
+  position: relative;
+  background: #141416 url('/assets/t4_granite_brick_texture.jpg') no-repeat center center;
+  background-size: cover;
+  border: 2px solid #D4AF37;
+  border-radius: var(--radius-md);
+  padding: 1.75rem 1.5rem;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45), inset 0 0 25px rgba(0, 0, 0, 0.9);
+  overflow: hidden;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.brick-chiseled-border {
+  border: 1.5px dashed rgba(212, 175, 55, 0.55);
+  padding: 1.5rem 1.25rem;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  box-sizing: border-box;
+}
+
+.brick-header-om {
+  font-size: 1.8rem;
+  color: #D4AF37;
+  margin-bottom: 0.35rem;
+}
+
+.brick-temple-tag {
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  color: #D4AF37;
+  font-weight: 700;
+  margin-bottom: 0.85rem;
+}
+
+.brick-engraved-name {
+  font-family: var(--font-serif);
+  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+  font-weight: 800;
+  color: #FFFDF0;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.85rem;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);
+}
+
+.brick-dedication-tag {
+  display: inline-block;
+  background: rgba(212, 175, 55, 0.15);
+  border: 1px solid #D4AF37;
+  color: #F3E5AB;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-full);
+  margin-bottom: 0.85rem;
+}
+
+.brick-spec-footer {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.68rem;
+  color: #C7B5AA;
+  border-top: 1px dashed rgba(212, 175, 55, 0.35);
+  padding-top: 0.75rem;
+  margin-top: 0.5rem;
+}/* ==========================================================================
+   BALLARAT HINDU TEMPLE & CULTURAL CENTRE (BHTCC) - MODERN UNIFIED DIGITAL FLAGSHIP
+   Template 4 Canonical Design System & Stylesheet
+   Design Benchmarks: Figma, Linear, x.ai, Apple
+   Color System: Deep Graphite Foundation, Charcoal Surfaces, Antique Gold Accents, Warm Ivory Typography
+   ========================================================================== */
+
+:root {
+  /* Surface Foundations: Sacred Temple Sandstone, Marble & Ivory */
+  --bg-base: #FAF7F2;              /* Auspicious Rajasthan sandstone / Warm Temple Sand */
+  --bg-surface: #FFFFFF;           /* Crisp Consecrated Marble Card Surface */
+  --bg-surface-1: #FFFFFF;         /* Elevated Card Surface */
+  --bg-surface-2: #F4EFE6;         /* Warm Sandstone / Beige */
+  --bg-surface-3: #ECE5D8;         /* Sandalwood / Chandan Beige */
+  --bg-surface-elevated: #FFFFFF;  /* Modals & Popovers */
+  --bg-glass: rgba(250, 247, 242, 0.94);
+  --bg-glass-card: rgba(255, 255, 255, 0.96);
+  --bg-card: #FFFFFF;
+  --bg-sand: #F4EFE6;
+  --bg-cream: #FAF7F2;
+  --bg-dark: #1F1514;              /* Deep Royal Charcoal for footer */
+
+  /* Gold & Sacred Metallic Palette */
+  --color-gold: #B8860B;           /* Deep Auspicious Temple Gold */
+  --color-gold-hover: #D4AF37;     /* Radiant Swarna Gold */
+  --color-gold-light: #F3E5AB;     /* Champagne Gold */
+  --color-gold-dim: #8B6508;
+  --color-gold-subtle: rgba(184, 134, 11, 0.12);
+  --color-bronze: #7A5800;
+  --color-saffron: #E65100;        /* Sacred Agni Saffron */
+  --color-saffron-warm: #FF8F00;
+  --color-sacred-amber: #FFA000;
+  --color-crimson: #58111A;        /* Deep Royal Kumkum Maroon */
+  --color-maroon: #3C0A11;         /* Sanctum Door Crimson */
+  --color-emerald: #10B981;        /* Consecrated Tulasi Green */
+
+  /* Typography / Text Palette */
+  --text-primary: #1C1917;         /* High-Contrast Charcoal (14:1 WCAG AAA) */
+  --text-secondary: #574844;       /* Warm Earth Tone / Stone Brown */
+  --text-tertiary: #84726E;        /* Subtle metadata / placeholder */
+  --text-gold: #B8860B;            /* Temple Gold Text */
+  --text-muted: #84726E;
+  --text-light: #FFFFFF;
+  --text-dark: #1C1917;
+
+  /* Precision Borders */
+  --border-subtle: rgba(184, 134, 11, 0.22);
+  --border-light: rgba(88, 17, 26, 0.08);
+  --border-gold: rgba(184, 134, 11, 0.38);
+  --border-gold-glow: rgba(212, 175, 55, 0.45);
+
+  /* Depth & Soft Organic Shadows */
+  --shadow-sm: 0 2px 8px rgba(34, 24, 22, 0.06);
+  --shadow-md: 0 8px 24px rgba(74, 14, 23, 0.08);
+  --shadow-lg: 0 16px 40px rgba(74, 14, 23, 0.12);
+  --shadow-gold: 0 8px 25px rgba(184, 134, 11, 0.18);
+  --shadow-inner: inset 0 1px 2px rgba(34, 24, 22, 0.04);
+
+  /* Typography Hierarchy */
+  --font-serif: 'Cinzel', 'Playfair Display', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: ui-monospace, 'SF Mono', Menlo, Monaco, Consolas, monospace;
+  --font-display: var(--font-serif);
+  --font-body: var(--font-sans);
+
+  /* Layout & Geometry */
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+
+  /* Restrained Motion Transitions */
+  --transition-fast: all 0.15s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-smooth: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Aliases */
+  --color-primary: #58111A;
+  --color-primary-dark: #3C0A11;
+  --color-accent-gold: var(--color-gold);
+  --color-accent-gold-light: #F3E5AB;
+  --color-accent-saffron: var(--color-saffron);
+}
+
+/* Base Reset & Core Document Styles */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  background-color: var(--bg-base);
+  overflow-x: hidden !important;
+  max-width: 100vw !important;
+  width: 100% !important;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-base);
+  color: var(--text-primary);
+  line-height: 1.6;
+  overflow-x: hidden !important;
+  max-width: 100vw !important;
+  width: 100% !important;
+  position: relative;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Accessibility: Respect Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Typography Helpers */
+h1, h2, h3, h4, h5, .font-serif {
+  font-family: var(--font-serif);
+  color: var(--text-primary);
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.text-gold { color: var(--color-gold) !important; }
+.text-saffron { color: var(--color-saffron) !important; }
+.text-maroon { color: #E5A93C !important; }
+.text-white { color: #FFFFFF !important; }
+.text-muted { color: var(--text-muted) !important; }
+.text-green { color: var(--color-emerald) !important; }
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Section Header Structure */
+.section-head {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 3.5rem;
+}
+
+.section-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: var(--color-gold-subtle);
+  border: 1px solid var(--border-gold);
+  color: var(--color-gold);
+  padding: 0.3rem 0.85rem;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.section-title {
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  letter-spacing: -0.01em;
+}
+
+.section-subtitle {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+}
+
+/* ==========================================================================
+   1. TOP NOTIFICATION & REAL-TIME PANCHANG INSTRUMENT BAR
+   Location: 110 Vaggs Rd, Ross Creek VIC 3351
+   ========================================================================== */
+.top-utility-bar {
+  background: #07090D;
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+  position: relative;
+  z-index: 1001;
+}
+
+.top-bar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.panchang-live-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+.panchang-live-badge .badge-icon {
+  color: var(--color-gold);
+}
+
+.panchang-live-badge strong {
+  color: var(--color-gold);
+}
+
+.live-darshan-indicator {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.2rem 0.65rem;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+}
+
+.pulse-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-emerald);
+  box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+  animation: pulse-green 2s infinite;
+}
+
+@keyframes pulse-green {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+  70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+}
+
+.ticker-wrapper {
+  flex: 1;
+  min-width: 0;
+  max-width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  contain: paint;
+}
+
+.ticker-label {
+  background: var(--color-accent-saffron);
+  color: #FFF;
+  font-size: 0.675rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.ticker-marquee {
+  white-space: nowrap;
+  animation: marquee 28s linear infinite;
+  display: inline-block;
+  overflow: hidden;
+  max-width: 100%;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+.top-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  font-size: 0.8rem;
+}
+
+.top-actions a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: var(--transition-fast);
+}
+
+.top-actions a:hover {
+  color: var(--color-gold);
+}
+
+/* ==========================================================================
+   2. MAIN HEADER & NAVIGATION (Glassmorphism + Precision Alignment)
+   ========================================================================== */
+.main-header {
+  background: rgba(11, 14, 20, 0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border-subtle);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
+  transition: var(--transition);
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.85rem 0;
+}
+
+.brand-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  text-decoration: none;
+}
+
+.brand-emblem {
+  width: 44px;
+  height: 44px;
+  background: linear-gradient(135deg, #161B26, #242B3D);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid var(--color-gold);
+  color: var(--color-gold);
+  font-size: 1.4rem;
+  box-shadow: var(--shadow-gold);
+  flex-shrink: 0;
+}
+
+.brand-text h1 {
+  font-size: 1.15rem;
+  letter-spacing: 0.05em;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.brand-text p {
+  font-size: 0.7rem;
+  color: var(--color-gold);
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin: 0;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+.nav-item a {
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  transition: var(--transition-fast);
+  position: relative;
+  padding: 0.3rem 0;
+}
+
+.nav-item a:hover, .nav-item.active a {
+  color: var(--color-gold);
+}
+
+.nav-item a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: var(--color-gold);
+  transition: var(--transition-fast);
+}
+
+.nav-item:hover a::after, .nav-item.active a::after {
+  width: 100%;
+}
+
+.header-cta-group {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* Reusable Precision Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.25rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  transition: var(--transition-fast);
+  font-family: var(--font-sans);
+  white-space: nowrap;
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 2px;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--color-saffron), #FF7043);
+  color: #FFF;
+  box-shadow: 0 4px 14px rgba(230, 81, 0, 0.35);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #D84315, var(--color-saffron));
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(230, 81, 0, 0.45);
+}
+
+.btn-gold {
+  background: linear-gradient(135deg, #E5C365, #C5A039);
+  color: #0B0E14;
+  font-weight: 700;
+  box-shadow: 0 4px 14px rgba(212, 175, 55, 0.3);
+}
+
+.btn-gold:hover {
+  background: linear-gradient(135deg, #F3D98A, #D4AF37);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-gold);
+}
+
+.btn-maroon {
+  background: var(--color-crimson);
+  color: #FFF;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+.btn-maroon:hover {
+  background: var(--color-maroon);
+  transform: translateY(-1px);
+  border-color: var(--color-gold);
+}
+
+.btn-outline-gold {
+  border: 1.5px solid var(--color-gold);
+  color: var(--color-gold);
+  background: transparent;
+}
+
+.btn-outline-gold:hover {
+  background: var(--color-gold-subtle);
+  border-color: var(--color-gold-hover);
+  color: var(--color-gold-hover);
+}
+
+.btn-sm {
+  padding: 0.45rem 0.85rem;
+  font-size: 0.8rem;
+}
+
+.btn-lg {
+  padding: 0.85rem 1.85rem;
+  font-size: 1rem;
+}
+
+.btn-block {
+  width: 100%;
+}
+
+/* ==========================================================================
+   3. FLAGSHIP HERO SECTION (Cinematic Architectural Sanctuary Backdrop)
+   Uses assets/t4_flagship_hero_sanctum.jpg
+   ========================================================================== */
+.hero-section {
+  position: relative;
+  background: linear-gradient(180deg, #FAF7F2 0%, #F5ECE0 50%, #EFE5D5 100%);
+  color: var(--text-primary);
+  padding: 4.5rem 0 5.5rem;
+  overflow: hidden;
+  border-bottom: 1.5px solid var(--border-subtle);
+}
+
+.hero-background-art {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.05;
+  background-image: radial-gradient(var(--color-gold) 1.5px, transparent 1.5px);
+  background-size: 32px 32px;
+  pointer-events: none;
+}
+
+.hero-mandala-ornament {
+  position: absolute;
+  right: -100px;
+  bottom: -100px;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  border: 1px solid rgba(212, 175, 55, 0.12);
+  opacity: 0.2;
+  pointer-events: none;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 3.5rem;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-gold);
+  color: var(--color-maroon);
+  padding: 0.35rem 0.95rem;
+  border-radius: var(--radius-full);
+  font-size: 0.78rem;
+  font-weight: 700;
+  margin-bottom: 1.35rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  box-shadow: var(--shadow-sm);
+}
+
+.hero-title {
+  font-size: clamp(2.4rem, 4.2vw, 3.4rem);
+  line-height: 1.16;
+  color: var(--color-maroon);
+  margin-bottom: 1.35rem;
+  letter-spacing: -0.015em;
+}
+
+.hero-title span {
+  background: linear-gradient(135deg, #B8860B 0%, #8B6508 50%, #B8860B 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #B8860B;
+}
+
+.hero-subtitle {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 2.25rem;
+  max-width: 620px;
+}
+
+.hero-cta-cluster {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2.75rem;
+}
+
+.hero-trust-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  width: 100%;
+  box-sizing: border-box;
+  gap: 1.5rem;
+  border-top: 1px solid var(--border-subtle);
+  padding-top: 1.75rem;
+}
+
+.trust-metric-item h4 {
+  font-size: 1.65rem;
+  color: var(--color-gold);
+  margin-bottom: 0.2rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.trust-metric-item p {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+/* Hero Right: Living Sanctum & Aarti Player Card */
+.live-sanctum-card {
+  background: rgba(17, 21, 31, 0.78);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--border-gold);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-lg);
+}
+
+.sanctum-media-box {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: #0E0708;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sanctum-media-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.sanctum-overlay {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  right: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.live-badge-glow {
+  background: #DC2626;
+  color: #FFF;
+  font-size: 0.68rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  box-shadow: 0 0 14px rgba(220, 38, 38, 0.85);
+}
+
+.sanctum-play-btn {
+  position: absolute;
+  width: 56px;
+  height: 56px;
+  background: rgba(212, 175, 55, 0.92);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0B0E14;
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  box-shadow: 0 0 24px rgba(212, 175, 55, 0.65);
+}
+
+.sanctum-play-btn:hover {
+  transform: scale(1.1);
+  background: #FFF;
+}
+
+.sanctum-details-bar {
+  margin-top: 1.25rem;
+}
+
+.ritual-now {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.75rem;
+}
+
+.ritual-now h3 {
+  font-size: 1.1rem;
+  color: #FFF;
+}
+
+.ritual-now span {
+  font-size: 0.8rem;
+  color: var(--color-gold);
+  font-weight: 600;
+}
+
+.ritual-countdown-box {
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: var(--radius-sm);
+  padding: 0.75rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.25rem;
+  border: 1px solid var(--border-subtle);
+}
+
+.countdown-digits {
+  font-family: var(--font-mono);
+  color: #F9D976;
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Micro-offerings interaction bar */
+.devotee-offerings-tray {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.offering-pill {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  border-radius: var(--radius-sm);
+  padding: 0.55rem 0.4rem;
+  color: var(--text-primary);
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  transition: var(--transition-fast);
+}
+
+.offering-pill:hover {
+  background: rgba(212, 175, 55, 0.2);
+  border-color: var(--color-gold);
+  transform: translateY(-1px);
+}
+
+.live-diya-counter-pill {
+  margin-top: 0.85rem;
+  background: rgba(0, 0, 0, 0.45);
+  padding: 0.45rem 0.85rem;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  border: 1px solid var(--border-subtle);
+}
+
+.live-diya-counter-pill strong {
+  color: var(--color-gold);
+}
+
+/* Living Diya Lamp & Flame Animation */
+.living-diya-stage {
+  position: absolute;
+  bottom: 14px;
+  right: 16px;
+  z-index: 10;
+}
+
+.brass-diya-lamp {
+  position: relative;
+  width: 44px;
+  height: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.diya-flame {
+  width: 14px;
+  height: 22px;
+  background: radial-gradient(ellipse at 50% 80%, #FFF 0%, #FFD000 40%, #FF5A00 85%, transparent 100%);
+  border-radius: 50% 50% 20% 20% / 60% 60% 40% 40%;
+  filter: drop-shadow(0 0 10px #FF9000);
+  animation: flame-flicker 1.8s infinite alternate ease-in-out;
+  transform-origin: center bottom;
+  margin-bottom: -2px;
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+@keyframes flame-flicker {
+  0%   { transform: scale(1) rotate(-1deg); }
+  25%  { transform: scale(1.06, 0.96) rotate(1deg); }
+  50%  { transform: scale(0.96, 1.04) rotate(-0.5deg); }
+  75%  { transform: scale(1.03, 1) rotate(0.8deg); }
+  100% { transform: scale(0.98, 1.02) rotate(-1deg); }
+}
+
+.brass-vessel {
+  width: 38px;
+  height: 14px;
+  background: linear-gradient(180deg, #E5C365 0%, #B8860B 100%);
+  border-radius: 0 0 18px 18px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.6);
+  border-top: 1px solid #FFE082;
+}
+
+.bell-swinging {
+  animation: bell-swing 1.5s ease-in-out;
+  transform-origin: top center;
+  display: inline-block;
+}
+
+@keyframes bell-swing {
+  0%   { transform: rotate(0); }
+  20%  { transform: rotate(20deg); }
+  40%  { transform: rotate(-18deg); }
+  60%  { transform: rotate(12deg); }
+  80%  { transform: rotate(-8deg); }
+  100% { transform: rotate(0); }
+}
+
+/* ==========================================================================
+   4. PILGRIM SERVICE TILES (Dark Graphite Architecture)
+   ========================================================================== */
+.services-dashboard-section {
+  padding: 5.5rem 0;
+  background: var(--bg-surface-1);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  width: 100%;
+  box-sizing: border-box;
+  gap: 1.5rem;
+}
+
+.service-tile {
+  background: var(--bg-surface-2);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 1.75rem 1.5rem;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition-fast);
+  position: relative;
+  overflow: hidden;
+}
+
+.service-tile:hover {
+  transform: translateY(-3px);
+  border-color: var(--border-gold);
+  box-shadow: var(--shadow-md), 0 0 20px rgba(212, 175, 55, 0.12);
+}
+
+.service-icon-box {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  margin-bottom: 1.25rem;
+  color: var(--color-gold);
+}
+
+.service-tile h3 {
+  font-size: 1.15rem;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.service-tile p {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin-bottom: 1.25rem;
+  flex: 1;
+}
+
+.service-meta-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--color-gold);
+  border-top: 1px solid var(--border-subtle);
+  padding-top: 0.85rem;
+}
+
+/* ==========================================================================
+   5. PUJAS & SEVAS CATALOG
+   ========================================================================== */
+.pujas-section {
+  padding: 5.5rem 0;
+  background: var(--bg-base);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.puja-filter-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.filter-tab {
+  background: var(--bg-surface-2);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  padding: 0.55rem 1.2rem;
+  border-radius: var(--radius-full);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.filter-tab:hover, .filter-tab.active {
+  background: var(--color-gold-subtle);
+  border-color: var(--color-gold);
+  color: var(--color-gold);
+}
+
+.pujas-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  width: 100%;
+  box-sizing: border-box;
+  gap: 2rem;
+}
+
+.puja-card {
+  background: var(--bg-surface-2);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition-fast);
+}
+
+.puja-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--border-gold);
+  box-shadow: var(--shadow-md);
+}
+
+.puja-card-img-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: #0E121A;
+}
+
+.puja-card-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.puja-card:hover .puja-card-img-wrap img {
+  transform: scale(1.04);
+}
+
+.puja-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(11, 14, 20, 0.85);
+  color: var(--color-gold);
+  border: 1px solid var(--border-gold);
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-full);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.puja-card-body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.puja-card-body h3 {
+  font-size: 1.2rem;
+  color: var(--text-primary);
+  margin-bottom: 0.4rem;
+}
+
+.puja-duration-deity {
+  font-size: 0.8rem;
+  color: var(--color-gold);
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
+
+.puja-desc {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+  margin-bottom: 1.25rem;
+  flex: 1;
+}
+
+.puja-price-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--border-subtle);
+  padding-top: 1rem;
+  margin-top: auto;
+}
+
+.price-val {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #FFF;
+}
+
+/* Priest Verification Banner */
+.priest-verification-card {
+  margin-top: 3.5rem;
+  background: var(--bg-surface-2);
+  border: 1px solid var(--border-gold);
+  border-radius: var(--radius-md);
+  padding: 1.75rem 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.priest-avatar {
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--color-gold);
+  flex-shrink: 0;
+  box-shadow: var(--shadow-gold);
+}
+
+.priest-info h4 {
+  font-size: 1.15rem;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+}
+
+.priest-info p {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.priest-disclaimer-note {
+  font-size: 0.72rem;
+  color: var(--text-tertiary);
+  margin-top: 0.35rem;
+  font-style: italic;
+}
+
+/* ==========================================================================
+   6. SIGNATURE ARTIFACT 1: DIGITAL GOTRA SANKALP GENERATOR & CERTIFICATE STUDIO
+   Features Vedic Gotras Autocomplete, Token Generation, WhatsApp Sharing & A4 Print
+   Uses assets/t4_certificate_filigree_frame.png
+   ========================================================================== */
+.sankalp-generator-section {
+  padding: 5.5rem 0;
+  background: radial-gradient(circle at 50% 0%, rgba(212, 175, 55, 0.06) 0%, transparent 60%), var(--bg-surface-1);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.sankalp-generator-card {
+  display: grid;
+  grid-template-columns: 1.05fr 1.35fr;
+  gap: 2.75rem;
+  background: var(--bg-surface-2);
+  border: 1px solid var(--border-gold);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+  box-shadow: var(--shadow-lg);
+}
+
+.sankalp-form-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.sankalp-step-title {
+  font-size: 1.2rem;
+  color: var(--text-primary);
+  font-family: var(--font-serif);
+  border-bottom: 1px solid var(--border-gold);
+  padding-bottom: 0.65rem;
+  margin-bottom: 0.25rem;
+}
+
+.form-group-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.form-group-item label {
+  font-size: 0.825rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+}
+
+.sankalp-input {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  border-radius: var(--radius-sm);
+  font-size: 0.95rem;
+  font-family: var(--font-sans);
+  background: var(--bg-surface-1);
+  color: var(--text-primary);
+  transition: var(--transition-fast);
+}
+
+.sankalp-input:focus {
+  outline: none;
+  border-color: var(--color-gold);
+  box-shadow: 0 0 12px rgba(212, 175, 55, 0.35);
+  background: var(--bg-surface-3);
+}
+
+.form-row-duo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+/* Quick intention preset chips */
+.intention-chips-tray {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: 0.35rem;
+}
+
+.intention-preset-chip {
+  background: var(--bg-surface-3);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 0.25rem 0.6rem;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.intention-preset-chip:hover, .intention-preset-chip.active {
+  background: var(--color-gold-subtle);
+  border-color: var(--color-gold);
+  color: var(--color-gold);
+}
+
+.sankalp-btn-cluster {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.btn-generate-sankalp {
+  flex: 1;
+  padding: 0.95rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.btn-reset-sankalp {
+  background: transparent;
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  padding: 0.95rem 1.25rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.btn-reset-sankalp:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-primary);
+}
+
+/* Consecrated Certificate Preview Frame */
+.sankalp-preview-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.sankalp-card-frame {
+  position: relative;
+  background: #0D0A0B;
+  color: #FAF7F2;
+  border-radius: var(--radius-md);
+  padding: 2.25rem 2rem;
+  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.75);
+  overflow: hidden;
+  min-height: 480px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Authentic Antique Gold Filigree Frame Overlay using assets/t4_certificate_filigree_frame.png */
+.sankalp-card-frame::before {
+  display: none !important;
   content: '';
   position: absolute;
   top: 0;
@@ -1678,7 +3866,9 @@ h1, h2, h3, h4, h5, .font-serif {
 
 .matrix-calculator-grid {
   display: grid;
-  grid-template-columns: 1.15fr 1fr;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  width: 100%;
+  box-sizing: border-box;
   gap: 2.75rem;
 }
 
@@ -1698,7 +3888,9 @@ h1, h2, h3, h4, h5, .font-serif {
 
 .brick-tier-chips {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  width: 100%;
+  box-sizing: border-box;
   gap: 0.65rem;
 }
 
@@ -1900,7 +4092,9 @@ h1, h2, h3, h4, h5, .font-serif {
 /* Virtual Granite Brick Wall Matrix Grid */
 .virtual-brick-wall-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  width: 100%;
+  box-sizing: border-box;
   gap: 0.65rem;
   margin: 0.5rem 0;
 }
@@ -2076,7 +4270,9 @@ h1, h2, h3, h4, h5, .font-serif {
 
 .timetable-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  width: 100%;
+  box-sizing: border-box;
   gap: 1.5rem;
 }
 
@@ -2121,7 +4317,9 @@ h1, h2, h3, h4, h5, .font-serif {
 
 .pillars-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  width: 100%;
+  box-sizing: border-box;
   gap: 2rem;
 }
 
@@ -2163,7 +4361,9 @@ h1, h2, h3, h4, h5, .font-serif {
 
 .testimonials-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  width: 100%;
+  box-sizing: border-box;
   gap: 2rem;
 }
 
@@ -2413,6 +4613,7 @@ h1, h2, h3, h4, h5, .font-serif {
   }
 
   #sankalp-certificate-target::before {
+    display: none !important;
     background: url('/assets/t4_certificate_filigree_frame.png') no-repeat center center !important;
     background-size: 100% 100% !important;
     opacity: 1 !important;
@@ -3163,7 +5364,9 @@ h1, h2, h3, h4, h5, .font-serif {
 }
 .donation-preset-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  width: 100%;
+  box-sizing: border-box;
   gap: 0.75rem;
   margin: 1.25rem 0;
 }
@@ -4285,7 +6488,7 @@ body {
 
   /* Sankalp Studio Mobile Optimization & Prevent Overflow */
   .sankalp-generator-card {
-    grid-template-columns: 1fr !important;
+    grid-template-columns: minmax(0, 1fr) !important;
     padding: 1.25rem 1rem !important;
     gap: 1.5rem !important;
     max-width: 100% !important;
@@ -4328,18 +6531,256 @@ body {
     width: 100% !important;
   }
 
-  /* Tax Matrix Mobile */
-  .matrix-calculator-grid {
-    grid-template-columns: 1fr !important;
+  /* Tax Matrix Mobile & Zero Horizontal Overflow */
+  .brick-matrix-calculator-card {
     padding: 1.25rem 1rem !important;
+    border-radius: var(--radius-md) !important;
+    margin-top: 1rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+  }
+
+  .matrix-card-header {
+    margin-bottom: 1.25rem !important;
+  }
+
+  .matrix-title {
+    font-size: 1.35rem !important;
+    line-height: 1.25 !important;
+  }
+
+  .matrix-subtitle {
+    font-size: 0.88rem !important;
+    line-height: 1.55 !important;
+  }
+
+  .brick-crowdfund-meter {
+    padding: 1rem !important;
+    margin-top: 1rem !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .meter-labels-row {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 0.35rem !important;
+    font-size: 0.78rem !important;
+  }
+
+  .matrix-calculator-grid {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 1.5rem !important;
+    padding: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .matrix-config-col, .matrix-output-col {
+    min-width: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
   }
 
   .brick-tier-chips {
-    grid-template-columns: 1fr 1fr !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 0.5rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .brick-chip {
+    padding: 0.65rem 0.35rem !important;
+    min-width: 0 !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .chip-qty {
+    font-size: 0.72rem !important;
+    line-height: 1.2 !important;
+    white-space: nowrap !important;
+  }
+
+  .chip-amt {
+    font-size: 0.95rem !important;
+  }
+
+  .matrix-form-row {
+    grid-template-columns: 1fr !important;
+    gap: 0.75rem !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .matrix-field {
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .matrix-input, .input-prefix-wrap {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .income-chips-tray {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 0.35rem !important;
+    margin-top: 0.4rem !important;
+  }
+
+  .income-preset-chip {
+    flex: 1 1 calc(25% - 0.35rem) !important;
+    min-width: 55px !important;
+    text-align: center !important;
+    padding: 0.35rem 0.25rem !important;
+    font-size: 0.75rem !important;
+  }
+
+  .virtual-brick-wall-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 0.5rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .virtual-brick-tile {
+    min-height: 58px !important;
+    padding: 0.5rem 0.25rem !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .matrix-output-col {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .tax-breakdown-card {
+    padding: 1.25rem 1rem !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .granite-brick-preview {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .brick-chiseled-border {
+    padding: 1.5rem 1rem !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
   }
 
   /* Native Bottom Bar Spacing */
   body {
     padding-bottom: 74px !important;
   }
+
+  /* Refined Button & Container Overflow Immunity */
+  #btnSponsorBrickNow,
+  .btn-block,
+  .btn-lg,
+  #donation-form .btn {
+    white-space: normal !important;
+    word-break: normal !important;
+    text-align: center !important;
+    justify-content: center !important;
+    line-height: 1.35 !important;
+    padding: 0.85rem 1rem !important;
+    font-size: 0.95rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+
+  /* Single column service touch cards on mobile */
+  .services-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .service-tile {
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Story card title and price containment */
+  .story-title-row {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: flex-start !important;
+    gap: 0.5rem !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .story-title-row h3 {
+    min-width: 0 !important;
+    flex: 1 1 auto !important;
+    word-break: break-word !important;
+    font-size: 1.05rem !important;
+  }
+
+  .story-price {
+    flex-shrink: 0 !important;
+    white-space: nowrap !important;
+  }
+
+    .sankalp-form-wrap,
+  .sankalp-preview-wrap,
+  .form-group-item,
+  .form-row-duo,
+  .intention-chips-tray,
+  .sankalp-btn-cluster {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.5rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .sankalp-btn-cluster .btn {
+    width: 100% !important;
+    justify-content: center !important;
+    white-space: normal !important;
+    min-height: 48px !important;
+    box-sizing: border-box !important;
+  }
+
+  .sankalp-input {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .intention-chip {
+    white-space: normal !important;
+    text-align: center !important;
+  }
+
+  .tax-legal-disclaimer {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    font-size: 0.78rem !important;
+    line-height: 1.45 !important;
+    padding: 0.75rem 0.85rem !important;
+  }
 }
+
