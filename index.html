@@ -1,54 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Ballarat Hindu Temple & Cultural Centre (BHTCC) | Universal Spiritual Sanctuary</title>
-  <meta name="description" content="A synthesis of traditional sanctity and modern digital convenience — online darshan passes, personalized sankalp sevas, live aarti broadcasts, capital construction masterplan, and transparent charity.">
+  <title>Ballarat Hindu Temple & Cultural Centre Inc. | Modern Unified Digital Flagship (BHTCC)</title>
   
-  <!-- Google Fonts: Cinzel for regal headers, Plus Jakarta Sans for UI readability -->
+  <meta name="description" content="Official modern digital flagship of Ballarat Hindu Temple & Cultural Centre Inc. (BHTCC). Consecrated 5-acre sanctuary at 110 Vaggs Rd, Ross Creek VIC 3351. ATO DGR $2+ tax-deductible giving, live Ballarat Panchang, and personalized Gotra Sankalp studio.">
+  <meta name="keywords" content="Ballarat Hindu Temple, BHTCC, Ross Creek Temple, Victoria Hindu Temple, Australian Hindu Temple, DGR Tax Deductible Donation, Gotra Sankalp, Ballarat Panchang">
+  
+  <!-- Preconnect and Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   
-  <!-- Core Design System -->
+  <!-- Flagship Sacred Stylesheet -->
   <link rel="stylesheet" href="/styles.css">
+  
+  <!-- Open Graph Protocol -->
+  <meta property="og:title" content="Ballarat Hindu Temple & Cultural Centre | Digital Flagship">
+  <meta property="og:description" content="Explore regional Victoria's consecrated 5-acre Hindu temple campus, live astronomical panchang, and tax-deductible foundation brick sponsorship.">
+  <meta property="og:image" content="/assets/t4_flagship_hero_sanctum.jpg">
+  <meta property="og:type" content="website">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🕉️</text></svg>">
 </head>
 <body>
 
   <!-- ======================================================================
-       1. TOP UTILITY BAR & LIVE PANCHANG TICKER (TTD + Shirdi + BHTCC)
+       1. TOP REAL-TIME PANCHANG & ASTRONOMICAL INSTRUMENT BAR
+       Location: 110 Vaggs Rd, Ross Creek VIC 3351 (-37.6433°S, 143.8153°E)
        ====================================================================== -->
-  <aside class="top-utility-bar" aria-label="Auspicious updates and daily alerts">
+  <aside class="top-utility-bar" aria-label="Auspicious updates and daily astronomical telemetry">
     <div class="container">
       <div class="top-bar-inner">
         
-        <!-- Live Hindu Panchang Ticker -->
+        <!-- Live Ballarat Panchang Astronomical Engine Ticker -->
         <div class="panchang-live-badge" id="panchang-engine-bar">
           <span class="badge-icon">☀️</span>
-          <span><strong>Ballarat Panchang:</strong> <span id="ballarat-tithi">Kartika Shukla Ekadashi</span> | Sunrise: <span id="ballarat-sunrise">06:04 AM</span> | Sunset: <span id="ballarat-sunset">08:14 PM</span> | Rahu: <span id="ballarat-rahu">01:30 PM - 03:00 PM</span></span>
+          <span>
+            <strong>Ballarat Time:</strong> <span id="ballarat-clock-seconds">Fri, 06 Nov 2026 • 07:38:14 PM AEDT</span> |
+            <strong>Tithi:</strong> <span id="ballarat-tithi">Kartika Shukla Ekadashi</span> |
+            Sunrise: <span id="ballarat-sunrise">06:13 AM</span> |
+            Sunset: <span id="ballarat-sunset">08:03 PM</span> |
+            Rahu Kalam: <span id="ballarat-rahu">11:24 AM - 01:08 PM</span>
+          </span>
         </div>
 
-        <!-- Live Darshan Wait & Queue Status (TTD / Shirdi Style) -->
+        <!-- Live Darshan Wait & Queue Telemetry -->
         <div class="live-darshan-indicator">
           <span class="pulse-dot"></span>
-          <span><strong>Sanctum Open:</strong> 06:00 AM - 09:30 PM | <em>Wait: ~15 mins</em></span>
+          <span><strong>Sanctum:</strong> 06:00 AM – 09:00 PM | <em>Ross Creek Sanctuary</em></span>
         </div>
 
-        <!-- Scrolling Flash Alerts Ticker (TTD Style) -->
+        <!-- Scrolling Special Notices Marquee -->
         <div class="ticker-wrapper">
-          <span class="ticker-label">Special Notice</span>
+          <span class="ticker-label">Notice</span>
           <div class="ticker-marquee">
-            <span>✨ Deepavali Maha Yajna & 108 Deepam Seva Bookings Open! • 🏛️ Phase 2 Temple Construction reaches 75% funding milestone • 🍲 Annadanam Daily Free Meals Kitchen open for all devotees (12 PM - 3 PM)</span>
+            <span>✨ Personalized Gotra Sankalp Studio live • 🏛️ 5-Acre Ross Creek Campus Phase 2 Sanctum Masonry active • 🍲 Weekend Maha Annadanam free community dining • 🇦🇺 ATO DGR $2+ Tax-Deductible Gifts (ABN 13 397 829 440)</span>
           </div>
         </div>
 
         <!-- Top Right Global Utilities -->
         <div class="top-actions">
-          <a href="#" id="currency-toggle" title="Switch Currency">🇦🇺 AUD ($)</a>
+          <a href="#" id="currency-toggle" title="Switch Display Currency">🇦🇺 AUD ($)</a>
           <span>|</span>
-          <a href="donate.html" title="Charity Tax Status">DGR / 80G Certified</a>
+          <a href="#brick-tax-matrix" title="Charity Tax Status">DGR Item 1 ($2+ Tax-Deductible)</a>
         </div>
 
       </div>
@@ -56,14 +73,14 @@
   </aside>
 
   <!-- ======================================================================
-       2. MAIN HEADER & NAVIGATION (BHTCC Diaspora + Modern DevTech)
+       2. MAIN HEADER & NAVIGATION
        ====================================================================== -->
   <header class="main-header">
     <div class="container">
       <nav class="navbar" aria-label="Main Navigation">
         
         <!-- Temple Seal & Identity -->
-        <a href="#" class="brand-wrapper">
+        <a href="index.html" class="brand-wrapper">
           <div class="brand-emblem">🕉️</div>
           <div class="brand-text">
             <h1>BALLARAT HINDU TEMPLE</h1>
@@ -74,23 +91,23 @@
         <!-- Navigation Links -->
         <ul class="nav-menu">
           <li class="nav-item active"><a href="index.html">Home</a></li>
-          <li class="nav-item"><a href="templates/" style="color: #D4AF37; font-weight: 800;">🎨 Pitch Deck</a></li>
-          <li class="nav-item"><a href="pujas.html">Sevas & Pujas</a></li>
-          <li class="nav-item"><a href="darshan.html">Live Darshan</a></li>
-          <li class="nav-item"><a href="project.html">Temple Project</a></li>
-          <li class="nav-item"><a href="donate.html">e-Hundi & Donate</a></li>
+          <li class="nav-item"><a href="templates/" style="color: var(--color-gold); font-weight: 800;">🎨 Pitch Deck</a></li>
+          <li class="nav-item"><a href="#pujas">Sevas & Pujas</a></li>
+          <li class="nav-item"><a href="#sankalp-generator">Sankalp Studio</a></li>
+          <li class="nav-item"><a href="#campus-explorer">5-Acre Masterplan</a></li>
+          <li class="nav-item"><a href="#brick-tax-matrix">Sponsor a Brick (DGR)</a></li>
           <li class="nav-item"><a href="#timetable">Daily Aarti</a></li>
-          <li class="nav-item"><a href="#governance">Trust & Governance</a></li>
+          <li class="nav-item"><a href="#governance">Governance</a></li>
         </ul>
 
         <!-- Primary Header Call-To-Actions -->
         <div class="header-cta-group">
-          <a href="donate.html" class="btn btn-outline-gold btn-sm">
+          <a href="#brick-tax-matrix" class="btn btn-outline-gold btn-sm">
+            <span>🧱</span> Sponsor Brick
+          </a>
+          <button type="button" class="btn btn-gold btn-sm open-donation-modal">
             <span>🪔</span> e-Hundi / Donate
-          </a>
-          <a href="darshan.html" class="btn btn-primary btn-sm">
-            <span>🎫</span> Priority Pass
-          </a>
+          </button>
         </div>
 
       </nav>
@@ -98,7 +115,8 @@
   </header>
 
   <!-- ======================================================================
-       3. DUAL HERO SECTION (BHTCC Vision + Shirdi Live Broadcast)
+       3. FLAGSHIP HERO SECTION (Cinematic Architectural Sanctuary Backdrop)
+       Uses assets/t4_flagship_hero_sanctum.jpg
        ====================================================================== -->
   <section class="hero-section" id="home">
     <div class="hero-background-art"></div>
@@ -107,63 +125,62 @@
     <div class="container">
       <div class="hero-grid">
         
-        <!-- Left: Grand Devotional Vision & Narrative (BHTCC Heritage) -->
+        <!-- Left: Grand Devotional Vision & Narrative -->
         <div class="hero-content">
           <div class="hero-tag">
             <span>🏛️</span> Serving the Global Sanatana Community Since 2016
           </div>
           
           <h1 class="hero-title">
-            Where Sacred Traditions Meet <span>Spiritual Sanctuary</span> & Community Service
+            Where Sacred Agamic Traditions Meet <span>Spiritual Sanctuary</span> & Digital Innovation
           </h1>
 
           <p class="hero-subtitle">
-            Experience authentic Vedic worship, transparent charitable giving, personalized remote sankalp sevas, and state-of-the-art community cultural infrastructure built for generations to come.
+            Australia's modern Vedic digital flagship. Experience authentic Agamic worship, 100% tax-deductible DGR charitable governance, instant personalized Gotra Sankalp consecration, and a transformative 5-acre regional Victorian campus.
           </p>
 
           <div class="hero-cta-cluster">
-            <a href="pujas.html" class="btn btn-gold btn-lg">
-              <span>🪔</span> Book Personalized Seva
+            <a href="#sankalp-generator" class="btn btn-gold btn-lg">
+              <span>✨</span> Consecrate Gotra Sankalp
             </a>
-            <a href="project.html" class="btn btn-outline-gold btn-lg" style="color: #FFF; border-color: rgba(255,255,255,0.4);">
-              <span>🏗️</span> Explore Masterplan
+            <a href="#campus-explorer" class="btn btn-outline-gold btn-lg">
+              <span>🏛️</span> Explore 5-Acre Campus
             </a>
-            <a href="donate.html" class="btn btn-maroon btn-lg">
-              <span>❤️</span> Sponsor a Brick ($101)
+            <a href="#brick-tax-matrix" class="btn btn-maroon btn-lg">
+              <span>🧱</span> Sponsor a Brick ($101+ DGR)
             </a>
           </div>
 
           <!-- Trust & Impact Stats -->
           <div class="hero-trust-metrics">
             <div class="trust-metric-item">
-              <h4>50,000+</h4>
-              <p>Pilgrims & Devotees Welcomed Annually</p>
+              <h4>5 Acres</h4>
+              <p>Consecrated Sanctuary at 110 Vaggs Rd, Ross Creek VIC</p>
             </div>
             <div class="trust-metric-item">
-              <h4>1,200+</h4>
-              <p>Sacred Vedic Sevas Performed with Sankalp</p>
+              <h4>$900k+</h4>
+              <p>Victorian State Government Capital Grant Support</p>
             </div>
             <div class="trust-metric-item">
-              <h4>100%</h4>
-              <p>Tax-Deductible Charitable Governance</p>
+              <h4>DGR Item 1</h4>
+              <p>ATO 100% Tax-Deductible Charity (ABN 13 397 829 440)</p>
             </div>
           </div>
         </div>
 
-        <!-- Right: Live Sanctum Darshan & Micro-Offerings Card (Shirdi + Sri Mandir) -->
+        <!-- Right: Live Sanctum Darshan & Micro-Offerings Player -->
         <div class="hero-live-player">
           <div class="live-sanctum-card">
             
             <div class="sanctum-media-box" id="sanctum-feed-box">
-              <!-- High-res authentic sanctum photo with fallback -->
-              <img src="/assets/ganesha_shrine.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&w=800&q=80'" alt="Sacred Lord Sri Ganesha Sanctum Sanctorum Live Feed">
+              <img src="/assets/t4_flagship_hero_sanctum.jpg" alt="Sacred Lord Sri Ganesha Sanctum Sanctorum Live Broadcast">
               
               <div class="sanctum-overlay">
                 <span class="live-badge-glow">
-                  <span class="pulse-dot" style="background:#FFF;"></span> LIVE BROADCAST
+                  <span class="pulse-dot" style="background:#FFF;"></span> LIVE SANCTUM
                 </span>
-                <span style="font-size: 0.75rem; background: rgba(0,0,0,0.6); padding: 0.2rem 0.5rem; border-radius: 4px;">
-                  1,480 Watching
+                <span style="font-size: 0.72rem; background: rgba(0,0,0,0.65); padding: 0.2rem 0.6rem; border-radius: 4px; color: var(--text-secondary);">
+                  Ballarat Sanctum Feed
                 </span>
               </div>
 
@@ -175,28 +192,28 @@
                 </div>
               </div>
 
-              <!-- Center Play Icon for Video Modal -->
-              <div class="sanctum-play-btn" onclick="showToast('Connecting to 24/7 Sanctum HD Stream...')" title="Expand Live Darshan">
+              <!-- Center Play Icon -->
+              <div class="sanctum-play-btn" onclick="showToast('Connecting to 24/7 Sanctum HD Broadcast...')" title="Expand Live Darshan">
                 ▶
               </div>
             </div>
 
-            <!-- Ritual Details & Dynamic Countdown -->
+            <!-- Ritual Details & Dynamic Astronomical Countdown -->
             <div class="sanctum-details-bar">
               <div class="ritual-now">
                 <div>
-                  <h3>Madhyanam Maha Aarti</h3>
-                  <span>Currently Active in Main Sanctum</span>
+                  <h3 id="ritual-active-title">Madhyahna Maha Aarti</h3>
+                  <span>Consecrated Agamic Ritual Active</span>
                 </div>
-                <span class="text-gold" id="sanctum-bell-icon" style="font-size: 1.25rem;">🔔</span>
+                <span class="text-gold" id="sanctum-bell-icon" style="font-size: 1.35rem;">🔔</span>
               </div>
 
               <div class="ritual-countdown-box">
-                <span style="font-size: 0.85rem; color: #D6C2B4;">Next: <strong>Sandhya Dhoop Aarti</strong></span>
-                <span class="countdown-digits" id="ritual-countdown">03h 42m 15s</span>
+                <span style="font-size: 0.825rem; color: #D6C2B4;" id="ritual-next-title">Next: <strong>Sandhya Dhoop & Deepa Aarti (19:00)</strong></span>
+                <span class="countdown-digits" id="ritual-countdown">00h 42m 15s</span>
               </div>
 
-              <!-- Devotee Offerings Tray (Sri Mandir Style) -->
+              <!-- Devotee Offerings Tray -->
               <div class="devotee-offerings-tray">
                 <button class="offering-pill" id="btn-offer-bell" title="Chime Bell">
                   <span>🔔</span> Ring Bell
@@ -224,283 +241,290 @@
   </section>
 
   <!-- ======================================================================
-       4. PILGRIM SERVICE HUB - QUICK-ACTION TILES (TTD + Shirdi Inspired)
+       4. PILGRIM SERVICE TILES DASHBOARD (Modern Graphite Bento Grid)
        ====================================================================== -->
   <section class="services-dashboard-section" id="services">
     <div class="container">
       
       <div class="section-head">
-        <span class="section-tag">Devotee Central Services</span>
-        <h2 class="section-title">High-Efficiency Pilgrim Services Portal</h2>
+        <span class="section-tag">Direct Pilgrim Services</span>
+        <h2 class="section-title">Everything You Need for Sacred Worship & Pilgrimage</h2>
         <p class="section-subtitle">
-          Direct, instant access to sacred darshan slots, specialized homams, accommodation, voluntary service, and daily Vedic utilities.
+          Engineered for ease, transparency, and authentic Agamic participation across Ballarat, regional Victoria, and worldwide diaspora.
         </p>
       </div>
 
-      <div class="tiles-dashboard-grid">
+      <div class="services-grid">
         
-        <!-- Tile 1: Special Entry Darshan -->
-        <a href="#pujas" class="service-tile open-puja-modal" data-seva="Special Entry Darshan (SED)">
-          <span class="tile-status status-open">Available Today</span>
-          <div>
-            <div class="tile-icon-box">🎫</div>
-            <h3>Special Entry Darshan</h3>
-            <p>Priority queue access for seniors, families with infants, and pilgrims with limited wait times.</p>
-          </div>
-          <div class="tile-footer">
-            <span>Book Time Slot</span>
-            <span>→</span>
+        <a href="#pujas" class="service-tile">
+          <div class="service-icon-box">🪔</div>
+          <h3>Book Personalized Seva</h3>
+          <p>Consecrate Vedic rituals chanted with your family Gotra and Janma Nakshatra by certified Agamic priests.</p>
+          <div class="service-meta-row">
+            <span>Agamic Vidhi</span>
+            <span>Explore Sevas →</span>
           </div>
         </a>
 
-        <!-- Tile 2: Arjitha Seva & Abhishekam -->
-        <a href="#pujas" class="service-tile open-puja-modal" data-seva="Arjitha Seva & Sahasranama Archana">
-          <span class="tile-status status-popular">Most Popular</span>
-          <div>
-            <div class="tile-icon-box">🪔</div>
-            <h3>Arjitha Sevas & Homam</h3>
-            <p>Participate in sacred daily rituals including Suprabhatam, Rudrabhishekam, and Navagraha Homa.</p>
-          </div>
-          <div class="tile-footer">
-            <span>View All Sevas</span>
-            <span>→</span>
+        <a href="darshan.html" class="service-tile">
+          <div class="service-icon-box">🎥</div>
+          <h3>24/7 Sanctum Broadcast</h3>
+          <p>Experience continuous high-definition live darshan of Lord Sri Ganesha, Shiva, and Murugan altars.</p>
+          <div class="service-meta-row">
+            <span>Live HD Stream</span>
+            <span>Watch Darshan →</span>
           </div>
         </a>
 
-        <!-- Tile 3: Remote Sankalp Puja (Sri Mandir Style) -->
-        <a href="#pujas" class="service-tile open-puja-modal" data-seva="Personalized Remote Sankalp Puja">
-          <span class="tile-status status-fast">Digital Seva</span>
-          <div>
-            <div class="tile-icon-box">📜</div>
-            <h3>Remote Sankalp Seva</h3>
-            <p>Provide your family Gotra & Name. Priests chant sacred mantras on your behalf with video delivery.</p>
-          </div>
-          <div class="tile-footer">
-            <span>Book with Gotra</span>
-            <span>→</span>
+        <a href="#sankalp-generator" class="service-tile">
+          <div class="service-icon-box">📜</div>
+          <h3>Gotra Sankalp Studio</h3>
+          <p>Generate your official consecrated Sankalp certificate with unique reference token and instant WhatsApp share.</p>
+          <div class="service-meta-row">
+            <span>Instant Digital Certificate</span>
+            <span>Generate Now →</span>
           </div>
         </a>
 
-        <!-- Tile 4: e-Hundi & Annadanam -->
-        <a href="#governance" class="service-tile open-donation-modal">
-          <span class="tile-status status-open">100% Tax Relief</span>
-          <div>
-            <div class="tile-icon-box">🍲</div>
-            <h3>e-Hundi & Annadanam</h3>
-            <p>Support daily free sanctified meals for pilgrims, hospital patients, and local community members.</p>
-          </div>
-          <div class="tile-footer">
-            <span>Make Sacred Offering</span>
-            <span>→</span>
+        <a href="#brick-tax-matrix" class="service-tile">
+          <div class="service-icon-box">🧱</div>
+          <h3>Sponsor Foundation Brick</h3>
+          <p>Commemorate your family name on dark Australian granite with ATO DGR 100% tax-deductible receipts.</p>
+          <div class="service-meta-row">
+            <span>$2+ ATO Deductible</span>
+            <span>View Matrix →</span>
           </div>
         </a>
 
-        <!-- Tile 5: Pilgrim Suites & Hall Hire -->
-        <a href="#community" class="service-tile" onclick="showToast('Pilgrim Accommodation & Cultural Hall availability loaded.')">
-          <span class="tile-status status-open">Booking Open</span>
-          <div>
-            <div class="tile-icon-box">🏨</div>
-            <h3>Guest Suites & Hall Hire</h3>
-            <p>Reserve clean, peaceful pilgrim guest accommodation and the 500-capacity community cultural hall.</p>
-          </div>
-          <div class="tile-footer">
-            <span>Check Room Dates</span>
-            <span>→</span>
+        <a href="#campus-explorer" class="service-tile">
+          <div class="service-icon-box">🍲</div>
+          <h3>Maha Annadanam Kitchen</h3>
+          <p>Support our commercial kitchen facility serving 500+ free hot consecrated sanctum meals (Prasadam) weekly.</p>
+          <div class="service-meta-row">
+            <span>Free Community Meals</span>
+            <span>Learn More →</span>
           </div>
         </a>
 
-        <!-- Tile 6: Srivari Volunteer Seva -->
-        <a href="#community" class="service-tile" onclick="showToast('Volunteer onboarding form opened.')">
-          <span class="tile-status status-popular">Join Sevadal</span>
-          <div>
-            <div class="tile-icon-box">🤝</div>
-            <h3>Volunteer Sevadal</h3>
-            <p>Dedicate your weekend time to queue management, kitchen prasadam service, and cultural programs.</p>
-          </div>
-          <div class="tile-footer">
-            <span>Register as Volunteer</span>
-            <span>→</span>
+        <a href="#campus-explorer" class="service-tile">
+          <div class="service-icon-box">📚</div>
+          <h3>Cultural Academy & Library</h3>
+          <p>Classes in Sanskrit, Indian classical arts, and Vedic scriptural preservation adhering to Victorian Child Safe Standards.</p>
+          <div class="service-meta-row">
+            <span>Youth Heritage</span>
+            <span>View Programs →</span>
           </div>
         </a>
 
-        <!-- Tile 7: Doorstep Prasadam Delivery -->
-        <a href="#pujas" class="service-tile" onclick="showToast('Prasadam delivery catalog open.')">
-          <span class="tile-status status-fast">Express Shipping</span>
-          <div>
-            <div class="tile-icon-box">📦</div>
-            <h3>Blessed Prasad Delivery</h3>
-            <p>Receive blessed Dry Fruit Prasadam, sacred Raksha Sutra, and Holy Vibhuti shipped directly to your home.</p>
-          </div>
-          <div class="tile-footer">
-            <span>Order Sacred Prasad</span>
-            <span>→</span>
+        <a href="#timetable" class="service-tile">
+          <div class="service-icon-box">⏰</div>
+          <h3>Daily Agamic Timetable</h3>
+          <p>Consult exact daily Aarti, Abhishekam, and Darshan hours aligned to Ballarat astronomical sunrise and sunset.</p>
+          <div class="service-meta-row">
+            <span>Agamic Schedule</span>
+            <span>View Times →</span>
           </div>
         </a>
 
-        <!-- Tile 8: Daily Vedic Panchang -->
-        <a href="#timetable" class="service-tile" onclick="showToast('Panchang: Shukla Paksha, auspicious for new ventures.')">
-          <span class="tile-status status-open">Real-time Astro</span>
-          <div>
-            <div class="tile-icon-box">✨</div>
-            <h3>Vedic Panchang & Tithis</h3>
-            <p>Inspect daily auspicious muhurats, festival calendars, planetary transits, and Rahu Kalam timings.</p>
-          </div>
-          <div class="tile-footer">
-            <span>View Full Panchang</span>
-            <span>→</span>
+        <a href="#governance" class="service-tile">
+          <div class="service-icon-box">⚖️</div>
+          <h3>Trust & Financial Audits</h3>
+          <p>Review BHTCC's Victorian Incorporated Association constitution, independent audits, and DGR registry records.</p>
+          <div class="service-meta-row">
+            <span>ABN 13 397 829 440</span>
+            <span>Audit Reports →</span>
           </div>
         </a>
 
       </div>
+
     </div>
   </section>
 
   <!-- ======================================================================
-       5. AUSPICIOUS PUJAS & SEVAS CAROUSEL (Sri Mandir High-Conversion Style)
+       5. FILTERABLE PUJA & SEVAS CATALOG
        ====================================================================== -->
   <section class="pujas-section" id="pujas">
     <div class="container">
       
       <div class="section-head">
-        <span class="section-tag">Divine Rituals & Sevas</span>
-        <h2 class="section-title">Participate in Upcoming Auspicious Pujas</h2>
+        <span class="section-tag">Consecrated Agamic Rituals</span>
+        <h2 class="section-title">Auspicious Sevas & Personalized Puja Offerings</h2>
         <p class="section-subtitle">
-          Vedic ceremonies performed by learned temple priests according to Agamic scriptures. Personalized Sankalp performed with your name and family Gotra.
+          All rituals are performed strictly according to Agamic Vastu and Vedic vidhi. Devotees receive personal video blessing documentation and sanctified prasadam.
         </p>
       </div>
 
-      <!-- Reactive Category Filters -->
-      <div class="pujas-filter-tabs">
-        <button class="filter-tab active" data-filter="all">All Sacred Sevas</button>
-        <button class="filter-tab" data-filter="wealth">Wealth & Prosperity</button>
-        <button class="filter-tab" data-filter="health">Health & Protection</button>
-        <button class="filter-tab" data-filter="education">Education & Career</button>
-        <button class="filter-tab" data-filter="family">Family Harmony</button>
+      <!-- Filter Tabs -->
+      <div class="puja-filter-tabs">
+        <button type="button" class="filter-tab active" data-filter="all">All Sevas (6)</button>
+        <button type="button" class="filter-tab" data-filter="daily">Daily Agamic</button>
+        <button type="button" class="filter-tab" data-filter="abhishekam">Abhishekams</button>
+        <button type="button" class="filter-tab" data-filter="homa">Homas & Yagnas</button>
+        <button type="button" class="filter-tab" data-filter="special">Special Occasions</button>
       </div>
 
       <!-- Pujas Grid -->
       <div class="pujas-grid">
         
-        <!-- Puja Card 1: Maha Rudrabhishekam -->
-        <div class="puja-card" data-category="health">
-          <div class="puja-image-container">
-            <img src="https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=600&q=80" alt="Maha Rudrabhishek with Bilva Patra">
-            <span class="puja-festival-badge">Kartik Purnima Special</span>
-            <div class="puja-devotees-count">
-              <span>👥</span> 1,842 Devotees Booked
-            </div>
+        <!-- Puja 1 -->
+        <article class="puja-card" data-category="abhishekam">
+          <div class="puja-card-img-wrap">
+            <img src="/assets/ganesha_shrine.jpg" alt="Maha Ganapati Sankatahara Abhishekam">
+            <span class="puja-badge">Moolasthanam</span>
           </div>
           <div class="puja-card-body">
-            <div>
-              <h3>Maha Rudrabhishekam with 108 Sacred Bilva Leaves</h3>
-              <div class="puja-benefit-pills">
-                <span class="benefit-pill">Health & Longevity</span>
-                <span class="benefit-pill">Negativity Ward</span>
-                <span class="benefit-pill">Mental Peace</span>
-              </div>
-              <ul class="puja-inclusions">
-                <li><span>✓</span> Name & Gotra chanting in main sanctum</li>
-                <li><span>✓</span> High-definition personalized video link</li>
-                <li><span>✓</span> Blessed Bilva & Bhasma box shipped</li>
-              </ul>
-            </div>
-            <div class="puja-card-footer">
-              <div class="puja-price">
-                <span>Offering From</span>
-                <strong class="price-val" data-aud="51" data-inr="501">$51</strong>
-              </div>
-              <button class="btn btn-primary open-puja-modal" data-seva="Maha Rudrabhishekam with 108 Sacred Bilva Leaves">
-                Participate Now
+            <h3>Maha Ganapati Sankatahara Abhishekam</h3>
+            <div class="puja-duration-deity">Lord Sri Ganesha • 45 Mins • Fresh Panchamritam</div>
+            <p class="puja-desc">
+              Sacred cleansing abhishekam with milk, curd, honey, ghee, and tender coconut water to dissolve obstacles and invoke auspicious prosperity.
+            </p>
+            <div class="puja-price-row">
+              <span class="price-val" data-aud="101" data-inr="5500">$101 AUD</span>
+              <button type="button" class="btn btn-gold btn-sm open-puja-modal" data-seva="Maha Ganapati Sankatahara Abhishekam">
+                Book with Sankalp
               </button>
             </div>
           </div>
-        </div>
+        </article>
 
-        <!-- Puja Card 2: Sri Lakshmi Kubera Homa -->
-        <div class="puja-card" data-category="wealth">
-          <div class="puja-image-container">
-            <img src="https://images.unsplash.com/photo-1609137144822-2617f694e976?auto=format&fit=crop&w=600&q=80" alt="Sri Lakshmi Kubera Homa">
-            <span class="puja-festival-badge">Deepotsav Special</span>
-            <div class="puja-devotees-count">
-              <span>👥</span> 2,390 Devotees Booked
-            </div>
+        <!-- Puja 2 -->
+        <article class="puja-card" data-category="abhishekam">
+          <div class="puja-card-img-wrap">
+            <img src="/assets/shiva_abhishekam.jpg" alt="Maha Rudrabhishek with 108 Bilva Patra">
+            <span class="puja-badge">Pradosham</span>
           </div>
           <div class="puja-card-body">
-            <div>
-              <h3>Sri Lakshmi Kubera Dhana Akarshana Maha Homam</h3>
-              <div class="puja-benefit-pills">
-                <span class="benefit-pill">Financial Growth</span>
-                <span class="benefit-pill">Business Prosperity</span>
-                <span class="benefit-pill">Debt Relief</span>
-              </div>
-              <ul class="puja-inclusions">
-                <li><span>✓</span> 108 Ahutis with lotus seeds & pure ghee</li>
-                <li><span>✓</span> Silver energized Lakshmi coin included</li>
-                <li><span>✓</span> Direct WhatsApp video blessings</li>
-              </ul>
-            </div>
-            <div class="puja-card-footer">
-              <div class="puja-price">
-                <span>Offering From</span>
-                <strong class="price-val" data-aud="101" data-inr="1100">$101</strong>
-              </div>
-              <button class="btn btn-primary open-puja-modal" data-seva="Sri Lakshmi Kubera Dhana Akarshana Maha Homam">
-                Participate Now
+            <h3>Maha Rudrabhishek with 108 Bilva Patra</h3>
+            <div class="puja-duration-deity">Lord Sri Shiva • 60 Mins • Sri Rudram Chanting</div>
+            <p class="puja-desc">
+              Consecrated chanting of Namakam and Chamakam with continuous holy water libations and 108 sacred Bilva leaves for peace, longevity, and health.
+            </p>
+            <div class="puja-price-row">
+              <span class="price-val" data-aud="151" data-inr="8200">$151 AUD</span>
+              <button type="button" class="btn btn-gold btn-sm open-puja-modal" data-seva="Maha Rudrabhishek with 108 Bilva Patra">
+                Book with Sankalp
               </button>
             </div>
           </div>
-        </div>
+        </article>
 
-        <!-- Puja Card 3: Saraswati Vidya Prapti Seva -->
-        <div class="puja-card" data-category="education">
-          <div class="puja-image-container">
-            <img src="https://images.unsplash.com/photo-1514894780887-121968d00567?auto=format&fit=crop&w=600&q=80" alt="Saraswati Vidya Prapti Seva">
-            <span class="puja-festival-badge">Exam Success Seva</span>
-            <div class="puja-devotees-count">
-              <span>👥</span> 970 Students Enrolled
-            </div>
+        <!-- Puja 3 -->
+        <article class="puja-card" data-category="daily">
+          <div class="puja-card-img-wrap">
+            <img src="/assets/lakshmi_puja.jpg" alt="Sri Mahalakshmi Sahasranama Kumkumarchana">
+            <span class="puja-badge">Friday Special</span>
           </div>
           <div class="puja-card-body">
-            <div>
-              <h3>Maha Saraswati Medha Sukta & Vidya Prapti Archana</h3>
-              <div class="puja-benefit-pills">
-                <span class="benefit-pill">Academic Focus</span>
-                <span class="benefit-pill">Memory Retention</span>
-                <span class="benefit-pill">Career Growth</span>
-              </div>
-              <ul class="puja-inclusions">
-                <li><span>✓</span> Chanting of Medha Suktam with student's Rashi</li>
-                <li><span>✓</span> Blessed Saraswati Yantra card shipped</li>
-                <li><span>✓</span> Pen and sacred thread consecrated</li>
-              </ul>
-            </div>
-            <div class="puja-card-footer">
-              <div class="puja-price">
-                <span>Offering From</span>
-                <strong class="price-val" data-aud="31" data-inr="351">$31</strong>
-              </div>
-              <button class="btn btn-primary open-puja-modal" data-seva="Maha Saraswati Medha Sukta & Vidya Prapti Archana">
-                Participate Now
+            <h3>Sri Mahalakshmi Sahasranama Kumkumarchana</h3>
+            <div class="puja-duration-deity">Goddess Sri Mahalakshmi • 45 Mins • 1008 Sacred Names</div>
+            <p class="puja-desc">
+              Chanting the 1,008 auspicious names of Goddess Lakshmi with vermillion kumkum offerings for family peace, wealth, and maternal grace.
+            </p>
+            <div class="puja-price-row">
+              <span class="price-val" data-aud="101" data-inr="5500">$101 AUD</span>
+              <button type="button" class="btn btn-gold btn-sm open-puja-modal" data-seva="Sri Mahalakshmi Sahasranama Kumkumarchana">
+                Book with Sankalp
               </button>
             </div>
           </div>
-        </div>
+        </article>
+
+        <!-- Puja 4 -->
+        <article class="puja-card" data-category="homa">
+          <div class="puja-card-img-wrap">
+            <img src="/assets/vedic_homa.jpg" alt="Navagraha Shanti & Ayushya Maha Yajna">
+            <span class="puja-badge">Sacred Agni</span>
+          </div>
+          <div class="puja-card-body">
+            <h3>Navagraha Shanti & Ayushya Maha Yajna</h3>
+            <div class="puja-duration-deity">Nine Planetary Deities • 90 Mins • Pure Ghee Homa</div>
+            <p class="puja-desc">
+              Powerful fire ritual invoking the blessings of the nine celestial planetary guardians and Ayur Devata for removing doshas and radiant longevity.
+            </p>
+            <div class="puja-price-row">
+              <span class="price-val" data-aud="251" data-inr="13500">$251 AUD</span>
+              <button type="button" class="btn btn-gold btn-sm open-puja-modal" data-seva="Navagraha Shanti & Ayushya Maha Yajna">
+                Book with Sankalp
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Puja 5 -->
+        <article class="puja-card" data-category="special">
+          <div class="puja-card-img-wrap">
+            <img src="/assets/granite_architecture.jpg" alt="Sri Venkateswara Kalyanotsavam">
+            <span class="puja-badge">Celestial Wedding</span>
+          </div>
+          <div class="puja-card-body">
+            <h3>Sri Venkateswara Balaji Kalyanotsavam</h3>
+            <div class="puja-duration-deity">Lord Srinivasa & Padmavathi • 75 Mins • Agamic Rites</div>
+            <p class="puja-desc">
+              Participate in the divine celestial wedding ceremony of Lord Balaji. Devotees receive blessed Akshata, sacred Raksha thread, and sanctum Laddu.
+            </p>
+            <div class="puja-price-row">
+              <span class="price-val" data-aud="301" data-inr="16500">$301 AUD</span>
+              <button type="button" class="btn btn-gold btn-sm open-puja-modal" data-seva="Sri Venkateswara Balaji Kalyanotsavam">
+                Book with Sankalp
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Puja 6 -->
+        <article class="puja-card" data-category="daily">
+          <div class="puja-card-img-wrap">
+            <img src="/assets/t1_sanctum_altar_epic.jpg" alt="Nitya Archana & Deepa Aradhana">
+            <span class="puja-badge">Daily Vidhi</span>
+          </div>
+          <div class="puja-card-body">
+            <h3>Nitya Archana & Deepa Aradhana</h3>
+            <div class="puja-duration-deity">All Presiding Deities • 20 Mins • Daily Morning & Evening</div>
+            <p class="puja-desc">
+              Daily personal family Archana chanting your Gotra, Nakshatra, and names during morning Kakad or evening Sandhya Deepa Aradhana.
+            </p>
+            <div class="puja-price-row">
+              <span class="price-val" data-aud="51" data-inr="2800">$51 AUD</span>
+              <button type="button" class="btn btn-gold btn-sm open-puja-modal" data-seva="Nitya Archana & Deepa Aradhana">
+                Book with Sankalp
+              </button>
+            </div>
+          </div>
+        </article>
 
       </div>
+
+      <!-- Priest Verification & Safeguard Banner -->
+      <div class="priest-verification-card">
+        <img src="/assets/t4_avatar_priest.jpg" alt="Illustrative Portrait of BHTCC Vedic Priest" class="priest-avatar">
+        <div class="priest-info">
+          <h4>Authentic Vedic Agamic Priesthood & Consecration</h4>
+          <p>
+            All remote sankalpas and temple sevas are chanted in strict adherence to classical Vaikhanasa and Shaiva Agamic traditions. Devotees receive digital verification documentation and consecrated prasadam dispatch.
+          </p>
+          <div class="priest-disclaimer-note">
+            * Devotional portrait represents the traditional Vedic priesthood tradition serving the Ballarat sanctuary.
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
   <!-- ======================================================================
-       5. DIGITAL GOTRA SANKALP GENERATOR & CONSECRATED CERTIFICATE (Feature 2)
+       6. SIGNATURE ARTIFACT 1: DIGITAL GOTRA SANKALP GENERATOR & CERTIFICATE STUDIO
+       Includes Autocomplete for 10 Vedic Gotras, 27 Nakshatras, Dynamic Token & Print
+       Uses assets/t4_certificate_filigree_frame.png
        ====================================================================== -->
   <section class="sankalp-generator-section" id="sankalp-generator">
     <div class="container">
       
       <div class="section-head">
-        <span class="section-tag">Instant Digital Seva</span>
-        <h2 class="section-title">Digital Gotra Sankalp Generator & Consecrated Certificate</h2>
+        <span class="section-tag">Signature Digital Artifact</span>
+        <h2 class="section-title">Digital Gotra Sankalp Generator & Certificate Studio</h2>
         <p class="section-subtitle">
-          Enter your family Gotra and Janma Nakshatra below. Generate your consecrated Sankalp pledge in real-time, consecrated by BHTCC priests with tax-deductible charity certification.
+          Prepare your sacred prayer intention before Lord Sri Ganesha and the presiding deities of Ballarat. Generate a personalized, high-resolution certificate with unique reference token and instant WhatsApp share.
         </p>
       </div>
 
@@ -508,25 +532,25 @@
         
         <!-- Left: Devotee Input Form -->
         <div class="sankalp-form-wrap">
-          <h3 class="sankalp-step-title">1. Devotee & Family Details</h3>
+          <h3 class="sankalp-step-title">1. Devotee & Prayer Configuration</h3>
           
           <div class="form-group-item">
-            <label for="input-sankalp-name">Devotee Full Name *</label>
-            <input type="text" id="input-sankalp-name" class="sankalp-input" placeholder="e.g. Ramesh & Sunita Sharma" value="Sharikrishna & Family">
+            <label for="input-sankalp-name">Devotee / Family Full Name *</label>
+            <input type="text" id="input-sankalp-name" class="sankalp-input" placeholder="e.g. Ramesh & Sunita Sharma" value="Sharikrishna & Family" autocomplete="name">
           </div>
 
           <div class="form-row-duo">
             <div class="form-group-item">
-              <label for="input-sankalp-gotra">Family Gotra *</label>
-              <input type="text" id="input-sankalp-gotra" class="sankalp-input" placeholder="e.g. Kashyapa, Bharadwaja" value="Kashyapa" list="gotra-options">
+              <label for="input-sankalp-gotra">Vedic Gotra * (Select or Type Custom)</label>
+              <input type="text" id="input-sankalp-gotra" class="sankalp-input" placeholder="e.g. Kashyapa, Bharadwaja" value="Kashyapa" list="gotra-options" autocomplete="off">
               <datalist id="gotra-options">
                 <option value="Kashyapa">
                 <option value="Bharadwaja">
                 <option value="Vasishta">
-                <option value="Vishwamitra">
-                <option value="Gautama">
                 <option value="Harita">
                 <option value="Atri">
+                <option value="Vishwamitra">
+                <option value="Gautama">
                 <option value="Jamadagni">
                 <option value="Kaundinya">
                 <option value="Agastya">
@@ -534,21 +558,34 @@
             </div>
 
             <div class="form-group-item">
-              <label for="input-sankalp-nakshatra">Janma Nakshatra</label>
+              <label for="input-sankalp-nakshatra">Janma Nakshatra *</label>
               <select id="input-sankalp-nakshatra" class="sankalp-input">
-                <option value="Rohini">Rohini (रोहिणी)</option>
+                <option value="Rohini" selected>Rohini (रोहिणी)</option>
                 <option value="Ashwini">Ashwini (अश्विनी)</option>
+                <option value="Bharani">Bharani (भरणी)</option>
                 <option value="Krittika">Krittika (कृत्तिका)</option>
                 <option value="Mrigashira">Mrigashira (मृगशीर्ष)</option>
+                <option value="Ardra">Ardra (आर्द्रा)</option>
                 <option value="Punarvasu">Punarvasu (पुनर्वसु)</option>
                 <option value="Pushya">Pushya (पुष्य)</option>
+                <option value="Ashlesha">Ashlesha (आश्लेषा)</option>
                 <option value="Magha">Magha (मघा)</option>
+                <option value="Purva Phalguni">Purva Phalguni (पूर्वा फाल्गुनी)</option>
                 <option value="Uttara Phalguni">Uttara Phalguni (उत्तरा फाल्गुनी)</option>
                 <option value="Hasta">Hasta (हस्त)</option>
                 <option value="Chitra">Chitra (चित्रा)</option>
                 <option value="Swati">Swati (स्वाति)</option>
+                <option value="Vishakha">Vishakha (विशाखा)</option>
                 <option value="Anuradha">Anuradha (अनुराधा)</option>
+                <option value="Jyeshtha">Jyeshtha (ज्येष्ठा)</option>
+                <option value="Mula">Mula (मूल)</option>
+                <option value="Purva Ashadha">Purva Ashadha (पूर्वाषाढ़ा)</option>
+                <option value="Uttara Ashadha">Uttara Ashadha (उत्तराषाढ़ा)</option>
                 <option value="Shravana">Shravana (श्रवण)</option>
+                <option value="Dhanishta">Dhanishta (धनिष्ठा)</option>
+                <option value="Shatabhisha">Shatabhisha (शतभिषा)</option>
+                <option value="Purva Bhadrapada">Purva Bhadrapada (पूर्वाभाद्रपदा)</option>
+                <option value="Uttara Bhadrapada">Uttara Bhadrapada (उत्तराभाद्रपदा)</option>
                 <option value="Revati">Revati (रेवती)</option>
               </select>
             </div>
@@ -557,22 +594,41 @@
           <div class="form-group-item">
             <label for="input-sankalp-deity">Presiding Deity for Sacred Sankalp *</label>
             <select id="input-sankalp-deity" class="sankalp-input">
-              <option value="Lord Sri Ganesha (Moolasthanam Remover of Obstacles)">Lord Sri Ganesha — Remover of Obstacles & Central Presiding Shrine</option>
-              <option value="Lord Sri Shiva (Mahadeva Cosmic Consciousness)">Lord Sri Shiva — Pradosham Rudrabhishekam & Peace</option>
-              <option value="Goddess Sri Ambal (Universal Mother Grace)">Goddess Sri Ambal — Kumkumarchana & Family Harmony</option>
-              <option value="Lord Sri Venkateswara (Balaji Blessings & Prosperity)">Lord Sri Venkateswara (Balaji) — Kalyanotsavam & Prosperity</option>
-              <option value="Lord Sri Murugan (Subrahmanya Spiritual Valour)">Lord Sri Murugan — Karttikeya Divine Protection</option>
+              <option value="Lord Sri Ganesha — Remover of Obstacles & Central Moolasthanam" selected>Lord Sri Ganesha — Remover of Obstacles & Central Moolasthanam</option>
+              <option value="Lord Sri Shiva — Pradosham Rudrabhishekam & Peace">Lord Sri Shiva — Pradosham Rudrabhishekam & Peace</option>
+              <option value="Goddess Sri Mahalakshmi — Auspicious Prosperity & Harmony">Goddess Sri Mahalakshmi — Auspicious Prosperity & Harmony</option>
+              <option value="Lord Sri Venkateswara (Balaji) — Blessings & Protection">Lord Sri Venkateswara (Balaji) — Blessings & Protection</option>
+              <option value="Lord Sri Murugan — Karttikeya Divine Valour & Protection">Lord Sri Murugan — Karttikeya Divine Valour & Protection</option>
+              <option value="Lord Sri Hanuman — Strength, Health & Sankat Mochan">Lord Sri Hanuman — Strength, Health & Sankat Mochan</option>
             </select>
           </div>
 
           <div class="form-group-item">
-            <label for="input-sankalp-intention">Special Prayer Purpose / Intention</label>
-            <input type="text" id="input-sankalp-intention" class="sankalp-input" placeholder="e.g. Family Health, Peace, Auspicious New Home, Academic Success" value="Family Health, Peace & Auspicious Prosperity">
+            <label for="input-sankalp-intention">Special Prayer Purpose / Intention *</label>
+            <input type="text" id="input-sankalp-intention" class="sankalp-input" placeholder="e.g. Family Health, Longevity, Prosperity, Peace" value="Family Health, Peace & Auspicious Prosperity">
+            
+            <!-- Quick Intention Preset Chips -->
+            <div class="intention-chips-tray">
+              <button type="button" class="intention-preset-chip" data-intention="Family Health & Longevity (Arogyam)">Health & Longevity</button>
+              <button type="button" class="intention-preset-chip" data-intention="Auspicious Prosperity, Peace & Harmony">Peace & Harmony</button>
+              <button type="button" class="intention-preset-chip" data-intention="Academic & Career Success (Vidya Prapti)">Academic & Career</button>
+              <button type="button" class="intention-preset-chip" data-intention="Griha Pravesh & New Home Blessings">Auspicious New Home</button>
+              <button type="button" class="intention-preset-chip" data-intention="Child Well-Being, Protection & Guidance">Child Protection</button>
+            </div>
           </div>
 
-          <button type="button" id="btn-update-sankalp" class="btn btn-gold btn-generate-sankalp">
-            <span>✨</span> Consecrate & Generate Certificate
-          </button>
+          <div class="sankalp-btn-cluster">
+            <button type="button" id="btn-update-sankalp" class="btn btn-gold btn-generate-sankalp">
+              <span>✨</span> Consecrate & Generate Token
+            </button>
+            <button type="button" id="btn-reset-sankalp" class="btn btn-reset-sankalp" title="Reset Form">
+              Reset
+            </button>
+          </div>
+
+          <div class="sankalp-privacy-note">
+            🔒 <strong>Devotional Privacy:</strong> Your Sankalp information is generated client-side in your browser. BHTCC never stores, sells, or monetizes personal prayer intentions. Reference tokens are generated for local certificate tracking.
+          </div>
         </div>
 
         <!-- Right: Consecrated Certificate Parchment Frame -->
@@ -583,8 +639,8 @@
               <div class="cert-header">
                 <span class="cert-om">🕉️</span>
                 <span class="cert-sloka">॥ धर्मो रक्षति रक्षितः ॥</span>
-                <h4 class="cert-temple-title">BALLARAT HINDU TEMPLE & CULTURAL CENTRE</h4>
-                <p class="cert-temple-sub">110 Vaggs Rd, Ross Creek VIC 3351 • ABN: 13 397 829 440</p>
+                <h4 class="cert-temple-title">BALLARAT HINDU TEMPLE & CULTURAL CENTRE INC.</h4>
+                <p class="cert-temple-sub">110 Vaggs Rd, Ross Creek VIC 3351 • ABN: 13 397 829 440 • DGR Registered Charity</p>
                 <span class="cert-site-tag" id="cert-token-id">BHTCC-2026-SKLP-8491</span>
               </div>
 
@@ -595,11 +651,11 @@
                 <div class="cert-devotee-block">
                   <span class="cert-label">DEVOTEE PATRON</span>
                   <div class="cert-name" id="cert-display-name">Sharikrishna & Family</div>
-                  <div class="cert-gotra" id="cert-display-gotra">Gotra: Kashyapa | Nakshatra: Rohini</div>
+                  <div class="cert-gotra" id="cert-display-gotra">Gotra: Kashyapa • Nakshatra: Rohini</div>
                 </div>
 
                 <p class="cert-sankalp-text" id="cert-display-intention">
-                  "May the divine auspices of Ballarat Hindu Temple remove all obstacles, granting spiritual peace, longevity, radiant health, and unbroken prosperity to this noble household."
+                  "May the divine auspices of Ballarat Hindu Temple bless Sharikrishna & Family with the auspicious fulfillment of prayer: Family Health, Peace & Auspicious Prosperity. Chanted with authentic Vedic Agamic sankalp at Ross Creek Sanctuary."
                 </p>
               </div>
 
@@ -608,25 +664,25 @@
                   <span>🏛️</span>
                   <div>
                     <strong>BHTCC Consecrated Seal</strong>
-                    <div style="font-size: 0.65rem; opacity: 0.85;">Victorian Registered Charity (DGR $2+)</div>
+                    <div style="font-size: 0.65rem; opacity: 0.85;">Victorian Incorporated Charity (DGR $2+)</div>
                   </div>
                 </div>
                 <div class="cert-meta">
                   <span id="cert-display-date">Consecrated: 6 Nov 2026</span>
-                  <span>Ross Creek Sanctuary, Victoria</span>
+                  <span>Ross Creek Sanctuary, Victoria, Australia</span>
                 </div>
               </div>
 
             </div>
           </div>
 
-          <!-- Share Actions -->
+          <!-- Share Actions Row -->
           <div class="sankalp-actions-row">
-            <button type="button" class="btn btn-whatsapp" id="btn-share-whatsapp">
+            <button type="button" class="btn btn-whatsapp" id="btn-share-whatsapp" title="Share your Sankalp on WhatsApp">
               <span>💬</span> Share on WhatsApp
             </button>
-            <button type="button" class="btn btn-outline-gold" id="btn-print-sankalp" style="background:#FFF;">
-              <span>🖨️</span> Save Certificate
+            <button type="button" class="btn btn-outline-gold" id="btn-print-sankalp" title="Save or Print A4 Certificate">
+              <span>🖨️</span> Save / Print Certificate
             </button>
           </div>
         </div>
@@ -637,139 +693,135 @@
   </section>
 
   <!-- ======================================================================
-       6. TEMPLE CONSTRUCTION & MASTERPLAN TRACKER (BHTCC Inspired)
+       7. SIGNATURE ARTIFACT 2: FIVE-ACRE ROSS CREEK CAMPUS INTERACTIVE ZONE EXPLORER
+       Masterplan visualization with 5 zones, interactive hotspots & engineering specs
+       Uses assets/t4_campus_blueprint_render.jpg
        ====================================================================== -->
-  <section class="project-progress-section" id="project">
+  <section class="project-progress-section" id="campus-explorer">
     <div class="container">
       
       <div class="section-head">
-        <span class="section-tag">Building Our Eternal Home</span>
-        <h2 class="section-title">Regional Temple Construction & Capital Campaign</h2>
+        <span class="section-tag">Architectural Masterplan Tour</span>
+        <h2 class="section-title">Explore the 5 Consecrated Acres at Ross Creek</h2>
         <p class="section-subtitle">
-          Transforming 5 consecrated acres at 110 Vaggs Rd, Ross Creek VIC 3351 into a permanent traditional Hindu shrine with a 350-capacity prayer hall, community cultural auditorium, and Vedic heritage garden. Backed by a $900k+ Victorian Government grant and compliant with strict Child Safe Standards and WWCC requirements.
+          Interactive architectural exploration of regional Victoria's first major Hindu temple campus. Explore the 5 masterplan zones, civic engineering milestones, and government grant deliverables.
         </p>
       </div>
 
-      <div class="project-master-card">
+      <div class="masterplan-campus-explorer">
         
-        <!-- Left: Financial Tracker & Phase Milestones -->
-        <div class="project-info-side">
-          <span style="font-size: 0.8rem; font-weight: 700; color: var(--color-accent-saffron); text-transform: uppercase;">
-            Fundraising Goal: $3,500,000 AUD (₹19.5 Crore)
-          </span>
-          <h3 style="font-size: 1.85rem; margin: 0.5rem 0 1rem;">Temple Phase 2 Construction Underway</h3>
-          <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">
-            With the land fully acquired and civil earthworks complete, our master stonemasons have commenced traditional granite carving for the central Vimana and Sanctum Sanctorum.
-          </p>
-
-          <!-- Funding Meter -->
-          <div class="capital-funding-tracker">
-            <div class="funding-header">
-              <div>
-                <span class="goal-amount">Total Capital Raised</span>
-                <div class="raised-amount">$2,625,000</div>
-              </div>
-              <div style="font-weight: 700; font-size: 1.25rem; color: var(--color-accent-saffron);">
-                61% Complete ($552,000 of $900,000 Goal)
-              </div>
-            </div>
-
-            <div class="progress-bar-rail">
-              <div class="progress-bar-fill" style="width: 75%;"></div>
-            </div>
-
-            <!-- Milestone Phases Stepper -->
-            <div class="milestones-stepper">
-              <div class="step-node completed">
-                <div class="step-dot"></div>
-                <p>Phase 1: Land Acquired</p>
-              </div>
-              <div class="step-node active">
-                <div class="step-dot"></div>
-                <p>Phase 2: Sanctum Masonry</p>
-              </div>
-              <div class="step-node">
-                <div class="step-dot"></div>
-                <p>Phase 3: Cultural Center</p>
-              </div>
-              <div class="step-node">
-                <div class="step-dot"></div>
-                <p>Phase 4: Maha Kumbhabhishekam</p>
-              </div>
-            </div>
-          </div>
-
-          <div style="display: flex; gap: 1rem; align-items: center;">
-            <button class="btn btn-primary open-donation-modal">
-              <span>🧱</span> Sponsor a Sacred Stone ($250)
-            </button>
-            <button class="btn btn-outline-gold" onclick="showToast('Loading interactive 3D blueprints...')">
-              View Architectural Blueprints
-            </button>
-          </div>
+        <!-- Architectural 3D Masterplan Viewer with Interactive Hotspots -->
+        <div class="masterplan-viewer-box">
+          <img src="/assets/t4_campus_blueprint_render.jpg" alt="Ballarat Hindu Temple 5-Acre Masterplan Visualization" class="masterplan-viewer-img">
+          
+          <!-- Interactive Hotspot Pins -->
+          <button type="button" class="masterplan-hotspot active" data-zone="1" style="top: 45%; left: 36%;" title="Zone 1: Main Ganesha Sanctum" aria-label="Zone 1: Main Sanctum">
+            1
+          </button>
+          <button type="button" class="masterplan-hotspot" data-zone="2" style="top: 38%; left: 56%;" title="Zone 2: Annadanam Kitchen" aria-label="Zone 2: Annadanam Kitchen">
+            2
+          </button>
+          <button type="button" class="masterplan-hotspot" data-zone="3" style="top: 58%; left: 48%;" title="Zone 3: Cultural Academy & Library" aria-label="Zone 3: Cultural Academy">
+            3
+          </button>
+          <button type="button" class="masterplan-hotspot" data-zone="4" style="top: 65%; left: 24%;" title="Zone 4: Peace Meditation Groves" aria-label="Zone 4: Peace Groves">
+            4
+          </button>
+          <button type="button" class="masterplan-hotspot" data-zone="5" style="top: 72%; left: 74%;" title="Zone 5: 75 Sealed Parking Bays" aria-label="Zone 5: Parking Bays">
+            5
+          </button>
         </div>
 
-        <!-- Right: Interactive Sponsorship Tiers & Blueprint Preview -->
-        <div class="project-media-side">
-          <img src="/assets/bhtcc_site_plan.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=800&q=80'" alt="Masterplan Aerial Blueprint">
-          
-          <div class="project-media-content">
-            <span class="badge-icon" style="font-size: 1.5rem;">🏛️</span>
-            <h4 style="font-size: 1.4rem; margin-top: 0.5rem; color: #FFF;">Become a Founding Patron</h4>
-            <p style="font-size: 0.85rem; color: #E8D3C5; margin-top: 0.25rem;">
-              Names of all sponsors donating over $500 are permanently engraved on the temple founder's bronze plaque.
-            </p>
-          </div>
+        <!-- Zone Navigation Tabs -->
+        <div class="masterplan-zones-tabs" id="campus-zones-tabs" role="tablist">
+          <button type="button" class="zone-tab-btn active" data-zone="1" role="tab" aria-selected="true">
+            <span>🛕</span> Zone 1: Main Sanctum & Hall
+          </button>
+          <button type="button" class="zone-tab-btn" data-zone="2" role="tab" aria-selected="false">
+            <span>🍲</span> Zone 2: Annadanam Kitchen
+          </button>
+          <button type="button" class="zone-tab-btn" data-zone="3" role="tab" aria-selected="false">
+            <span>📚</span> Zone 3: Cultural Academy & Library
+          </button>
+          <button type="button" class="zone-tab-btn" data-zone="4" role="tab" aria-selected="false">
+            <span>🌳</span> Zone 4: Peace Groves & Goshala
+          </button>
+          <button type="button" class="zone-tab-btn" data-zone="5" role="tab" aria-selected="false">
+            <span>🚗</span> Zone 5: 75 Sealed Parking Bays
+          </button>
+        </div>
 
-          <div class="brick-sponsorship-tiers">
-            <div class="tier-item">
-              <span class="tier-title">100 Foundation Bricks</span>
-              <span class="tier-action open-donation-modal" data-amount="250">$250 (Sponsor)</span>
+        <!-- Zone Spotlight Display -->
+        <div class="zone-spotlight-display" id="zone-spotlight-card">
+          <div class="zone-visual-box">
+            <img id="zone-spotlight-img" src="/assets/t4_flagship_hero_sanctum.jpg" alt="Zone 1: Main Ganesha Sanctum & Prayer Hall">
+            <div class="zone-badge-overlay" id="zone-spotlight-badge">Zone 1 • 350-Capacity Sanctum</div>
+          </div>
+          <div class="zone-info-box">
+            <div>
+              <span id="zone-phase-tag" style="font-size: 0.75rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-saffron);">Phase 1 Structural Framing & Ground Slab Active</span>
+              <h3 id="zone-spotlight-title" style="margin: 0.35rem 0 0.5rem; color: var(--text-primary); font-size: 1.45rem;">Main Sri Ganesha Sanctum & 350-Capacity Prayer Hall</h3>
+              <p id="zone-spotlight-desc" style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6;">
+                Traditional Dravidian granite stonework sanctum designed in strict adherence to Agamic Vastu Shastra principles. Anchored by the consecrated Sri Ganesha Garbha-griha, pradakshina circumambulatory path, and acoustic resonance hall for Vedic chanting.
+              </p>
+              <ul class="zone-specs-list" id="zone-spotlight-specs">
+                <li><span class="spec-check">✓</span> 350-devotee indoor sacred congregation prayer hall</li>
+                <li><span class="spec-check">✓</span> Solid hand-carved black granite Moolasthanam altar</li>
+                <li><span class="spec-check">✓</span> Consecrated shrines for Lord Shiva, Murugan & Devi Mahalakshmi</li>
+                <li><span class="spec-check">✓</span> Ultra-HD 4K live broadcast pan-tilt camera grid for remote darshan</li>
+                <li><span class="spec-check">✓</span> Victorian Shire of Golden Plains planning approval endorsed</li>
+              </ul>
             </div>
-            <div class="tier-item">
-              <span class="tier-title">Carved Sanctum Pillar</span>
-              <span class="tier-action open-donation-modal" data-amount="1000">$1,000 (Sponsor)</span>
-            </div>
-            <div class="tier-item">
-              <span class="tier-title">Gold Plated Kalasam</span>
-              <span class="tier-action open-donation-modal" data-amount="2500">$2,500 (Sponsor)</span>
-            </div>
-            <div class="tier-item">
-              <span class="tier-title">Deity Shrine Sponsor</span>
-              <span class="tier-action open-donation-modal" data-amount="5000">$5,000 (Sponsor)</span>
+            <div style="display: flex; gap: 0.85rem; align-items: center; margin-top: 1rem; flex-wrap: wrap;">
+              <a href="project.html" class="btn btn-gold btn-sm">
+                <span>📐</span> Full Engineering Blueprints
+              </a>
+              <button type="button" class="btn btn-outline-gold btn-sm open-donation-modal">
+                <span>🧱</span> Sponsor This Zone
+              </button>
             </div>
           </div>
         </div>
 
       </div>
 
-      <!-- ======================================================================
-           SIGNATURE ARTIFACT 3: DGR TAX-DEDUCTIBLE BRICK SPONSORSHIP MATRIX & AUSTRALIAN TAX BENEFIT CALCULATOR
-           ====================================================================== -->
-      <div class="brick-matrix-calculator-card" id="brick-tax-matrix" style="margin-top: 2.75rem;">
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       8. SIGNATURE ARTIFACT 3: DGR BRICK SPONSORSHIP MATRIX & AUSTRALIAN PROGRESSIVE TAX CALCULATOR
+       Uses assets/t4_granite_brick_texture.jpg
+       Progressive marginal tax modeling (FY 2024-25 & 2025-26 Stage 3)
+       ====================================================================== -->
+  <section class="project-progress-section" id="brick-tax-matrix" style="padding-top: 0;">
+    <div class="container">
+      
+      <div class="brick-matrix-calculator-card">
+        
         <div class="matrix-card-header">
           <div class="matrix-badge">
-            <span>🇦🇺</span> ATO DGR $2+ Item 1 Tax-Deductible Charity (Victoria) • ABN 13 397 829 440
+            <span>🇦🇺</span> ATO DGR Item 1 ($2+ Tax-Deductible Charity) • ABN 13 397 829 440
           </div>
-          <h3 class="matrix-title">Australian DGR Tax-Deductible Brick Sponsorship Matrix</h3>
+          <h3 class="matrix-title">Australian DGR Granite Brick Sponsorship & Progressive Tax Benefit Matrix</h3>
           <p class="matrix-subtitle">
-            All donations over $2 to Ballarat Hindu Temple & Cultural Centre Inc. are 100% tax-deductible under Australian Taxation Office rules. Use our dynamic calculator below to determine your estimated ATO tax refund and net out-of-pocket investment.
+            All eligible gifts of $2 or more to Ballarat Hindu Temple & Cultural Centre Inc. qualify as tax-deductible donations under Australian tax law (ITAA 1997 Subdivision 30-B). Use our progressive calculator below to estimate your exact marginal income-tax savings and net out-of-pocket contribution.
           </p>
 
-          <!-- Brick Crowdfunding Live Progress Bar -->
+          <!-- Brick Crowdfunding Dual Progress Meter -->
           <div class="brick-crowdfund-meter">
             <div class="meter-labels-row">
               <span class="meter-lbl-left">🧱 <strong>4,280 of 7,000</strong> Sacred Granite Bricks Consecrated</span>
               <span class="meter-lbl-right"><strong>61.1%</strong> Funded ($552,000 of $900,000 Community Milestone)</span>
             </div>
-            <div class="brick-meter-track">
+            <div class="brick-meter-track" role="progressbar" aria-valuenow="61" aria-valuemin="0" aria-valuemax="100" aria-label="Brick Crowdfunding Progress">
               <div class="brick-meter-fill" style="width: 61.1%;"></div>
             </div>
           </div>
         </div>
 
         <div class="matrix-calculator-grid">
-          <!-- Left: Tier Selector & Family Inscription Configurator -->
+          
+          <!-- Left: Sponsorship Tier Selector & Progressive Tax Configurator -->
           <div class="matrix-config-col">
             <label class="matrix-label">1. Choose Sponsorship Tier</label>
             <div class="brick-tier-chips" id="brickTierChips">
@@ -799,6 +851,7 @@
               </button>
             </div>
 
+            <!-- Custom Gift Amount & Taxable Income Inputs -->
             <div class="matrix-form-row">
               <div class="matrix-field">
                 <label for="brick-custom-input">Gift Amount ($ AUD)</label>
@@ -807,208 +860,211 @@
                   <input type="number" id="brick-custom-input" class="matrix-input" value="250" min="2" step="10">
                 </div>
               </div>
+
               <div class="matrix-field">
-                <label for="brick-tax-bracket">Australian Resident Tax Bracket</label>
-                <select id="brick-tax-bracket" class="matrix-input">
-                  <option value="0.16">16% ($18,201 – $45,000)</option>
-                  <option value="0.30" selected>30% Middle Income ($45,001 – $135,000)</option>
-                  <option value="0.37">37% Upper Income ($135,001 – $190,000)</option>
-                  <option value="0.45">45% Top Marginal Rate ($190,001+)</option>
-                </select>
+                <label for="brick-income-input">Annual Taxable Income ($ AUD)</label>
+                <div class="input-prefix-wrap">
+                  <span class="prefix">$</span>
+                  <input type="number" id="brick-income-input" class="matrix-input" value="90000" min="0" step="5000">
+                </div>
+                <!-- Income Preset Chips -->
+                <div class="income-chips-tray">
+                  <button type="button" class="income-preset-chip" data-income="45000">$45k</button>
+                  <button type="button" class="income-preset-chip active" data-income="90000">$90k</button>
+                  <button type="button" class="income-preset-chip" data-income="135000">$135k</button>
+                  <button type="button" class="income-preset-chip" data-income="190000">$190k</button>
+                </div>
               </div>
             </div>
 
-            <div class="matrix-field" style="margin-top: 1.15rem;">
-              <label for="brick-donor-name">Devotee / Family Name for Granite Plaque Inscription</label>
+            <!-- Financial Year & Medicare Options -->
+            <div class="matrix-form-row">
+              <div class="matrix-field">
+                <label for="brick-tax-bracket">Australian Financial Year</label>
+                <select id="brick-tax-bracket" class="matrix-input">
+                  <option value="2024-25" selected>FY 2024–25 (Revised Stage 3 Tax Cuts)</option>
+                  <option value="2025-26">FY 2025–26 (Stage 3 Tax Year)</option>
+                  <option value="2023-24">FY 2023–24 (Historical Comparison)</option>
+                </select>
+              </div>
+
+              <div class="matrix-field" style="justify-content: flex-end;">
+                <label class="checkbox-label-wrap">
+                  <input type="checkbox" id="brick-include-medicare" checked>
+                  <span>Include 2% Medicare Levy Savings</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Devotee Family Inscription Input -->
+            <div class="matrix-field">
+              <label for="brick-donor-name">Devotee / Family Name for Granite Plaque Engraving</label>
               <input type="text" id="brick-donor-name" class="matrix-input" placeholder="e.g. Ramesh & Sunita Sharma" value="Sharikrishna & Family">
             </div>
+
+            <!-- Interactive Virtual Brick Wall (Select Available Brick) -->
+            <div class="matrix-field">
+              <label class="matrix-label">Select a Virtual Granite Wall Tile to Preview</label>
+              <div class="virtual-brick-wall-grid">
+                <div class="virtual-brick-tile funded" data-brick-num="4277">
+                  <span class="tile-number">#4277</span>
+                  <span class="tile-engraving">RAMANATHAN FAMILY</span>
+                </div>
+                <div class="virtual-brick-tile funded" data-brick-num="4278">
+                  <span class="tile-number">#4278</span>
+                  <span class="tile-engraving">PATEL & DESCENDANTS</span>
+                </div>
+                <div class="virtual-brick-tile funded" data-brick-num="4279">
+                  <span class="tile-number">#4279</span>
+                  <span class="tile-engraving">DR. H. KUMAR</span>
+                </div>
+                <div class="virtual-brick-tile funded" data-brick-num="4280">
+                  <span class="tile-number">#4280</span>
+                  <span class="tile-engraving">NAIR HOUSEHOLD</span>
+                </div>
+                <div class="virtual-brick-tile selected" data-brick-num="4281">
+                  <span class="tile-number">#4281 (AVAILABLE)</span>
+                  <span class="tile-engraving">SHARIKRISHNA & FAMILY</span>
+                </div>
+                <div class="virtual-brick-tile" data-brick-num="4282">
+                  <span class="tile-number">#4282 (AVAILABLE)</span>
+                  <span class="tile-engraving">RESERVE BRICK</span>
+                </div>
+                <div class="virtual-brick-tile" data-brick-num="4283">
+                  <span class="tile-number">#4283 (AVAILABLE)</span>
+                  <span class="tile-engraving">RESERVE BRICK</span>
+                </div>
+                <div class="virtual-brick-tile" data-brick-num="4284">
+                  <span class="tile-number">#4284 (AVAILABLE)</span>
+                  <span class="tile-engraving">RESERVE BRICK</span>
+                </div>
+              </div>
+            </div>
+
           </div>
 
-          <!-- Right: Dynamic Australian Tax Breakdown & 3D Granite Brick Inscription Preview -->
+          <!-- Right: Dynamic Australian Progressive Tax Breakdown & 3D Granite Plaque Preview -->
           <div class="matrix-output-col">
+            
+            <!-- Itemized Tax Output Card -->
             <div class="tax-breakdown-card">
               <div class="tax-row">
                 <span class="tax-lbl">Gross Charitable Gift (DGR Item 1)</span>
                 <span class="tax-val" id="taxGrossVal">$250.00 AUD</span>
               </div>
+              <div class="tax-row">
+                <span class="tax-lbl">Taxable Income After Deduction</span>
+                <span class="tax-val" id="taxIncomeAfterVal">$89,750 AUD</span>
+              </div>
+              <div class="tax-row">
+                <span class="tax-lbl">Estimated Income Tax Reduction</span>
+                <span class="tax-val text-green" id="taxBaseSavingVal">-$75.00 AUD</span>
+              </div>
+              <div class="tax-row">
+                <span class="tax-lbl">Estimated Medicare Levy Savings</span>
+                <span class="tax-val text-green" id="taxMedicareSavingVal">-$5.00 AUD</span>
+              </div>
               <div class="tax-row tax-refund-row">
-                <span class="tax-lbl">Estimated ATO Tax Refund (<span id="taxRateLbl">30%</span> bracket)</span>
-                <span class="tax-val text-green" id="taxRefundVal">-$75.00 AUD</span>
+                <span class="tax-lbl">Total Estimated ATO Tax Benefit (<span id="taxRateLbl">32%</span> effective)</span>
+                <span class="tax-val text-green" id="taxRefundVal">-$80.00 AUD</span>
               </div>
               <div class="tax-divider"></div>
               <div class="tax-row tax-net-row">
                 <div>
-                  <span class="tax-net-lbl">Net Effective Cost to Devotee</span>
-                  <div class="tax-net-sub">Your actual out-of-pocket investment after tax</div>
+                  <span class="tax-net-lbl">Net Effective Out-of-Pocket Cost</span>
+                  <div class="tax-net-sub">Your actual contribution after progressive tax benefit</div>
                 </div>
-                <span class="tax-net-val" id="taxNetVal">$175.00 AUD</span>
+                <span class="tax-net-val" id="taxNetVal">$170.00 AUD</span>
               </div>
             </div>
 
-            <!-- Virtual Carved Granite Brick Plaque Preview -->
+            <!-- Virtual 3D Carved Granite Brick Plaque Preview (Uses assets/t4_granite_brick_texture.jpg) -->
             <div class="granite-brick-preview" id="graniteBrickPlaque">
               <div class="brick-chiseled-border">
                 <div class="brick-header-om">🕉️</div>
                 <div class="brick-temple-tag">BALLARAT HINDU TEMPLE • FOUNDER'S BRICK WALL</div>
                 <div class="brick-engraved-name" id="brickEngravedName">SHARIKRISHNA & FAMILY</div>
                 <div class="brick-footer-meta">
-                  <span id="brickTierBadge">3 FOUNDATION BRICKS</span> • <span>110 VAGGS RD, ROSS CREEK</span>
+                  <span id="brickTierBadge">3 FOUNDATION BRICKS (PILLAR TIER)</span> • <span>110 VAGGS RD, ROSS CREEK</span>
                 </div>
               </div>
             </div>
 
+            <!-- Sponsor Action Button -->
             <button type="button" class="btn btn-gold btn-block btn-lg" id="btnSponsorBrickNow">
               <span>🧱</span> Sponsor Brick Now with ATO Receipt ($<span id="btnSponsorAmt">250</span> AUD)
             </button>
+
+            <!-- Legal Tax Disclaimer -->
+            <div class="tax-legal-disclaimer">
+              ⚖️ <strong>Legal & Tax Disclaimer:</strong> This calculator provides an indicative estimate only and is not personal tax or financial advice. Actual tax outcomes depend on individual circumstances, applicable Australian tax law, and the eligibility of the donation under ITAA 1997 Subdivision 30-B. Payments in exchange for commercial goods, sevas, or services do not qualify as tax-deductible gifts. Please consult the Australian Taxation Office (ATO) or a registered tax agent.
+            </div>
+
           </div>
+
         </div>
+
       </div>
 
-      <!-- Interactive 5-Acre Ross Creek Campus Zone Explorer (Feature 3) -->
-      <div class="masterplan-campus-explorer" style="margin-top: 3.5rem;">
-        <div class="section-head" style="margin-bottom: 1.5rem; text-align: left;">
-          <span class="section-tag" style="background: rgba(212, 175, 55, 0.15); color: #B8860B; border: 1px solid rgba(212, 175, 55, 0.3);">Campus Masterplan Tour</span>
-          <h3 style="font-size: 1.85rem; font-family: var(--font-serif); color: var(--color-primary-dark); margin: 0.35rem 0;">Explore the 5 Consecrated Acres at Ross Creek</h3>
-          <p style="color: var(--text-muted); font-size: 0.95rem;">Select any zone below to examine architectural blueprints, engineering specifications, and construction status.</p>
-        </div>
-
-        <!-- Zone Navigation Tabs -->
-        <div class="masterplan-zones-tabs" id="campus-zones-tabs" role="tablist">
-          <button type="button" class="zone-tab-btn active" data-zone="1" role="tab" aria-selected="true">
-            <span>🛕</span> Zone 1: Main Ganesha Sanctum
-          </button>
-          <button type="button" class="zone-tab-btn" data-zone="2" role="tab" aria-selected="false">
-            <span>🍲</span> Zone 2: Maha Annadanam Kitchen
-          </button>
-          <button type="button" class="zone-tab-btn" data-zone="3" role="tab" aria-selected="false">
-            <span>📚</span> Zone 3: Cultural Learning Centre
-          </button>
-          <button type="button" class="zone-tab-btn" data-zone="4" role="tab" aria-selected="false">
-            <span>🌳</span> Zone 4: Peace Meditation Gardens
-          </button>
-          <button type="button" class="zone-tab-btn" data-zone="5" role="tab" aria-selected="false">
-            <span>🚗</span> Zone 5: 75 Sealed Parking Bays
-          </button>
-        </div>
-
-        <!-- Zone Spotlight Display -->
-        <div class="zone-spotlight-display" id="zone-spotlight-card">
-          <div class="zone-visual-box">
-            <img id="zone-spotlight-img" src="/assets/bhtcc_interior.jpg" alt="Zone 1: Main Ganesha Sanctum & Prayer Hall">
-            <div class="zone-badge-overlay" id="zone-spotlight-badge">Zone 1 • 350-Capacity Sanctum</div>
-          </div>
-          <div class="zone-info-box">
-            <div>
-              <span id="zone-phase-tag" style="font-size: 0.75rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: #D9480F;">Phase 1 Structural Framing Active</span>
-              <h3 id="zone-spotlight-title">Main Sri Ganesha Shrine & 350-Capacity Prayer Hall</h3>
-              <p id="zone-spotlight-desc" style="font-size: 0.9rem; color: var(--text-dark); line-height: 1.55;">
-                Traditional granite stonework sanctum designed according to Agamic Vastu Shastra principles. Serving as the primary spiritual anchor with sacred garbha-griha, pradakshina path, and acoustic resonance chamber for Vedic chanting.
-              </p>
-              <ul class="zone-specs-list" id="zone-spotlight-specs">
-                <li><span>✓</span> 350-devotee indoor congregation hall</li>
-                <li><span>✓</span> Solid hand-carved black granite moolasthanam</li>
-                <li><span>✓</span> Dedicated altar spaces for Shiva, Murugan & Ambal</li>
-                <li><span>✓</span> Integrated 4K live broadcast pan-tilt camera grid</li>
-              </ul>
-            </div>
-            <div style="display: flex; gap: 0.75rem; align-items: center; margin-top: 1rem; flex-wrap: wrap;">
-              <a href="project.html" class="btn btn-primary btn-sm">
-                <span>📐</span> Full Engineering Specs
-              </a>
-              <a href="donate.html" class="btn btn-outline-gold btn-sm">
-                <span>🧱</span> Sponsor This Zone
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
   </section>
 
   <!-- ======================================================================
-       7. DAILY AARTI TIMETABLE & PILGRIM CODE (Shirdi Inspired)
+       9. DAILY AGAMIC AARTI TIMETABLE & PILGRIM ETIQUETTE
        ====================================================================== -->
   <section class="timetable-section" id="timetable">
     <div class="container">
       
       <div class="section-head">
-        <span class="section-tag">Daily Ritual Schedule</span>
-        <h2 class="section-title">Aarti & Sanctum Darshan Timetable</h2>
+        <span class="section-tag">Agamic Timings</span>
+        <h2 class="section-title">Daily Aarti & Consecrated Worship Schedule</h2>
         <p class="section-subtitle">
-          Devotees are welcome to participate in person or tune in to the live broadcast during these auspicious hours.
+          Observed daily in accordance with Agamic Vastu tradition at 110 Vaggs Rd, Ross Creek VIC.
         </p>
       </div>
 
-      <div class="timetable-card">
-        <div class="timetable-header">
-          <div>
-            <h3 style="font-size: 1.25rem;">Sanctum Daily Schedule (Monday to Sunday)</h3>
-            <span style="font-size: 0.825rem; color: #F3E5AB;">All timings follow Local Temple Standard Time</span>
-          </div>
-          <button class="btn btn-gold btn-sm open-puja-modal" data-seva="Daily Aarti Participation">
-            Register for Aarti Seva
-          </button>
+      <div class="timetable-grid">
+        
+        <div class="timetable-card">
+          <div class="timetable-time">08:00 AM</div>
+          <div class="timetable-name">Kakad / Suprabhatam Aarti</div>
+          <p class="timetable-desc">Morning awakening prayer with sacred conch blowing, Mangala Harathi, and Agamic morning Japam.</p>
         </div>
 
-        <div class="table-responsive">
-          <table class="timetable">
-            <thead>
-              <tr>
-                <th>Aarti / Seva Name</th>
-                <th>Exact Timing</th>
-                <th>Presiding Deity</th>
-                <th>Significance & Offerings</th>
-                <th>Entry Protocol</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><strong>Kakad / Suprabhata Seva</strong></td>
-                <td><span class="timing-badge">05:30 AM - 06:15 AM</span></td>
-                <td>Sri Ganesha & Shiva</td>
-                <td>Morning awakening hymns, holy milk abhishekam</td>
-                <td>Open to all pilgrims</td>
-              </tr>
-              <tr>
-                <td><strong>Madhyanam Maha Aarti</strong></td>
-                <td><span class="timing-badge">12:00 PM - 12:45 PM</span></td>
-                <td>All Sanctum Shrines</td>
-                <td>Midday Naivedyam offering and traditional bell chanting</td>
-                <td>Free Darshan & Prasad</td>
-              </tr>
-              <tr>
-                <td><strong>Sandhya Dhoop Aarti</strong></td>
-                <td><span class="timing-badge">06:30 PM - 07:15 PM</span></td>
-                <td>Sri Maha Vishnu & Devi</td>
-                <td>Dhoopam (incense) and deepam offering at sunset</td>
-                <td>Community Gathering</td>
-              </tr>
-              <tr>
-                <td><strong>Shej Aarti & Ekanta Seva</strong></td>
-                <td><span class="timing-badge">09:00 PM - 09:30 PM</span></td>
-                <td>Main Sanctum</td>
-                <td>Lullaby hymns and resting ceremony for the deities</td>
-                <td>Night Sanctum Close</td>
-              </tr>
-            </tbody>
-          </table>
+        <div class="timetable-card">
+          <div class="timetable-time">12:30 PM</div>
+          <div class="timetable-name">Madhyahna Maha Aarti</div>
+          <p class="timetable-desc">Midday royal food offering (Naivedyam) to Sri Ganesha and Shiva, followed by free Annadanam prasadam.</p>
         </div>
+
+        <div class="timetable-card">
+          <div class="timetable-time">07:00 PM</div>
+          <div class="timetable-name">Sandhya Dhoop & Deepa Aarti</div>
+          <p class="timetable-desc">Evening worship with 108 brass lamps, traditional drum resonance (Melam), and community bhajan singing.</p>
+        </div>
+
+        <div class="timetable-card">
+          <div class="timetable-time">08:30 PM</div>
+          <div class="timetable-name">Sayana Shanti Aarti</div>
+          <p class="timetable-desc">Night conclusion ritual with lullaby chanting, sacred ash (Vibhuti) distribution, and sanctum repose.</p>
+        </div>
+
       </div>
 
     </div>
   </section>
 
   <!-- ======================================================================
-       8. CHARITY PILLARS & COMMUNITY HARMONY (Annadanam & Vedic Education)
+       10. COMMUNITY PILLARS & CHARITABLE GOVERNANCE
        ====================================================================== -->
   <section class="community-pillars-section" id="community">
     <div class="container">
       
       <div class="section-head">
-        <span class="section-tag">Selfless Service (Seva)</span>
-        <h2 class="section-title">Preserving Heritage Through Active Service</h2>
+        <span class="section-tag">Service in Unity</span>
+        <h2 class="section-title">Built on Four Unshakeable Pillars of Sanatana Dharma</h2>
         <p class="section-subtitle">
-          Our temple functions as more than a place of worship — it is an active humanitarian centre supporting the broader community.
+          Ensuring our Ross Creek sanctuary serves spiritual, charitable, cultural, and environmental needs for generations to come.
         </p>
       </div>
 
@@ -1016,26 +1072,20 @@
         
         <div class="pillar-card">
           <div class="pillar-icon">🍲</div>
-          <h3>Daily Annadanam</h3>
-          <p>Over 500 fresh, pure vegetarian meals prepared daily and served free of charge to all visitors and local shelters.</p>
+          <h3>Maha Annadanam</h3>
+          <p>Hunger relief is sacred duty. We provide 100% free, freshly prepared vegetarian meals to all pilgrims, visitors, and regional Ballarat community members without distinction.</p>
         </div>
 
         <div class="pillar-card">
           <div class="pillar-icon">📚</div>
-          <h3>Vedic & Heritage Classes</h3>
-          <p>Weekend classes in Sanskrit, Carnatic vocal music, Bharatanatyam classical dance, and philosophical texts for youth.</p>
+          <h3>Cultural Academy</h3>
+          <p>Preserving Indian languages (Sanskrit, Tamil, Hindi, Telugu), classical Carnatic music, Bharatanatyam dance, and Vedic wisdom under strict Victorian Child Safe Standards.</p>
         </div>
 
         <div class="pillar-card">
-          <div class="pillar-icon">🩺</div>
-          <h3>Free Health Camps</h3>
-          <p>Regular preventive health checkups, blood donation drives, and eye screening camps organized with regional doctors.</p>
-        </div>
-
-        <div class="pillar-card">
-          <div class="pillar-icon">🐄</div>
-          <h3>Sacred Gosala</h3>
-          <p>Dedicated sanctuary providing shelter, medical care, and lifelong protection for native indigenous cows.</p>
+          <div class="pillar-icon">🌳</div>
+          <h3>Environmental Stewardship</h3>
+          <p>A 5-acre eco-sanctuary integrating rainwater harvesting, solar power generation, organic vegetable gardens, sacred Tulasi/Bilva groves, and ethical goshala animal care.</p>
         </div>
 
       </div>
@@ -1044,195 +1094,175 @@
   </section>
 
   <!-- ======================================================================
-       9. DEVOTEE TESTIMONIALS & TRUST AUDIT (BHTCC & Shirdi Governance)
+       11. DEVOTEE TESTIMONIALS & TRUST AUDIT
        ====================================================================== -->
   <section class="testimonials-section" id="governance">
     <div class="container">
       
       <div class="section-head">
-        <span class="section-tag">Devotee Experiences</span>
-        <h2 class="section-title">Words from Our Devoted Community</h2>
+        <span class="section-tag">Devotee Voice & Transparency</span>
+        <h2 class="section-title">Words from Our Regional Victorian Community</h2>
         <p class="section-subtitle">
-          Rated 4.9 / 5 across Google Reviews and verified pilgrim testimonials.
+          Ballarat Hindu Temple & Cultural Centre Inc. is an incorporated association governed by an elected committee under Victorian Law.
         </p>
       </div>
 
-            <div class="testimonials-grid">
+      <div class="testimonials-grid">
         
         <div class="testimonial-card">
           <p class="testimonial-quote">
-            "Finding a local Hindu community in Ballarat has made Victoria feel like home. The upcoming temple at Ross Creek is a beacon of hope and culture for our children."
+            "Finding a local Hindu temple in Ballarat has made regional Victoria feel like home. The upcoming temple at Ross Creek is a beacon of culture and spirituality for our children."
           </p>
           <div class="devotee-profile">
-            <div class="devotee-avatar">SR</div>
-            <div class="devotee-info">
-              <h4>S. Ramanathan</h4>
-              <p>Life Member, Ballarat VIC</p>
-            </div>
+            <h4>S. Ramanathan</h4>
+            <p>Life Member & Ballarat Resident Since 2017</p>
           </div>
         </div>
 
         <div class="testimonial-card">
           <p class="testimonial-quote">
-            "BHTCC Ganesh Chaturthi Festival has grown to become an outstanding multicultural event in Ballarat, recognized by regional councils and community bodies alike."
+            "The annual BHTCC Ganesh Chaturthi Festival has grown to become an outstanding multicultural highlight in Ballarat, warmly embraced by regional councils and community bodies alike."
           </p>
           <div class="devotee-profile">
-            <div class="devotee-avatar">PP</div>
-            <div class="devotee-info">
-              <h4>P. Patel</h4>
-              <p>Festival Coordinator, Golden Plains Shire</p>
-            </div>
+            <h4>P. Patel</h4>
+            <p>Festival Volunteer Coordinator, Golden Plains</p>
           </div>
         </div>
 
         <div class="testimonial-card">
           <p class="testimonial-quote">
-            "The transparency in reporting and governance of BHTCC is incredibly refreshing. Knowing my donations are tracked directly against the Ganesh Shrine construction slab builds huge trust."
+            "The governance and financial transparency of BHTCC is refreshing. Knowing my donations are tracked directly against the Ganesha Sanctum construction slab builds immense trust."
           </p>
           <div class="devotee-profile">
-            <div class="devotee-avatar">MN</div>
-            <div class="devotee-info">
-              <h4>M. Nair</h4>
-              <p>Donation Sponsor, Regional Victoria</p>
-            </div>
+            <h4>M. Nair</h4>
+            <p>Foundation Brick Donor, Regional Victoria</p>
           </div>
         </div>
 
-      </div>
-
-      <!-- Trust & Tax Compliance Banner -->
-      <div class="trust-credentials-banner">
-        <div class="credentials-text">
-          <h3>Uncompromising Governance & Tax Exemption</h3>
-          <p>
-            Registered Incorporated Charity under the ACNC (Australia) with Deductible Gift Recipient (DGR) status. Donations eligible for 80G tax deductions in India. Fully audited by independent certified public accountants.
-          </p>
-        </div>
-        <div class="credentials-badges">
-          <div class="gov-badge">
-            <span>🛡️</span> ABN: 13 397 829 440
-          </div>
-          <div class="gov-badge">
-            <span>📑</span> Section 80G & 12A Certified
-          </div>
-        </div>
       </div>
 
     </div>
   </section>
 
   <!-- ======================================================================
-       10. MAIN FOOTER
+       12. MAIN FOOTER
        ====================================================================== -->
   <footer class="main-footer">
     <div class="container">
       <div class="footer-grid">
         
-        <!-- Col 1: About Trust -->
-        <div class="footer-col">
-          <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
-            <span style="font-size: 1.5rem;">🕉️</span>
-            <h3 style="color: #FFF; font-size: 1.25rem;">Ballarat Hindu Temple & Cultural Centre (BHTCC)</h3>
-          </div>
-          <p>
-            A non-profit charitable trust dedicated to the preservation of Vedic culture, universal spirituality, and community welfare.
+        <!-- Brand Info -->
+        <div class="footer-brand">
+          <div style="font-size: 2.2rem; margin-bottom: 0.5rem; color: var(--color-gold);">🕉️</div>
+          <h3>BALLARAT HINDU TEMPLE</h3>
+          <p>& Cultural Centre Inc. (BHTCC)</p>
+          <p style="font-size: 0.8rem; color: var(--text-secondary); line-height: 1.6;">
+            A community-led initiative establishing regional Victoria's first major permanent Hindu Temple, cultural academy, and commercial Annadanam kitchen in Ross Creek.
           </p>
-          <p style="font-size: 0.8rem; color: #E5A93C;">
-            📍 Temple Site: 110 Vaggs Rd, Ross Creek VIC 3351 Australia
+          <p style="font-size: 0.78rem; color: var(--color-gold); font-weight: 700;">
+            Incorporated Association (Victoria) • ABN: 13 397 829 440 • DGR Registered Charity
           </p>
         </div>
 
-        <!-- Col 2: Quick Links -->
+        <!-- Links Column 1 -->
         <div class="footer-col">
-          <h4>Devotee Services</h4>
-          <ul class="footer-links">
-            <li><a href="#services">Special Entry Darshan</a></li>
-            <li><a href="#pujas">Personalized Seva Booking</a></li>
-            <li><a href="#timetable">Daily Aarti Schedule</a></li>
-            <li><a href="#community">Annadanam Meals Fund</a></li>
-            <li><a href="#community">Pilgrim Guest Suites</a></li>
+          <h4>Sanctuary Navigation</h4>
+          <ul>
+            <li><a href="#home">Home Flagship</a></li>
+            <li><a href="templates/">🎨 Executive Pitch Deck</a></li>
+            <li><a href="#pujas">Auspicious Sevas & Pujas</a></li>
+            <li><a href="#sankalp-generator">Gotra Sankalp Studio</a></li>
+            <li><a href="#campus-explorer">5-Acre Masterplan</a></li>
+            <li><a href="#brick-tax-matrix">Sponsor a Brick (DGR)</a></li>
           </ul>
         </div>
 
-        <!-- Col 3: Governance & Trust -->
+        <!-- Links Column 2 -->
         <div class="footer-col">
-          <h4>Trust & Governance</h4>
-          <ul class="footer-links">
-            <li><a href="#project">Construction Masterplan</a></li>
-            <li><a href="#governance">Annual Audit Reports</a></li>
-            <li><a href="#governance">Executive Committee</a></li>
-            <li><a href="#community">Volunteer Registration</a></li>
-            <li><a href="#governance">Donor Tax Receipts</a></li>
+          <h4>Statutory Standards</h4>
+          <ul>
+            <li><a href="#governance">ATO DGR Subdivision 30-B</a></li>
+            <li><a href="#governance">Victorian Child Safe Standards</a></li>
+            <li><a href="#governance">Working with Children (WWCC)</a></li>
+            <li><a href="#governance">Food Safety Act 1984 Compliance</a></li>
+            <li><a href="#governance">DDA Universal Accessibility</a></li>
+            <li><a href="#governance">BHTCC Constitution</a></li>
           </ul>
         </div>
 
-        <!-- Col 4: Newsletter & Contact -->
+        <!-- Contact Column -->
         <div class="footer-col">
-          <h4>Auspicious Alerts</h4>
-          <p>Subscribe to receive festival dates, Ekadashi alerts, and seva booking notifications.</p>
-          <form onsubmit="event.preventDefault(); showToast('Subscribed to auspicious festival alerts!');" style="display: flex; gap: 0.5rem;">
-            <input type="email" placeholder="Your Email Address" required style="padding: 0.5rem 0.75rem; border-radius: 4px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.1); color: #FFF; font-size: 0.85rem; width: 100%;">
-            <button type="submit" class="btn btn-gold btn-sm">Subscribe</button>
-          </form>
+          <h4>Ross Creek Sanctuary</h4>
+          <ul>
+            <li style="color: var(--text-primary); font-weight: 600;">110 Vaggs Rd, Ross Creek VIC 3351</li>
+            <li>Australia</li>
+            <li style="margin-top: 0.5rem;"><a href="mailto:info@ballarathindutemple.org.au">info@ballarathindutemple.org.au</a></li>
+            <li><a href="tel:+61353000000">+61 3 5300 0000</a></li>
+            <li style="margin-top: 0.75rem;">
+              <button type="button" class="btn btn-gold btn-sm open-donation-modal">
+                <span>🪔</span> Online e-Hundi
+              </button>
+            </li>
+          </ul>
         </div>
 
       </div>
 
       <div class="footer-bottom">
-        <p>© 2026 Ballarat Hindu Temple & Cultural Centre (BHTCC) Inc. All Rights Reserved.</p>
-        <p>Built with Vedic Dignity & Contemporary Web Architecture</p>
+        <p>© 2026 Ballarat Hindu Temple & Cultural Centre Inc. (BHTCC). All rights reserved. Registered Charity in Victoria, Australia.</p>
+        <p>Built with vanilla HTML5, CSS3 & Native ES6 • Zero External Runtime Dependencies</p>
       </div>
     </div>
   </footer>
 
   <!-- ======================================================================
-       11. INTERACTIVE SANKALP PUJA BOOKING MODAL (Sri Mandir Flow)
+       13. INTERACTIVE PUJA BOOKING MODAL
        ====================================================================== -->
-  <div id="puja-modal" class="modal-overlay">
+  <div id="puja-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-puja-heading">
     <div class="modal-container">
       <div class="modal-header">
         <div>
-          <h3>Book Personalized Seva with Sankalp</h3>
-          <span id="modal-puja-name" style="font-size: 0.8rem; color: #F3E5AB;">Maha Rudrabhishek with 108 Bilva Patra</span>
+          <h3 id="modal-puja-heading">Book Sacred Agamic Seva</h3>
+          <span id="modal-puja-name" style="font-size: 0.8rem; color: var(--color-gold);">Maha Rudrabhishek with 108 Bilva Patra</span>
         </div>
-        <button class="modal-close-btn" id="close-puja-modal">×</button>
+        <button class="modal-close-btn" id="close-puja-modal" aria-label="Close Modal">&times;</button>
       </div>
-
+      
       <div class="modal-body">
         <form id="puja-booking-form">
-          <div class="form-group">
-            <label for="devotee-name">Primary Devotee Full Name *</label>
-            <input type="text" id="devotee-name" class="form-control" placeholder="e.g. Anand Sharma" required>
+          <div class="form-group-item">
+            <label for="devotee-name">Devotee Full Name *</label>
+            <input type="text" id="devotee-name" class="form-control" placeholder="e.g. Anand Sharma" required autocomplete="name">
           </div>
 
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
-            <div class="form-group">
+          <div class="form-row-duo">
+            <div class="form-group-item">
               <label for="devotee-gotra">Family Gotra *</label>
-              <input type="text" id="devotee-gotra" class="form-control" placeholder="e.g. Kashyapa / Bharadwaja" required>
+              <input type="text" id="devotee-gotra" class="form-control" placeholder="e.g. Kashyapa" required list="gotra-options">
             </div>
-            <div class="form-group">
-              <label for="devotee-rashi">Birth Rashi & Nakshatra</label>
-              <input type="text" id="devotee-rashi" class="form-control" placeholder="e.g. Mesha / Ashwini">
+            <div class="form-group-item">
+              <label for="devotee-rashi">Janma Nakshatra / Rashi</label>
+              <input type="text" id="devotee-rashi" class="form-control" placeholder="e.g. Rohini / Vrishabha">
             </div>
           </div>
 
-          <div class="form-group">
-            <label for="devotee-family">Family Members for Sankalp (Optional)</label>
+          <div class="form-group-item">
+            <label for="devotee-family">Family Members for Sankalp Blessing</label>
             <input type="text" id="devotee-family" class="form-control" placeholder="Names of spouse, children, or parents">
           </div>
 
-          <div class="form-group">
-            <label for="devotee-phone">WhatsApp / Mobile for Video Proof *</label>
-            <input type="tel" id="devotee-phone" class="form-control" placeholder="+61 400 000 000 or +91 98765 43210" required>
+          <div class="form-group-item">
+            <label for="devotee-phone">WhatsApp / Contact Phone *</label>
+            <input type="tel" id="devotee-phone" class="form-control" placeholder="+61 400 000 000" required autocomplete="tel">
           </div>
 
-          <div class="form-group">
-            <label for="devotee-address">Postal Address for Blessed Prasad Delivery</label>
+          <div class="form-group-item">
+            <label for="devotee-address">Postal Address for Sanctum Prasadam Courier</label>
             <textarea id="devotee-address" class="form-control" rows="2" placeholder="Full residential address for courier dispatch"></textarea>
           </div>
 
-          <button type="submit" class="btn btn-primary btn-lg" style="width: 100%; margin-top: 0.5rem;">
-            Confirm Seva & Proceed to Sankalp ($51)
+          <button type="submit" class="btn btn-gold btn-block btn-lg" style="margin-top: 1rem;">
+            <span>🪔</span> Confirm Seva Booking & Sankalp
           </button>
         </form>
       </div>
@@ -1240,60 +1270,62 @@
   </div>
 
   <!-- ======================================================================
-       12. INTERACTIVE e-HUNDI & DONATION MODAL (TTD + Shirdi Flow)
+       14. INTERACTIVE E-HUNDI / DGR DONATION MODAL
        ====================================================================== -->
-  <div id="donation-modal" class="modal-overlay">
+  <div id="donation-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-donation-heading">
     <div class="modal-container">
       <div class="modal-header">
         <div>
-          <h3>Sacred e-Hundi & Charitable Offering</h3>
-          <span style="font-size: 0.8rem; color: #F3E5AB;">100% Tax Deductible (DGR / 80G Certified)</span>
+          <h3 id="modal-donation-heading">Consecrated e-Hundi Offering</h3>
+          <span style="font-size: 0.8rem; color: #10B981;">100% Tax-Deductible Charity (ATO DGR Item 1 • ABN 13 397 829 440)</span>
         </div>
-        <button class="modal-close-btn" id="close-donation-modal">×</button>
+        <button class="modal-close-btn" id="close-donation-modal" aria-label="Close Modal">&times;</button>
       </div>
 
       <div class="modal-body">
         <form id="donation-form">
-          <div class="form-group">
-            <label for="donation-cause">Select Auspicious Cause</label>
+          <div class="form-group-item">
+            <label for="donation-cause">Sacred Contribution Purpose *</label>
             <select id="donation-cause" class="form-control">
-              <option value="Daily Annadanam (Free Meals Fund)">Daily Annadanam (Free Pilgrim Meals)</option>
-              <option value="Temple Construction Phase 2 (Sanctum Masonry)">Temple Construction Phase 2 (Stone Masonry)</option>
-              <option value="Sacred Gosala (Cow Sanctuary)">Sacred Gosala (Cow Care & Fodder)</option>
-              <option value="General Temple Corpus Fund">General Temple Corpus Fund</option>
+              <option value="Temple Construction Phase 2 (Sanctum Masonry)">Temple Construction Phase 2 (Sanctum Masonry)</option>
+              <option value="Granite Brick Sponsorship ($101+ DGR)">Granite Brick Sponsorship ($101+ DGR)</option>
+              <option value="Maha Annadanam Free Meals Fund">Maha Annadanam Free Meals Fund</option>
+              <option value="Vedic Cultural Learning Centre">Vedic Cultural Learning Centre</option>
+              <option value="General Sanctuary Corpus Fund">General Sanctuary Corpus Fund</option>
             </select>
           </div>
 
-          <div class="form-group">
-            <label>Select Amount</label>
-            <div class="donation-preset-grid">
-              <div class="preset-chip" data-amount="21">$21</div>
-              <div class="preset-chip active" data-amount="51">$51</div>
-              <div class="preset-chip" data-amount="101">$101</div>
-              <div class="preset-chip" data-amount="251">$251</div>
+          <div class="form-group-item">
+            <label>Select Amount ($ AUD)</label>
+            <div style="display: flex; gap: 0.5rem; margin-bottom: 0.75rem; flex-wrap: wrap;">
+              <button type="button" class="preset-chip" data-val="51">$51</button>
+              <button type="button" class="preset-chip active" data-val="101">$101</button>
+              <button type="button" class="preset-chip" data-val="250">$250</button>
+              <button type="button" class="preset-chip" data-val="500">$500</button>
+              <button type="button" class="preset-chip" data-val="1000">$1,000</button>
             </div>
-            <input type="number" id="donation-custom-amount" class="form-control" value="51" placeholder="Custom Amount">
+            <input type="number" id="donation-custom-amount" class="form-control" value="101" placeholder="Custom Amount" min="2">
           </div>
 
-          <div class="form-group">
-            <label for="donor-name">Donor Full Legal Name (for Tax Receipt)</label>
-            <input type="text" id="donor-name" class="form-control" placeholder="Full name as on tax records" required>
+          <div class="form-group-item">
+            <label for="donor-name">Donor Full Legal Name (for ATO Tax Receipt) *</label>
+            <input type="text" id="donor-name" class="form-control" placeholder="Full name as on tax records" required autocomplete="name">
           </div>
 
-          <div class="form-group">
-            <label for="donor-email">Email Address for Official Receipt</label>
-            <input type="email" id="donor-email" class="form-control" placeholder="your.name@example.com" required>
+          <div class="form-group-item">
+            <label for="donor-email">Email Address (for instant DGR Receipt dispatch) *</label>
+            <input type="email" id="donor-email" class="form-control" placeholder="your.name@example.com" required autocomplete="email">
           </div>
 
-          <button type="submit" class="btn btn-gold btn-lg" style="width: 100%; margin-top: 0.5rem;">
-            Make Auspicious Offering
+          <button type="submit" class="btn btn-gold btn-block btn-lg" style="margin-top: 1rem;">
+            <span>🌸</span> Complete Tax-Deductible Contribution
           </button>
         </form>
       </div>
     </div>
   </div>
 
-  <!-- Core Script Logic -->
+  <!-- Native ES6 Flagship Application Logic -->
   <script src="/app.js"></script>
 </body>
 </html>
