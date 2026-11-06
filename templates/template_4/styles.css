@@ -7269,3 +7269,319 @@ body {
     display: none !important;
   }
 }
+
+/* ==========================================================================
+   MILESTONE 3 LEAD ENGINEERING & MOBILE-FIRST REMEDIATION SUITE
+   ========================================================================== */
+
+:root {
+  --color-gold-accessible: #8C6D23;
+  --color-gold-accessible-dark: #6E5314;
+}
+
+/* 1. Accessible Color Contrast (WCAG 2.1 AA 4.5:1) */
+.text-gold {
+  color: var(--color-gold-accessible) !important;
+}
+.btn-outline-gold {
+  color: var(--color-gold-accessible) !important;
+  border-color: var(--color-gold-accessible) !important;
+}
+.btn-outline-gold:hover {
+  background: var(--color-gold-accessible) !important;
+  color: #FFFFFF !important;
+}
+
+/* 2. Responsive Grids & Containment (Darshan & Donate Blocker Fixes) */
+.pass-booking-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  align-items: start;
+  width: 100%;
+  min-width: 0;
+}
+@media (min-width: 900px) {
+  .pass-booking-grid {
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 2.5rem;
+  }
+}
+
+.pillars-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .pillars-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+.form-row-2col {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  width: 100%;
+}
+@media (min-width: 600px) {
+  .form-row-2col {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.card-responsive-padded {
+  padding: 1.25rem 0.75rem !important;
+  box-sizing: border-box !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+}
+@media (min-width: 768px) {
+  .card-responsive-padded {
+    padding: 2.5rem !important;
+  }
+}
+@media (min-width: 1024px) {
+  .card-responsive-padded {
+    padding: 3rem !important;
+  }
+}
+
+/* 3. Tax Receipt Canvas Watermark Overflow Fix */
+.tax-receipt-canvas {
+  overflow: hidden !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  box-sizing: border-box !important;
+}
+
+@media (max-width: 768px) {
+  .tax-receipt-canvas {
+    padding: 1.25rem !important;
+  }
+}
+
+.receipt-watermark {
+  font-size: clamp(2rem, 6vw, 4rem) !important;
+  max-width: 100% !important;
+}
+
+.donation-interactive-grid {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+}
+.donation-interactive-grid > * {
+  min-width: 0 !important;
+  max-width: 100% !important;
+}
+@media (max-width: 1024px) {
+  .donation-interactive-grid {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+}
+@media (max-width: 600px) {
+  .btn {
+    white-space: normal !important;
+    word-break: break-word !important;
+  }
+  .container {
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+  }
+}
+
+.frequency-toggle-wrapper {
+  display: flex !important;
+  gap: 0.5rem !important;
+  background: var(--bg-sand) !important;
+  padding: 0.35rem !important;
+  border-radius: var(--radius-sm) !important;
+  margin-bottom: 1.75rem !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+@media (max-width: 480px) {
+  .frequency-toggle-wrapper {
+    flex-direction: column !important;
+  }
+}
+
+.frequency-btn {
+  white-space: normal !important;
+  text-align: center !important;
+  line-height: 1.3 !important;
+  word-break: break-word !important;
+}
+
+/* 4. Camera Controls & Darshan Mobile Overflows */
+.camera-controls-bar {
+  overflow-x: hidden !important;
+  max-width: 100% !important;
+}
+.cam-switch-group {
+  display: flex !important;
+  gap: 0.5rem !important;
+  flex-wrap: wrap !important;
+  max-width: 100% !important;
+}
+
+/* 5. Mobile Timetable Scroll Hint & Table Containment */
+.table-responsive {
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow-x: auto !important;
+  -webkit-overflow-scrolling: touch !important;
+}
+.mobile-scroll-hint {
+  display: none;
+  font-size: 0.75rem;
+  color: var(--color-gold-accessible);
+  margin-bottom: 0.5rem;
+  text-align: right;
+}
+@media (max-width: 768px) {
+  .mobile-scroll-hint {
+    display: block;
+  }
+  .timetable th, .timetable td {
+    min-width: 110px;
+  }
+  .timetable th:first-child, .timetable td:first-child {
+    min-width: 80px;
+  }
+}
+
+/* 6. Pervasive 44px Minimum Touch Targets (WCAG 2.1 AA 2.5.5) */
+.mobile-header-controls .btn-gold.btn-xs,
+.mobile-header-controls .btn {
+  min-height: 44px !important;
+  padding: 0.6rem 1.1rem !important;
+  font-size: 0.85rem !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-sizing: border-box !important;
+}
+
+.filter-tab {
+  min-height: 44px !important;
+  padding: 0.65rem 1.25rem !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-sizing: border-box !important;
+}
+
+.intention-preset-chip {
+  min-height: 44px !important;
+  padding: 0.6rem 1rem !important;
+  font-size: 0.85rem !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  box-sizing: border-box !important;
+}
+
+.form-control,
+.matrix-input,
+#donor-search-input {
+  min-height: 44px !important;
+  font-size: 1rem !important;
+  box-sizing: border-box !important;
+}
+
+.preset-chip,
+.brick-chip,
+.frequency-btn,
+.cam-btn {
+  min-height: 44px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-sizing: border-box !important;
+}
+
+.modal-close-btn,
+.drawer-close-btn {
+  min-width: 44px !important;
+  min-height: 44px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-sizing: border-box !important;
+}
+
+.social-icon-btn {
+  width: 44px !important;
+  height: 44px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-sizing: border-box !important;
+}
+
+.mobile-panchang-pill {
+  min-height: 44px !important;
+  padding: 0.4rem 0.85rem !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  box-sizing: border-box !important;
+}
+
+.footer-links a {
+  display: inline-block !important;
+  padding: 0.45rem 0 !important;
+  min-height: 44px !important;
+  line-height: 28px !important;
+  box-sizing: border-box !important;
+}
+
+.breadcrumbs a {
+  display: inline-flex !important;
+  align-items: center !important;
+  padding: 0.35rem 0.5rem !important;
+  min-height: 44px !important;
+  box-sizing: border-box !important;
+}
+
+.brand-wrapper {
+  min-height: 44px !important;
+}
+
+#brick-slider {
+  min-height: 44px !important;
+}
+
+/* 7. Focus-Visible Outline Indicators */
+:focus-visible {
+  outline: 2px solid var(--color-gold, #D4AF37) !important;
+  outline-offset: 2px !important;
+}
+button:focus:not(:focus-visible),
+a:focus:not(:focus-visible) {
+  outline: none !important;
+}
+
+/* 8. Micro-Interaction Smooth Hover Transitions */
+.preset-chip,
+.intention-preset-chip,
+.brick-chip {
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+.preset-chip:hover,
+.intention-preset-chip:hover,
+.brick-chip:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.15) !important;
+}
+.preset-chip:active,
+.intention-preset-chip:active,
+.brick-chip:active {
+  transform: translateY(0) !important;
+}
+

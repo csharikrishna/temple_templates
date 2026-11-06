@@ -1344,7 +1344,9 @@ function initInstagramCarousel() {
 function initMobileDrawer() {
   const menuBtn = document.getElementById('mobileMenuBtn');
   const drawerOverlay = document.getElementById('mobileDrawerOverlay');
+  const drawerPanel = document.getElementById('mobileDrawerPanel');
   const closeBtn = document.getElementById('drawerCloseBtn');
+  const altCloseBtn = document.getElementById('closeDrawerBtn');
   const drawerLinks = document.querySelectorAll('.drawer-link');
 
   if (!menuBtn || !drawerOverlay) return;
@@ -1352,15 +1354,42 @@ function initMobileDrawer() {
   function openDrawer() {
     drawerOverlay.classList.add('active');
     document.body.style.overflow = 'hidden';
+    menuBtn.setAttribute('aria-expanded', 'true');
+    if (closeBtn) closeBtn.focus();
+    document.addEventListener('keydown', handleKeyDown);
   }
 
   function closeDrawer() {
     drawerOverlay.classList.remove('active');
     document.body.style.overflow = '';
+    menuBtn.setAttribute('aria-expanded', 'false');
+    document.removeEventListener('keydown', handleKeyDown);
+    menuBtn.focus();
+  }
+
+  function handleKeyDown(e) {
+    if (e.key === 'Escape') {
+      closeDrawer();
+      return;
+    }
+    if (e.key === 'Tab' && drawerPanel) {
+      const focusables = drawerPanel.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+      if (!focusables.length) return;
+      const first = focusables[0];
+      const last = focusables[focusables.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    }
   }
 
   menuBtn.addEventListener('click', openDrawer);
   if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
+  if (altCloseBtn) altCloseBtn.addEventListener('click', closeDrawer);
 
   drawerOverlay.addEventListener('click', (e) => {
     if (e.target === drawerOverlay) closeDrawer();

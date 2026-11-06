@@ -515,6 +515,55 @@
         padding: 1.5rem;
       }
     }
+
+    @media (max-width: 600px) {
+      .header-inner {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1rem;
+      }
+      .nav-actions {
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .nav-btn {
+        width: 100%;
+        justify-content: center;
+        white-space: normal;
+        text-align: center;
+        box-sizing: border-box;
+      }
+      .matrix-section {
+        padding: 1.25rem 0.75rem;
+      }
+      .matrix-table th, .matrix-table td {
+        padding: 0.75rem 0.65rem;
+        font-size: 0.8rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 0 0.85rem;
+      }
+      .studio-header {
+        padding-left: 0.85rem;
+        padding-right: 0.85rem;
+      }
+      .pitch-body {
+        padding: 1.25rem 0.85rem;
+      }
+      .brand-text h1 {
+        font-size: 0.95rem;
+      }
+      .table-responsive {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+    }
   </style>
 </head>
 <body>
@@ -666,7 +715,7 @@
         Strategic breakdown to help the BHTCC Executive Committee and donors choose the optimal digital path.
       </p>
 
-      <div style="overflow-x: auto;">
+      <div class="table-responsive" style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
         <table class="matrix-table">
           <thead>
             <tr>

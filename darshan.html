@@ -85,7 +85,7 @@
     <!-- Multi-Camera Broadcast Feed -->
     <div class="camera-feed-container">
       <div class="camera-screen" id="sanctum-feed-box">
-        <img id="active-cam-feed" src="https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&w=1400&q=80" alt="Main Sanctum Feed">
+        <img id="active-cam-feed" src="/assets/t4_flagship_hero_sanctum.jpg" alt="Main Sanctum Feed">
         <div class="sanctum-overlay">
           <span class="live-badge-glow">
             <span class="pulse-dot" style="background:#FFF;"></span> LIVE FEED 1080p
@@ -102,26 +102,26 @@
           <span style="font-size: 0.8rem; color: #F3E5AB; font-weight: 700; margin-right: 0.5rem; align-self: center;">
             CAMERA ANGLE:
           </span>
-          <button class="cam-btn active" data-src="https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&w=1400&q=80">
+          <button class="cam-btn active" data-src="/assets/t4_flagship_hero_sanctum.jpg">
             Cam 1: Garbhagriha (Main)
           </button>
-          <button class="cam-btn" data-src="https://images.unsplash.com/photo-1609137144822-2617f694e976?auto=format&fit=crop&w=1400&q=80">
+          <button class="cam-btn" data-src="/assets/lakshmi_puja.jpg">
             Cam 2: Utsava Murti Altar
           </button>
-          <button class="cam-btn" data-src="https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=1400&q=80">
+          <button class="cam-btn" data-src="/assets/vedic_homa.jpg">
             Cam 3: Yajnashala Homa
           </button>
         </div>
 
         <!-- Devotee Offerings Tray -->
-        <div style="display: flex; gap: 0.5rem;">
-          <button class="btn btn-outline-gold btn-sm" id="btn-offer-bell" style="color: #FFF; border-color: rgba(212,175,55,0.6);">
+        <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+          <button class="btn btn-outline-gold btn-sm" id="btn-offer-bell" aria-label="Ring the 432 Hz sanctum bronze temple bell chime" style="color: #FFF; border-color: rgba(212,175,55,0.6);">
             <span>🔔</span> Ring Sanctum Bell
           </button>
-          <button class="btn btn-outline-gold btn-sm" id="btn-offer-deepam" style="color: #FFF; border-color: rgba(212,175,55,0.6);">
+          <button class="btn btn-outline-gold btn-sm" id="btn-offer-deepam" aria-label="Offer digital deepam: light a sacred ghee diya lamp in the sanctum" style="color: #FFF; border-color: rgba(212,175,55,0.6);">
             <span>🪔</span> Offer Diya
           </button>
-          <button class="btn btn-gold btn-sm" id="btn-offer-flowers">
+          <button class="btn btn-gold btn-sm" id="btn-offer-flowers" aria-label="Offer sacred pushpanjali shower of rose petals before the deities">
             <span>🌸</span> Shower Flowers
           </button>
         </div>
@@ -141,6 +141,9 @@
         </div>
       </div>
 
+      <div class="mobile-scroll-hint" aria-hidden="true">
+        <span>⟷ Swipe horizontally to explore full timetable</span>
+      </div>
       <div class="table-responsive">
         <table class="timetable">
           <thead>
@@ -187,7 +190,7 @@
     </section>
 
     <!-- Priority Special Entry Darshan (SED) Pass Booking (TTD Style) -->
-    <section id="pass-booking-section" style="background: var(--bg-cream); border-radius: var(--radius-lg); border: 1.5px solid var(--border-light); padding: 3rem; margin-bottom: 4rem;">
+    <section id="pass-booking-section" class="card-responsive-padded" style="background: var(--bg-cream); border-radius: var(--radius-lg); border: 1.5px solid var(--border-light); margin-bottom: 4rem;">
       <div style="text-align: center; max-width: 680px; margin: 0 auto 2.5rem;">
         <span class="section-tag">TTD Style Express Queuing</span>
         <h2 style="font-size: 2rem; margin: 0.5rem 0;">Book Special Entry Darshan (SED) Pass</h2>
@@ -196,7 +199,7 @@
         </p>
       </div>
 
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; align-items: start;">
+      <div class="pass-booking-grid">
         
         <!-- Booking Form -->
         <form id="darshan-pass-form" style="background: #FFF; padding: 2rem; border-radius: var(--radius-md); border: 1px solid var(--border-light); box-shadow: var(--shadow-sm);">
@@ -205,7 +208,7 @@
             <input type="text" id="pass-devotee-name" class="form-control" placeholder="e.g. Radhakrishnan Menon" required>
           </div>
 
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+          <div class="form-row-2col">
             <div class="form-group">
               <label for="pass-date">Preferred Date *</label>
               <input type="date" id="pass-date" class="form-control" required value="2026-11-08">
@@ -221,7 +224,7 @@
             </div>
           </div>
 
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+          <div class="form-row-2col">
             <div class="form-group">
               <label for="pass-pilgrim-count">Devotee Count *</label>
               <select id="pass-pilgrim-count" class="form-control">
@@ -269,9 +272,9 @@
     </section>
 
     <!-- Sanctum Etiquette & Dress Code (Shirdi & TTD Guidelines) -->
-    <section style="background: #FFF; border-radius: var(--radius-lg); border: 1.5px solid var(--border-light); padding: 2.5rem; margin-bottom: 4rem;">
+    <section class="card-responsive-padded" style="background: #FFF; border-radius: var(--radius-lg); border: 1.5px solid var(--border-light); margin-bottom: 4rem;">
       <h3 style="font-size: 1.4rem; margin-bottom: 1rem;">Sanctum Pilgrimage Etiquette & Dress Code</h3>
-      <div class="pillars-grid" style="grid-template-columns: repeat(3, 1fr);">
+      <div class="pillars-grid">
         <div style="background: var(--bg-cream); padding: 1.25rem; border-radius: var(--radius-sm);">
           <h4 style="font-size: 1rem; color: var(--color-primary-dark); margin-bottom: 0.35rem;">Traditional Attire</h4>
           <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5;">

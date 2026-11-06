@@ -89,7 +89,7 @@
     <!-- Blueprint Interactive Showcase -->
     <div class="blueprint-showcase-box" id="blueprint-display">
       <div class="blueprint-canvas">
-        <img id="blueprint-img" src="https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=1200&q=80" alt="Central Sanctum Architectural Render">
+        <img id="blueprint-img" src="/assets/t4_campus_blueprint_render.jpg" alt="Central Sanctum Architectural Render">
       </div>
       <div class="blueprint-spec-panel">
         <div>
@@ -142,7 +142,7 @@
           </div>
         </div>
 
-        <div style="display: flex; gap: 1rem; align-items: center;">
+        <div style="display: flex; gap: 1rem; align-items: center; flex-wrap: wrap;">
           <a href="donate.html" class="btn btn-primary">
             <span>📜</span> Make a Capital Pledge
           </a>
@@ -182,7 +182,7 @@
     </div>
 
     <!-- Interactive Brick Sponsorship Calculator -->
-    <section id="brick-calculator-section" style="background: #FFF; border-radius: var(--radius-lg); border: 1.5px solid var(--border-light); padding: 3rem; margin-bottom: 4rem; box-shadow: var(--shadow-sm);">
+    <section id="brick-calculator-section" class="card-responsive-padded" style="background: #FFF; border-radius: var(--radius-lg); border: 1.5px solid var(--border-light); margin-bottom: 4rem; box-shadow: var(--shadow-sm);">
       <div style="text-align: center; max-width: 680px; margin: 0 auto 2.5rem;">
         <span class="section-tag">Interactive Giving Calculator</span>
         <h2 style="font-size: 2rem; margin: 0.5rem 0;">Sponsor Sacred Construction Bricks</h2>
@@ -221,7 +221,7 @@
           <span class="section-tag">Digital Inscription Wall</span>
           <h3 style="font-size: 1.5rem;">Founding Donors & Patrons Honor Roll</h3>
         </div>
-        <input type="text" id="donor-search-input" placeholder="Search donor name or city..." style="padding: 0.5rem 1rem; border: 1.5px solid var(--border-light); border-radius: var(--radius-sm); font-size: 0.85rem; min-width: 240px;">
+        <input type="text" id="donor-search-input" class="form-control" placeholder="Search donor name or city..." aria-label="Search audited donor registry by devotee name, city, or state" style="min-height: 44px; padding: 0.65rem 1rem; border: 1.5px solid var(--border-light); border-radius: var(--radius-sm); font-size: 1rem; min-width: 240px; box-sizing: border-box;">
       </div>
 
       <div class="table-responsive">
@@ -322,7 +322,7 @@
       sanctum: {
         title: "Garbhagriha & Maha Mandapam",
         desc: "Carved according to Manasara Shilpa Shastra. Features 24 hand-chiseled granite pillars, brass clad kalasam spires, and sanctums dedicated to Lord Ganesha, Shiva, Vishnu, and Durga.",
-        img: "https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=1200&q=80",
+        img: "/assets/t4_campus_blueprint_render.jpg",
         specs: [
           ["Building Area", "8,500 sq ft"],
           ["Tower Height (Shikhar)", "52 Feet (15.8 m)"],
@@ -334,7 +334,7 @@
       hall: {
         title: "Community Cultural Auditorium",
         desc: "A multi-use 500-seat acoustic auditorium designed for Carnatic music, Bharatanatyam performances, wedding ceremonies, youth classes, and spiritual lectures.",
-        img: "https://images.unsplash.com/photo-1514894780887-121968d00567?auto=format&fit=crop&w=1200&q=80",
+        img: "/assets/bhtcc_interior.jpg",
         specs: [
           ["Auditorium Capacity", "500 Devotees Seated"],
           ["Dining Hall", "300 Capacity Annadanam Facility"],
@@ -346,7 +346,7 @@
       garden: {
         title: "Gosala & Vedic Meditation Gardens",
         desc: "An eco-friendly 4-acre landscaped sanctuary featuring native Australian gum trees alongside sacred Tulasi groves, Bilva trees, lotus ponds, and a shelter for 25 cows.",
-        img: "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&w=1200&q=80",
+        img: "/assets/granite_architecture.jpg",
         specs: [
           ["Garden Area", "4.2 Acres"],
           ["Sanctuary Residents", "25 Native Cows & Calves"],
@@ -358,7 +358,7 @@
       site: {
         title: "Master Site Layout, Parking & Solar Array",
         desc: "Full perimeter ring road, 250 sealed visitor car parks with EV charging bays, rainwater harvesting tanks, and a 100kW rooftop solar energy grid.",
-        img: "https://images.unsplash.com/photo-1609137144822-2617f694e976?auto=format&fit=crop&w=1200&q=80",
+        img: "/assets/bhtcc_site_plan.jpg",
         specs: [
           ["Total Land Parcel", "15.4 Acres"],
           ["Car Parking", "250 Sealed Spaces + Coach Bays"],
