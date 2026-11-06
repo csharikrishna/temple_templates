@@ -7,6 +7,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   initBellSynthesizer();
   initPushpaFlowerShower();
+  initDiyaOfferingT1();
   initDonationFormT1();
   initPriestBookingT1();
 });
@@ -110,6 +111,48 @@ function initPushpaFlowerShower() {
     });
   });
 }
+
+function triggerDiyaAnimationT1() {
+  const container = document.getElementById('altarVideoScreen') || document.querySelector('.t1-video-screen') || document.body;
+  const diya = document.createElement('div');
+  diya.className = 't1-floating-diya';
+  diya.innerHTML = '🪔';
+  diya.style.position = 'absolute';
+  diya.style.left = '50%';
+  diya.style.bottom = '20px';
+  diya.style.transform = 'translateX(-50%) scale(0.6)';
+  diya.style.fontSize = '3.5rem';
+  diya.style.zIndex = '25';
+  diya.style.filter = 'drop-shadow(0 0 25px #FFD000) drop-shadow(0 0 45px #FF6A00)';
+  diya.style.transition = 'all 1.6s cubic-bezier(0.16, 1, 0.3, 1)';
+  diya.style.opacity = '1';
+  diya.style.pointerEvents = 'none';
+
+  container.appendChild(diya);
+
+  requestAnimationFrame(() => {
+    diya.style.transform = 'translateX(-50%) translateY(-70px) scale(1.35)';
+  });
+
+  setTimeout(() => {
+    diya.style.opacity = '0';
+    diya.style.transform = 'translateX(-50%) translateY(-140px) scale(0.9)';
+    setTimeout(() => diya.remove(), 800);
+  }, 1400);
+}
+
+function initDiyaOfferingT1() {
+  const diyaBtns = document.querySelectorAll('#diyaBtn, .btn-offer-diya, [data-action="diya"]');
+  diyaBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      triggerDiyaAnimationT1();
+      playTempleBellChime();
+      showToast('🪔 Sacred Deepam Lighted! May the divine radiance of Sri Ganesha guide you.');
+    });
+  });
+}
+
 
 /* -------------------------------------------------------------------------
    3. Toast Notification Component
