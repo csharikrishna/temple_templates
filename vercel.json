@@ -35,8 +35,28 @@
       "permanent": true
     },
     {
+      "source": "/templates/template_2",
+      "destination": "/templates/template_1/",
+      "permanent": false
+    },
+    {
+      "source": "/templates/template_2/",
+      "destination": "/templates/template_1/",
+      "permanent": false
+    },
+    {
       "source": "/templates/template_2/:path*",
       "destination": "/templates/template_1/",
+      "permanent": false
+    },
+    {
+      "source": "/templates/template_3",
+      "destination": "/templates/template_4/",
+      "permanent": false
+    },
+    {
+      "source": "/templates/template_3/",
+      "destination": "/templates/template_4/",
       "permanent": false
     },
     {
@@ -45,8 +65,18 @@
       "permanent": false
     },
     {
+      "source": "/template_2",
+      "destination": "/templates/template_1/",
+      "permanent": false
+    },
+    {
       "source": "/template_2/:path*",
       "destination": "/templates/template_1/",
+      "permanent": false
+    },
+    {
+      "source": "/template_3",
+      "destination": "/templates/template_4/",
       "permanent": false
     },
     {
