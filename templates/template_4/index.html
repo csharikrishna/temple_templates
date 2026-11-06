@@ -159,8 +159,8 @@
           <div class="live-sanctum-card">
             
             <div class="sanctum-media-box" id="sanctum-feed-box">
-              <!-- High-res sanctum photo simulation -->
-              <img src="https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&w=800&q=80" alt="Sacred Sanctum Sanctorum Live Feed">
+              <!-- High-res authentic sanctum photo with fallback -->
+              <img src="/assets/ganesha_shrine.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&w=800&q=80'" alt="Sacred Lord Sri Ganesha Sanctum Sanctorum Live Feed">
               
               <div class="sanctum-overlay">
                 <span class="live-badge-glow">
@@ -169,6 +169,14 @@
                 <span style="font-size: 0.75rem; background: rgba(0,0,0,0.6); padding: 0.2rem 0.5rem; border-radius: 4px;">
                   1,480 Watching
                 </span>
+              </div>
+
+              <!-- Living Diya Stage (Interactive Physics & Sacred Flame) -->
+              <div class="living-diya-stage">
+                <div class="brass-diya-lamp" id="interactive-brass-diya" title="Click or tap to offer a sacred Diya flame">
+                  <div class="diya-flame" id="diya-flame-element"></div>
+                  <div class="brass-vessel"></div>
+                </div>
               </div>
 
               <!-- Center Play Icon for Video Modal -->
@@ -184,7 +192,7 @@
                   <h3>Madhyanam Maha Aarti</h3>
                   <span>Currently Active in Main Sanctum</span>
                 </div>
-                <span class="text-gold" style="font-size: 1.25rem;">🔔</span>
+                <span class="text-gold" id="sanctum-bell-icon" style="font-size: 1.25rem;">🔔</span>
               </div>
 
               <div class="ritual-countdown-box">
@@ -203,6 +211,12 @@
                 <button class="offering-pill" id="btn-offer-flowers" title="Shower Flowers">
                   <span>🌸</span> Pushpanjali
                 </button>
+              </div>
+
+              <!-- Live Consecrated Diya Counter Pill -->
+              <div class="live-diya-counter-pill">
+                <span>🪔</span>
+                <span><strong id="diya-counter-num">4,289</strong> Diyas Consecrated Today by Pilgrims</span>
               </div>
             </div>
 
@@ -481,6 +495,152 @@
   </section>
 
   <!-- ======================================================================
+       5. DIGITAL GOTRA SANKALP GENERATOR & CONSECRATED CERTIFICATE (Feature 2)
+       ====================================================================== -->
+  <section class="sankalp-generator-section" id="sankalp-generator">
+    <div class="container">
+      
+      <div class="section-head">
+        <span class="section-tag">Instant Digital Seva</span>
+        <h2 class="section-title">Digital Gotra Sankalp Generator & Consecrated Certificate</h2>
+        <p class="section-subtitle">
+          Enter your family Gotra and Janma Nakshatra below. Generate your consecrated Sankalp pledge in real-time, consecrated by BHTCC priests with tax-deductible charity certification.
+        </p>
+      </div>
+
+      <div class="sankalp-generator-card">
+        
+        <!-- Left: Devotee Input Form -->
+        <div class="sankalp-form-wrap">
+          <h3 class="sankalp-step-title">1. Devotee & Family Details</h3>
+          
+          <div class="form-group-item">
+            <label for="input-sankalp-name">Devotee Full Name *</label>
+            <input type="text" id="input-sankalp-name" class="sankalp-input" placeholder="e.g. Ramesh & Sunita Sharma" value="Sharikrishna & Family">
+          </div>
+
+          <div class="form-row-duo">
+            <div class="form-group-item">
+              <label for="input-sankalp-gotra">Family Gotra *</label>
+              <input type="text" id="input-sankalp-gotra" class="sankalp-input" placeholder="e.g. Kashyapa, Bharadwaja" value="Kashyapa" list="gotra-options">
+              <datalist id="gotra-options">
+                <option value="Kashyapa">
+                <option value="Bharadwaja">
+                <option value="Vasishta">
+                <option value="Vishwamitra">
+                <option value="Gautama">
+                <option value="Harita">
+                <option value="Atri">
+                <option value="Jamadagni">
+                <option value="Kaundinya">
+                <option value="Agastya">
+              </datalist>
+            </div>
+
+            <div class="form-group-item">
+              <label for="input-sankalp-nakshatra">Janma Nakshatra</label>
+              <select id="input-sankalp-nakshatra" class="sankalp-input">
+                <option value="Rohini">Rohini (रोहिणी)</option>
+                <option value="Ashwini">Ashwini (अश्विनी)</option>
+                <option value="Krittika">Krittika (कृत्तिका)</option>
+                <option value="Mrigashira">Mrigashira (मृगशीर्ष)</option>
+                <option value="Punarvasu">Punarvasu (पुनर्वसु)</option>
+                <option value="Pushya">Pushya (पुष्य)</option>
+                <option value="Magha">Magha (मघा)</option>
+                <option value="Uttara Phalguni">Uttara Phalguni (उत्तरा फाल्गुनी)</option>
+                <option value="Hasta">Hasta (हस्त)</option>
+                <option value="Chitra">Chitra (चित्रा)</option>
+                <option value="Swati">Swati (स्वाति)</option>
+                <option value="Anuradha">Anuradha (अनुराधा)</option>
+                <option value="Shravana">Shravana (श्रवण)</option>
+                <option value="Revati">Revati (रेवती)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group-item">
+            <label for="input-sankalp-deity">Presiding Deity for Sacred Sankalp *</label>
+            <select id="input-sankalp-deity" class="sankalp-input">
+              <option value="Lord Sri Ganesha (Moolasthanam Remover of Obstacles)">Lord Sri Ganesha — Remover of Obstacles & Central Presiding Shrine</option>
+              <option value="Lord Sri Shiva (Mahadeva Cosmic Consciousness)">Lord Sri Shiva — Pradosham Rudrabhishekam & Peace</option>
+              <option value="Goddess Sri Ambal (Universal Mother Grace)">Goddess Sri Ambal — Kumkumarchana & Family Harmony</option>
+              <option value="Lord Sri Venkateswara (Balaji Blessings & Prosperity)">Lord Sri Venkateswara (Balaji) — Kalyanotsavam & Prosperity</option>
+              <option value="Lord Sri Murugan (Subrahmanya Spiritual Valour)">Lord Sri Murugan — Karttikeya Divine Protection</option>
+            </select>
+          </div>
+
+          <div class="form-group-item">
+            <label for="input-sankalp-intention">Special Prayer Purpose / Intention</label>
+            <input type="text" id="input-sankalp-intention" class="sankalp-input" placeholder="e.g. Family Health, Peace, Auspicious New Home, Academic Success" value="Family Health, Peace & Auspicious Prosperity">
+          </div>
+
+          <button type="button" id="btn-update-sankalp" class="btn btn-gold btn-generate-sankalp">
+            <span>✨</span> Consecrate & Generate Certificate
+          </button>
+        </div>
+
+        <!-- Right: Consecrated Certificate Parchment Frame -->
+        <div class="sankalp-preview-wrap">
+          <div class="sankalp-card-frame" id="sankalp-certificate-target">
+            <div class="card-filigree-border">
+              
+              <div class="cert-header">
+                <span class="cert-om">🕉️</span>
+                <span class="cert-sloka">॥ धर्मो रक्षति रक्षितः ॥</span>
+                <h4 class="cert-temple-title">BALLARAT HINDU TEMPLE & CULTURAL CENTRE</h4>
+                <p class="cert-temple-sub">110 Vaggs Rd, Ross Creek VIC 3351 • ABN: 13 397 829 440</p>
+                <span class="cert-site-tag" id="cert-token-id">BHTCC-2026-SKLP-8491</span>
+              </div>
+
+              <div class="cert-body">
+                <span class="cert-badge">CONSECRATED VEDIC SANKALP RECORD</span>
+                <div class="cert-deity" id="cert-display-deity">Presiding Deity: Lord Sri Ganesha</div>
+
+                <div class="cert-devotee-block">
+                  <span class="cert-label">DEVOTEE PATRON</span>
+                  <div class="cert-name" id="cert-display-name">Sharikrishna & Family</div>
+                  <div class="cert-gotra" id="cert-display-gotra">Gotra: Kashyapa | Nakshatra: Rohini</div>
+                </div>
+
+                <p class="cert-sankalp-text" id="cert-display-intention">
+                  "May the divine auspices of Ballarat Hindu Temple remove all obstacles, granting spiritual peace, longevity, radiant health, and unbroken prosperity to this noble household."
+                </p>
+              </div>
+
+              <div class="cert-footer">
+                <div class="cert-seal">
+                  <span>🏛️</span>
+                  <div>
+                    <strong>BHTCC Consecrated Seal</strong>
+                    <div style="font-size: 0.65rem; opacity: 0.85;">Victorian Registered Charity (DGR $2+)</div>
+                  </div>
+                </div>
+                <div class="cert-meta">
+                  <span id="cert-display-date">Consecrated: 6 Nov 2026</span>
+                  <span>Ross Creek Sanctuary, Victoria</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Share Actions -->
+          <div class="sankalp-actions-row">
+            <button type="button" class="btn btn-whatsapp" id="btn-share-whatsapp">
+              <span>💬</span> Share on WhatsApp
+            </button>
+            <button type="button" class="btn btn-outline-gold" id="btn-print-sankalp" style="background:#FFF;">
+              <span>🖨️</span> Save Certificate
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ======================================================================
        6. TEMPLE CONSTRUCTION & MASTERPLAN TRACKER (BHTCC Inspired)
        ====================================================================== -->
   <section class="project-progress-section" id="project">
@@ -555,7 +715,7 @@
 
         <!-- Right: Interactive Sponsorship Tiers & Blueprint Preview -->
         <div class="project-media-side">
-          <img src="https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=800&q=80" alt="Masterplan Aerial Blueprint">
+          <img src="/assets/bhtcc_site_plan.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=800&q=80'" alt="Masterplan Aerial Blueprint">
           
           <div class="project-media-content">
             <span class="badge-icon" style="font-size: 1.5rem;">🏛️</span>
@@ -585,6 +745,65 @@
           </div>
         </div>
 
+      </div>
+
+      <!-- Interactive 5-Acre Ross Creek Campus Zone Explorer (Feature 3) -->
+      <div class="masterplan-campus-explorer" style="margin-top: 3.5rem;">
+        <div class="section-head" style="margin-bottom: 1.5rem; text-align: left;">
+          <span class="section-tag" style="background: rgba(212, 175, 55, 0.15); color: #B8860B; border: 1px solid rgba(212, 175, 55, 0.3);">Campus Masterplan Tour</span>
+          <h3 style="font-size: 1.85rem; font-family: var(--font-serif); color: var(--color-primary-dark); margin: 0.35rem 0;">Explore the 5 Consecrated Acres at Ross Creek</h3>
+          <p style="color: var(--text-muted); font-size: 0.95rem;">Select any zone below to examine architectural blueprints, engineering specifications, and construction status.</p>
+        </div>
+
+        <!-- Zone Navigation Tabs -->
+        <div class="masterplan-zones-tabs" id="campus-zones-tabs" role="tablist">
+          <button type="button" class="zone-tab-btn active" data-zone="1" role="tab" aria-selected="true">
+            <span>🛕</span> Zone 1: Main Ganesha Sanctum
+          </button>
+          <button type="button" class="zone-tab-btn" data-zone="2" role="tab" aria-selected="false">
+            <span>🍲</span> Zone 2: Maha Annadanam Kitchen
+          </button>
+          <button type="button" class="zone-tab-btn" data-zone="3" role="tab" aria-selected="false">
+            <span>📚</span> Zone 3: Cultural Learning Centre
+          </button>
+          <button type="button" class="zone-tab-btn" data-zone="4" role="tab" aria-selected="false">
+            <span>🌳</span> Zone 4: Peace Meditation Gardens
+          </button>
+          <button type="button" class="zone-tab-btn" data-zone="5" role="tab" aria-selected="false">
+            <span>🚗</span> Zone 5: 75 Sealed Parking Bays
+          </button>
+        </div>
+
+        <!-- Zone Spotlight Display -->
+        <div class="zone-spotlight-display" id="zone-spotlight-card">
+          <div class="zone-visual-box">
+            <img id="zone-spotlight-img" src="/assets/bhtcc_interior.jpg" alt="Zone 1: Main Ganesha Sanctum & Prayer Hall">
+            <div class="zone-badge-overlay" id="zone-spotlight-badge">Zone 1 • 350-Capacity Sanctum</div>
+          </div>
+          <div class="zone-info-box">
+            <div>
+              <span id="zone-phase-tag" style="font-size: 0.75rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: #D9480F;">Phase 1 Structural Framing Active</span>
+              <h3 id="zone-spotlight-title">Main Sri Ganesha Shrine & 350-Capacity Prayer Hall</h3>
+              <p id="zone-spotlight-desc" style="font-size: 0.9rem; color: var(--text-dark); line-height: 1.55;">
+                Traditional granite stonework sanctum designed according to Agamic Vastu Shastra principles. Serving as the primary spiritual anchor with sacred garbha-griha, pradakshina path, and acoustic resonance chamber for Vedic chanting.
+              </p>
+              <ul class="zone-specs-list" id="zone-spotlight-specs">
+                <li><span>✓</span> 350-devotee indoor congregation hall</li>
+                <li><span>✓</span> Solid hand-carved black granite moolasthanam</li>
+                <li><span>✓</span> Dedicated altar spaces for Shiva, Murugan & Ambal</li>
+                <li><span>✓</span> Integrated 4K live broadcast pan-tilt camera grid</li>
+              </ul>
+            </div>
+            <div style="display: flex; gap: 0.75rem; align-items: center; margin-top: 1rem; flex-wrap: wrap;">
+              <a href="project.html" class="btn btn-primary btn-sm">
+                <span>📐</span> Full Engineering Specs
+              </a>
+              <a href="donate.html" class="btn btn-outline-gold btn-sm">
+                <span>🧱</span> Sponsor This Zone
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>

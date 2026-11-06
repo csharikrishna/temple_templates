@@ -7,6 +7,9 @@
 document.addEventListener('DOMContentLoaded', () => {
   initCountdown();
   initOfferings();
+  initLivingDiyaStage();
+  initGotraSankalpGenerator();
+  initCampusZoneExplorer();
   initPujaFilters();
   initModals();
   initCurrencyToggle();
@@ -356,3 +359,271 @@ function showToast(msg) {
     toast.style.transform = 'translateY(10px)';
   }, 3200);
 }
+
+/* -------------------------------------------------------------------------
+   7. Living Sanctum Altar & Interactive Diya Physics (Feature 1)
+   ------------------------------------------------------------------------- */
+let diyaCount = 4289;
+
+function initLivingDiyaStage() {
+  const deepamBtn = document.getElementById('btn-offer-deepam');
+  const interactiveDiya = document.getElementById('interactive-brass-diya');
+  const diyaCounterEl = document.getElementById('diya-counter-num');
+  const flameEl = document.getElementById('diya-flame-element');
+  const feedBox = document.getElementById('sanctum-feed-box');
+  const bellBtn = document.getElementById('btn-offer-bell');
+  const bellIcon = document.getElementById('sanctum-bell-icon');
+
+  function triggerDiyaOffering() {
+    diyaCount++;
+    if (diyaCounterEl) {
+      diyaCounterEl.textContent = diyaCount.toLocaleString();
+    }
+
+    if (flameEl) {
+      flameEl.style.transform = 'scale(1.4)';
+      flameEl.style.filter = 'drop-shadow(0 0 25px #FFD000) drop-shadow(0 0 45px #FF6A00)';
+      setTimeout(() => {
+        flameEl.style.transform = '';
+        flameEl.style.filter = '';
+      }, 1200);
+    }
+
+    if (feedBox) {
+      showOfferingAnimation('🪔', feedBox);
+    }
+
+    playTempleBellChime();
+    showToast('🪔 Sacred Diya Lighted! Your prayer shines before Lord Sri Ganesha.');
+  }
+
+  if (interactiveDiya) {
+    interactiveDiya.style.cursor = 'pointer';
+    interactiveDiya.addEventListener('click', triggerDiyaOffering);
+  }
+
+  if (deepamBtn) {
+    // Override/augment click handler
+    deepamBtn.addEventListener('click', (e) => {
+      triggerDiyaOffering();
+    });
+  }
+
+  if (bellBtn && bellIcon) {
+    bellBtn.addEventListener('click', () => {
+      bellIcon.classList.remove('bell-swinging');
+      void bellIcon.offsetWidth;
+      bellIcon.classList.add('bell-swinging');
+    });
+  }
+}
+
+/* -------------------------------------------------------------------------
+   8. Digital Gotra Sankalp Generator & Certificate (Feature 2)
+   ------------------------------------------------------------------------- */
+function initGotraSankalpGenerator() {
+  const nameInput = document.getElementById('input-sankalp-name');
+  const gotraInput = document.getElementById('input-sankalp-gotra');
+  const nakshatraInput = document.getElementById('input-sankalp-nakshatra');
+  const deitySelect = document.getElementById('input-sankalp-deity');
+  const intentionInput = document.getElementById('input-sankalp-intention');
+  const updateBtn = document.getElementById('btn-update-sankalp');
+
+  const displayName = document.getElementById('cert-display-name');
+  const displayGotra = document.getElementById('cert-display-gotra');
+  const displayDeity = document.getElementById('cert-display-deity');
+  const displayIntention = document.getElementById('cert-display-intention');
+  const displayDate = document.getElementById('cert-display-date');
+  const displayToken = document.getElementById('cert-token-id');
+
+  const whatsappBtn = document.getElementById('btn-share-whatsapp');
+  const printBtn = document.getElementById('btn-print-sankalp');
+
+  function updateCertificate() {
+    const devotee = (nameInput && nameInput.value.trim()) || 'Devotee Patron & Family';
+    const gotra = (gotraInput && gotraInput.value.trim()) || 'Kashyapa';
+    const nakshatra = (nakshatraInput && nakshatraInput.value) || 'Rohini';
+    const deity = (deitySelect && deitySelect.value) || 'Lord Sri Ganesha';
+    const intention = (intentionInput && intentionInput.value.trim()) || 'Family Health, Peace & Auspicious Prosperity';
+
+    if (displayName) displayName.textContent = devotee;
+    if (displayGotra) displayGotra.textContent = `Gotra: ${gotra} | Nakshatra: ${nakshatra}`;
+    if (displayDeity) displayDeity.textContent = `Presiding Deity: ${deity.split('(')[0].trim()}`;
+    if (displayIntention) {
+      displayIntention.textContent = `"May the divine auspices of Ballarat Hindu Temple bless ${devotee} with fulfillment of prayer: ${intention}. Chanted with authentic Vedic Agamic sankalp."`;
+    }
+
+    if (displayDate) {
+      const today = new Date().toLocaleDateString('en-AU', { day: 'numeric', month: 'short', year: 'numeric' });
+      displayDate.textContent = `Consecrated: ${today}`;
+    }
+
+    if (displayToken && !displayToken.getAttribute('data-locked')) {
+      const randToken = 'BHTCC-2026-SKLP-' + Math.floor(1000 + Math.random() * 9000);
+      displayToken.textContent = randToken;
+      displayToken.setAttribute('data-locked', 'true');
+    }
+  }
+
+  if (updateBtn) {
+    updateBtn.addEventListener('click', () => {
+      if (displayToken) displayToken.removeAttribute('data-locked');
+      updateCertificate();
+      playTempleBellChime();
+      showToast('✨ Sacred Gotra Sankalp Consecrated! Certificate Updated.');
+    });
+  }
+
+  [nameInput, gotraInput, nakshatraInput, deitySelect, intentionInput].forEach(el => {
+    if (el) {
+      el.addEventListener('input', updateCertificate);
+    }
+  });
+
+  if (whatsappBtn) {
+    whatsappBtn.addEventListener('click', () => {
+      const devotee = (nameInput && nameInput.value.trim()) || 'Devotee Patron & Family';
+      const gotra = (gotraInput && gotraInput.value.trim()) || 'Kashyapa';
+      const deity = (deitySelect && deitySelect.value) ? deitySelect.value.split('(')[0].trim() : 'Lord Sri Ganesha';
+      const token = displayToken ? displayToken.textContent : 'BHTCC-2026-SKLP';
+      
+      const msg = `🕉️ *Ballarat Hindu Temple & Cultural Centre Inc. (BHTCC)*\n*Consecrated Vedic Sankalp Record*\n\n🙏 *Devotee:* ${devotee}\n🪔 *Gotra:* ${gotra}\n🛕 *Presiding Deity:* ${deity}\n📜 *Token ID:* ${token}\n📍 *Sanctuary:* 110 Vaggs Rd, Ross Creek VIC 3351 (ABN 13 397 829 440)\n\n_May your sacred prayers be fulfilled!_\nhttps://csharikrishna.github.io/temple_templates/`;
+      
+      window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(msg)}`, '_blank');
+      showToast('Opening WhatsApp with your Consecrated Sankalp...');
+    });
+  }
+
+  if (printBtn) {
+    printBtn.addEventListener('click', () => {
+      window.print();
+    });
+  }
+
+  updateCertificate();
+}
+
+/* -------------------------------------------------------------------------
+   9. 5-Acre Ross Creek Campus Interactive Zone Explorer (Feature 3)
+   ------------------------------------------------------------------------- */
+function initCampusZoneExplorer() {
+  const zoneTabs = document.querySelectorAll('.zone-tab-btn');
+  const zoneImg = document.getElementById('zone-spotlight-img');
+  const zoneBadge = document.getElementById('zone-spotlight-badge');
+  const zonePhase = document.getElementById('zone-phase-tag');
+  const zoneTitle = document.getElementById('zone-spotlight-title');
+  const zoneDesc = document.getElementById('zone-spotlight-desc');
+  const zoneSpecs = document.getElementById('zone-spotlight-specs');
+
+  if (!zoneTabs.length) return;
+
+  const zoneData = {
+    '1': {
+      title: 'Main Sri Ganesha Shrine & 350-Capacity Prayer Hall',
+      badge: 'Zone 1 • 350-Capacity Sanctum',
+      phase: 'Phase 1 Structural Framing Active',
+      img: 'assets/bhtcc_interior.jpg',
+      desc: 'Traditional granite stonework sanctum designed according to Agamic Vastu Shastra principles. Serving as the primary spiritual anchor with sacred garbha-griha, pradakshina path, and acoustic resonance chamber for Vedic chanting.',
+      specs: [
+        '350-devotee indoor congregation hall',
+        'Solid hand-carved black granite moolasthanam',
+        'Dedicated altar spaces for Shiva, Murugan & Ambal',
+        'Integrated 4K live broadcast pan-tilt camera grid'
+      ]
+    },
+    '2': {
+      title: 'Maha Annadanam Commercial Kitchen & Dining Complex',
+      badge: 'Zone 2 • Annadanam Kitchen',
+      phase: 'Council Approved & Earthworks Ready',
+      img: 'assets/vedic_homa.jpg',
+      desc: 'Industrial-grade commercial kitchen facility compliant with Victorian Food Safety and Shire regulations, capable of serving 500+ free hot consecrated sanctum meals (Prasadam) every weekend and during major festivals.',
+      specs: [
+        'Commercial steam kettles, roti stations & cold storage',
+        'Seated dining hall for 250 devotees simultaneously',
+        '100% free sanctified vegetarian food distribution',
+        'Victorian Health & Council Food Act 1984 certified'
+      ]
+    },
+    '3': {
+      title: 'Vedic Cultural Learning Centre & Scriptural Library',
+      badge: 'Zone 3 • Cultural Pavilion',
+      phase: 'Architecture Blueprints Finalized',
+      img: 'assets/granite_architecture.jpg',
+      desc: 'A vibrant educational pavilion dedicated to preserving Sanatana Dharma heritage for youth in Ballarat and regional Victoria. Featuring classrooms for Sanskrit, Hindi, Tamil, classical Carnatic music, and Bharatanatyam dance.',
+      specs: [
+        '3 multipurpose cultural classrooms with smart screens',
+        'Curated library of Vedic scriptures & children’s literature',
+        'Victorian Child Safe Standards and WWCC compliance',
+        'Community workshops and senior citizen social spaces'
+      ]
+    },
+    '4': {
+      title: 'Landscaped Peace Gardens, Meditation Walk & Sacred Goshala',
+      badge: 'Zone 4 • 2 Acres of Sacred Flora',
+      phase: 'Eco-Landscape Design Commenced',
+      img: 'assets/lakshmi_puja.jpg',
+      desc: 'Integrating Australian native flora with sacred Indian medicinal and flowering plants including Tulasi, Bilva, Neem, and fragrant jasmine. A tranquil walking trail for quiet japa meditation and family contemplation.',
+      specs: [
+        'Walking meditation pradakshina trail with seating',
+        'Sacred Bilva and Tulasi consecrated gardens',
+        'Rainwater harvesting ponds and sustainable solar grid',
+        'Planned ethical cow shelter (Goshala) for seva'
+      ]
+    },
+    '5': {
+      title: '75 Sealed Parking Bays, Universal DDA Access & Bus Dropoff',
+      badge: 'Zone 5 • Civil Infrastructure',
+      phase: 'Asphalt Paving & Drainage 70% Done',
+      img: 'assets/bhtcc_site_plan.jpg',
+      desc: 'High-capacity civil engineering and transport infrastructure funded in part by the $900k+ Victorian Government grant. Ensuring safe, dignified, step-free access for elders, prams, and pilgrims arriving from Melbourne and Geelong.',
+      specs: [
+        '75 asphalt-sealed visitor and devotee parking bays',
+        'Dedicated tour bus turn-around and dropoff concourse',
+        '100% DDA-compliant step-free tactile ramps & accessible toilets',
+        'Electric Vehicle (EV) destination chargers on site'
+      ]
+    }
+  };
+
+  zoneTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      zoneTabs.forEach(t => {
+        t.classList.remove('active');
+        t.setAttribute('aria-selected', 'false');
+      });
+      tab.classList.add('active');
+      tab.setAttribute('aria-selected', 'true');
+
+      const zoneId = tab.getAttribute('data-zone') || '1';
+      const data = zoneData[zoneId];
+      if (!data) return;
+
+      if (zoneTitle) zoneTitle.textContent = data.title;
+      if (zoneBadge) zoneBadge.textContent = data.badge;
+      if (zonePhase) zonePhase.textContent = data.phase;
+      if (zoneDesc) zoneDesc.textContent = data.desc;
+      if (zoneImg) {
+        zoneImg.style.opacity = '0.3';
+        setTimeout(() => {
+          zoneImg.src = data.img;
+          zoneImg.alt = data.title;
+          zoneImg.style.opacity = '1';
+        }, 120);
+      }
+
+      if (zoneSpecs && data.specs) {
+        zoneSpecs.innerHTML = data.specs.map(s => `<li><span>✓</span> ${s}</li>`).join('');
+      }
+
+      showToast(`Viewing: ${data.title}`);
+    });
+  });
+}
+
+// Global window exposure
+window.playTempleBellChime = playTempleBellChime;
+window.showToast = showToast;
+window.initLivingDiyaStage = initLivingDiyaStage;
+window.initGotraSankalpGenerator = initGotraSankalpGenerator;
+window.initCampusZoneExplorer = initCampusZoneExplorer;
+
