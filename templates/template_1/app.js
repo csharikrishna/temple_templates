@@ -14,76 +14,87 @@ document.addEventListener('DOMContentLoaded', () => {
 
 /* -------------------------------------------------------------------------
    1. Authentic 432 Hz Multi-Harmonic Bronze Bell Synthesizer (Web Audio API)
+   Artistic Audio Reference — User Initiated Only
    ------------------------------------------------------------------------- */
 function playTempleBellChime() {
   try {
     const AudioContext = window.AudioContext || window.webkitAudioContext;
     if (!AudioContext) return;
     const ctx = new AudioContext();
+    if (ctx.state === 'suspended') {
+      ctx.resume();
+    }
     const now = ctx.currentTime;
 
-    // Consecrated 432 Hz Sacred Bronze Fundamental & Overtone Series
-    // Fundamental (432 Hz)
+    // Master Gain to prevent harsh clipping
+    const masterGain = ctx.createGain();
+    masterGain.gain.setValueAtTime(0.7, now);
+    masterGain.connect(ctx.destination);
+
+    // Consecrated 432 Hz Sacred Bronze Fundamental & Harmonically Rich Overtone Series
+    // 0. Sub-bass bronze body resonance (216 Hz)
+    const osc0 = ctx.createOscillator();
+    const gain0 = ctx.createGain();
+    osc0.type = 'sine';
+    osc0.frequency.setValueAtTime(216, now);
+    osc0.frequency.exponentialRampToValueAtTime(214, now + 3.0);
+    gain0.gain.setValueAtTime(0.35, now);
+    gain0.gain.exponentialRampToValueAtTime(0.0001, now + 3.4);
+    osc0.connect(gain0); gain0.connect(masterGain);
+
+    // 1. Fundamental (432 Hz)
     const osc1 = ctx.createOscillator();
     const gain1 = ctx.createGain();
     osc1.type = 'sine';
     osc1.frequency.setValueAtTime(432, now);
-    osc1.frequency.exponentialRampToValueAtTime(430, now + 2.8);
+    osc1.frequency.exponentialRampToValueAtTime(430, now + 3.2);
+    gain1.gain.setValueAtTime(0.55, now);
+    gain1.gain.exponentialRampToValueAtTime(0.0001, now + 3.5);
+    osc1.connect(gain1); gain1.connect(masterGain);
 
-    // Tierce - Minor 3rd resonance (518 Hz)
+    // 2. Tierce - Minor 3rd resonance (518.4 Hz)
     const osc2 = ctx.createOscillator();
     const gain2 = ctx.createGain();
     osc2.type = 'triangle';
     osc2.frequency.setValueAtTime(518.4, now);
-    osc2.frequency.exponentialRampToValueAtTime(514, now + 2.0);
+    osc2.frequency.exponentialRampToValueAtTime(514, now + 2.4);
+    gain2.gain.setValueAtTime(0.32, now);
+    gain2.gain.exponentialRampToValueAtTime(0.0001, now + 2.5);
+    osc2.connect(gain2); gain2.connect(masterGain);
 
-    // Quint - 5th overtone (648 Hz)
+    // 3. Quint - 5th overtone (648 Hz)
     const osc3 = ctx.createOscillator();
     const gain3 = ctx.createGain();
     osc3.type = 'sine';
     osc3.frequency.setValueAtTime(648, now);
-    osc3.frequency.exponentialRampToValueAtTime(640, now + 1.8);
+    osc3.frequency.exponentialRampToValueAtTime(642, now + 2.0);
+    gain3.gain.setValueAtTime(0.24, now);
+    gain3.gain.exponentialRampToValueAtTime(0.0001, now + 2.1);
+    osc3.connect(gain3); gain3.connect(masterGain);
 
-    // Nominal - Octave (864 Hz)
+    // 4. Nominal - Octave (864 Hz)
     const osc4 = ctx.createOscillator();
     const gain4 = ctx.createGain();
     osc4.type = 'triangle';
     osc4.frequency.setValueAtTime(864, now);
-    osc4.frequency.exponentialRampToValueAtTime(856, now + 1.4);
+    osc4.frequency.exponentialRampToValueAtTime(858, now + 1.6);
+    gain4.gain.setValueAtTime(0.18, now);
+    gain4.gain.exponentialRampToValueAtTime(0.0001, now + 1.7);
+    osc4.connect(gain4); gain4.connect(masterGain);
 
-    // High Shimmer Metallic Overtones (1728 Hz)
+    // 5. High Shimmer Metallic Overtones (1728 Hz)
     const osc5 = ctx.createOscillator();
     const gain5 = ctx.createGain();
     osc5.type = 'sine';
     osc5.frequency.setValueAtTime(1728, now);
-    osc5.frequency.exponentialRampToValueAtTime(1296, now + 0.9);
-
-    // Realistic bronze strike and exponential ring decay envelopes
-    gain1.gain.setValueAtTime(0.5, now);
-    gain1.gain.exponentialRampToValueAtTime(0.0001, now + 3.2);
-
-    gain2.gain.setValueAtTime(0.3, now);
-    gain2.gain.exponentialRampToValueAtTime(0.0001, now + 2.2);
-
-    gain3.gain.setValueAtTime(0.25, now);
-    gain3.gain.exponentialRampToValueAtTime(0.0001, now + 1.9);
-
-    gain4.gain.setValueAtTime(0.2, now);
-    gain4.gain.exponentialRampToValueAtTime(0.0001, now + 1.5);
-
-    gain5.gain.setValueAtTime(0.12, now);
-    gain5.gain.exponentialRampToValueAtTime(0.0001, now + 0.9);
-
-    // Connect nodes
-    osc1.connect(gain1); gain1.connect(ctx.destination);
-    osc2.connect(gain2); gain2.connect(ctx.destination);
-    osc3.connect(gain3); gain3.connect(ctx.destination);
-    osc4.connect(gain4); gain4.connect(ctx.destination);
-    osc5.connect(gain5); gain5.connect(ctx.destination);
+    osc5.frequency.exponentialRampToValueAtTime(1296, now + 1.1);
+    gain5.gain.setValueAtTime(0.10, now);
+    gain5.gain.exponentialRampToValueAtTime(0.0001, now + 1.1);
+    osc5.connect(gain5); gain5.connect(masterGain);
 
     // Trigger oscillations
-    osc1.start(now); osc2.start(now); osc3.start(now); osc4.start(now); osc5.start(now);
-    osc1.stop(now + 3.3); osc2.stop(now + 2.3); osc3.stop(now + 2.0); osc4.stop(now + 1.6); osc5.stop(now + 1.0);
+    osc0.start(now); osc1.start(now); osc2.start(now); osc3.start(now); osc4.start(now); osc5.start(now);
+    osc0.stop(now + 3.5); osc1.stop(now + 3.6); osc2.stop(now + 2.6); osc3.stop(now + 2.2); osc4.stop(now + 1.8); osc5.stop(now + 1.2);
   } catch (e) {
     console.warn("AudioContext policy or error: ", e);
   }
@@ -106,7 +117,7 @@ function triggerBellSwingAnimation() {
   }
 
   playTempleBellChime();
-  showToast('🔔 Consecrated 432 Hz Mandir Bell Chimed! May your prayers reach the Sanctum.');
+  showToast('🔔 Consecrated Bronze Mandir Bell Chimed! (432 Hz Artistic Reference)');
 }
 
 function initBellSynthesizer() {
@@ -127,6 +138,13 @@ function initBellSynthesizer() {
       e.stopPropagation();
       triggerBellSwingAnimation();
     });
+    bellRig.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        e.stopPropagation();
+        triggerBellSwingAnimation();
+      }
+    });
   }
 
   if (bellRope) {
@@ -134,6 +152,13 @@ function initBellSynthesizer() {
       e.preventDefault();
       e.stopPropagation();
       triggerBellSwingAnimation();
+    });
+    bellRope.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        e.stopPropagation();
+        triggerBellSwingAnimation();
+      }
     });
   }
 }
@@ -181,6 +206,11 @@ function initPushpaFlowerShower() {
    3. Akhanda Deepam (Living Sacred Brass Flame Animation)
    ------------------------------------------------------------------------- */
 function triggerAkhandaDeepamOffering() {
+  const deepamEl = document.getElementById('t1AkhandaDeepam');
+  if (deepamEl) {
+    deepamEl.classList.add('rekindled');
+    setTimeout(() => deepamEl.classList.remove('rekindled'), 2200);
+  }
   const glowOverlay = document.getElementById('t1SanctumGlowOverlay');
   const container = document.getElementById('altarVideoScreen') || document.body;
 
@@ -243,29 +273,41 @@ function initDiyaOfferingT1() {
       e.stopPropagation();
       triggerAkhandaDeepamOffering();
     });
+    deepamWidget.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        e.stopPropagation();
+        triggerAkhandaDeepamOffering();
+      }
+    });
   }
 }
 
 /* -------------------------------------------------------------------------
    4. Consecrated 528 Hz Japa Mala 108 Beads Tracker & Synthesizer
+   (Artistic 528 Hz Harmonic Chime)
    ------------------------------------------------------------------------- */
 let t1MalaCount = 0;
 let t1MalaRounds = 0;
 let t1DroneCtx = null;
 let t1DroneGain = null;
 let t1DroneActive = false;
+let lastBeadAdvanceTime = 0;
 
 function playBeadChime() {
   try {
     const AudioContext = window.AudioContext || window.webkitAudioContext;
     if (!AudioContext) return;
     const ctx = new AudioContext();
+    if (ctx.state === 'suspended') {
+      ctx.resume();
+    }
     const now = ctx.currentTime;
     const osc = ctx.createOscillator();
     const gain = ctx.createGain();
 
     osc.type = 'sine';
-    osc.frequency.setValueAtTime(528, now); // Solfeggio 528 Hz Transformation Frequency
+    osc.frequency.setValueAtTime(528, now); // Artistic 528 Hz Chime
     osc.frequency.exponentialRampToValueAtTime(1056, now + 0.18);
 
     gain.gain.setValueAtTime(0.22, now);
@@ -295,11 +337,14 @@ function toggleTanpuraDrone(btn) {
       }
       t1DroneActive = false;
       if (btn) btn.classList.remove('drone-active');
-      showToast('🪕 Sacred Drone Paused.');
+      showToast('🪕 Tanpura Drone Paused.');
       return;
     }
 
     t1DroneCtx = new AudioContext();
+    if (t1DroneCtx.state === 'suspended') {
+      t1DroneCtx.resume();
+    }
     const now = t1DroneCtx.currentTime;
 
     const osc1 = t1DroneCtx.createOscillator(); // Root Sa (D3 146.83 Hz)
@@ -329,7 +374,7 @@ function toggleTanpuraDrone(btn) {
 
     t1DroneActive = true;
     if (btn) btn.classList.add('drone-active');
-    showToast('🪕 Sacred 432 Hz Tanpura Drone Active. Meditate with Sri Ganesha.');
+    showToast('🪕 Tanpura Drone Active (Artistic 432 Hz Tuning). Meditate with Sri Ganesha.');
   } catch (e) {
     console.warn("Drone error: ", e);
   }
@@ -340,10 +385,13 @@ function initJapaMalaCounter() {
   const countDisplay = document.getElementById('t1MalaCount');
   const roundsDisplay = document.getElementById('t1MalaRounds');
   const progressFill = document.getElementById('t1JapaProgress');
+  const progressTrack = document.getElementById('t1JapaProgressTrack');
   const slokaEl = document.getElementById('t1SanskritSloka');
   const droneBtn = document.getElementById('t1DroneBtn');
   const resetBtn = document.getElementById('t1JapaResetBtn');
   const strandEl = document.getElementById('t1MalaStrand');
+  const completionCard = document.getElementById('t1MalaCompletionCard');
+  const nextRoundBtn = document.getElementById('t1NextRoundBtn');
 
   // Populate 108 visual Rudraksha mala beads
   if (strandEl && strandEl.children.length === 0) {
@@ -352,9 +400,19 @@ function initJapaMalaCounter() {
       const bead = document.createElement('div');
       bead.className = 't1-mala-bead';
       bead.id = 't1Bead_' + i;
-      bead.title = 'Bead ' + i + ' of 108';
+      bead.title = 'Rudraksha Bead ' + i + ' of 108';
+      bead.setAttribute('role', 'button');
+      bead.setAttribute('tabindex', '0');
+      bead.setAttribute('aria-label', 'Rudraksha Bead ' + i + ' of 108');
+      
       bead.addEventListener('click', () => {
         advanceBead(i);
+      });
+      bead.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          advanceBead(i);
+        }
       });
       fragment.appendChild(bead);
     }
@@ -362,6 +420,13 @@ function initJapaMalaCounter() {
   }
 
   function advanceBead(targetNum) {
+    const currentTime = Date.now();
+    // Debounce rapid accidental double-taps
+    if (typeof targetNum !== 'number' && currentTime - lastBeadAdvanceTime < 70) {
+      return;
+    }
+    lastBeadAdvanceTime = currentTime;
+
     if (typeof targetNum === 'number') {
       t1MalaCount = targetNum;
     } else {
@@ -372,10 +437,12 @@ function initJapaMalaCounter() {
       t1MalaCount = 1;
       t1MalaRounds++;
       if (roundsDisplay) roundsDisplay.textContent = t1MalaRounds;
+      if (completionCard) completionCard.style.display = 'none';
     }
 
     if (countDisplay) countDisplay.textContent = t1MalaCount;
     if (progressFill) progressFill.style.width = ((t1MalaCount / 108) * 100) + '%';
+    if (progressTrack) progressTrack.setAttribute('aria-valuenow', t1MalaCount);
 
     // Update beads visual state
     for (let i = 1; i <= 108; i++) {
@@ -402,9 +469,10 @@ function initJapaMalaCounter() {
     if (t1MalaCount === 108) {
       t1MalaRounds++;
       if (roundsDisplay) roundsDisplay.textContent = t1MalaRounds;
+      if (completionCard) completionCard.style.display = 'block';
       triggerPushpaShower();
       playTempleBellChime();
-      showToast('🙏 108 Sacred Beads Consecrated! Full Ganesha Moola Mantra Mala Complete. Auspicious Blessings!');
+      showToast('🙏 108 Sacred Beads Consecrated! Full Japa Mala Complete. (528 Hz Artistic Chime)');
     }
   }
 
@@ -412,6 +480,22 @@ function initJapaMalaCounter() {
     japaBtn.addEventListener('click', (e) => {
       e.preventDefault();
       advanceBead();
+    });
+  }
+
+  if (nextRoundBtn) {
+    nextRoundBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      t1MalaCount = 0;
+      if (countDisplay) countDisplay.textContent = '0';
+      if (progressFill) progressFill.style.width = '0%';
+      if (progressTrack) progressTrack.setAttribute('aria-valuenow', 0);
+      if (completionCard) completionCard.style.display = 'none';
+      for (let i = 1; i <= 108; i++) {
+        const bead = document.getElementById('t1Bead_' + i);
+        if (bead) bead.classList.remove('bead-current', 'bead-chanted');
+      }
+      showToast('📿 Auspicious! Beginning Next Mala Round with Sri Ganesha.');
     });
   }
 
@@ -428,6 +512,8 @@ function initJapaMalaCounter() {
       t1MalaCount = 0;
       if (countDisplay) countDisplay.textContent = '0';
       if (progressFill) progressFill.style.width = '0%';
+      if (progressTrack) progressTrack.setAttribute('aria-valuenow', 0);
+      if (completionCard) completionCard.style.display = 'none';
       for (let i = 1; i <= 108; i++) {
         const bead = document.getElementById('t1Bead_' + i);
         if (bead) bead.classList.remove('bead-current', 'bead-chanted');
@@ -445,6 +531,8 @@ function showToast(message) {
   if (!toast) {
     toast = document.createElement('div');
     toast.id = 't1-toast';
+    toast.setAttribute('role', 'status');
+    toast.setAttribute('aria-live', 'polite');
     toast.style.position = 'fixed';
     toast.style.bottom = '28px';
     toast.style.right = '28px';

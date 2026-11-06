@@ -2797,18 +2797,26 @@ body {
   color: #1A0306;
 }
 
+.t1-hanging-bell-rig:focus-visible,
+.t1-akhanda-deepam-widget:focus-visible,
+.t1-mala-bead:focus-visible {
+  outline: 2px solid var(--t1-gold);
+  outline-offset: 4px;
+}
+
 .t1-hanging-bell-rig.swinging {
-  animation: t1BellSway 1.8s cubic-bezier(0.28, 0.84, 0.42, 1);
+  animation: t1BellSway 2.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   transform-origin: 50% 0;
 }
 
 @keyframes t1BellSway {
   0% { transform: translateX(-50%) rotate(0deg); }
-  15% { transform: translateX(-50%) rotate(18deg); }
-  32% { transform: translateX(-50%) rotate(-14deg); }
-  50% { transform: translateX(-50%) rotate(9deg); }
-  70% { transform: translateX(-50%) rotate(-5deg); }
-  85% { transform: translateX(-50%) rotate(2deg); }
+  12% { transform: translateX(-50%) rotate(15deg); }
+  28% { transform: translateX(-50%) rotate(-11deg); }
+  44% { transform: translateX(-50%) rotate(7.5deg); }
+  60% { transform: translateX(-50%) rotate(-4.5deg); }
+  76% { transform: translateX(-50%) rotate(2.2deg); }
+  88% { transform: translateX(-50%) rotate(-0.8deg); }
   100% { transform: translateX(-50%) rotate(0deg); }
 }
 
@@ -3146,4 +3154,697 @@ body {
   color: #D9480F;
   padding: 0.2rem 0.5rem;
   border-radius: 4px;
+}
+
+
+/* ==========================================================================
+   CLASSICAL CEREMONIAL MANDIR ELEVATION — BESPOKE ARCHITECTURAL SYSTEM
+   ========================================================================== */
+
+/* Brand Seal Insignia */
+.t1-header-seal-img {
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
+  filter: drop-shadow(0 3px 8px rgba(60, 10, 17, 0.45));
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  vertical-align: middle;
+}
+
+.t1-brand-crest:hover .t1-header-seal-img {
+  transform: rotate(5deg) scale(1.08);
+}
+
+.t1-footer-seal-img {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.4));
+  margin-bottom: 0.5rem;
+}
+
+/* Sanctum Altar Enhancement */
+#t1SanctumImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 36%;
+  display: block;
+}
+
+#altarVideoScreen {
+  background: #0E0706;
+  border: 2px solid rgba(212, 175, 55, 0.45);
+  box-shadow: 0 16px 50px rgba(0, 0, 0, 0.6), 0 0 30px rgba(212, 175, 55, 0.15);
+}
+
+/* Consecrated Rudraksha Mala 108 Beads & Completion */
+.t1-mala-bead {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #8A4B29 0%, #522712 60%, #2A1206 100%);
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  box-shadow: inset 0 1px 2px rgba(255, 230, 160, 0.25), 0 2px 4px rgba(0,0,0,0.4);
+  transition: transform 0.2s ease, background 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.t1-mala-bead:hover {
+  transform: scale(1.25);
+  border-color: #FFD700;
+}
+
+.t1-mala-bead.bead-chanted {
+  background: radial-gradient(circle at 35% 35%, #FFF0A0 0%, #D4AF37 50%, #8B6508 100%);
+  border-color: #FFF8DC;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.8), inset 0 1px 2px #FFF;
+}
+
+.t1-mala-bead.bead-current {
+  background: radial-gradient(circle at 35% 35%, #FFFFFF 0%, #FF8F00 55%, #E65100 100%);
+  border-color: #FFF;
+  box-shadow: 0 0 16px #FF9100, 0 0 24px rgba(255, 145, 0, 0.6);
+  transform: scale(1.4);
+  animation: t1BeadPulse 1.2s ease-in-out infinite alternate;
+}
+
+@keyframes t1BeadPulse {
+  from { transform: scale(1.3); box-shadow: 0 0 10px #FF9100; }
+  to { transform: scale(1.5); box-shadow: 0 0 20px #FFD000; }
+}
+
+.t1-mala-completion-card {
+  background: linear-gradient(135deg, rgba(60, 10, 17, 0.96), rgba(88, 17, 26, 0.96));
+  border: 1.5px solid var(--t1-gold);
+  border-radius: var(--radius-t1);
+  padding: 1.5rem;
+  margin: 1.25rem 0;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6), 0 0 25px rgba(212, 175, 55, 0.35);
+  animation: t1FadeInUp 0.5s ease-out forwards;
+}
+
+.t1-completion-badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: #FFD700;
+  background: rgba(212, 175, 55, 0.2);
+  border: 1px solid rgba(212, 175, 55, 0.5);
+  padding: 0.3rem 1rem;
+  border-radius: var(--radius-full);
+  margin-bottom: 0.75rem;
+}
+
+.t1-completion-inner h5 {
+  color: #FFF3B0;
+  font-size: 1.35rem;
+  font-family: var(--font-serif);
+  margin-bottom: 0.5rem;
+}
+
+.t1-completion-inner p {
+  color: #F8EAD6;
+  font-size: 0.95rem;
+  margin-bottom: 1.2rem;
+}
+
+@keyframes t1FadeInUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* -------------------------------------------------------------------------
+   SECTION B: ARCHITECTURAL EDITORIAL STORYTELLING
+   ------------------------------------------------------------------------- */
+.t1-editorial-campus-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  margin-top: 2rem;
+}
+
+.t1-editorial-hero-feature {
+  background: #FFFFFF;
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  transition: var(--transition);
+}
+
+.t1-editorial-hero-feature:hover {
+  box-shadow: var(--shadow-lg), 0 0 30px rgba(212, 175, 55, 0.15);
+  border-color: var(--t1-gold);
+}
+
+.t1-editorial-media-wrapper {
+  position: relative;
+  min-height: 440px;
+  overflow: hidden;
+  background: #140807;
+}
+
+.t1-editorial-render-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.t1-editorial-hero-feature:hover .t1-editorial-render-img {
+  transform: scale(1.03);
+}
+
+.t1-render-concept-badge {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  background: rgba(30, 4, 8, 0.88);
+  backdrop-filter: blur(8px);
+  color: #FFD700;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  padding: 0.4rem 0.85rem;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(212, 175, 55, 0.5);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  z-index: 2;
+}
+
+.t1-render-location-tag {
+  position: absolute;
+  bottom: 18px;
+  left: 18px;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(6px);
+  color: #FAF7F2;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  z-index: 2;
+}
+
+.t1-editorial-hero-details {
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.t1-editorial-meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.t1-pill-gold {
+  background: rgba(212, 175, 55, 0.15);
+  color: #8B6508;
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-full);
+  letter-spacing: 0.03em;
+}
+
+.t1-pill-grant {
+  background: rgba(15, 81, 50, 0.1);
+  color: #0F5132;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-full);
+}
+
+.t1-pill-phase {
+  background: rgba(88, 17, 26, 0.08);
+  color: var(--t1-crimson);
+  border: 1px solid rgba(88, 17, 26, 0.25);
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-full);
+}
+
+.t1-editorial-hero-details h4 {
+  font-size: 1.65rem;
+  line-height: 1.3;
+  margin-bottom: 0.85rem;
+  color: var(--t1-crimson-dark);
+}
+
+.t1-editorial-hero-details p {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  margin-bottom: 0.85rem;
+  color: var(--t1-text-muted);
+}
+
+.t1-editorial-footnote {
+  font-size: 0.8rem !important;
+  color: #78716C !important;
+  margin-bottom: 1.5rem !important;
+}
+
+.t1-editorial-specs-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.85rem;
+  margin-bottom: 1.5rem;
+  background: var(--t1-sand);
+  padding: 1.25rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+}
+
+.t1-spec-block {
+  display: flex;
+  flex-direction: column;
+}
+
+.t1-spec-value {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--t1-crimson-dark);
+  line-height: 1.2;
+}
+
+.t1-spec-label {
+  font-size: 0.725rem;
+  font-weight: 600;
+  color: var(--t1-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-top: 0.25rem;
+}
+
+.t1-editorial-progress-container {
+  margin-bottom: 1.75rem;
+}
+
+.t1-prog-label-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.825rem;
+  font-weight: 700;
+  color: var(--t1-crimson-dark);
+  margin-bottom: 0.4rem;
+}
+
+.t1-editorial-cta-row {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Editorial Split Row (Stonemasonry & Annadanam) */
+.t1-editorial-split-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.t1-editorial-split-card {
+  background: #FFFFFF;
+  border: 1.5px solid rgba(212, 175, 55, 0.3);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition);
+}
+
+.t1-editorial-split-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--t1-gold);
+  box-shadow: var(--shadow-md), 0 0 25px rgba(212, 175, 55, 0.15);
+}
+
+.t1-split-media {
+  position: relative;
+  height: 290px;
+  overflow: hidden;
+  background: #140807;
+}
+
+.t1-split-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.t1-editorial-split-card:hover .t1-split-img {
+  transform: scale(1.04);
+}
+
+.t1-split-tag-floating {
+  position: absolute;
+  bottom: 14px;
+  left: 14px;
+  background: rgba(30, 4, 8, 0.88);
+  backdrop-filter: blur(8px);
+  color: #FFD700;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  padding: 0.35rem 0.8rem;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(212, 175, 55, 0.45);
+}
+
+.t1-split-content {
+  padding: 2rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.t1-kavacha-tag-sm {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: var(--t1-crimson);
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 0.35rem;
+}
+
+.t1-split-header h4 {
+  font-size: 1.35rem;
+  line-height: 1.3;
+  margin-bottom: 0.75rem;
+  color: var(--t1-crimson-dark);
+}
+
+.t1-split-content p {
+  font-size: 0.9rem;
+  line-height: 1.65;
+  margin-bottom: 1.25rem;
+  flex: 1;
+}
+
+.t1-split-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 1.25rem;
+}
+
+.t1-split-chips span {
+  font-size: 0.72rem;
+  font-weight: 700;
+  background: var(--t1-sand);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  color: var(--t1-crimson-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+}
+
+.t1-link-editorial {
+  color: var(--t1-saffron);
+  font-weight: 800;
+  text-decoration: none;
+  font-size: 0.875rem;
+  align-self: flex-start;
+}
+
+.t1-link-editorial:hover {
+  color: var(--t1-crimson);
+  text-decoration: underline;
+}
+
+/* Secondary Editorial Bento Grid */
+.t1-editorial-sub-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.t1-sub-bento-card {
+  background: #FFFFFF;
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  border-radius: var(--radius-t1);
+  padding: 1.75rem;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-start;
+  transition: var(--transition);
+}
+
+.t1-sub-bento-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--t1-gold);
+  box-shadow: var(--shadow-md);
+}
+
+.t1-sub-bento-icon {
+  font-size: 2.2rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.t1-sub-bento-text {
+  flex: 1;
+}
+
+.t1-sub-tag {
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: var(--t1-crimson);
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+.t1-sub-bento-text h4 {
+  font-size: 1.15rem;
+  margin-bottom: 0.4rem;
+  color: var(--t1-crimson-dark);
+}
+
+.t1-sub-bento-text p {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.t1-sub-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.t1-link-gold-sm {
+  color: var(--t1-saffron);
+  font-weight: 800;
+  text-decoration: none;
+  font-size: 0.825rem;
+}
+
+.t1-link-gold-sm:hover {
+  color: var(--t1-crimson);
+  text-decoration: underline;
+}
+
+/* -------------------------------------------------------------------------
+   SECTION C: CEREMONIAL SEVA LEDGER & WAX SEAL INSIGNIA
+   ------------------------------------------------------------------------- */
+.t1-wax-seal-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.65rem;
+}
+
+.t1-wax-seal-img {
+  width: 76px;
+  height: 76px;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 10px rgba(60, 10, 17, 0.45));
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.t1-seva-ledger-card:hover .t1-wax-seal-img {
+  transform: scale(1.08) rotate(4deg);
+}
+
+.t1-seal-caption {
+  font-size: 0.55rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #8B6508;
+  text-transform: uppercase;
+  margin-top: 0.35rem;
+}
+
+.t1-ledger-tax-badge {
+  display: inline-block;
+  background: rgba(15, 81, 50, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.4);
+  color: #0F5132;
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-full);
+  font-size: 0.72rem;
+  font-weight: 800;
+  margin-top: 0.25rem;
+}
+
+.t1-ledger-tax-sub {
+  font-size: 0.68rem;
+  color: #64748B;
+  line-height: 1.3;
+  display: block;
+  margin-top: 0.25rem;
+}
+
+/* Statutory DGR Notice */
+.t1-dgr-statutory-notice {
+  margin-top: 3rem;
+  background: linear-gradient(135deg, #FAF7F2 0%, #F5EFE6 100%);
+  border: 1.5px solid rgba(212, 175, 55, 0.5);
+  border-radius: var(--radius-t1);
+  padding: 1.5rem 2rem;
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-start;
+  box-shadow: var(--shadow-sm);
+}
+
+.t1-dgr-shield {
+  font-size: 2.2rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.t1-dgr-text h5 {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  color: var(--t1-crimson-dark);
+  margin-bottom: 0.35rem;
+}
+
+.t1-dgr-text p {
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: #574844;
+  margin: 0;
+}
+
+/* -------------------------------------------------------------------------
+   RESPONSIVE OVERRIDES (TABLET, MOBILE, ULTRA-WIDE)
+   ------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .t1-editorial-hero-feature {
+    grid-template-columns: 1fr;
+  }
+  .t1-editorial-media-wrapper {
+    min-height: 360px;
+  }
+  .t1-editorial-specs-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .t1-editorial-split-row {
+    grid-template-columns: 1fr;
+  }
+  .t1-editorial-sub-grid {
+    grid-template-columns: 1fr;
+  }
+  .t1-editorial-hero-details {
+    padding: 1.5rem;
+  }
+  .t1-editorial-specs-grid {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 1rem;
+  }
+  .t1-dgr-statutory-notice {
+    flex-direction: column;
+    padding: 1.25rem;
+  }
+  .t1-seva-ledger-card {
+    grid-template-columns: 1fr;
+  }
+  .t1-ledger-seal-col {
+    padding: 1.25rem;
+    border-right: none;
+    border-bottom: 1.5px dashed rgba(212, 175, 55, 0.35);
+  }
+  .t1-wax-seal-img {
+    width: 64px;
+    height: 64px;
+  }
+  .t1-ledger-action {
+    border-left: none;
+    border-top: 1.5px solid rgba(212, 175, 55, 0.25);
+    padding: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .t1-editorial-specs-grid {
+    grid-template-columns: 1fr;
+  }
+  .t1-spec-value {
+    font-size: 1.15rem;
+  }
+  .t1-editorial-cta-row {
+    flex-direction: column;
+  }
+  .t1-editorial-cta-row .btn-t1-gold,
+  .t1-editorial-cta-row .btn-t1-outline {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+  .t1-render-concept-badge {
+    font-size: 0.625rem;
+    padding: 0.3rem 0.65rem;
+  }
+  .t1-render-location-tag {
+    font-size: 0.68rem;
+    padding: 0.25rem 0.65rem;
+  }
+}
+
+/* Reduced Motion Safety */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .t1-hanging-bell-rig.swinging {
+    animation: none !important;
+  }
+  .t1-flame-outer,
+  .t1-flame-aura {
+    animation: none !important;
+  }
+  .t1-mala-bead.bead-current {
+    animation: none !important;
+  }
 }
