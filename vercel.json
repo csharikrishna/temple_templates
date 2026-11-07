@@ -93,6 +93,21 @@
       "source": "/template_3/:path*",
       "destination": "/templates/template_4/",
       "permanent": false
+    },
+    {
+      "source": "/template_1/",
+      "destination": "/templates/template_1/",
+      "permanent": true
+    },
+    {
+      "source": "/template_4/",
+      "destination": "/templates/template_4/",
+      "permanent": true
+    },
+    {
+      "source": "/template_5/",
+      "destination": "/templates/template_5/",
+      "permanent": true
     }
   ],
   "headers": [
