@@ -1,0 +1,1 @@
+var e=`/templates/template_5/assets/vastu-gardens-0XoWjvCu.jpg`;export{e as t};

@@ -14,3 +14,7 @@ audit_shots/
 device_shots/
 
 templetemplets/
+
+audit_artifacts/
+.agents/teamwork/
+

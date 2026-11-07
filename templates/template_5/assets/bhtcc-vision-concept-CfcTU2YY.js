@@ -1,0 +1,1 @@
+var e=`/templates/template_5/assets/bhtcc-vision-concept-CyiYyvcj.jpg`;export{e as t};

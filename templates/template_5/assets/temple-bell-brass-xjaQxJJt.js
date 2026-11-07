@@ -1,0 +1,1 @@
+var e=`/templates/template_5/assets/sanctum-shiva-DfmYlV8M.jpg`,t=`/templates/template_5/assets/sanctum-ganesha-cCmYsk9O.jpg`,n=`/templates/template_5/assets/temple-brass-lamp-CgzW6Kp1.jpg`,r=`/templates/template_5/assets/temple-bell-brass-XlpM0hbX.jpg`;export{e as i,n,t as r,r as t};

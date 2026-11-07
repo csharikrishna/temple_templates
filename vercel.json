@@ -25,6 +25,11 @@
       "permanent": true
     },
     {
+      "source": "/templates/template_5",
+      "destination": "/templates/template_5/",
+      "permanent": true
+    },
+    {
       "source": "/template_1",
       "destination": "/templates/template_1/",
       "permanent": true
@@ -32,6 +37,11 @@
     {
       "source": "/template_4",
       "destination": "/templates/template_4/",
+      "permanent": true
+    },
+    {
+      "source": "/template_5",
+      "destination": "/templates/template_5/",
       "permanent": true
     },
     {
@@ -125,6 +135,10 @@
     {
       "source": "/template_4/:path*",
       "destination": "/templates/template_4/:path*"
+    },
+    {
+      "source": "/template_5/:path*",
+      "destination": "/templates/template_5/:path*"
     },
     {
       "source": "/flagship",

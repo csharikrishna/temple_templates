@@ -1,0 +1,1 @@
+var e=`/templates/template_5/assets/annadhanam-prasadam-DBKsmp7b.jpg`;export{e as t};
