@@ -1,0 +1,1056 @@
+[
+  {
+    "id": "sec_1",
+    "title": "Section 1: General Organization, Legal & Institutional Profile",
+    "description": "Establishes legal identity, tax exemptions, and official communications.",
+    "fields": [
+      {
+        "id": "field_1",
+        "name": "Temple Official Name",
+        "current_value": "Ballarat Hindu Temple & Cultural Centre Incorporated",
+        "fillable_hint": "[_______________________________________]",
+        "guidance": "Exact legal registered name as per Consumer Affairs Victoria.",
+        "is_missing": false
+      },
+      {
+        "id": "field_2",
+        "name": "Acronym / Short Form",
+        "current_value": "BHTCC",
+        "fillable_hint": "[_______________________________________]",
+        "guidance": "Used for logos, mobile navbar, badges, and headers.",
+        "is_missing": false
+      },
+      {
+        "id": "field_3",
+        "name": "Legal Entity Type",
+        "current_value": "Incorporated Association (Victoria, Australia)",
+        "fillable_hint": "[  ] Incorporated Association[  ] Company Limited by Guarantee[  ] Other: _______________",
+        "guidance": "Determines terms, constitution rules, and legal footer.",
+        "is_missing": false
+      },
+      {
+        "id": "field_4",
+        "name": "State Registration No.",
+        "current_value": "Victorian Association Registration Number",
+        "fillable_hint": "Reg No: [_______________________________]",
+        "guidance": "Appears on government grant applications and disclosures.",
+        "is_missing": false
+      },
+      {
+        "id": "field_5",
+        "name": "ABN (Business Number)",
+        "current_value": "13 397 829 440",
+        "fillable_hint": "[_______________________________________]",
+        "guidance": "11-digit Australian Business Number. Verified on ABN Lookup.",
+        "is_missing": false
+      },
+      {
+        "id": "field_6",
+        "name": "Charity & Tax Status",
+        "current_value": "Registered Charity / Not-for-Profit (Advancement of Religion / Community Support)",
+        "fillable_hint": "[  ] Registered with ACNC[  ] DGR Item 1 Endorsed[  ] DGR Item 2 Endorsed[  ] NFP Exempt",
+        "guidance": "Governs tax deductibility wording on donation checkouts.",
+        "is_missing": false
+      },
+      {
+        "id": "field_7",
+        "name": "Physical Site Address",
+        "current_value": "110 Vaggs Rd, Ross Creek VIC 3351",
+        "fillable_hint": "[_______________________________________]Suburb: [___________] State: [___] Postcode: [____]",
+        "guidance": "Location of the 5-acre temple property.",
+        "is_missing": false
+      },
+      {
+        "id": "field_8",
+        "name": "Postal / Office Address",
+        "current_value": "110 Vaggs Rd, Ross Creek VIC 3351",
+        "fillable_hint": "[_______________________________________][  ] Same as Physical Site Address",
+        "guidance": "For legal notices, billing, and postal mail.",
+        "is_missing": false
+      },
+      {
+        "id": "field_9",
+        "name": "Local Council (LGA)",
+        "current_value": "Golden Plains Shire Council (bordering City of Ballarat)",
+        "fillable_hint": "[_______________________________________]",
+        "guidance": "Required for council permits, parking codes, and local links.",
+        "is_missing": false
+      },
+      {
+        "id": "field_10",
+        "name": "Public Contact Phone",
+        "current_value": "+61 3 5300 0000",
+        "fillable_hint": "[_______________________________________]",
+        "guidance": "Primary landline / mobile displayed in site header and footer.",
+        "is_missing": false
+      },
+      {
+        "id": "field_11",
+        "name": "Public Contact Email",
+        "current_value": "info@ballarathindutemple.org.au",
+        "fillable_hint": "[_______________________________________]",
+        "guidance": "Primary public enquiry email inbox.",
+        "is_missing": false
+      },
+      {
+        "id": "field_12",
+        "name": "Emergency / Priest Direct Phone",
+        "current_value": "Not specified on current site",
+        "fillable_hint": "[_______________________________________]",
+        "guidance": "Mobile number for urgent bereavement or crisis support.",
+        "is_missing": false
+      }
+    ]
+  },
+  {
+    "id": "sec_2",
+    "title": "Section 2: Domain, DNS & Web Hosting Infrastructure",
+    "description": "CRITICAL TECHNICAL REQUIREMENTS (Not visible on current prototype site).",
+    "fields": [
+      {
+        "id": "field_1",
+        "name": "Primary Domain Name",
+        "current_value": "bhtcc.netlify.app (temporary staging)",
+        "fillable_hint": "Target Domain: [________________________]Secondary / Redirects: [_________________]",
+        "guidance": "e.g. ballarathindutemple.org.au, bhtcc.org.au.",
+        "is_missing": false
+      },
+      {
+        "id": "field_2",
+        "name": "Domain Registrar",
+        "current_value": "Not disclosed",
+        "fillable_hint": "Registrar Name: [_______________________]Account Username: [_____________________][  ] Client will manage DNS[  ] Agency to manage DNS",
+        "guidance": "e.g., GoDaddy, CrazyDomains, Melbourne IT, Squarespace.",
+        "is_missing": false
+      },
+      {
+        "id": "field_3",
+        "name": "DNS Provider",
+        "current_value": "Netlify Edge DNS",
+        "fillable_hint": "[  ] Cloudflare (Recommended)[  ] Registrar DNS[  ] Other: ____________________________",
+        "guidance": "Cloudflare provides free SSL, DDOS protection, and CDN caching.",
+        "is_missing": false
+      },
+      {
+        "id": "field_4",
+        "name": "Production Hosting",
+        "current_value": "Netlify (Starter / Free Tier)",
+        "fillable_hint": "[  ] Vercel Pro[  ] Netlify Pro[  ] AWS / GCP Cloud[  ] cPanel / VPS",
+        "guidance": "Host for Next.js web application and serverless APIs.",
+        "is_missing": false
+      },
+      {
+        "id": "field_5",
+        "name": "SSL Certificate",
+        "current_value": "Let's Encrypt Wildcard via Netlify",
+        "fillable_hint": "[  ] Auto Let's Encrypt[  ] Cloudflare Edge SSL[  ] Custom EV SSL",
+        "guidance": "Mandatory HTTPS across all pages and payment gateways.",
+        "is_missing": false
+      },
+      {
+        "id": "field_6",
+        "name": "Target Go-Live Date",
+        "current_value": "Current site live on Netlify",
+        "fillable_hint": "Target Launch: [DD/MM/YYYY]Milestone Event Date: [DD/MM/YYYY]",
+        "guidance": "Deadline for web rollout (e.g. aligned with Ganesh Festival).",
+        "is_missing": false
+      }
+    ]
+  },
+  {
+    "id": "sec_3",
+    "title": "Section 3: Branding, Visual Identity & Creative Assets",
+    "description": "Design guidelines to ensure authentic cultural aesthetics and brand consistency.",
+    "fields": [
+      {
+        "id": "field_1",
+        "name": "Vector Logo Files",
+        "current_value": "Lucide Landmark icon used as placeholder",
+        "fillable_hint": "[  ] SVG vector provided[  ] High-res PNG provided (transparent)[  ] New custom temple logo to be designed",
+        "guidance": "Please attach high-res master artwork files.",
+        "is_missing": false
+      },
+      {
+        "id": "field_2",
+        "name": "Icon / Mascot Mark",
+        "current_value": "Traditional Gopuram / Ganesha silhouette",
+        "fillable_hint": "[_______________________________________]",
+        "guidance": "Used for favicon, browser tabs, watermarks, and app icons.",
+        "is_missing": false
+      },
+      {
+        "id": "field_3",
+        "name": "Brand Color Palette",
+        "current_value": "Maroon (#6B1D2F), Gold (#D4AF37), Saffron, Temple White (#FAF9F5)",
+        "fillable_hint": "Primary Color (Hex): [__________________]Accent Gold (Hex): [___________________]Background (Hex): [____________________]",
+        "guidance": "Exact HEX / Pantone codes matching physical signage and prints.",
+        "is_missing": false
+      },
+      {
+        "id": "field_4",
+        "name": "Typography Preferences",
+        "current_value": "Playfair Display (Serif), Inter (Sans), Manrope (Buttons)",
+        "fillable_hint": "Headings Font: [________________________]Body Text Font: [_______________________]Indian Script Font (Tamil/Devanagari): [__]",
+        "guidance": "Web-safe Google Fonts or custom commercial font licenses.",
+        "is_missing": false
+      },
+      {
+        "id": "field_5",
+        "name": "Official Slogan / Tagline",
+        "current_value": "Building a Spiritual and Cultural Home for Regional Victoria",
+        "fillable_hint": "[_______________________________________]",
+        "guidance": "Hero tagline displayed prominently under main temple masthead.",
+        "is_missing": false
+      },
+      {
+        "id": "field_6",
+        "name": "Brand Style Guide",
+        "current_value": "None provided on site",
+        "fillable_hint": "[  ] Attached PDF Brand Guide[  ] Ad-hoc / Follow website aesthetics",
+        "guidance": "Document defining logo clear space, dos and don'ts.",
+        "is_missing": true
+      }
+    ]
+  },
+  {
+    "id": "sec_4",
+    "title": "Section 4: Payment Gateways, Banking & Financial Operations",
+    "description": "CRITICAL TECHNICAL REQUIREMENTS for processing live donations, sponsorships, and memberships.",
+    "fields": [
+      {
+        "id": "field_1",
+        "name": "Online Payment Gateway",
+        "current_value": "Mock simulated payment modal (Test)",
+        "fillable_hint": "[  ] Stripe (Recommended)[  ] Square[  ] PayPal Australia[  ] CommBank BPOINT / NAB Transact",
+        "guidance": "Stripe supports Apple Pay, Google Pay, and recurring pledges.",
+        "is_missing": false
+      },
+      {
+        "id": "field_2",
+        "name": "Payment Gateway Account",
+        "current_value": "Simulated dummy terminal",
+        "fillable_hint": "Stripe Account ID: [____________________][  ] Account already active[  ] Need assistance setting up new Stripe NFP",
+        "guidance": "NFP registered charities get discounted 1.4% + 30c processing fees.",
+        "is_missing": false
+      },
+      {
+        "id": "field_3",
+        "name": "Direct Bank Deposit (EFT)",
+        "current_value": "Not published on current site",
+        "fillable_hint": "Bank Name: [____________________________]Account Name: [_________________________]BSB Number: [___________________________]Account Number: [_______________________]",
+        "guidance": "Displayed on checkout for donors preferring direct bank wire.",
+        "is_missing": false
+      },
+      {
+        "id": "field_4",
+        "name": "Card Surcharge Policy",
+        "current_value": "Absorbed in mock terminal",
+        "fillable_hint": "[  ] Absorb merchant fees[  ] Give donor option to cover processing fee (+1.75%)[  ] Surcharge mandatory",
+        "guidance": "Giving donors the option to add 1.75% increases net donations by ~85%.",
+        "is_missing": false
+      },
+      {
+        "id": "field_5",
+        "name": "DGR Receipting Setup",
+        "current_value": "Basic simulated email notice",
+        "fillable_hint": "Receipt Prefix: [e.g. BHTCC-2026-]Authorized Signatory Name: [____________]Signatory Title: [e.g. Treasurer][  ] Digital signature image attached",
+        "guidance": "Australian tax laws require serialized receipt numbers and authorized signature.",
+        "is_missing": false
+      },
+      {
+        "id": "field_6",
+        "name": "Currency & International",
+        "current_value": "AUD ($) only",
+        "fillable_hint": "[  ] AUD only[  ] Multi-currency card acceptance enabled",
+        "guidance": "Accepting overseas remittances from family members in India/USA/UK.",
+        "is_missing": false
+      }
+    ]
+  },
+  {
+    "id": "sec_5",
+    "title": "Section 5: Temple Operational Timings, Etiquette & Facility Hire",
+    "description": "Operational details essential for visitor experience (Currently missing from web prototype).",
+    "fields": [
+      {
+        "id": "field_1",
+        "name": "Daily Darshan Hours",
+        "current_value": "Not displayed (Site is under construction)",
+        "fillable_hint": "Weekday Morning: [____ AM] to [____ AM]Weekday Evening: [____ PM] to [____ PM]Weekend Morning: [____ AM] to [____ PM]Weekend Evening: [____ PM] to [____ PM]",
+        "guidance": "Displayed on homepage header, Google Maps, and contact page.",
+        "is_missing": false
+      },
+      {
+        "id": "field_2",
+        "name": "Daily Pooja / Aarti Times",
+        "current_value": "Not specified",
+        "fillable_hint": "Morning Aarti: [____ AM]Noon Pooja: [____ PM]Evening Aarti: [____ PM]Night Closure Aarti: [____ PM]",
+        "guidance": "Essential for devotees planning visits for specific daily aartis.",
+        "is_missing": false
+      },
+      {
+        "id": "field_3",
+        "name": "Dress Code & Etiquette",
+        "current_value": "Not explicitly listed",
+        "fillable_hint": "Traditional Modest Attire Required: [  ] Yes  [  ] NoFootwear Removal Policy: [  ] Yes (Shoe room provided)Strict Vegetarian / No Alcohol / No Vaping: [  ] YesInner Sanctum Photography: [  ] Prohibited  [  ] Allowed",
+        "guidance": "Sets behavioral expectations for visitors, school tours, and tourists.",
+        "is_missing": false
+      },
+      {
+        "id": "field_4",
+        "name": "Prasadam Protocols",
+        "current_value": "Daily prasadam mentioned in project plan",
+        "fillable_hint": "Free Blessed Prasadam Daily: [  ] Yes  [  ] NoWeekend Community Feast (Annadhanam): [  ] YesPaid Laddu/Vada Prasadam Counter: [  ] Planned",
+        "guidance": "Devotee guidance regarding meals and blessed food distribution.",
+        "is_missing": false
+      },
+      {
+        "id": "field_5",
+        "name": "Community Hall Hire",
+        "current_value": "Mentions hall capacity of 350 devotees",
+        "fillable_hint": "Available for Private Hire: [  ] Yes  [  ] NoHire Rate (Half Day / Full Day): [$_______]Security Bond: [$_______]Strict Vegetarian Catering Contract: [  ] Yes",
+        "guidance": "For private weddings, naming ceremonies, classical arangetrams, and gatherings.",
+        "is_missing": false
+      },
+      {
+        "id": "field_6",
+        "name": "Commercial Kitchen Hire",
+        "current_value": "Supported by $400k Victorian grant",
+        "fillable_hint": "Commercial Kitchen Separate Hire: [  ] Yes  [  ] NoFood Safety Supervisor Requirement: [  ] Yes",
+        "guidance": "Terms for community culinary groups and festival banquet preparation.",
+        "is_missing": false
+      },
+      {
+        "id": "field_7",
+        "name": "Accessibility Provisions",
+        "current_value": "Accessible bays listed for 75+ parking",
+        "fillable_hint": "Wheelchair Ramps: [  ] YesAccessible Bathrooms: [  ] YesHearing Loop in Hall: [  ] Yes  [  ] Planned",
+        "guidance": "Required for accessibility compliance (Disability Discrimination Act).",
+        "is_missing": false
+      }
+    ]
+  },
+  {
+    "id": "sec_6",
+    "title": "Section 6: Spiritual Shrines, Enshrined Deities & Sacred Hierarchy",
+    "description": "Details the religious lineage, primary sanctum, and ritual schedules.",
+    "fields": [
+      {
+        "id": "field_1",
+        "name": "Primary Deity (Moolasthanam)",
+        "current_value": "Sri Ganesha (Vighnaharta / Remover of Obstacles)",
+        "fillable_hint": "Deity Form: [___________________________]Granite Sculptor Source: [e.g. Mahabalipuram, India]Primary Moolamantra: [__________________]",
+        "guidance": "The main central deity anchoring the Ross Creek sanctum.",
+        "is_missing": false
+      },
+      {
+        "id": "field_2",
+        "name": "Lord Shiva Shrine",
+        "current_value": "Lord Shiva (Chandeshwar Sannidhi - North Layout)",
+        "fillable_hint": "Form: [  ] Shiva Lingam  [  ] NatarajaSpecific Sacred Day: [e.g. Pradosham, Mondays]Special Abhishekam Offerings: [_________]",
+        "guidance": "Subsidiary sanctum positioned on astronomical coordinates.",
+        "is_missing": false
+      },
+      {
+        "id": "field_3",
+        "name": "Goddess Ambal Shrine",
+        "current_value": "Goddess Ambal (Divine Mother / Shakti - Left Flank)",
+        "fillable_hint": "Form: [  ] Durga  [  ] Parvati  [  ] LalithaSpecial Days: [e.g. Fridays, Pournami, Navaratri]Archana Offerings: [Kumkum, Flower garlands]",
+        "guidance": "Dedicated to female divine power and cultural festivals.",
+        "is_missing": false
+      },
+      {
+        "id": "field_4",
+        "name": "Navagraha Mandapam",
+        "current_value": "Nine Planetary Deities (Elevated Stone Pavilion)",
+        "fillable_hint": "Installation Type: [  ] Traditional Vedic SquareParihara Timings: [Saturdays, Rahu Kalam]Specific Oil Lamps Permitted: [  ] Sesame  [  ] Ghee",
+        "guidance": "Crucial for planetary remedies and astrological rituals.",
+        "is_missing": false
+      },
+      {
+        "id": "field_5",
+        "name": "Additional Shrines Planned",
+        "current_value": "Lord Murugan (mentioned in masterplan)",
+        "fillable_hint": "[  ] Lord Murugan / Kartikeya[  ] Sri Hanuman[  ] Sri Venkateswara / Balaji[  ] Sri AyyappaOther: [________________________________]",
+        "guidance": "Future deities to be carved and consecrated in Phase 2/3.",
+        "is_missing": false
+      },
+      {
+        "id": "field_6",
+        "name": "Sacred Flagpole & Peedam",
+        "current_value": "Traditional stone carving details",
+        "fillable_hint": "Dhwaja Stambham (Flagpole): [  ] Planned  [  ] Not plannedBali Peedam: [  ] Yes  [  ] NoTulsi Mandapam: [  ] Yes (in garden)",
+        "guidance": "Traditional external temple architecture fixtures.",
+        "is_missing": false
+      }
+    ]
+  },
+  {
+    "id": "sec_7",
+    "title": "Section 7: Priest Services, Home Blessings & Booking Workflow",
+    "description": "Catalog of traditional services offered to the community and their booking terms.",
+    "fields": [
+      {
+        "id": "field_1",
+        "name": "Chief Priest / Personnel",
+        "current_value": "General 'Priest Coordinator' listed",
+        "fillable_hint": "Priest Full Name: [_____________________]Vedic Lineage / Veda Patashala: [______]Languages Spoken: [Tamil, Telugu, Hindi, English, Sanskrit]",
+        "guidance": "Builds trust and transparency for devotees booking homams.",
+        "is_missing": false
+      },
+      {
+        "id": "field_2",
+        "name": "Priest Booking Coordinator",
+        "current_value": "Simulated booking form",
+        "fillable_hint": "Coordinator Name: [_____________________]Direct Phone / WhatsApp: [_______________]Notification Email: [___________________]",
+        "guidance": "Staff member receiving automatic alerts when a booking is submitted.",
+        "is_missing": false
+      },
+      {
+        "id": "field_3",
+        "name": "Temple Archana Rates",
+        "current_value": "Listed as option on form",
+        "fillable_hint": "Suggested Dakshina: [$__________________]Items Included: [  ] Flowers  [  ] Fruits  [  ] Coconut",
+        "guidance": "Brief blessings conducted at the temple altar.",
+        "is_missing": false
+      },
+      {
+        "id": "field_4",
+        "name": "Ganapathi Homam / Grihapravesh",
+        "current_value": "Housewarming & new business fire pooja",
+        "fillable_hint": "Suggested Dakshina: [$__________________]Duration: [e.g. 2.5 - 3 Hours]Client Samagri List PDF: [  ] Available  [  ] Need created",
+        "guidance": "The most requested home ceremony for new property buyers.",
+        "is_missing": false
+      },
+      {
+        "id": "field_5",
+        "name": "Satyanarayana Vratam",
+        "current_value": "Thanksgiving & family prayer",
+        "fillable_hint": "Suggested Dakshina: [$__________________]Duration: [e.g. 2 Hours]Pooja Samagri provided by priest: [  ] Yes  [  ] No",
+        "guidance": "Popular full-moon (Purnima) family ceremony.",
+        "is_missing": false
+      },
+      {
+        "id": "field_6",
+        "name": "Milestone & Baby Blessings",
+        "current_value": "Naming, First Feeding, Anniversaries",
+        "fillable_hint": "Suggested Dakshina: [$__________________]Categories: [Namakarana, Annaprashana, 60th/80th B'day]",
+        "guidance": "Child and elder life-cycle sacraments (Samskaras).",
+        "is_missing": false
+      },
+      {
+        "id": "field_7",
+        "name": "Vehicle Blessing (Vahana Pooja)",
+        "current_value": "Not listed on current site",
+        "fillable_hint": "[  ] Available at TempleSuggested Dakshina: [$__________________]Booking Required: [  ] Yes  [  ] Drive-in Walkup",
+        "guidance": "Very high traffic service for new car purchases.",
+        "is_missing": false
+      },
+      {
+        "id": "field_8",
+        "name": "Priest Travel Policy",
+        "current_value": "Not specified",
+        "fillable_hint": "Within Ballarat Urban: [Free / Included]Outside Ballarat (25km - 100km): [Add $___ / km]Maximum Travel Radius: [____ km from Ballarat]",
+        "guidance": "Covers fuel/travel time for priests travelling to Geelong, Ararat, etc.",
+        "is_missing": false
+      },
+      {
+        "id": "field_9",
+        "name": "Booking Notice Period",
+        "current_value": "Instant form submission",
+        "fillable_hint": "Minimum Notice Required: [e.g. 7 Days]Urgent Request Handling: [Call Priest Direct]Online Deposit Required: [  ] Yes ($____)  [  ] Pay on Day",
+        "guidance": "Prevents last-minute double-bookings on auspicious dates.",
+        "is_missing": false
+      }
+    ]
+  },
+  {
+    "id": "sec_8",
+    "title": "Section 8: Architecture, Masterplan & Construction Progress",
+    "description": "Engineering specifications, council permits, and construction tracking data.",
+    "fields": [
+      {
+        "id": "field_1",
+        "name": "Total Land Area",
+        "current_value": "5 Acres (110 Vaggs Rd, Ross Creek)",
+        "fillable_hint": "Title Folio: [___________________________]Total Square Metres: [__________________]Zoning Classification: [Rural Living / Special]",
+        "guidance": "Official property title data.",
+        "is_missing": false
+      },
+      {
+        "id": "field_2",
+        "name": "Planning Permit Reference",
+        "current_value": "Golden Plains Shire Council Masterplan approved",
+        "fillable_hint": "Council Permit No: [____________________]Approval Date: [________________________]Conditions of Approval Summary: [_______]",
+        "guidance": "Council permit details build legitimacy and donor confidence.",
+        "is_missing": false
+      },
+      {
+        "id": "field_3",
+        "name": "Civil Contractor & Builders",
+        "current_value": "Mr. Ramesh Patel (Civil Engineer / PM)",
+        "fillable_hint": "Principal Builder / Construction Co: [____]Architectural Firm: [___________________]Stonemason Guild (Granite Altars): [____]",
+        "guidance": "Recognizing key engineering and artisan partners on the website.",
+        "is_missing": false
+      },
+      {
+        "id": "field_4",
+        "name": "Current Build Progress",
+        "current_value": "45% Completed (Foundation slabs poured)",
+        "fillable_hint": "Current Exact Progress: [____ %]Next Scheduled Milestone: [_____________]Estimated Completion Phase 1: [MM/YYYY]",
+        "guidance": "Drives live progress bars and milestone timeline on website.",
+        "is_missing": false
+      },
+      {
+        "id": "field_5",
+        "name": "Interactive Blueprint Assets",
+        "current_value": "Masterplan (mp-1 to 5), Prayer Hall (ph-1 to 5)",
+        "fillable_hint": "[  ] High-res CAD / PDF drawings provided[  ] 3D drone footage available[  ] Architectural renderings attached",
+        "guidance": "Used for interactive hotspot map where donors click parts to sponsor.",
+        "is_missing": false
+      }
+    ]
+  },
+  {
+    "id": "sec_9",
+    "title": "Section 9: Capital Fundraising Campaigns, Pillar Sponsorships & Donors",
+    "description": "Detailed breakdown of financial targets, recognition plates, and donor tiers.",
+    "fields": [
+      {
+        "id": "field_1",
+        "name": "Ganesha Temple Target",
+        "current_value": "$500,000 Target ($345,000 Raised on site)",
+        "fillable_hint": "Current Updated Goal: [$________________]Amount Raised to Date: [$_______________]",
+        "guidance": "Dedicated to solid granite sanctum blocks and stone spires.",
+        "is_missing": false
+      },
+      {
+        "id": "field_2",
+        "name": "Shiva & Ambal Shrines Target",
+        "current_value": "$250,000 Target ($125,000 Raised on site)",
+        "fillable_hint": "Current Updated Goal: [$________________]Amount Raised to Date: [$_______________]",
+        "guidance": "Dedicated to subsidiary shrines and stone wall carvings.",
+        "is_missing": false
+      },
+      {
+        "id": "field_3",
+        "name": "Community Hall & Kitchen Target",
+        "current_value": "$150,000 Target ($82,000 Raised on site)",
+        "fillable_hint": "Current Updated Goal: [$________________]Amount Raised to Date: [$_______________]",
+        "guidance": "To build commercial kitchen, library, classrooms, and park.",
+        "is_missing": false
+      },
+      {
+        "id": "field_4",
+        "name": "Pillar Sponsorship Program",
+        "current_value": "Pillar sponsorship recognized with copper plates",
+        "fillable_hint": "Pillar Sponsorship Amount: [$__________]Total Number of Pillars: [e.g. 16 Pillars]Number of Pillars Remaining: [__________]",
+        "guidance": "Prime fundraising vehicle for major donors ($5,000 - $10,000+).",
+        "is_missing": false
+      },
+      {
+        "id": "field_5",
+        "name": "Copper Plate Inscription Specs",
+        "current_value": "Custom copper inscription plate in Prayer Hall",
+        "fillable_hint": "Maximum Characters per Plate: [e.g. 60 chars]Lines Allowed: [e.g. 3 Lines]Standard Format: 'Donated by [Family Name], [City]'",
+        "guidance": "Form fields for donor to enter their family inscription at checkout.",
+        "is_missing": false
+      },
+      {
+        "id": "field_6",
+        "name": "Brick / Tile Sponsorship",
+        "current_value": "Not listed on current site",
+        "fillable_hint": "[  ] Enable Engraved Brick CampaignDonation per Brick: [$__________________]Text Limit: [e.g. 2 lines of 16 chars]",
+        "guidance": "Allows everyday devotees to contribute $250 - $500 with their name.",
+        "is_missing": false
+      },
+      {
+        "id": "field_7",
+        "name": "Major Benefactor Wall",
+        "current_value": "Not explicitly listed",
+        "fillable_hint": "Grand Benefactor ($50k+): [  ] YesPatron Sponsor ($25k+): [  ] YesGold Sponsor ($10k+): [  ] Yes",
+        "guidance": "Permanent marble/granite wall of honor at temple entrance.",
+        "is_missing": false
+      },
+      {
+        "id": "field_8",
+        "name": "Anonymous Giving Option",
+        "current_value": "Checkbox: 'Keep donation anonymous on public lists'",
+        "fillable_hint": "[  ] Keep anonymous checkbox enabledDefault: [  ] Public  [  ] Anonymous",
+        "guidance": "Protects modesty and privacy of donors.",
+        "is_missing": false
+      }
+    ]
+  },
+  {
+    "id": "sec_10",
+    "title": "Section 10: Membership Program, Dues & Devotee Portal",
+    "description": "Configuration of membership tiers, billing cycles, and member rights.",
+    "fields": [
+      {
+        "id": "field_1",
+        "name": "Ordinary Membership Tier",
+        "current_value": "$50.00 AUD / Year",
+        "fillable_hint": "Annual Fee: [$__________________________]Voting Rights: [  ] Yes  [  ] NoRenewable: [  ] Annual Recurring  [  ] Manual",
+        "guidance": "Entry-level voting membership for individual regional adults.",
+        "is_missing": false
+      },
+      {
+        "id": "field_2",
+        "name": "Association Membership Tier",
+        "current_value": "$150.00 AUD / Year",
+        "fillable_hint": "Annual Fee: [$__________________________]Covers: [  ] Immediate Family (2 adults + kids)[  ] Community Association Partner",
+        "guidance": "Family tier offering discounts on workshops and cultural classes.",
+        "is_missing": false
+      },
+      {
+        "id": "field_3",
+        "name": "Life Membership Tier",
+        "current_value": "$500.00 AUD (One-Time Payment)",
+        "fillable_hint": "One-Time Fee: [$________________________]Installment Option: [  ] No  [  ] 5x $100Life Certificate Provided: [  ] Yes",
+        "guidance": "Prestigious lifetime status with perpetual AGM voting rights.",
+        "is_missing": false
+      },
+      {
+        "id": "field_4",
+        "name": "Membership Cycle",
+        "current_value": "Calculated as annual / one-time",
+        "fillable_hint": "[  ] Calendar Year (1 Jan – 31 Dec)[  ] Financial Year (1 Jul – 30 Jun)[  ] Rolling 12 Months from join date",
+        "guidance": "Determines when automated renewal reminder emails are triggered.",
+        "is_missing": false
+      },
+      {
+        "id": "field_5",
+        "name": "Voting Eligibility Rule",
+        "current_value": "Full voting rights at BHTCC AGMs",
+        "fillable_hint": "Minimum Membership Tenure to Vote: [e.g. 3 Months prior to AGM]Minimum Age to Vote: [18 Years]",
+        "guidance": "Mandatory under Victorian Model Rules for Incorporated Associations.",
+        "is_missing": false
+      },
+      {
+        "id": "field_6",
+        "name": "Devotee Portal Capabilities",
+        "current_value": "Basic simulated card checkout",
+        "fillable_hint": "[  ] Login with Password / Magic Link[  ] Download annual tax receipts[  ] View AGM minutes & voting notices[  ] Update family contact details",
+        "guidance": "Custom portal features for logged-in members.",
+        "is_missing": false
+      }
+    ]
+  },
+  {
+    "id": "sec_11",
+    "title": "Section 11: Calendar of Events, Festivals & RSVP / Ticketing System",
+    "description": "Information for scheduling, managing, and ticketing major community festivals.",
+    "fields": [
+      {
+        "id": "field_1",
+        "name": "Ganesh Chaturthi Festival",
+        "current_value": "15 September 2026 (10:00 AM – 8:00 PM)",
+        "fillable_hint": "Current Year Date: [DD/MM/YYYY]Expected Attendees: [e.g. 1,000 - 1,500]Entry Fee: [  ] Free RSVP  [  ] Paid Ticket",
+        "guidance": "Ballarat's signature multicultural festival with chariot procession.",
+        "is_missing": false
+      },
+      {
+        "id": "field_2",
+        "name": "Maha Shivaratri Celebrations",
+        "current_value": "05 March 2026 (6:00 PM – 6:00 AM Overnight)",
+        "fillable_hint": "Current Year Date: [DD/MM/YYYY]All-Night Vigil Schedule: [4 Prahara Abhishekams]Prasadam / Fasting Food Provided: [  ] Yes",
+        "guidance": "Major night festival drawing devotees from Melbourne & regional towns.",
+        "is_missing": false
+      },
+      {
+        "id": "field_3",
+        "name": "Diwali / Deepavali Annakut",
+        "current_value": "Not listed in web prototype",
+        "fillable_hint": "Date: [DD/MM/YYYY]Chopra Pooja / Lakshmi Pooja: [  ] YesFireworks / Sparklers Permission: [  ] Yes  [  ] No",
+        "guidance": "Festival of Lights and New Year gathering.",
+        "is_missing": false
+      },
+      {
+        "id": "field_4",
+        "name": "Navaratri & Dussehra",
+        "current_value": "Mentioned in worship text",
+        "fillable_hint": "Dates (9 Nights): [From DD/MM to DD/MM]Daily Golu Display: [  ] YesGarba / Dandiya Night Planned: [  ] Yes",
+        "guidance": "Nine nights of devotional dancing and goddess worship.",
+        "is_missing": false
+      },
+      {
+        "id": "field_5",
+        "name": "RSVP & Capacity Control",
+        "current_value": "Basic simulated ticket counter modal",
+        "fillable_hint": "[  ] Free RSVP with QR code tickets[  ] Limit tickets per booking (Max: ___)[  ] Send automated reminder SMS/Email",
+        "guidance": "Prevents site overcrowding and helps caterer plan Prasadam volumes.",
+        "is_missing": false
+      },
+      {
+        "id": "field_6",
+        "name": "Cultural Stage Applications",
+        "current_value": "Not present on site",
+        "fillable_hint": "Accept Dance / Music Academy submissions: [  ] YesApplication Deadline: [___ weeks prior]Stage Coordinator Email: [______________]",
+        "guidance": "Allows local classical dance/music academies to register performances.",
+        "is_missing": false
+      }
+    ]
+  },
+  {
+    "id": "sec_12",
+    "title": "Section 12: Community Programs, Educational Classes & Welfare Outreach",
+    "description": "Schedules, instructor details, and enrollment workflows for cultural and welfare services.",
+    "fields": [
+      {
+        "id": "field_1",
+        "name": "Saturday Yoga & Meditation",
+        "current_value": "Every Saturday, 8:30 AM – 10:00 AM",
+        "fillable_hint": "Current Timing: [_______________________]Location: [BHTCC Site / Ballarat Hub]Instructor Name & Cert: [_______________]Class Fee: [  ] 100% Free  [  ] Gold Coin Donation",
+        "guidance": "Community health and wellness initiative.",
+        "is_missing": false
+      },
+      {
+        "id": "field_2",
+        "name": "Sunday Language Academy",
+        "current_value": "Every Sunday, 2:00 PM – 4:00 PM",
+        "fillable_hint": "Languages Taught: [  ] Sanskrit  [  ] Hindi  [  ] Tamil  [  ] TeluguAge Groups: [  ] Kids (5-12)  [  ] Teens  [  ] AdultsTerm Fee / Materials Cost: [$___________]",
+        "guidance": "Preserving linguistic roots and sacred scripture chanting.",
+        "is_missing": false
+      },
+      {
+        "id": "field_3",
+        "name": "Seniors Spiritual Gathering",
+        "current_value": "Fortnightly Wednesdays, 11:00 AM – 1:00 PM",
+        "fillable_hint": "Timing: [_______________________________]Transport Assistance Available: [  ] Yes  [  ] NoHot Vegetarian Lunch Provided: [  ] Yes",
+        "guidance": "Vital social engagement program preventing elderly isolation.",
+        "is_missing": false
+      },
+      {
+        "id": "field_4",
+        "name": "Welfare & Food Relief Drives",
+        "current_value": "Monthly special campaigns",
+        "fillable_hint": "Partner Charities: [e.g. Ballarat SoupBus, Salvos]Accepted Goods: [Dry pantry rations, blankets, winter wear]Collection Drop-off Point: [110 Vaggs Rd]",
+        "guidance": "Demonstrates public benefit and multicultural civic support.",
+        "is_missing": false
+      },
+      {
+        "id": "field_5",
+        "name": "Online Student Enrollment",
+        "current_value": "Name, Email, Phone, Program selector",
+        "fillable_hint": "[  ] Require Parent / Guardian Details[  ] Medical / Allergy Disclosures[  ] Student Photo Release Permission",
+        "guidance": "Ensures compliance with duty of care and child protection.",
+        "is_missing": false
+      }
+    ]
+  },
+  {
+    "id": "sec_13",
+    "title": "Section 13: Volunteer Management, Roles & WWCC Compliance",
+    "description": "Framework for recruiting, coordinating, and legally vetting community volunteers.",
+    "fields": [
+      {
+        "id": "field_1",
+        "name": "Volunteer Streams",
+        "current_value": "7 areas listed on existing website",
+        "fillable_hint": "[  ] Festivals & Events Coordination[  ] Temple Operations & Priest Support[  ] Facility Maintenance & Trades[  ] Landscaping & Gardens[  ] Cultural Teaching & Language[  ] IT, Audio-Visual & Photography[  ] Fundraising & Grant Writing",
+        "guidance": "Volunteers select their preferred functional areas on signup.",
+        "is_missing": false
+      },
+      {
+        "id": "field_2",
+        "name": "Working with Children Check",
+        "current_value": "Mandatory compliance stated on site",
+        "fillable_hint": "WWCC Collection Method: [  ] Upload Card Image  [  ] Enter Card No + ExpiryAdmin Verification Officer: [___________]",
+        "guidance": "Mandatory under Victorian Child Safe Standards for all active roles.",
+        "is_missing": false
+      },
+      {
+        "id": "field_3",
+        "name": "Volunteer Shift Availability",
+        "current_value": "Weekends, Weekdays, Flexible, Festivals",
+        "fillable_hint": "[  ] Match existing site optionsCustom Options: [_______________________]",
+        "guidance": "Helps event coordinators filter rosters for working bees and festivals.",
+        "is_missing": false
+      },
+      {
+        "id": "field_4",
+        "name": "Volunteer Code of Conduct",
+        "current_value": "PDF download referenced",
+        "fillable_hint": "Digital Sign-off Checkbox Required: [  ] YesEmergency Contact Field Required: [  ] Yes",
+        "guidance": "Ensures all volunteers commit to safety, respect, and zero harassment.",
+        "is_missing": false
+      }
+    ]
+  },
+  {
+    "id": "sec_14",
+    "title": "Section 14: Committee Members, Key Personnel & Role-Based Access Control",
+    "description": "Board profiles for website publication and system access permissions.",
+    "fields": [
+      {
+        "id": "field_1",
+        "name": "Dr. Harish Kumar (President)",
+        "current_value": "Healthcare Administration",
+        "fillable_hint": "Bio Summary (50-100 words): [____________][  ] High-res headshot photo providedEmail / LinkedIn: [_____________________]",
+        "guidance": "President profile for About Us and Governance pages.",
+        "is_missing": false
+      },
+      {
+        "id": "field_2",
+        "name": "Mrs. Priya Rajan (Secretary)",
+        "current_value": "Secondary Education / Language Coordinator",
+        "fillable_hint": "Bio Summary (50-100 words): [____________][  ] High-res headshot photo providedEmail / LinkedIn: [_____________________]",
+        "guidance": "Secretary profile and community liaison.",
+        "is_missing": false
+      },
+      {
+        "id": "field_3",
+        "name": "Mr. Satish Nair (Treasurer)",
+        "current_value": "Chartered Accountant / Financial Governance",
+        "fillable_hint": "Bio Summary (50-100 words): [____________][  ] High-res headshot photo providedEmail / LinkedIn: [_____________________]",
+        "guidance": "Treasurer profile ensuring financial accountability.",
+        "is_missing": false
+      },
+      {
+        "id": "field_4",
+        "name": "Mr. Ramesh Patel (Project Mgr)",
+        "current_value": "Civil Engineer / Construction Liaison",
+        "fillable_hint": "Bio Summary (50-100 words): [____________][  ] High-res headshot photo providedEmail / LinkedIn: [_____________________]",
+        "guidance": "Project manager overseeing on-site civil progress.",
+        "is_missing": false
+      },
+      {
+        "id": "field_5",
+        "name": "Additional Board Members",
+        "current_value": "Not listed on current site",
+        "fillable_hint": "Name & Role 1: [________________________]Name & Role 2: [________________________]Name & Role 3: [________________________]",
+        "guidance": "Complete list of all committee members and trustees.",
+        "is_missing": false
+      },
+      {
+        "id": "field_6",
+        "name": "Admin Portal User Roles",
+        "current_value": "Single static read-only mock portal",
+        "fillable_hint": "[  ] Super Admin (Executive Committee)[  ] Finance Admin (Treasurer / Receipts)[  ] Event Manager (RSVPs / Ticketing)[  ] Priest / Pooja Coordinator",
+        "guidance": "Configures user authentication and granular CMS permissions.",
+        "is_missing": false
+      }
+    ]
+  },
+  {
+    "id": "sec_15",
+    "title": "Section 15: Communications, Automated Emails & SMS Gateways",
+    "description": "CRITICAL TECHNICAL REQUIREMENTS for automated transactional devotee communications.",
+    "fields": [
+      {
+        "id": "field_1",
+        "name": "Transactional Email Provider",
+        "current_value": "Simulated mock client alerts",
+        "fillable_hint": "[  ] SendGrid[  ] Postmark[  ] AWS SES[  ] Resend (Recommended for Next.js)",
+        "guidance": "Ensures high deliverability of receipts into donors' primary inboxes.",
+        "is_missing": false
+      },
+      {
+        "id": "field_2",
+        "name": "Email Sending Domain",
+        "current_value": "info@ballarathindutemple.org.au",
+        "fillable_hint": "Sending Address: [e.g. notifications@...]DKIM / SPF / DMARC Access: [  ] Provided",
+        "guidance": "Prevents temple transactional emails from landing in SPAM folders.",
+        "is_missing": false
+      },
+      {
+        "id": "field_3",
+        "name": "Automated Receipt Template",
+        "current_value": "Simulated alert on screen",
+        "fillable_hint": "[  ] Attach official PDF Tax Receipt[  ] Include thank-you note from President[  ] Include DGR tax endorsement statement",
+        "guidance": "Instant proof of tax deduction emailed to donor within 5 seconds.",
+        "is_missing": false
+      },
+      {
+        "id": "field_4",
+        "name": "SMS Notification Gateway",
+        "current_value": "Not implemented",
+        "fillable_hint": "[  ] Twilio SMS[  ] MessageMedia Australia[  ] Not required for Phase 1",
+        "guidance": "For urgent festival parking updates, weather alerts, or priest reminders.",
+        "is_missing": false
+      },
+      {
+        "id": "field_5",
+        "name": "Devotee Newsletter Platform",
+        "current_value": "Not connected",
+        "fillable_hint": "[  ] Mailchimp[  ] Brevo (Sendinblue)[  ] Campaign MonitorAccount API Key: [______________________]",
+        "guidance": "Automatically adds newsletter subscribers to email marketing lists.",
+        "is_missing": false
+      }
+    ]
+  },
+  {
+    "id": "sec_16",
+    "title": "Section 16: SEO, Google Business, Analytics & Social Media",
+    "description": "Visibility and digital marketing infrastructure (Not present on prototype site).",
+    "fields": [
+      {
+        "id": "field_1",
+        "name": "Google Maps Listing",
+        "current_value": "Raw link to query: 110 Vaggs Rd",
+        "fillable_hint": "Google Business Profile Claimed: [  ] Yes  [  ] NoExact Google Maps CID / Place ID: [______]Google Reviews Widget Embed: [  ] Yes",
+        "guidance": "Claiming Google Business Profile allows direct directions and reviews.",
+        "is_missing": false
+      },
+      {
+        "id": "field_2",
+        "name": "Google Analytics 4 (GA4)",
+        "current_value": "Not installed",
+        "fillable_hint": "GA4 Measurement ID: [G-_________________]Google Tag Manager ID: [GTM-____________]",
+        "guidance": "Tracks website visitors, donation conversion rate, and traffic sources.",
+        "is_missing": false
+      },
+      {
+        "id": "field_3",
+        "name": "Google Search Console",
+        "current_value": "Not verified",
+        "fillable_hint": "Search Console Verification Token: [____]Target Search Keywords: [Hindu Temple Ballarat, Regional Victoria Temple, Indian Community Ballarat]",
+        "guidance": "Ensures Google indexes all temple pages, poojas, and festival dates.",
+        "is_missing": false
+      },
+      {
+        "id": "field_4",
+        "name": "Social Media Links",
+        "current_value": "Generic footer links",
+        "fillable_hint": "Facebook Page: [________________________]Instagram Profile: [____________________]YouTube Channel (Live Poojas): [________]WhatsApp Community Group: [_____________]",
+        "guidance": "Direct links embedded in header, footer, and event RSVP pages.",
+        "is_missing": false
+      },
+      {
+        "id": "field_5",
+        "name": "OpenGraph Social Share Image",
+        "current_value": "None configured",
+        "fillable_hint": "[  ] Upload 1200x630px social banner image[  ] Default to Temple Aerial Rendering",
+        "guidance": "Image preview displayed when site links are shared on WhatsApp/FB.",
+        "is_missing": true
+      }
+    ]
+  },
+  {
+    "id": "sec_17",
+    "title": "Section 17: Legal Compliance, Policies & Statutory Downloads",
+    "description": "Formal documents required for governance and regulatory compliance.",
+    "fields": [
+      {
+        "id": "field_1",
+        "name": "BHTCC Model Constitution",
+        "current_value": "bhtcc-constitution.pdf (15 Aug 2016)",
+        "fillable_hint": "[  ] Final signed PDF attached[  ] Need updated 2026 version",
+        "guidance": "Mandatory download on Governance page under Victorian law.",
+        "is_missing": false
+      },
+      {
+        "id": "field_2",
+        "name": "Child Safety Standards Policy",
+        "current_value": "child-safety-policy.pdf (01 Oct 2025)",
+        "fillable_hint": "[  ] Approved PDF attached[  ] Need template provided",
+        "guidance": "Demonstrates mandatory compliance with Victoria's 11 Child Safe Standards.",
+        "is_missing": false
+      },
+      {
+        "id": "field_3",
+        "name": "Volunteer Code of Conduct",
+        "current_value": "volunteer-code-of-conduct.pdf (10 Jan 2026)",
+        "fillable_hint": "[  ] Approved PDF attached[  ] Need template provided",
+        "guidance": "Signed by all active volunteers upon registration.",
+        "is_missing": false
+      },
+      {
+        "id": "field_4",
+        "name": "Audited Financial Report",
+        "current_value": "financial-report-2025.pdf (31 Dec 2025)",
+        "fillable_hint": "[  ] Most recent audited report attachedYear: [2024 / 2025 / 2026]",
+        "guidance": "Builds immense trust with donors and government grant auditors.",
+        "is_missing": false
+      },
+      {
+        "id": "field_5",
+        "name": "Privacy Policy Document",
+        "current_value": "Points to governance page placeholder",
+        "fillable_hint": "[  ] Custom Privacy Policy attached[  ] Use Australian Privacy Principles (APP) template",
+        "guidance": "Required by Australian law for collecting personal/credit card details.",
+        "is_missing": false
+      },
+      {
+        "id": "field_6",
+        "name": "Terms of Website Use",
+        "current_value": "Points to governance page placeholder",
+        "fillable_hint": "[  ] Custom Terms of Use attached[  ] Use standard Australian NFP template",
+        "guidance": "Protects temple against liability and misuse of site materials.",
+        "is_missing": false
+      },
+      {
+        "id": "field_7",
+        "name": "Acknowledgement of Country",
+        "current_value": "Not displayed on existing site",
+        "fillable_hint": "[  ] Display Wadawurrung Traditional Owners acknowledgement in site footerCustom Wording: [_______________________]",
+        "guidance": "Crucial civic respect for Traditional Custodians across regional Victoria.",
+        "is_missing": false
+      }
+    ]
+  },
+  {
+    "id": "sec_18",
+    "title": "Section 18: Future Development Roadmap & Phase 2 Wishlist",
+    "description": "Strategic capabilities for future expansion and technology enhancements.",
+    "fields": [
+      {
+        "id": "field_1",
+        "name": "Live Video Streaming",
+        "current_value": "Static photography only",
+        "fillable_hint": "[  ] Embed YouTube Live stream of main altar[  ] RTSP / RTMP CCTV temple broadcast[  ] Special festivals only",
+        "guidance": "Enables elderly and interstate devotees to participate in daily aartis.",
+        "is_missing": false
+      },
+      {
+        "id": "field_2",
+        "name": "Multilingual Switcher",
+        "current_value": "English only",
+        "fillable_hint": "[  ] English only[  ] Add Tamil[  ] Add Hindi[  ] Add Gujarati / Telugu[  ] Google Website Translator widget",
+        "guidance": "Expands accessibility for first-generation migrant elders.",
+        "is_missing": false
+      },
+      {
+        "id": "field_3",
+        "name": "Devotee Birth Star Database",
+        "current_value": "Not implemented",
+        "fillable_hint": "[  ] Collect Devotee Rashi & Nakshatra[  ] Automated birthday/anniversary prayer reminders[  ] Phase 2 feature",
+        "guidance": "Deepens spiritual connection between devotees and temple rituals.",
+        "is_missing": false
+      },
+      {
+        "id": "field_4",
+        "name": "Prasadam Canteen POS Sync",
+        "current_value": "Cash/direct payment on site",
+        "fillable_hint": "[  ] Integrate Square / Clover POS for canteen[  ] Online pre-order festival sweets & savories[  ] Phase 2 feature",
+        "guidance": "Eliminates festival canteen queues and cash-handling bottlenecks.",
+        "is_missing": false
+      },
+      {
+        "id": "field_5",
+        "name": "Mobile App (iOS / Android)",
+        "current_value": "Responsive web only",
+        "fillable_hint": "[  ] PWA (Progressive Web App - Add to Homescreen)[  ] Native Flutter / React Native App[  ] Not needed at this time",
+        "guidance": "PWA allows push notifications for festival reminders with zero app store fees.",
+        "is_missing": false
+      },
+      {
+        "id": "field_6",
+        "name": "CLIENT AUTHORIZATION & SIGN-OFF",
+        "current_value": "DEVELOPMENT AGENCY ACKNOWLEDGMENT",
+        "fillable_hint": "Representative Name: [__________________________]Title / Role: [__________________________________]Signature: _____________________________________Date: [____ / ____ / ________]",
+        "guidance": "Project Lead: [________________________________]Agency: Web Engineering & Design TeamSignature: _____________________________________Date: [____ / ____ / ________]",
+        "is_missing": false
+      },
+      {
+        "id": "field_7",
+        "name": "Please return the completed document along with your digital vector logo assets, high-res photos, and policy PDFs to the web development team.",
+        "current_value": "",
+        "fillable_hint": "",
+        "guidance": "",
+        "is_missing": true
+      }
+    ]
+  }
+]

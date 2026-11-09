@@ -30,6 +30,11 @@
       "permanent": true
     },
     {
+      "source": "/intake",
+      "destination": "/intake/",
+      "permanent": true
+    },
+    {
       "source": "/template_1",
       "destination": "/templates/template_1/",
       "permanent": true
