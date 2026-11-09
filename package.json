@@ -1,0 +1,12 @@
+{
+  "name": "bhtcc-temple-templates",
+  "version": "1.0.0",
+  "description": "Ballarat Hindu Temple & Cultural Centre Web Templates and Client Intake Portal",
+  "type": "module",
+  "scripts": {
+    "dev": "python server.py"
+  },
+  "dependencies": {
+    "@vercel/blob": "^0.27.1"
+  }
+}

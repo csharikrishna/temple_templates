@@ -3,1124 +3,1848 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>BHTCC Client Intake & Verification Cockpit | Ballarat Hindu Temple</title>
+  <title>Information Verification & Client Intake | Ballarat Hindu Temple & Cultural Centre</title>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Cinzel:wght@600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      /* Clean Light Theme Palette */
       --bg: #f8fafc;
-      --bg-surface: #ffffff;
-      --bg-subtle: #f1f5f9;
+      --surface: #ffffff;
+      --surface-subtle: #f1f5f9;
+      --surface-muted: #f8fafc;
       --border: #e2e8f0;
-      --border-dark: #cbd5e1;
-      --border-focus: #7e1c27;
-      
-      --brand-crimson: #7e1c27;
-      --brand-crimson-light: #991b1b;
-      --brand-crimson-subtle: #fdf2f2;
-      --brand-gold: #b45309;
-      --brand-gold-subtle: #fef3c7;
-      
-      --emerald: #059669;
-      --emerald-subtle: #ecfdf5;
-      --emerald-border: #10b981;
-      --emerald-text: #065f46;
-      
-      --amber: #d97706;
-      --amber-subtle: #fffbeb;
-      --amber-border: #f59e0b;
-      --amber-text: #92400e;
+      --border-focus: #94a3b8;
       
       --text-main: #0f172a;
       --text-body: #334155;
       --text-muted: #64748b;
-      --text-light: #94a3b8;
+      --text-subtle: #94a3b8;
       
-      --font-body: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-      --font-heading: 'Cinzel', serif;
-      --font-mono: 'JetBrains Mono', monospace;
+      --brand-primary: #7e1c27;
+      --brand-primary-hover: #63141e;
+      --brand-accent: #b45309;
       
-      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
-      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+      /* Executive Actions */
+      --btn-confirm: #059669;
+      --btn-confirm-hover: #047857;
+      --btn-secondary-border: #cbd5e1;
+      --btn-secondary-text: #334155;
+      --btn-secondary-hover: #f1f5f9;
       
+      /* State Tints */
+      --green-bg: #ecfdf5;
+      --green-border: #a7f3d0;
+      --green-text: #065f46;
+      
+      --amber-bg: #fffbeb;
+      --amber-border: #fde68a;
+      --amber-text: #92400e;
+      
+      --blue-bg: #eff6ff;
+      --blue-border: #bfdbfe;
+      --blue-text: #1d4ed8;
+
       --radius-sm: 6px;
       --radius-md: 10px;
-      --radius-lg: 16px;
+      --radius-lg: 12px;
+      --radius-xl: 16px;
+      --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
+      --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.02);
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
-
+    
     body {
       background-color: var(--bg);
       color: var(--text-body);
-      font-family: var(--font-body);
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       line-height: 1.5;
-      padding-bottom: 120px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      padding-bottom: 96px;
       -webkit-font-smoothing: antialiased;
     }
 
-    /* Executive Top Navigation */
+    /* Executive Top Masthead */
     header {
-      background: rgba(255, 255, 255, 0.95);
+      background: #ffffff;
       border-bottom: 1px solid var(--border);
-      padding: 18px 24px;
       position: sticky;
       top: 0;
-      z-index: 100;
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+      z-index: 50;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
     }
 
     .header-inner {
-      max-width: 1140px;
+      max-width: 960px;
       margin: 0 auto;
+      padding: 14px 20px;
       display: flex;
       flex-direction: column;
-      gap: 16px;
+      gap: 12px;
     }
 
-    .brand-row {
+    .top-bar {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 14px;
     }
 
-    .brand-title {
+    .brand-group {
       display: flex;
       align-items: center;
-      gap: 14px;
+      gap: 12px;
     }
 
-    .brand-icon {
-      width: 48px;
-      height: 48px;
-      background: linear-gradient(135deg, #7e1c27 0%, #58111a 100%);
-      border: 2px solid #e5b869;
-      border-radius: 12px;
+    .brand-icon-box {
+      width: 38px;
+      height: 38px;
+      border-radius: var(--radius-md);
+      background: var(--brand-primary);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 24px;
-      box-shadow: 0 4px 12px rgba(126, 28, 39, 0.2);
+      color: #ffffff;
+      flex-shrink: 0;
     }
 
-    h1 {
-      font-family: var(--font-heading);
-      font-size: 1.25rem;
+    .brand-icon-box svg {
+      width: 22px;
+      height: 22px;
+    }
+
+    .brand-meta h1 {
+      font-family: 'Cinzel', serif;
+      font-size: 1.05rem;
       font-weight: 700;
-      color: var(--brand-crimson);
-      letter-spacing: 0.01em;
-      line-height: 1.2;
+      color: var(--text-main);
+      letter-spacing: -0.01em;
+      line-height: 1.25;
     }
 
-    .subtitle {
-      font-size: 0.8rem;
+    .brand-meta p {
+      font-size: 0.76rem;
       color: var(--text-muted);
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-top: 3px;
-      flex-wrap: wrap;
+      font-weight: 500;
     }
 
-    .tag-gov {
-      font-family: var(--font-mono);
-      font-size: 0.72rem;
-      background: var(--brand-gold-subtle);
-      color: var(--brand-gold);
-      border: 1px solid rgba(180, 83, 9, 0.25);
-      padding: 2px 8px;
-      border-radius: 4px;
-      font-weight: 600;
-    }
-
-    .btn-studio {
+    .btn-return-hub {
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      background: #ffffff;
-      border: 1px solid var(--border-dark);
-      color: var(--text-main);
-      padding: 8px 14px;
-      border-radius: 8px;
-      font-size: 0.8rem;
+      padding: 6px 12px;
+      background: var(--surface-subtle);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      color: var(--text-muted);
+      font-size: 0.78rem;
       font-weight: 600;
       text-decoration: none;
-      transition: all 0.2s ease;
-      box-shadow: var(--shadow-sm);
+      transition: all 0.15s ease;
     }
 
-    .btn-studio:hover {
-      background: var(--bg-subtle);
-      border-color: var(--brand-crimson);
-      color: var(--brand-crimson);
+    .btn-return-hub:hover {
+      background: #e2e8f0;
+      color: var(--text-main);
     }
 
-    /* Live Progress Cockpit */
-    .progress-cockpit {
-      background: #ffffff;
-      border: 1px solid var(--border);
-      border-radius: var(--radius-md);
-      padding: 14px 18px;
+    /* Progress Overview */
+    .progress-bar-container {
       display: flex;
-      flex-direction: column;
-      gap: 10px;
-      box-shadow: var(--shadow-sm);
-    }
-
-    .progress-stats {
-      display: flex;
-      justify-content: space-between;
       align-items: center;
-      font-size: 0.85rem;
-      flex-wrap: wrap;
-      gap: 10px;
+      gap: 14px;
+      font-size: 0.78rem;
+      color: var(--text-muted);
     }
 
-    .stats-badges {
+    .progress-track {
+      flex: 1;
+      height: 6px;
+      background: #e2e8f0;
+      border-radius: 999px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: var(--btn-confirm);
+      width: 0%;
+      transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    /* SEGMENTED VIEW SWITCHER */
+    .view-control-wrap {
+      max-width: 960px;
+      margin: 16px auto 0 auto;
+      padding: 0 20px;
+      width: 100%;
+    }
+
+    .segmented-control {
       display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
+      background: #e2e8f0;
+      padding: 3px;
+      border-radius: 10px;
+      gap: 3px;
     }
 
-    .pill-badge {
+    .seg-btn {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 9px 16px;
+      border-radius: 8px;
+      border: none;
+      background: transparent;
+      font-family: inherit;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .seg-btn svg {
+      width: 17px;
+      height: 17px;
+      stroke: currentColor;
+    }
+
+    .seg-btn:hover {
+      color: var(--text-main);
+    }
+
+    .seg-btn.active {
+      background: #ffffff;
+      color: var(--text-main);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    }
+
+    .seg-badge {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
-      padding: 4px 10px;
-      border-radius: 20px;
-      font-size: 0.76rem;
-      font-weight: 600;
-      font-family: var(--font-mono);
+      justify-content: center;
+      min-width: 22px;
+      height: 20px;
+      padding: 0 7px;
+      border-radius: 999px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      background: #cbd5e1;
+      color: #334155;
     }
 
-    .pill-total { background: var(--bg-subtle); color: var(--text-body); border: 1px solid var(--border); }
-    .pill-verified { background: var(--emerald-subtle); color: var(--emerald-text); border: 1px solid var(--emerald-border); }
-    .pill-action { background: var(--amber-subtle); color: var(--amber-text); border: 1px solid var(--amber-border); }
+    .seg-btn.active .seg-badge {
+      background: #f1f5f9;
+      color: var(--text-main);
+    }
 
-    .progress-bar-wrap {
+    .seg-badge.badge-green {
+      background: #d1fae5;
+      color: #065f46;
+    }
+
+    /* Filter Nav (In Review Queue) */
+    .filter-nav-wrap {
+      max-width: 960px;
+      margin: 12px auto 0 auto;
+      padding: 0 20px;
       width: 100%;
-      height: 8px;
-      background: #e2e8f0;
-      border-radius: 9999px;
-      overflow: hidden;
-      position: relative;
     }
 
-    .progress-bar-fill {
-      height: 100%;
-      background: linear-gradient(90deg, #10b981 0%, #059669 100%);
-      border-radius: 9999px;
-      transition: width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    /* Filter & Category Navigation Bar */
-    .filter-bar {
-      max-width: 1140px;
-      margin: 22px auto 0;
-      padding: 0 24px;
+    .filter-pills {
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
-    .filter-tabs {
-      display: flex;
       gap: 6px;
       overflow-x: auto;
       padding-bottom: 4px;
-      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
     }
 
-    .filter-btn {
-      background: #ffffff;
-      border: 1px solid var(--border-dark);
-      color: var(--text-body);
-      padding: 8px 16px;
-      border-radius: 8px;
-      font-size: 0.82rem;
+    .filter-pills::-webkit-scrollbar { display: none; }
+
+    .filter-pill {
+      white-space: nowrap;
+      padding: 6px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text-muted);
+      font-size: 0.78rem;
       font-weight: 600;
       cursor: pointer;
-      white-space: nowrap;
-      transition: all 0.2s ease;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      box-shadow: var(--shadow-sm);
+      transition: all 0.15s ease;
     }
 
-    .filter-btn:hover {
-      background: var(--bg-subtle);
-      border-color: var(--text-main);
+    .filter-pill:hover {
+      background: var(--surface-subtle);
       color: var(--text-main);
     }
 
-    .filter-btn.active {
+    .filter-pill.active {
       background: var(--text-main);
       color: #ffffff;
       border-color: var(--text-main);
-      box-shadow: 0 2px 6px rgba(15, 23, 42, 0.25);
     }
 
-    .section-select-wrap {
-      min-width: 220px;
+    .filter-pill.action-pill {
+      background: #fffbeb;
+      color: #92400e;
+      border-color: #fde68a;
     }
 
-    select.section-dropdown {
-      width: 100%;
-      background: #ffffff;
-      border: 1px solid var(--border-dark);
-      color: var(--text-main);
-      padding: 9px 14px;
-      border-radius: 8px;
-      font-size: 0.82rem;
-      font-weight: 500;
-      outline: none;
-      cursor: pointer;
-      box-shadow: var(--shadow-sm);
-    }
-
-    select.section-dropdown:focus {
-      border-color: var(--brand-crimson);
-      box-shadow: 0 0 0 2px rgba(126, 28, 39, 0.15);
+    .filter-pill.action-pill.active {
+      background: #b45309;
+      color: #ffffff;
+      border-color: #b45309;
     }
 
     /* Main Container */
     main {
-      max-width: 1140px;
-      margin: 24px auto;
-      padding: 0 24px;
+      max-width: 960px;
+      margin: 16px auto 0 auto;
+      padding: 0 20px;
+      width: 100%;
       display: flex;
       flex-direction: column;
-      gap: 28px;
+      gap: 16px;
     }
 
-    /* Section Block */
-    .section-block {
+    /* Section Card */
+    .section-card {
       background: #ffffff;
       border: 1px solid var(--border);
       border-radius: var(--radius-lg);
-      padding: 24px 28px;
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-      box-shadow: var(--shadow-sm);
-      transition: border-color 0.2s;
-    }
-
-    .section-block:hover {
-      border-color: #cbd5e1;
+      overflow: hidden;
+      box-shadow: var(--shadow-card);
     }
 
     .section-header {
+      padding: 14px 20px;
+      background: #fafbfc;
       border-bottom: 1px solid var(--border);
-      padding-bottom: 16px;
       display: flex;
+      align-items: center;
       justify-content: space-between;
-      align-items: flex-start;
-      gap: 16px;
-      flex-wrap: wrap;
     }
 
-    .section-title-wrap h2 {
-      font-family: var(--font-heading);
-      font-size: 1.15rem;
-      color: var(--brand-crimson);
-      margin-bottom: 4px;
+    .section-title {
+      font-size: 0.92rem;
       font-weight: 700;
+      color: var(--brand-primary);
+      letter-spacing: -0.01em;
     }
 
-    .section-desc {
-      font-size: 0.84rem;
+    .section-meta {
+      font-size: 0.75rem;
       color: var(--text-muted);
     }
 
-    .section-batch-actions {
-      display: flex;
-      gap: 8px;
-    }
-
-    .btn-batch {
-      background: var(--bg-subtle);
-      border: 1px solid var(--border-dark);
-      color: var(--text-body);
-      padding: 7px 12px;
-      border-radius: 6px;
-      font-size: 0.74rem;
+    .btn-verify-all {
+      background: #f8fafc;
+      color: #065f46;
+      border: 1px solid #cbd5e1;
+      padding: 4px 10px;
+      border-radius: var(--radius-sm);
+      font-size: 0.72rem;
       font-weight: 600;
       cursor: pointer;
-      transition: all 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      transition: all 0.15s ease;
     }
 
-    .btn-batch:hover {
-      background: var(--emerald-subtle);
-      color: var(--emerald-text);
-      border-color: var(--emerald-border);
+    .btn-verify-all:hover {
+      background: #ecfdf5;
+      border-color: #a7f3d0;
     }
 
-    /* Fields Grid */
-    .fields-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 16px;
-    }
-
-    @media (min-width: 860px) {
-      .fields-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    /* Individual Question Card */
-    .field-card {
-      background: #ffffff;
-      border: 1px solid var(--border);
-      border-radius: var(--radius-md);
-      padding: 20px;
+    /* Individual Field Item */
+    .field-item {
+      padding: 18px 20px;
+      border-bottom: 1px solid var(--border);
       display: flex;
       flex-direction: column;
-      gap: 14px;
-      position: relative;
-      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+      gap: 12px;
+      background: #ffffff;
+      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease;
     }
 
-    .field-card:hover {
-      border-color: #cbd5e1;
-      box-shadow: var(--shadow-md);
+    .field-item:last-child {
+      border-bottom: none;
     }
 
-    .field-card.confirmed {
-      border: 1.5px solid var(--emerald-border);
-      background: #fbfdfc;
-      box-shadow: 0 2px 10px rgba(16, 185, 129, 0.08);
+    .field-item.animating-out {
+      opacity: 0;
+      transform: translateY(-12px);
+      max-height: 0;
+      padding-top: 0;
+      padding-bottom: 0;
+      margin-bottom: 0;
+      overflow: hidden;
     }
 
-    .field-card.needs-action {
-      border: 1.5px solid var(--amber-border);
-      background: #fffdfa;
-    }
-
-    .card-top {
+    .field-top {
       display: flex;
-      justify-content: space-between;
       align-items: flex-start;
-      gap: 10px;
+      justify-content: space-between;
+      gap: 12px;
     }
 
-    .field-name {
+    .field-heading {
+      font-size: 0.92rem;
       font-weight: 700;
-      font-size: 0.95rem;
       color: var(--text-main);
     }
 
     .status-badge {
       font-size: 0.7rem;
-      font-family: var(--font-mono);
-      padding: 3px 8px;
-      border-radius: 4px;
-      font-weight: 600;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 999px;
       white-space: nowrap;
     }
 
-    .status-badge.verified { background: var(--emerald-subtle); color: var(--emerald-text); border: 1px solid var(--emerald-border); }
-    .status-badge.action { background: var(--amber-subtle); color: var(--amber-text); border: 1px solid var(--amber-border); }
+    .badge-needed {
+      background: #fffbeb;
+      color: #92400e;
+      border: 1px solid #fde68a;
+    }
 
-    /* Scraped Finding Box */
-    .finding-box {
+    .record-box {
       background: #f8fafc;
-      border: 1px solid #e2e8f0;
-      border-left: 3.5px solid var(--brand-crimson);
-      border-radius: var(--radius-sm);
+      border: 1px solid #edf2f7;
+      border-radius: var(--radius-md);
       padding: 12px 14px;
       display: flex;
       flex-direction: column;
-      gap: 5px;
+      gap: 4px;
     }
 
-    .finding-label {
+    .record-label {
       font-size: 0.7rem;
-      font-family: var(--font-mono);
-      color: var(--brand-crimson);
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
       font-weight: 700;
-    }
-
-    .finding-value {
-      font-size: 0.9rem;
-      color: var(--text-main);
-      font-weight: 500;
-      word-break: break-word;
-      line-height: 1.45;
-    }
-
-    .finding-guidance {
-      font-size: 0.75rem;
-      color: var(--text-muted);
-      margin-top: 2px;
-      border-top: 1px dashed #e2e8f0;
-      padding-top: 5px;
-    }
-
-    /* Verification Toggle Buttons */
-    .toggle-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-      margin-top: 4px;
-    }
-
-    .btn-toggle {
-      padding: 10px 14px;
-      border-radius: var(--radius-sm);
-      border: 1px solid var(--border-dark);
-      background: #ffffff;
-      color: var(--text-body);
-      font-size: 0.82rem;
-      font-weight: 600;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-      box-shadow: var(--shadow-sm);
-    }
-
-    .btn-toggle:hover {
-      background: var(--bg-subtle);
-      border-color: var(--text-main);
-      color: var(--text-main);
-    }
-
-    .btn-toggle.btn-confirm.active {
-      background: var(--emerald-subtle);
-      color: var(--emerald-text);
-      border: 1.5px solid var(--emerald-border);
-      box-shadow: 0 2px 8px rgba(16, 185, 129, 0.2);
-      font-weight: 700;
-    }
-
-    .btn-toggle.btn-edit.active {
-      background: var(--amber-subtle);
-      color: var(--amber-text);
-      border: 1.5px solid var(--amber-border);
-      box-shadow: 0 2px 8px rgba(245, 158, 11, 0.2);
-      font-weight: 700;
-    }
-
-    /* Edit Input Field */
-    .edit-area {
-      display: none;
-      flex-direction: column;
-      gap: 6px;
-      margin-top: 6px;
-      animation: fadeIn 0.2s ease;
-    }
-
-    .edit-area.open {
-      display: flex;
-    }
-
-    .edit-area label {
-      font-size: 0.72rem;
-      color: var(--amber-text);
-      font-weight: 700;
-      font-family: var(--font-mono);
       text-transform: uppercase;
       letter-spacing: 0.04em;
+      color: var(--text-subtle);
     }
 
-    .edit-input {
+    .record-text {
+      font-size: 0.88rem;
+      color: var(--text-main);
+      font-weight: 500;
+      white-space: pre-wrap;
+    }
+
+    .record-guidance {
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    /* In-Card File Attachment Area */
+    .card-attachment-zone {
+      background: #f8fafc;
+      border: 1px dashed #cbd5e1;
+      border-radius: var(--radius-md);
+      padding: 10px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .attachment-zone-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .attachment-zone-title {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .btn-select-file {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 5px 12px;
       background: #ffffff;
-      border: 1.5px solid #cbd5e1;
+      border: 1px solid var(--btn-secondary-border);
       border-radius: var(--radius-sm);
       color: var(--text-main);
-      padding: 10px 14px;
-      font-size: 0.88rem;
-      outline: none;
-      font-family: var(--font-body);
-      transition: border 0.2s, box-shadow 0.2s;
-    }
-
-    .edit-input:focus {
-      border-color: var(--brand-crimson);
-      box-shadow: 0 0 0 3px rgba(126, 28, 39, 0.12);
-    }
-
-    /* PHOTO PUSHING BOOTH */
-    .booth-section {
-      background: #ffffff;
-      border: 2px dashed #cbd5e1;
-      border-radius: var(--radius-lg);
-      padding: 36px 28px;
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      cursor: pointer;
       box-shadow: var(--shadow-sm);
+      transition: all 0.15s ease;
     }
 
-    .booth-header {
-      text-align: center;
+    .btn-select-file:hover {
+      background: #f1f5f9;
+      border-color: #94a3b8;
+    }
+
+    .file-pill {
       display: flex;
-      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      background: #ecfdf5;
+      border: 1px solid #a7f3d0;
+      border-radius: var(--radius-sm);
+      padding: 6px 10px;
+    }
+
+    .file-pill-details {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.8rem;
+      color: #065f46;
+      font-weight: 600;
+    }
+
+    .btn-file-delete {
+      background: transparent;
+      border: none;
+      color: #b91c1c;
+      font-size: 0.74rem;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .btn-file-delete:hover {
+      text-decoration: underline;
+    }
+
+    /* CARD ACTION BUTTONS */
+    .field-action-bar {
+      display: flex;
       align-items: center;
       gap: 8px;
     }
 
-    .booth-badge {
-      background: var(--brand-gold-subtle);
-      color: var(--brand-gold);
-      border: 1px solid rgba(180, 83, 9, 0.25);
-      font-family: var(--font-mono);
-      font-size: 0.75rem;
-      padding: 4px 12px;
-      border-radius: 20px;
-      font-weight: 700;
+    .btn-confirm-as-is {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 8px 16px;
+      background: var(--btn-confirm);
+      color: #ffffff;
+      border: none;
+      border-radius: var(--radius-sm);
+      font-size: 0.84rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s ease;
     }
 
-    .dropzone {
-      background: #f8fafc;
-      border: 2px dashed #94a3b8;
-      border-radius: var(--radius-md);
-      padding: 40px 20px;
-      text-align: center;
+    .btn-confirm-as-is:hover {
+      background: var(--btn-confirm-hover);
+    }
+
+    .btn-edit-trigger {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 8px 14px;
+      background: #ffffff;
+      color: var(--btn-secondary-text);
+      border: 1px solid var(--btn-secondary-border);
+      border-radius: var(--radius-sm);
+      font-size: 0.84rem;
+      font-weight: 600;
       cursor: pointer;
-      transition: all 0.2s;
+      transition: all 0.15s ease;
+    }
+
+    .btn-edit-trigger:hover {
+      background: var(--btn-secondary-hover);
+      color: var(--text-main);
+    }
+
+    /* Expandable Edit Box */
+    .edit-drawer {
+      display: none;
+      background: #fffdfa;
+      border: 1px solid #fde68a;
+      border-radius: var(--radius-md);
+      padding: 14px;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 4px;
+    }
+
+    .edit-drawer.open {
+      display: flex;
+    }
+
+    .edit-drawer-title {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #92400e;
+    }
+
+    .edit-textarea {
+      width: 100%;
+      min-height: 70px;
+      padding: 8px 12px;
+      border: 1px solid #cbd5e1;
+      border-radius: var(--radius-sm);
+      font-family: inherit;
+      font-size: 0.86rem;
+      color: var(--text-main);
+      background: #ffffff;
+      outline: none;
+      resize: vertical;
+    }
+
+    .edit-textarea:focus {
+      border-color: #0f172a;
+      box-shadow: 0 0 0 2px rgba(15, 23, 42, 0.08);
+    }
+
+    .drawer-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-save-drawer {
+      background: #0f172a;
+      color: #ffffff;
+      border: none;
+      border-radius: var(--radius-sm);
+      padding: 7px 14px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .btn-save-drawer:hover {
+      background: #1e293b;
+    }
+
+    .btn-cancel-drawer {
+      background: transparent;
+      border: 1px solid #cbd5e1;
+      color: var(--text-muted);
+      border-radius: var(--radius-sm);
+      padding: 6px 12px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      cursor: pointer;
+    }
+
+    /* IN-SECTION VERIFIED TRAY */
+    .section-verified-tray {
+      background: #fafbfc;
+      border-top: 1px solid var(--border);
+      padding: 10px 20px;
+    }
+
+    .tray-btn {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      background: none;
+      border: none;
+      font-family: inherit;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #065f46;
+      cursor: pointer;
+    }
+
+    .tray-list {
       display: flex;
       flex-direction: column;
+      gap: 6px;
+      margin-top: 8px;
+    }
+
+    .tray-row {
+      display: flex;
       align-items: center;
+      justify-content: space-between;
       gap: 12px;
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: var(--radius-sm);
+      padding: 8px 12px;
     }
 
-    .dropzone:hover, .dropzone.dragover {
-      border-color: var(--brand-crimson);
-      background: #fdf2f2;
-    }
-
-    .drop-icon {
-      font-size: 40px;
-    }
-
-    .drop-text {
-      font-size: 1rem;
-      color: var(--text-main);
-      font-weight: 700;
-    }
-
-    .drop-sub {
+    .tray-row-title {
       font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    .tray-row-val {
+      font-size: 0.76rem;
       color: var(--text-muted);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      max-width: 420px;
     }
 
-    .file-input { display: none; }
-
-    /* Uploaded Gallery Grid */
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 18px;
+    .btn-reopen-pill {
+      background: #f8fafc;
+      border: 1px solid #cbd5e1;
+      border-radius: 4px;
+      padding: 2px 8px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: #334155;
+      cursor: pointer;
+      white-space: nowrap;
     }
 
-    @media (min-width: 680px) {
-      .gallery-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
+    .btn-reopen-pill:hover {
+      background: #e2e8f0;
     }
 
-    @media (min-width: 1000px) {
-      .gallery-grid {
-        grid-template-columns: repeat(3, 1fr);
-      }
+    /* DEDICATED VERIFIED / SUBMITTED COCKPIT (Tab 2) */
+    .verified-cockpit {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
     }
 
-    .asset-card {
+    .cockpit-header-box {
       background: #ffffff;
       border: 1px solid var(--border);
-      border-radius: var(--radius-md);
-      overflow: hidden;
+      border-radius: var(--radius-lg);
+      padding: 20px;
       display: flex;
       flex-direction: column;
-      transition: all 0.2s;
+      gap: 14px;
+      box-shadow: var(--shadow-card);
+    }
+
+    .cockpit-meta h2 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .cockpit-meta p {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    .sub-filter-row {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
+      padding-top: 8px;
+      border-top: 1px solid #f1f5f9;
+    }
+
+    .sub-filter-pill {
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: #ffffff;
+      color: var(--text-muted);
+      font-size: 0.75rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .sub-filter-pill:hover {
+      background: var(--surface-subtle);
+      color: var(--text-main);
+    }
+
+    .sub-filter-pill.active {
+      background: #0f172a;
+      color: #ffffff;
+      border-color: #0f172a;
+    }
+
+    /* Master Verified Card */
+    .verified-card {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 16px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
       box-shadow: var(--shadow-sm);
     }
 
-    .asset-card:hover {
-      box-shadow: var(--shadow-md);
-      border-color: #cbd5e1;
+    .verified-card-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
     }
 
-    .asset-thumb-wrap {
-      width: 100%;
-      height: 160px;
-      background: #f1f5f9;
+    .card-category-tag {
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--brand-primary);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .card-title-text {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-top: 2px;
+    }
+
+    .card-tags {
       display: flex;
       align-items: center;
-      justify-content: center;
+      gap: 6px;
+    }
+
+    .tag-green {
+      background: #ecfdf5;
+      color: #065f46;
+      border: 1px solid #a7f3d0;
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 999px;
+    }
+
+    .tag-amber {
+      background: #fffbeb;
+      color: #92400e;
+      border: 1px solid #fde68a;
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 999px;
+    }
+
+    .tag-blue {
+      background: #eff6ff;
+      color: #1d4ed8;
+      border: 1px solid #bfdbfe;
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 999px;
+    }
+
+    .verified-card-body {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: var(--radius-md);
+      padding: 10px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .body-tag-label {
+      font-size: 0.68rem;
+      font-weight: 700;
+      color: var(--text-subtle);
+      text-transform: uppercase;
+    }
+
+    .body-approved-val {
+      font-size: 0.88rem;
+      color: var(--text-main);
+      font-weight: 500;
+      white-space: pre-wrap;
+    }
+
+    .verified-card-foot {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 4px;
+    }
+
+    .foot-time {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+    }
+
+    .btn-return-review {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: #ffffff;
+      border: 1px solid #cbd5e1;
+      border-radius: var(--radius-sm);
+      color: #334155;
+      font-size: 0.76rem;
+      font-weight: 600;
+      padding: 4px 10px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .btn-return-review:hover {
+      background: #f1f5f9;
+      color: #0f172a;
+    }
+
+    /* Media Repository Dropzone */
+    .media-card {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      box-shadow: var(--shadow-card);
+    }
+
+    .media-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--brand-primary);
+    }
+
+    .media-sub {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .media-dropzone {
+      border: 1.5px dashed #cbd5e1;
+      border-radius: var(--radius-md);
+      padding: 28px 20px;
+      text-align: center;
+      background: #fafbfc;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .media-dropzone:hover {
+      border-color: #0f172a;
+      background: #ffffff;
+    }
+
+    .media-drop-icon {
+      width: 32px;
+      height: 32px;
+      color: #64748b;
+    }
+
+    .media-drop-label {
+      font-size: 0.86rem;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    .media-drop-hint {
+      font-size: 0.74rem;
+      color: var(--text-muted);
+    }
+
+    .media-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+      gap: 10px;
+    }
+
+    .media-thumb-card {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
       overflow: hidden;
       position: relative;
     }
 
-    .asset-thumb {
+    .media-thumb-img {
       width: 100%;
-      height: 100%;
+      height: 85px;
       object-fit: cover;
+      background: #e2e8f0;
+      display: block;
     }
 
-    .asset-body {
-      padding: 14px;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      flex: 1;
+    .media-meta {
+      padding: 6px 8px;
     }
 
-    .asset-meta {
-      display: flex;
-      justify-content: space-between;
-      font-size: 0.75rem;
-      color: var(--text-muted);
-      font-family: var(--font-mono);
+    .media-name {
+      font-size: 0.7rem;
       font-weight: 600;
-    }
-
-    .asset-purpose-select, .asset-caption-input {
-      background: #ffffff;
-      border: 1px solid var(--border-dark);
       color: var(--text-main);
-      padding: 8px 12px;
-      border-radius: 6px;
-      font-size: 0.8rem;
-      outline: none;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
-    .asset-purpose-select:focus, .asset-caption-input:focus {
-      border-color: var(--brand-crimson);
-    }
-
-    .asset-btn-remove {
-      background: #fef2f2;
-      border: 1px solid #fecaca;
-      color: #dc2626;
-      padding: 7px;
-      border-radius: 6px;
-      font-size: 0.74rem;
-      font-weight: 600;
+    .btn-media-delete {
+      position: absolute;
+      top: 4px;
+      right: 4px;
+      width: 20px;
+      height: 20px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.75);
+      color: #fff;
+      border: none;
+      font-size: 0.7rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       cursor: pointer;
-      text-align: center;
-      transition: all 0.2s;
     }
 
-    .asset-btn-remove:hover {
-      background: #dc2626;
-      color: #ffffff;
-      border-color: #dc2626;
-    }
-
-    /* Sticky Bottom Footer */
-    .sticky-footer {
+    /* Executive Sticky Bottom Bar */
+    .sticky-bar {
       position: fixed;
       bottom: 0;
       left: 0;
       right: 0;
-      background: rgba(255, 255, 255, 0.97);
+      background: #ffffff;
       border-top: 1px solid var(--border);
-      padding: 14px 24px;
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      z-index: 100;
-      box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.06);
+      padding: 12px 20px;
+      z-index: 40;
+      box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.04);
     }
 
-    .footer-inner {
-      max-width: 1140px;
+    .sticky-inner {
+      max-width: 960px;
       margin: 0 auto;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 14px;
-      flex-wrap: wrap;
     }
 
-    .save-indicator {
+    .sticky-left {
       display: flex;
       align-items: center;
-      gap: 8px;
-      font-size: 0.82rem;
-      color: var(--text-body);
-      font-family: var(--font-mono);
-      font-weight: 500;
-    }
-
-    .save-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--emerald);
-      box-shadow: 0 0 6px rgba(16, 185, 129, 0.6);
-    }
-
-    .action-group {
-      display: flex;
       gap: 10px;
-      flex-wrap: wrap;
+      font-size: 0.8rem;
+      color: var(--text-muted);
     }
 
-    .btn-action {
-      padding: 10px 16px;
+    .status-dot-indicator {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: #059669;
+    }
+
+    .btn-counter-toggle {
+      background: #f1f5f9;
+      border: 1px solid #cbd5e1;
+      color: #0f172a;
       border-radius: var(--radius-sm);
-      font-size: 0.84rem;
-      font-weight: 700;
+      padding: 3px 8px;
+      font-size: 0.74rem;
+      font-weight: 600;
       cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .sticky-right {
       display: flex;
       align-items: center;
       gap: 8px;
-      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-      border: 1px solid transparent;
-      text-decoration: none;
-      box-shadow: var(--shadow-sm);
     }
 
-    .btn-primary {
-      background: var(--brand-crimson);
-      color: #ffffff;
-    }
-
-    .btn-primary:hover {
-      background: var(--brand-crimson-light);
-      transform: translateY(-1px);
-    }
-
-    .btn-secondary {
+    .btn-ghost-action {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 12px;
       background: #ffffff;
+      border: 1px solid var(--btn-secondary-border);
+      border-radius: var(--radius-sm);
       color: var(--text-main);
-      border-color: var(--border-dark);
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s ease;
     }
 
-    .btn-secondary:hover {
-      background: var(--bg-subtle);
-      border-color: var(--text-main);
+    .btn-ghost-action:hover {
+      background: #f1f5f9;
     }
 
-    .btn-whatsapp {
-      background: #16a34a;
-      color: #ffffff;
-      border-color: #15803d;
-    }
-
-    .btn-whatsapp:hover {
-      background: #15803d;
-      transform: translateY(-1px);
-    }
-
-    /* Toast Notification */
-    .toast {
-      position: fixed;
-      top: 24px;
-      right: 24px;
+    .btn-primary-submit {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 16px;
       background: #0f172a;
       color: #ffffff;
-      border-left: 4px solid var(--emerald);
-      padding: 12px 20px;
+      border: none;
       border-radius: var(--radius-sm);
-      font-size: 0.85rem;
+      font-size: 0.82rem;
       font-weight: 600;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-      z-index: 1000;
-      display: none;
-      animation: slideIn 0.3s ease;
+      cursor: pointer;
+      transition: all 0.15s ease;
     }
 
-    @keyframes fadeIn { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: translateY(0); } }
-    @keyframes slideIn { from { opacity: 0; transform: translateX(20px); } to { opacity: 1; transform: translateX(0); } }
+    .btn-primary-submit:hover {
+      background: #1e293b;
+    }
 
-    /* Responsive adjustments */
-    @media (max-width: 680px) {
-      header { padding: 14px 16px; }
-      main { padding: 0 16px; }
-      .brand-title h1 { font-size: 1.05rem; }
-      .stats-badges { display: flex; gap: 4px; flex-wrap: wrap; }
-      .pill-badge { font-size: 0.68rem; padding: 2px 6px; }
-      .toggle-row { grid-template-columns: 1fr; }
-      .footer-inner { flex-direction: column; align-items: stretch; }
-      .action-group { justify-content: stretch; }
-      .action-group .btn-action { flex: 1; justify-content: center; }
+    /* Modal */
+    .modal-backdrop {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(15, 23, 42, 0.45);
+      backdrop-filter: blur(2px);
+      z-index: 100;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .modal-backdrop.active {
+      display: flex;
+    }
+
+    .modal-box {
+      background: #ffffff;
+      border-radius: var(--radius-xl);
+      max-width: 460px;
+      width: 100%;
+      padding: 24px;
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 12px;
+    }
+
+    .modal-icon-circle {
+      width: 44px;
+      height: 44px;
+      border-radius: 999px;
+      background: #ecfdf5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #059669;
+    }
+
+    .modal-icon-circle svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    .modal-h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .modal-p {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    .modal-dest {
+      width: 100%;
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 8px 12px;
+      font-family: monospace;
+      font-size: 0.74rem;
+      color: var(--text-main);
+      text-align: left;
+      word-break: break-all;
+    }
+
+    .btn-modal-dismiss {
+      width: 100%;
+      padding: 9px;
+      background: #0f172a;
+      color: #fff;
+      border: none;
+      border-radius: var(--radius-sm);
+      font-weight: 600;
+      font-size: 0.84rem;
+      cursor: pointer;
+    }
+
+    /* Clean Toast */
+    .clean-toast {
+      position: fixed;
+      bottom: 74px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #0f172a;
+      color: #fff;
+      padding: 7px 16px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+      display: none;
+      z-index: 60;
+    }
+
+    @media (max-width: 640px) {
+      .header-inner { padding: 12px 14px; }
+      .view-control-wrap { padding: 0 14px; margin-top: 10px; }
+      .filter-nav-wrap { padding: 0 14px; margin-top: 8px; }
+      main { padding: 0 14px; margin-top: 10px; }
+      .field-item { padding: 14px 16px; }
+      .sticky-inner {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+      }
+      .sticky-left {
+        justify-content: space-between;
+      }
+      .sticky-right {
+        width: 100%;
+      }
+      .sticky-right button {
+        flex: 1;
+        justify-content: center;
+      }
     }
   </style>
 </head>
 <body>
 
-  <!-- Sticky Header & Live Progress Cockpit -->
+  <!-- Masthead -->
   <header>
     <div class="header-inner">
-      <div class="brand-row">
-        <div class="brand-title">
-          <div class="brand-icon">🛕</div>
-          <div>
-            <h1>Ballarat Hindu Temple & Cultural Centre</h1>
-            <div class="subtitle">
-              <span>Client Intake & Verification Cockpit</span>
-              <span class="tag-gov">ABN 13 397 829 440</span>
-            </div>
+      <div class="top-bar">
+        <div class="brand-group">
+          <div class="brand-icon-box">
+            <!-- Refined Temple Gopuram Crest Line SVG -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 21h18"/>
+              <path d="M5 21V7l7-4 7 4v14"/>
+              <path d="M9 21v-4a3 3 0 0 1 6 0v4"/>
+              <path d="M10 9h4"/>
+            </svg>
+          </div>
+          <div class="brand-meta">
+            <h1>Ballarat Hindu Temple & Cultural Centre Inc.</h1>
+            <p>Official Content Verification & Asset Intake • ABN 13 397 829 440</p>
           </div>
         </div>
-        <div class="section-batch-actions">
-          <a href="/templates/" class="btn-studio">
-            ← Studio Hub
-          </a>
-        </div>
+        <a href="/templates/" class="btn-return-hub">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          Studio Hub
+        </a>
       </div>
 
-      <div class="progress-cockpit">
-        <div class="progress-stats">
-          <div class="stats-badges">
-            <span class="pill-badge pill-total">Total: <strong id="stat-total">116</strong> Fields</span>
-            <span class="pill-badge pill-verified">✓ Verified: <strong id="stat-verified">0</strong></span>
-            <span class="pill-badge pill-action">⚠️ Action Needed: <strong id="stat-action">0</strong></span>
-          </div>
-          <div style="font-size:0.85rem; font-weight:700; color:var(--brand-crimson);">
-            Completion: <span id="stat-percentage">0%</span>
-          </div>
+      <div class="progress-bar-container">
+        <span id="progress-summary">Review questions below</span>
+        <div class="progress-track">
+          <div class="progress-fill" id="progress-bar"></div>
         </div>
-        <div class="progress-bar-wrap">
-          <div class="progress-bar-fill" id="progress-bar" style="width: 0%;"></div>
-        </div>
+        <span id="progress-percent" style="font-weight:600; color:var(--text-main);">0% Verified</span>
       </div>
     </div>
   </header>
 
-  <!-- Filter & Category Navigator -->
-  <div class="filter-bar">
-    <div class="filter-tabs">
-      <button class="filter-btn active" data-filter="all">All Fields (116)</button>
-      <button class="filter-btn" data-filter="action">⚠️ Action Items (<span id="filter-action-count">15</span>)</button>
-      <button class="filter-btn" data-filter="unconfirmed">⏳ Pending Review</button>
-      <button class="filter-btn" data-filter="confirmed">✓ Confirmed</button>
-    </div>
-    <div class="section-select-wrap">
-      <select class="section-dropdown" id="section-jumper">
-        <option value="">Jump to Section...</option>
-      </select>
+  <!-- SEGMENTED VIEW SWITCHER: Pending Review vs Verified & Submitted -->
+  <div class="view-control-wrap">
+    <div class="segmented-control">
+      <button class="seg-btn active" id="tab-mode-queue" onclick="switchViewMode('queue')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/>
+          <rect x="9" y="3" width="6" height="4" rx="1"/>
+          <path d="M9 14l2 2 4-4"/>
+        </svg>
+        <span>Pending Review</span>
+        <span class="seg-badge" id="badge-pending-count">91</span>
+      </button>
+      <button class="seg-btn" id="tab-mode-submitted" onclick="switchViewMode('submitted')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+          <polyline points="22 4 12 14.01 9 11.01"/>
+        </svg>
+        <span>Verified & Submitted</span>
+        <span class="seg-badge badge-green" id="badge-submitted-count">0</span>
+      </button>
     </div>
   </div>
 
-  <!-- Main Question Cards Container -->
+  <!-- Filter Pills (Active in Review Mode) -->
+  <div class="filter-nav-wrap" id="category-nav-wrap">
+    <div class="filter-pills" id="category-pills">
+      <!-- Injected via JS -->
+    </div>
+  </div>
+
+  <!-- Primary Review Queue -->
   <main id="main-content">
-    <!-- Populated dynamically via JS -->
+    <!-- Injected via JS -->
   </main>
 
-  <!-- Photo & Asset Pushing Booth (Dedicated Section) -->
-  <main style="margin-top:0;">
-    <section class="booth-section" id="photo-booth">
-      <div class="booth-header">
-        <span class="booth-badge">OPTIONAL CLIENT MEDIA ASSET DROPZONE</span>
-        <h2 style="font-family:var(--font-heading); color:var(--brand-crimson); font-size:1.35rem; font-weight:700;">📸 Photo & Asset Pushing Booth</h2>
-        <p style="font-size:0.86rem; color:var(--text-muted); max-width:620px;">
-          Have official temple logos, architectural drawings, photos of deities, or past Ganesh Chaturthi celebrations? Drop them here with placement notes for the design team.
-        </p>
+  <!-- Master Verified Section (Tab 2) -->
+  <main id="submitted-view" style="display:none;">
+    <div class="verified-cockpit">
+      <div class="cockpit-header-box">
+        <div class="cockpit-meta">
+          <h2>Verified Records & Feedback</h2>
+          <p>All items confirmed as accurate or updated with committee feedback remain permanently accessible here. Any record can be reopened for revision at any time.</p>
+        </div>
+        
+        <div class="sub-filter-row">
+          <button class="sub-filter-pill active" id="sub-filter-all" onclick="setSubmittedFilter('all')">
+            All Verified (<span id="count-sub-all">0</span>)
+          </button>
+          <button class="sub-filter-pill" id="sub-filter-confirmed" onclick="setSubmittedFilter('confirmed')">
+            Confirmed As-Is (<span id="count-sub-confirmed">0</span>)
+          </button>
+          <button class="sub-filter-pill" id="sub-filter-edited" onclick="setSubmittedFilter('edited')">
+            Custom Feedback (<span id="count-sub-edited">0</span>)
+          </button>
+          <button class="sub-filter-pill" id="sub-filter-files" onclick="setSubmittedFilter('files')">
+            Files Attached (<span id="count-sub-files">0</span>)
+          </button>
+        </div>
       </div>
 
-      <div class="dropzone" id="dropzone" onclick="document.getElementById('file-picker').click()">
-        <input type="file" id="file-picker" class="file-input" multiple accept="image/*,application/pdf">
-        <div class="drop-icon">📤</div>
-        <div class="drop-text">Tap or Drag Images & Blueprints Here</div>
-        <div class="drop-sub">Supports PNG, JPG, WebP, and PDF blueprints • Uploaded assets save locally to your device</div>
+      <div id="submitted-cards-list" style="display:flex; flex-direction:column; gap:12px;">
+        <!-- Injected via JS -->
+      </div>
+    </div>
+  </main>
+
+  <!-- Media Repository Section -->
+  <main style="margin-top:0;" id="section-photos">
+    <div class="media-card">
+      <div>
+        <h2 class="media-title">Document & Media Repository (Optional)</h2>
+        <p class="media-sub">Upload master architectural elevations, ceremony photography, or constitution PDFs for the website development team.</p>
       </div>
 
-      <!-- Uploaded Asset Gallery -->
-      <div class="gallery-grid" id="asset-gallery">
+      <div class="media-dropzone" onclick="document.getElementById('file-picker').click()">
+        <input type="file" id="file-picker" style="display:none;" multiple accept="image/*,application/pdf">
+        <svg class="media-drop-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+          <polyline points="17 8 12 3 7 8"/>
+          <line x1="12" y1="3" x2="12" y2="15"/>
+        </svg>
+        <div class="media-drop-label">Choose Files or Drag & Drop Here</div>
+        <div class="media-drop-hint">PNG, JPG, WebP, SVG, PDF • Stored permanently in session & project storage</div>
+      </div>
+
+      <div class="media-grid" id="assets-grid">
         <!-- Rendered dynamically -->
       </div>
-    </section>
+    </div>
   </main>
 
-  <!-- Sticky Bottom Actions -->
-  <footer class="sticky-footer">
-    <div class="footer-inner">
-      <div class="save-indicator">
-        <span class="save-dot"></span>
+  <!-- Executive Sticky Bottom Bar -->
+  <footer class="sticky-bar">
+    <div class="sticky-inner">
+      <div class="sticky-left">
+        <span class="status-dot-indicator"></span>
         <span id="save-status">Saved locally on device</span>
+        <button class="btn-counter-toggle" id="footer-submitted-pill" onclick="switchViewMode('submitted')">
+          <span id="footer-sub-count">0</span> Verified
+        </button>
       </div>
 
-      <div class="action-group">
-        <button class="btn-action btn-secondary" onclick="copyExecutiveSummary()">
-          📋 Copy Summary
+      <div class="sticky-right">
+        <button class="btn-ghost-action" onclick="downloadBackupJSON()">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+          Export Backup (JSON)
         </button>
-        <button class="btn-action btn-secondary" onclick="downloadJSON()">
-          📥 Export JSON
-        </button>
-        <button class="btn-action btn-secondary" onclick="downloadMarkdown()">
-          📄 Export Markdown
-        </button>
-        <button class="btn-action btn-whatsapp" onclick="sendViaWhatsApp()">
-          💬 WhatsApp
+        <button class="btn-primary-submit" onclick="submitToServer()">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
+          Submit Final Verification
         </button>
       </div>
     </div>
   </footer>
 
-  <!-- Toast Notification -->
-  <div class="toast" id="toast">Copied to clipboard!</div>
+  <!-- Confirmation Modal -->
+  <div class="modal-backdrop" id="success-modal">
+    <div class="modal-box">
+      <div class="modal-icon-circle">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="20 6 9 17 4 12"/>
+        </svg>
+      </div>
+      <h3 class="modal-h3">Verification Saved Successfully</h3>
+      <p class="modal-p" id="modal-msg">
+        Your verified answers, custom feedback, and attached master files have been recorded to persistent project storage.
+      </p>
+      <div class="modal-dest" id="modal-details">
+        Saved to: intake_submissions/...
+      </div>
+      <button class="btn-modal-dismiss" onclick="closeModal()">Close & Continue</button>
+    </div>
+  </div>
+
+  <div class="clean-toast" id="toast">Saved</div>
 
   <script>
-    // Embedded Tagged Intake Data
-    const RAW_SECTIONS = [{"id": "sec_1", "title": "Section 1: General Organization, Legal & Institutional Profile", "description": "Establishes legal identity, tax exemptions, and official communications.", "fields": [{"id": "field_1", "name": "Temple Official Name", "current_value": "Ballarat Hindu Temple & Cultural Centre Incorporated", "fillable_hint": "[_______________________________________]", "guidance": "Exact legal registered name as per Consumer Affairs Victoria.", "is_missing": false, "needs_action": false}, {"id": "field_2", "name": "Acronym / Short Form", "current_value": "BHTCC", "fillable_hint": "[_______________________________________]", "guidance": "Used for logos, mobile navbar, badges, and headers.", "is_missing": false, "needs_action": false}, {"id": "field_3", "name": "Legal Entity Type", "current_value": "Incorporated Association (Victoria, Australia)", "fillable_hint": "[  ] Incorporated Association[  ] Company Limited by Guarantee[  ] Other: _______________", "guidance": "Determines terms, constitution rules, and legal footer.", "is_missing": false, "needs_action": false}, {"id": "field_4", "name": "State Registration No.", "current_value": "Victorian Association Registration Number", "fillable_hint": "Reg No: [_______________________________]", "guidance": "Appears on government grant applications and disclosures.", "is_missing": false, "needs_action": false}, {"id": "field_5", "name": "ABN (Business Number)", "current_value": "13 397 829 440", "fillable_hint": "[_______________________________________]", "guidance": "11-digit Australian Business Number. Verified on ABN Lookup.", "is_missing": false, "needs_action": false}, {"id": "field_6", "name": "Charity & Tax Status", "current_value": "Registered Charity / Not-for-Profit (Advancement of Religion / Community Support)", "fillable_hint": "[  ] Registered with ACNC[  ] DGR Item 1 Endorsed[  ] DGR Item 2 Endorsed[  ] NFP Exempt", "guidance": "Governs tax deductibility wording on donation checkouts.", "is_missing": false, "needs_action": false}, {"id": "field_7", "name": "Physical Site Address", "current_value": "110 Vaggs Rd, Ross Creek VIC 3351", "fillable_hint": "[_______________________________________]Suburb: [___________] State: [___] Postcode: [____]", "guidance": "Location of the 5-acre temple property.", "is_missing": false, "needs_action": false}, {"id": "field_8", "name": "Postal / Office Address", "current_value": "110 Vaggs Rd, Ross Creek VIC 3351", "fillable_hint": "[_______________________________________][  ] Same as Physical Site Address", "guidance": "For legal notices, billing, and postal mail.", "is_missing": false, "needs_action": false}, {"id": "field_9", "name": "Local Council (LGA)", "current_value": "Golden Plains Shire Council (bordering City of Ballarat)", "fillable_hint": "[_______________________________________]", "guidance": "Required for council permits, parking codes, and local links.", "is_missing": false, "needs_action": false}, {"id": "field_10", "name": "Public Contact Phone", "current_value": "+61 3 5300 0000", "fillable_hint": "[_______________________________________]", "guidance": "Primary landline / mobile displayed in site header and footer.", "is_missing": false, "needs_action": false}, {"id": "field_11", "name": "Public Contact Email", "current_value": "info@ballarathindutemple.org.au", "fillable_hint": "[_______________________________________]", "guidance": "Primary public enquiry email inbox.", "is_missing": false, "needs_action": false}, {"id": "field_12", "name": "Emergency / Priest Direct Phone", "current_value": "Not specified on current site", "fillable_hint": "[_______________________________________]", "guidance": "Mobile number for urgent bereavement or crisis support.", "is_missing": false, "needs_action": false}]}, {"id": "sec_2", "title": "Section 2: Domain, DNS & Web Hosting Infrastructure", "description": "CRITICAL TECHNICAL REQUIREMENTS (Not visible on current prototype site).", "fields": [{"id": "field_1", "name": "Primary Domain Name", "current_value": "bhtcc.netlify.app (temporary staging)", "fillable_hint": "Target Domain: [________________________]Secondary / Redirects: [_________________]", "guidance": "e.g. ballarathindutemple.org.au, bhtcc.org.au.", "is_missing": false, "needs_action": false}, {"id": "field_2", "name": "Domain Registrar", "current_value": "Not disclosed", "fillable_hint": "Registrar Name: [_______________________]Account Username: [_____________________][  ] Client will manage DNS[  ] Agency to manage DNS", "guidance": "e.g., GoDaddy, CrazyDomains, Melbourne IT, Squarespace.", "is_missing": false, "needs_action": true}, {"id": "field_3", "name": "DNS Provider", "current_value": "Netlify Edge DNS", "fillable_hint": "[  ] Cloudflare (Recommended)[  ] Registrar DNS[  ] Other: ____________________________", "guidance": "Cloudflare provides free SSL, DDOS protection, and CDN caching.", "is_missing": false, "needs_action": false}, {"id": "field_4", "name": "Production Hosting", "current_value": "Netlify (Starter / Free Tier)", "fillable_hint": "[  ] Vercel Pro[  ] Netlify Pro[  ] AWS / GCP Cloud[  ] cPanel / VPS", "guidance": "Host for Next.js web application and serverless APIs.", "is_missing": false, "needs_action": false}, {"id": "field_5", "name": "SSL Certificate", "current_value": "Let's Encrypt Wildcard via Netlify", "fillable_hint": "[  ] Auto Let's Encrypt[  ] Cloudflare Edge SSL[  ] Custom EV SSL", "guidance": "Mandatory HTTPS across all pages and payment gateways.", "is_missing": false, "needs_action": false}, {"id": "field_6", "name": "Target Go-Live Date", "current_value": "Current site live on Netlify", "fillable_hint": "Target Launch: [DD/MM/YYYY]Milestone Event Date: [DD/MM/YYYY]", "guidance": "Deadline for web rollout (e.g. aligned with Ganesh Festival).", "is_missing": false, "needs_action": false}]}, {"id": "sec_3", "title": "Section 3: Branding, Visual Identity & Creative Assets", "description": "Design guidelines to ensure authentic cultural aesthetics and brand consistency.", "fields": [{"id": "field_1", "name": "Vector Logo Files", "current_value": "Lucide Landmark icon used as placeholder", "fillable_hint": "[  ] SVG vector provided[  ] High-res PNG provided (transparent)[  ] New custom temple logo to be designed", "guidance": "Please attach high-res master artwork files.", "is_missing": false, "needs_action": true}, {"id": "field_2", "name": "Icon / Mascot Mark", "current_value": "Traditional Gopuram / Ganesha silhouette", "fillable_hint": "[_______________________________________]", "guidance": "Used for favicon, browser tabs, watermarks, and app icons.", "is_missing": false, "needs_action": false}, {"id": "field_3", "name": "Brand Color Palette", "current_value": "Maroon (#6B1D2F), Gold (#D4AF37), Saffron, Temple White (#FAF9F5)", "fillable_hint": "Primary Color (Hex): [__________________]Accent Gold (Hex): [___________________]Background (Hex): [____________________]", "guidance": "Exact HEX / Pantone codes matching physical signage and prints.", "is_missing": false, "needs_action": false}, {"id": "field_4", "name": "Typography Preferences", "current_value": "Playfair Display (Serif), Inter (Sans), Manrope (Buttons)", "fillable_hint": "Headings Font: [________________________]Body Text Font: [_______________________]Indian Script Font (Tamil/Devanagari): [__]", "guidance": "Web-safe Google Fonts or custom commercial font licenses.", "is_missing": false, "needs_action": false}, {"id": "field_5", "name": "Official Slogan / Tagline", "current_value": "Building a Spiritual and Cultural Home for Regional Victoria", "fillable_hint": "[_______________________________________]", "guidance": "Hero tagline displayed prominently under main temple masthead.", "is_missing": false, "needs_action": false}, {"id": "field_6", "name": "Brand Style Guide", "current_value": "None provided on site", "fillable_hint": "[  ] Attached PDF Brand Guide[  ] Ad-hoc / Follow website aesthetics", "guidance": "Document defining logo clear space, dos and don'ts.", "is_missing": true, "needs_action": false}]}, {"id": "sec_4", "title": "Section 4: Payment Gateways, Banking & Financial Operations", "description": "CRITICAL TECHNICAL REQUIREMENTS for processing live donations, sponsorships, and memberships.", "fields": [{"id": "field_1", "name": "Online Payment Gateway", "current_value": "Mock simulated payment modal (Test)", "fillable_hint": "[  ] Stripe (Recommended)[  ] Square[  ] PayPal Australia[  ] CommBank BPOINT / NAB Transact", "guidance": "Stripe supports Apple Pay, Google Pay, and recurring pledges.", "is_missing": false, "needs_action": true}, {"id": "field_2", "name": "Payment Gateway Account", "current_value": "Simulated dummy terminal", "fillable_hint": "Stripe Account ID: [____________________][  ] Account already active[  ] Need assistance setting up new Stripe NFP", "guidance": "NFP registered charities get discounted 1.4% + 30c processing fees.", "is_missing": false, "needs_action": true}, {"id": "field_3", "name": "Direct Bank Deposit (EFT)", "current_value": "Not published on current site", "fillable_hint": "Bank Name: [____________________________]Account Name: [_________________________]BSB Number: [___________________________]Account Number: [_______________________]", "guidance": "Displayed on checkout for donors preferring direct bank wire.", "is_missing": false, "needs_action": true}, {"id": "field_4", "name": "Card Surcharge Policy", "current_value": "Absorbed in mock terminal", "fillable_hint": "[  ] Absorb merchant fees[  ] Give donor option to cover processing fee (+1.75%)[  ] Surcharge mandatory", "guidance": "Giving donors the option to add 1.75% increases net donations by ~85%.", "is_missing": false, "needs_action": true}, {"id": "field_5", "name": "DGR Receipting Setup", "current_value": "Basic simulated email notice", "fillable_hint": "Receipt Prefix: [e.g. BHTCC-2026-]Authorized Signatory Name: [____________]Signatory Title: [e.g. Treasurer][  ] Digital signature image attached", "guidance": "Australian tax laws require serialized receipt numbers and authorized signature.", "is_missing": false, "needs_action": true}, {"id": "field_6", "name": "Currency & International", "current_value": "AUD ($) only", "fillable_hint": "[  ] AUD only[  ] Multi-currency card acceptance enabled", "guidance": "Accepting overseas remittances from family members in India/USA/UK.", "is_missing": false, "needs_action": false}]}, {"id": "sec_5", "title": "Section 5: Temple Operational Timings, Etiquette & Facility Hire", "description": "Operational details essential for visitor experience (Currently missing from web prototype).", "fields": [{"id": "field_1", "name": "Daily Darshan Hours", "current_value": "Not displayed (Site is under construction)", "fillable_hint": "Weekday Morning: [____ AM] to [____ AM]Weekday Evening: [____ PM] to [____ PM]Weekend Morning: [____ AM] to [____ PM]Weekend Evening: [____ PM] to [____ PM]", "guidance": "Displayed on homepage header, Google Maps, and contact page.", "is_missing": false, "needs_action": false}, {"id": "field_2", "name": "Daily Pooja / Aarti Times", "current_value": "Not specified", "fillable_hint": "Morning Aarti: [____ AM]Noon Pooja: [____ PM]Evening Aarti: [____ PM]Night Closure Aarti: [____ PM]", "guidance": "Essential for devotees planning visits for specific daily aartis.", "is_missing": false, "needs_action": false}, {"id": "field_3", "name": "Dress Code & Etiquette", "current_value": "Not explicitly listed", "fillable_hint": "Traditional Modest Attire Required: [  ] Yes  [  ] NoFootwear Removal Policy: [  ] Yes (Shoe room provided)Strict Vegetarian / No Alcohol / No Vaping: [  ] YesInner Sanctum Photography: [  ] Prohibited  [  ] Allowed", "guidance": "Sets behavioral expectations for visitors, school tours, and tourists.", "is_missing": false, "needs_action": false}, {"id": "field_4", "name": "Prasadam Protocols", "current_value": "Daily prasadam mentioned in project plan", "fillable_hint": "Free Blessed Prasadam Daily: [  ] Yes  [  ] NoWeekend Community Feast (Annadhanam): [  ] YesPaid Laddu/Vada Prasadam Counter: [  ] Planned", "guidance": "Devotee guidance regarding meals and blessed food distribution.", "is_missing": false, "needs_action": false}, {"id": "field_5", "name": "Community Hall Hire", "current_value": "Mentions hall capacity of 350 devotees", "fillable_hint": "Available for Private Hire: [  ] Yes  [  ] NoHire Rate (Half Day / Full Day): [$_______]Security Bond: [$_______]Strict Vegetarian Catering Contract: [  ] Yes", "guidance": "For private weddings, naming ceremonies, classical arangetrams, and gatherings.", "is_missing": false, "needs_action": false}, {"id": "field_6", "name": "Commercial Kitchen Hire", "current_value": "Supported by $400k Victorian grant", "fillable_hint": "Commercial Kitchen Separate Hire: [  ] Yes  [  ] NoFood Safety Supervisor Requirement: [  ] Yes", "guidance": "Terms for community culinary groups and festival banquet preparation.", "is_missing": false, "needs_action": false}, {"id": "field_7", "name": "Accessibility Provisions", "current_value": "Accessible bays listed for 75+ parking", "fillable_hint": "Wheelchair Ramps: [  ] YesAccessible Bathrooms: [  ] YesHearing Loop in Hall: [  ] Yes  [  ] Planned", "guidance": "Required for accessibility compliance (Disability Discrimination Act).", "is_missing": false, "needs_action": false}]}, {"id": "sec_6", "title": "Section 6: Spiritual Shrines, Enshrined Deities & Sacred Hierarchy", "description": "Details the religious lineage, primary sanctum, and ritual schedules.", "fields": [{"id": "field_1", "name": "Primary Deity (Moolasthanam)", "current_value": "Sri Ganesha (Vighnaharta / Remover of Obstacles)", "fillable_hint": "Deity Form: [___________________________]Granite Sculptor Source: [e.g. Mahabalipuram, India]Primary Moolamantra: [__________________]", "guidance": "The main central deity anchoring the Ross Creek sanctum.", "is_missing": false, "needs_action": false}, {"id": "field_2", "name": "Lord Shiva Shrine", "current_value": "Lord Shiva (Chandeshwar Sannidhi - North Layout)", "fillable_hint": "Form: [  ] Shiva Lingam  [  ] NatarajaSpecific Sacred Day: [e.g. Pradosham, Mondays]Special Abhishekam Offerings: [_________]", "guidance": "Subsidiary sanctum positioned on astronomical coordinates.", "is_missing": false, "needs_action": false}, {"id": "field_3", "name": "Goddess Ambal Shrine", "current_value": "Goddess Ambal (Divine Mother / Shakti - Left Flank)", "fillable_hint": "Form: [  ] Durga  [  ] Parvati  [  ] LalithaSpecial Days: [e.g. Fridays, Pournami, Navaratri]Archana Offerings: [Kumkum, Flower garlands]", "guidance": "Dedicated to female divine power and cultural festivals.", "is_missing": false, "needs_action": false}, {"id": "field_4", "name": "Navagraha Mandapam", "current_value": "Nine Planetary Deities (Elevated Stone Pavilion)", "fillable_hint": "Installation Type: [  ] Traditional Vedic SquareParihara Timings: [Saturdays, Rahu Kalam]Specific Oil Lamps Permitted: [  ] Sesame  [  ] Ghee", "guidance": "Crucial for planetary remedies and astrological rituals.", "is_missing": false, "needs_action": false}, {"id": "field_5", "name": "Additional Shrines Planned", "current_value": "Lord Murugan (mentioned in masterplan)", "fillable_hint": "[  ] Lord Murugan / Kartikeya[  ] Sri Hanuman[  ] Sri Venkateswara / Balaji[  ] Sri AyyappaOther: [________________________________]", "guidance": "Future deities to be carved and consecrated in Phase 2/3.", "is_missing": false, "needs_action": false}, {"id": "field_6", "name": "Sacred Flagpole & Peedam", "current_value": "Traditional stone carving details", "fillable_hint": "Dhwaja Stambham (Flagpole): [  ] Planned  [  ] Not plannedBali Peedam: [  ] Yes  [  ] NoTulsi Mandapam: [  ] Yes (in garden)", "guidance": "Traditional external temple architecture fixtures.", "is_missing": false, "needs_action": false}]}, {"id": "sec_7", "title": "Section 7: Priest Services, Home Blessings & Booking Workflow", "description": "Catalog of traditional services offered to the community and their booking terms.", "fields": [{"id": "field_1", "name": "Chief Priest / Personnel", "current_value": "General 'Priest Coordinator' listed", "fillable_hint": "Priest Full Name: [_____________________]Vedic Lineage / Veda Patashala: [______]Languages Spoken: [Tamil, Telugu, Hindi, English, Sanskrit]", "guidance": "Builds trust and transparency for devotees booking homams.", "is_missing": false, "needs_action": false}, {"id": "field_2", "name": "Priest Booking Coordinator", "current_value": "Simulated booking form", "fillable_hint": "Coordinator Name: [_____________________]Direct Phone / WhatsApp: [_______________]Notification Email: [___________________]", "guidance": "Staff member receiving automatic alerts when a booking is submitted.", "is_missing": false, "needs_action": true}, {"id": "field_3", "name": "Temple Archana Rates", "current_value": "Listed as option on form", "fillable_hint": "Suggested Dakshina: [$__________________]Items Included: [  ] Flowers  [  ] Fruits  [  ] Coconut", "guidance": "Brief blessings conducted at the temple altar.", "is_missing": false, "needs_action": false}, {"id": "field_4", "name": "Ganapathi Homam / Grihapravesh", "current_value": "Housewarming & new business fire pooja", "fillable_hint": "Suggested Dakshina: [$__________________]Duration: [e.g. 2.5 - 3 Hours]Client Samagri List PDF: [  ] Available  [  ] Need created", "guidance": "The most requested home ceremony for new property buyers.", "is_missing": false, "needs_action": false}, {"id": "field_5", "name": "Satyanarayana Vratam", "current_value": "Thanksgiving & family prayer", "fillable_hint": "Suggested Dakshina: [$__________________]Duration: [e.g. 2 Hours]Pooja Samagri provided by priest: [  ] Yes  [  ] No", "guidance": "Popular full-moon (Purnima) family ceremony.", "is_missing": false, "needs_action": false}, {"id": "field_6", "name": "Milestone & Baby Blessings", "current_value": "Naming, First Feeding, Anniversaries", "fillable_hint": "Suggested Dakshina: [$__________________]Categories: [Namakarana, Annaprashana, 60th/80th B'day]", "guidance": "Child and elder life-cycle sacraments (Samskaras).", "is_missing": false, "needs_action": false}, {"id": "field_7", "name": "Vehicle Blessing (Vahana Pooja)", "current_value": "Not listed on current site", "fillable_hint": "[  ] Available at TempleSuggested Dakshina: [$__________________]Booking Required: [  ] Yes  [  ] Drive-in Walkup", "guidance": "Very high traffic service for new car purchases.", "is_missing": false, "needs_action": false}, {"id": "field_8", "name": "Priest Travel Policy", "current_value": "Not specified", "fillable_hint": "Within Ballarat Urban: [Free / Included]Outside Ballarat (25km - 100km): [Add $___ / km]Maximum Travel Radius: [____ km from Ballarat]", "guidance": "Covers fuel/travel time for priests travelling to Geelong, Ararat, etc.", "is_missing": false, "needs_action": false}, {"id": "field_9", "name": "Booking Notice Period", "current_value": "Instant form submission", "fillable_hint": "Minimum Notice Required: [e.g. 7 Days]Urgent Request Handling: [Call Priest Direct]Online Deposit Required: [  ] Yes ($____)  [  ] Pay on Day", "guidance": "Prevents last-minute double-bookings on auspicious dates.", "is_missing": false, "needs_action": false}]}, {"id": "sec_8", "title": "Section 8: Architecture, Masterplan & Construction Progress", "description": "Engineering specifications, council permits, and construction tracking data.", "fields": [{"id": "field_1", "name": "Total Land Area", "current_value": "5 Acres (110 Vaggs Rd, Ross Creek)", "fillable_hint": "Title Folio: [___________________________]Total Square Metres: [__________________]Zoning Classification: [Rural Living / Special]", "guidance": "Official property title data.", "is_missing": false, "needs_action": false}, {"id": "field_2", "name": "Planning Permit Reference", "current_value": "Golden Plains Shire Council Masterplan approved", "fillable_hint": "Council Permit No: [____________________]Approval Date: [________________________]Conditions of Approval Summary: [_______]", "guidance": "Council permit details build legitimacy and donor confidence.", "is_missing": false, "needs_action": false}, {"id": "field_3", "name": "Civil Contractor & Builders", "current_value": "Mr. Ramesh Patel (Civil Engineer / PM)", "fillable_hint": "Principal Builder / Construction Co: [____]Architectural Firm: [___________________]Stonemason Guild (Granite Altars): [____]", "guidance": "Recognizing key engineering and artisan partners on the website.", "is_missing": false, "needs_action": false}, {"id": "field_4", "name": "Current Build Progress", "current_value": "45% Completed (Foundation slabs poured)", "fillable_hint": "Current Exact Progress: [____ %]Next Scheduled Milestone: [_____________]Estimated Completion Phase 1: [MM/YYYY]", "guidance": "Drives live progress bars and milestone timeline on website.", "is_missing": false, "needs_action": false}, {"id": "field_5", "name": "Interactive Blueprint Assets", "current_value": "Masterplan (mp-1 to 5), Prayer Hall (ph-1 to 5)", "fillable_hint": "[  ] High-res CAD / PDF drawings provided[  ] 3D drone footage available[  ] Architectural renderings attached", "guidance": "Used for interactive hotspot map where donors click parts to sponsor.", "is_missing": false, "needs_action": false}]}, {"id": "sec_9", "title": "Section 9: Capital Fundraising Campaigns, Pillar Sponsorships & Donors", "description": "Detailed breakdown of financial targets, recognition plates, and donor tiers.", "fields": [{"id": "field_1", "name": "Ganesha Temple Target", "current_value": "$500,000 Target ($345,000 Raised on site)", "fillable_hint": "Current Updated Goal: [$________________]Amount Raised to Date: [$_______________]", "guidance": "Dedicated to solid granite sanctum blocks and stone spires.", "is_missing": false, "needs_action": false}, {"id": "field_2", "name": "Shiva & Ambal Shrines Target", "current_value": "$250,000 Target ($125,000 Raised on site)", "fillable_hint": "Current Updated Goal: [$________________]Amount Raised to Date: [$_______________]", "guidance": "Dedicated to subsidiary shrines and stone wall carvings.", "is_missing": false, "needs_action": false}, {"id": "field_3", "name": "Community Hall & Kitchen Target", "current_value": "$150,000 Target ($82,000 Raised on site)", "fillable_hint": "Current Updated Goal: [$________________]Amount Raised to Date: [$_______________]", "guidance": "To build commercial kitchen, library, classrooms, and park.", "is_missing": false, "needs_action": false}, {"id": "field_4", "name": "Pillar Sponsorship Program", "current_value": "Pillar sponsorship recognized with copper plates", "fillable_hint": "Pillar Sponsorship Amount: [$__________]Total Number of Pillars: [e.g. 16 Pillars]Number of Pillars Remaining: [__________]", "guidance": "Prime fundraising vehicle for major donors ($5,000 - $10,000+).", "is_missing": false, "needs_action": false}, {"id": "field_5", "name": "Copper Plate Inscription Specs", "current_value": "Custom copper inscription plate in Prayer Hall", "fillable_hint": "Maximum Characters per Plate: [e.g. 60 chars]Lines Allowed: [e.g. 3 Lines]Standard Format: 'Donated by [Family Name], [City]'", "guidance": "Form fields for donor to enter their family inscription at checkout.", "is_missing": false, "needs_action": false}, {"id": "field_6", "name": "Brick / Tile Sponsorship", "current_value": "Not listed on current site", "fillable_hint": "[  ] Enable Engraved Brick CampaignDonation per Brick: [$__________________]Text Limit: [e.g. 2 lines of 16 chars]", "guidance": "Allows everyday devotees to contribute $250 - $500 with their name.", "is_missing": false, "needs_action": false}, {"id": "field_7", "name": "Major Benefactor Wall", "current_value": "Not explicitly listed", "fillable_hint": "Grand Benefactor ($50k+): [  ] YesPatron Sponsor ($25k+): [  ] YesGold Sponsor ($10k+): [  ] Yes", "guidance": "Permanent marble/granite wall of honor at temple entrance.", "is_missing": false, "needs_action": false}, {"id": "field_8", "name": "Anonymous Giving Option", "current_value": "Checkbox: 'Keep donation anonymous on public lists'", "fillable_hint": "[  ] Keep anonymous checkbox enabledDefault: [  ] Public  [  ] Anonymous", "guidance": "Protects modesty and privacy of donors.", "is_missing": false, "needs_action": false}]}, {"id": "sec_10", "title": "Section 10: Membership Program, Dues & Devotee Portal", "description": "Configuration of membership tiers, billing cycles, and member rights.", "fields": [{"id": "field_1", "name": "Ordinary Membership Tier", "current_value": "$50.00 AUD / Year", "fillable_hint": "Annual Fee: [$__________________________]Voting Rights: [  ] Yes  [  ] NoRenewable: [  ] Annual Recurring  [  ] Manual", "guidance": "Entry-level voting membership for individual regional adults.", "is_missing": false, "needs_action": false}, {"id": "field_2", "name": "Association Membership Tier", "current_value": "$150.00 AUD / Year", "fillable_hint": "Annual Fee: [$__________________________]Covers: [  ] Immediate Family (2 adults + kids)[  ] Community Association Partner", "guidance": "Family tier offering discounts on workshops and cultural classes.", "is_missing": false, "needs_action": false}, {"id": "field_3", "name": "Life Membership Tier", "current_value": "$500.00 AUD (One-Time Payment)", "fillable_hint": "One-Time Fee: [$________________________]Installment Option: [  ] No  [  ] 5x $100Life Certificate Provided: [  ] Yes", "guidance": "Prestigious lifetime status with perpetual AGM voting rights.", "is_missing": false, "needs_action": false}, {"id": "field_4", "name": "Membership Cycle", "current_value": "Calculated as annual / one-time", "fillable_hint": "[  ] Calendar Year (1 Jan – 31 Dec)[  ] Financial Year (1 Jul – 30 Jun)[  ] Rolling 12 Months from join date", "guidance": "Determines when automated renewal reminder emails are triggered.", "is_missing": false, "needs_action": false}, {"id": "field_5", "name": "Voting Eligibility Rule", "current_value": "Full voting rights at BHTCC AGMs", "fillable_hint": "Minimum Membership Tenure to Vote: [e.g. 3 Months prior to AGM]Minimum Age to Vote: [18 Years]", "guidance": "Mandatory under Victorian Model Rules for Incorporated Associations.", "is_missing": false, "needs_action": false}, {"id": "field_6", "name": "Devotee Portal Capabilities", "current_value": "Basic simulated card checkout", "fillable_hint": "[  ] Login with Password / Magic Link[  ] Download annual tax receipts[  ] View AGM minutes & voting notices[  ] Update family contact details", "guidance": "Custom portal features for logged-in members.", "is_missing": false, "needs_action": true}]}, {"id": "sec_11", "title": "Section 11: Calendar of Events, Festivals & RSVP / Ticketing System", "description": "Information for scheduling, managing, and ticketing major community festivals.", "fields": [{"id": "field_1", "name": "Ganesh Chaturthi Festival", "current_value": "15 September 2026 (10:00 AM – 8:00 PM)", "fillable_hint": "Current Year Date: [DD/MM/YYYY]Expected Attendees: [e.g. 1,000 - 1,500]Entry Fee: [  ] Free RSVP  [  ] Paid Ticket", "guidance": "Ballarat's signature multicultural festival with chariot procession.", "is_missing": false, "needs_action": false}, {"id": "field_2", "name": "Maha Shivaratri Celebrations", "current_value": "05 March 2026 (6:00 PM – 6:00 AM Overnight)", "fillable_hint": "Current Year Date: [DD/MM/YYYY]All-Night Vigil Schedule: [4 Prahara Abhishekams]Prasadam / Fasting Food Provided: [  ] Yes", "guidance": "Major night festival drawing devotees from Melbourne & regional towns.", "is_missing": false, "needs_action": false}, {"id": "field_3", "name": "Diwali / Deepavali Annakut", "current_value": "Not listed in web prototype", "fillable_hint": "Date: [DD/MM/YYYY]Chopra Pooja / Lakshmi Pooja: [  ] YesFireworks / Sparklers Permission: [  ] Yes  [  ] No", "guidance": "Festival of Lights and New Year gathering.", "is_missing": false, "needs_action": false}, {"id": "field_4", "name": "Navaratri & Dussehra", "current_value": "Mentioned in worship text", "fillable_hint": "Dates (9 Nights): [From DD/MM to DD/MM]Daily Golu Display: [  ] YesGarba / Dandiya Night Planned: [  ] Yes", "guidance": "Nine nights of devotional dancing and goddess worship.", "is_missing": false, "needs_action": false}, {"id": "field_5", "name": "RSVP & Capacity Control", "current_value": "Basic simulated ticket counter modal", "fillable_hint": "[  ] Free RSVP with QR code tickets[  ] Limit tickets per booking (Max: ___)[  ] Send automated reminder SMS/Email", "guidance": "Prevents site overcrowding and helps caterer plan Prasadam volumes.", "is_missing": false, "needs_action": true}, {"id": "field_6", "name": "Cultural Stage Applications", "current_value": "Not present on site", "fillable_hint": "Accept Dance / Music Academy submissions: [  ] YesApplication Deadline: [___ weeks prior]Stage Coordinator Email: [______________]", "guidance": "Allows local classical dance/music academies to register performances.", "is_missing": false, "needs_action": false}]}, {"id": "sec_12", "title": "Section 12: Community Programs, Educational Classes & Welfare Outreach", "description": "Schedules, instructor details, and enrollment workflows for cultural and welfare services.", "fields": [{"id": "field_1", "name": "Saturday Yoga & Meditation", "current_value": "Every Saturday, 8:30 AM – 10:00 AM", "fillable_hint": "Current Timing: [_______________________]Location: [BHTCC Site / Ballarat Hub]Instructor Name & Cert: [_______________]Class Fee: [  ] 100% Free  [  ] Gold Coin Donation", "guidance": "Community health and wellness initiative.", "is_missing": false, "needs_action": false}, {"id": "field_2", "name": "Sunday Language Academy", "current_value": "Every Sunday, 2:00 PM – 4:00 PM", "fillable_hint": "Languages Taught: [  ] Sanskrit  [  ] Hindi  [  ] Tamil  [  ] TeluguAge Groups: [  ] Kids (5-12)  [  ] Teens  [  ] AdultsTerm Fee / Materials Cost: [$___________]", "guidance": "Preserving linguistic roots and sacred scripture chanting.", "is_missing": false, "needs_action": false}, {"id": "field_3", "name": "Seniors Spiritual Gathering", "current_value": "Fortnightly Wednesdays, 11:00 AM – 1:00 PM", "fillable_hint": "Timing: [_______________________________]Transport Assistance Available: [  ] Yes  [  ] NoHot Vegetarian Lunch Provided: [  ] Yes", "guidance": "Vital social engagement program preventing elderly isolation.", "is_missing": false, "needs_action": false}, {"id": "field_4", "name": "Welfare & Food Relief Drives", "current_value": "Monthly special campaigns", "fillable_hint": "Partner Charities: [e.g. Ballarat SoupBus, Salvos]Accepted Goods: [Dry pantry rations, blankets, winter wear]Collection Drop-off Point: [110 Vaggs Rd]", "guidance": "Demonstrates public benefit and multicultural civic support.", "is_missing": false, "needs_action": false}, {"id": "field_5", "name": "Online Student Enrollment", "current_value": "Name, Email, Phone, Program selector", "fillable_hint": "[  ] Require Parent / Guardian Details[  ] Medical / Allergy Disclosures[  ] Student Photo Release Permission", "guidance": "Ensures compliance with duty of care and child protection.", "is_missing": false, "needs_action": false}]}, {"id": "sec_13", "title": "Section 13: Volunteer Management, Roles & WWCC Compliance", "description": "Framework for recruiting, coordinating, and legally vetting community volunteers.", "fields": [{"id": "field_1", "name": "Volunteer Streams", "current_value": "7 areas listed on existing website", "fillable_hint": "[  ] Festivals & Events Coordination[  ] Temple Operations & Priest Support[  ] Facility Maintenance & Trades[  ] Landscaping & Gardens[  ] Cultural Teaching & Language[  ] IT, Audio-Visual & Photography[  ] Fundraising & Grant Writing", "guidance": "Volunteers select their preferred functional areas on signup.", "is_missing": false, "needs_action": false}, {"id": "field_2", "name": "Working with Children Check", "current_value": "Mandatory compliance stated on site", "fillable_hint": "WWCC Collection Method: [  ] Upload Card Image  [  ] Enter Card No + ExpiryAdmin Verification Officer: [___________]", "guidance": "Mandatory under Victorian Child Safe Standards for all active roles.", "is_missing": false, "needs_action": false}, {"id": "field_3", "name": "Volunteer Shift Availability", "current_value": "Weekends, Weekdays, Flexible, Festivals", "fillable_hint": "[  ] Match existing site optionsCustom Options: [_______________________]", "guidance": "Helps event coordinators filter rosters for working bees and festivals.", "is_missing": false, "needs_action": false}, {"id": "field_4", "name": "Volunteer Code of Conduct", "current_value": "PDF download referenced", "fillable_hint": "Digital Sign-off Checkbox Required: [  ] YesEmergency Contact Field Required: [  ] Yes", "guidance": "Ensures all volunteers commit to safety, respect, and zero harassment.", "is_missing": false, "needs_action": false}]}, {"id": "sec_14", "title": "Section 14: Committee Members, Key Personnel & Role-Based Access Control", "description": "Board profiles for website publication and system access permissions.", "fields": [{"id": "field_1", "name": "Dr. Harish Kumar (President)", "current_value": "Healthcare Administration", "fillable_hint": "Bio Summary (50-100 words): [____________][  ] High-res headshot photo providedEmail / LinkedIn: [_____________________]", "guidance": "President profile for About Us and Governance pages.", "is_missing": false, "needs_action": false}, {"id": "field_2", "name": "Mrs. Priya Rajan (Secretary)", "current_value": "Secondary Education / Language Coordinator", "fillable_hint": "Bio Summary (50-100 words): [____________][  ] High-res headshot photo providedEmail / LinkedIn: [_____________________]", "guidance": "Secretary profile and community liaison.", "is_missing": false, "needs_action": false}, {"id": "field_3", "name": "Mr. Satish Nair (Treasurer)", "current_value": "Chartered Accountant / Financial Governance", "fillable_hint": "Bio Summary (50-100 words): [____________][  ] High-res headshot photo providedEmail / LinkedIn: [_____________________]", "guidance": "Treasurer profile ensuring financial accountability.", "is_missing": false, "needs_action": false}, {"id": "field_4", "name": "Mr. Ramesh Patel (Project Mgr)", "current_value": "Civil Engineer / Construction Liaison", "fillable_hint": "Bio Summary (50-100 words): [____________][  ] High-res headshot photo providedEmail / LinkedIn: [_____________________]", "guidance": "Project manager overseeing on-site civil progress.", "is_missing": false, "needs_action": false}, {"id": "field_5", "name": "Additional Board Members", "current_value": "Not listed on current site", "fillable_hint": "Name & Role 1: [________________________]Name & Role 2: [________________________]Name & Role 3: [________________________]", "guidance": "Complete list of all committee members and trustees.", "is_missing": false, "needs_action": false}, {"id": "field_6", "name": "Admin Portal User Roles", "current_value": "Single static read-only mock portal", "fillable_hint": "[  ] Super Admin (Executive Committee)[  ] Finance Admin (Treasurer / Receipts)[  ] Event Manager (RSVPs / Ticketing)[  ] Priest / Pooja Coordinator", "guidance": "Configures user authentication and granular CMS permissions.", "is_missing": false, "needs_action": true}]}, {"id": "sec_15", "title": "Section 15: Communications, Automated Emails & SMS Gateways", "description": "CRITICAL TECHNICAL REQUIREMENTS for automated transactional devotee communications.", "fields": [{"id": "field_1", "name": "Transactional Email Provider", "current_value": "Simulated mock client alerts", "fillable_hint": "[  ] SendGrid[  ] Postmark[  ] AWS SES[  ] Resend (Recommended for Next.js)", "guidance": "Ensures high deliverability of receipts into donors' primary inboxes.", "is_missing": false, "needs_action": true}, {"id": "field_2", "name": "Email Sending Domain", "current_value": "info@ballarathindutemple.org.au", "fillable_hint": "Sending Address: [e.g. notifications@...]DKIM / SPF / DMARC Access: [  ] Provided", "guidance": "Prevents temple transactional emails from landing in SPAM folders.", "is_missing": false, "needs_action": false}, {"id": "field_3", "name": "Automated Receipt Template", "current_value": "Simulated alert on screen", "fillable_hint": "[  ] Attach official PDF Tax Receipt[  ] Include thank-you note from President[  ] Include DGR tax endorsement statement", "guidance": "Instant proof of tax deduction emailed to donor within 5 seconds.", "is_missing": false, "needs_action": true}, {"id": "field_4", "name": "SMS Notification Gateway", "current_value": "Not implemented", "fillable_hint": "[  ] Twilio SMS[  ] MessageMedia Australia[  ] Not required for Phase 1", "guidance": "For urgent festival parking updates, weather alerts, or priest reminders.", "is_missing": false, "needs_action": false}, {"id": "field_5", "name": "Devotee Newsletter Platform", "current_value": "Not connected", "fillable_hint": "[  ] Mailchimp[  ] Brevo (Sendinblue)[  ] Campaign MonitorAccount API Key: [______________________]", "guidance": "Automatically adds newsletter subscribers to email marketing lists.", "is_missing": false, "needs_action": false}]}, {"id": "sec_16", "title": "Section 16: SEO, Google Business, Analytics & Social Media", "description": "Visibility and digital marketing infrastructure (Not present on prototype site).", "fields": [{"id": "field_1", "name": "Google Maps Listing", "current_value": "Raw link to query: 110 Vaggs Rd", "fillable_hint": "Google Business Profile Claimed: [  ] Yes  [  ] NoExact Google Maps CID / Place ID: [______]Google Reviews Widget Embed: [  ] Yes", "guidance": "Claiming Google Business Profile allows direct directions and reviews.", "is_missing": false, "needs_action": false}, {"id": "field_2", "name": "Google Analytics 4 (GA4)", "current_value": "Not installed", "fillable_hint": "GA4 Measurement ID: [G-_________________]Google Tag Manager ID: [GTM-____________]", "guidance": "Tracks website visitors, donation conversion rate, and traffic sources.", "is_missing": false, "needs_action": false}, {"id": "field_3", "name": "Google Search Console", "current_value": "Not verified", "fillable_hint": "Search Console Verification Token: [____]Target Search Keywords: [Hindu Temple Ballarat, Regional Victoria Temple, Indian Community Ballarat]", "guidance": "Ensures Google indexes all temple pages, poojas, and festival dates.", "is_missing": false, "needs_action": false}, {"id": "field_4", "name": "Social Media Links", "current_value": "Generic footer links", "fillable_hint": "Facebook Page: [________________________]Instagram Profile: [____________________]YouTube Channel (Live Poojas): [________]WhatsApp Community Group: [_____________]", "guidance": "Direct links embedded in header, footer, and event RSVP pages.", "is_missing": false, "needs_action": false}, {"id": "field_5", "name": "OpenGraph Social Share Image", "current_value": "None configured", "fillable_hint": "[  ] Upload 1200x630px social banner image[  ] Default to Temple Aerial Rendering", "guidance": "Image preview displayed when site links are shared on WhatsApp/FB.", "is_missing": true, "needs_action": false}]}, {"id": "sec_17", "title": "Section 17: Legal Compliance, Policies & Statutory Downloads", "description": "Formal documents required for governance and regulatory compliance.", "fields": [{"id": "field_1", "name": "BHTCC Model Constitution", "current_value": "bhtcc-constitution.pdf (15 Aug 2016)", "fillable_hint": "[  ] Final signed PDF attached[  ] Need updated 2026 version", "guidance": "Mandatory download on Governance page under Victorian law.", "is_missing": false, "needs_action": false}, {"id": "field_2", "name": "Child Safety Standards Policy", "current_value": "child-safety-policy.pdf (01 Oct 2025)", "fillable_hint": "[  ] Approved PDF attached[  ] Need template provided", "guidance": "Demonstrates mandatory compliance with Victoria's 11 Child Safe Standards.", "is_missing": false, "needs_action": false}, {"id": "field_3", "name": "Volunteer Code of Conduct", "current_value": "volunteer-code-of-conduct.pdf (10 Jan 2026)", "fillable_hint": "[  ] Approved PDF attached[  ] Need template provided", "guidance": "Signed by all active volunteers upon registration.", "is_missing": false, "needs_action": false}, {"id": "field_4", "name": "Audited Financial Report", "current_value": "financial-report-2025.pdf (31 Dec 2025)", "fillable_hint": "[  ] Most recent audited report attachedYear: [2024 / 2025 / 2026]", "guidance": "Builds immense trust with donors and government grant auditors.", "is_missing": false, "needs_action": false}, {"id": "field_5", "name": "Privacy Policy Document", "current_value": "Points to governance page placeholder", "fillable_hint": "[  ] Custom Privacy Policy attached[  ] Use Australian Privacy Principles (APP) template", "guidance": "Required by Australian law for collecting personal/credit card details.", "is_missing": false, "needs_action": true}, {"id": "field_6", "name": "Terms of Website Use", "current_value": "Points to governance page placeholder", "fillable_hint": "[  ] Custom Terms of Use attached[  ] Use standard Australian NFP template", "guidance": "Protects temple against liability and misuse of site materials.", "is_missing": false, "needs_action": true}, {"id": "field_7", "name": "Acknowledgement of Country", "current_value": "Not displayed on existing site", "fillable_hint": "[  ] Display Wadawurrung Traditional Owners acknowledgement in site footerCustom Wording: [_______________________]", "guidance": "Crucial civic respect for Traditional Custodians across regional Victoria.", "is_missing": false, "needs_action": false}]}, {"id": "sec_18", "title": "Section 18: Future Development Roadmap & Phase 2 Wishlist", "description": "Strategic capabilities for future expansion and technology enhancements.", "fields": [{"id": "field_1", "name": "Live Video Streaming", "current_value": "Static photography only", "fillable_hint": "[  ] Embed YouTube Live stream of main altar[  ] RTSP / RTMP CCTV temple broadcast[  ] Special festivals only", "guidance": "Enables elderly and interstate devotees to participate in daily aartis.", "is_missing": false, "needs_action": false}, {"id": "field_2", "name": "Multilingual Switcher", "current_value": "English only", "fillable_hint": "[  ] English only[  ] Add Tamil[  ] Add Hindi[  ] Add Gujarati / Telugu[  ] Google Website Translator widget", "guidance": "Expands accessibility for first-generation migrant elders.", "is_missing": false, "needs_action": false}, {"id": "field_3", "name": "Devotee Birth Star Database", "current_value": "Not implemented", "fillable_hint": "[  ] Collect Devotee Rashi & Nakshatra[  ] Automated birthday/anniversary prayer reminders[  ] Phase 2 feature", "guidance": "Deepens spiritual connection between devotees and temple rituals.", "is_missing": false, "needs_action": false}, {"id": "field_4", "name": "Prasadam Canteen POS Sync", "current_value": "Cash/direct payment on site", "fillable_hint": "[  ] Integrate Square / Clover POS for canteen[  ] Online pre-order festival sweets & savories[  ] Phase 2 feature", "guidance": "Eliminates festival canteen queues and cash-handling bottlenecks.", "is_missing": false, "needs_action": false}, {"id": "field_5", "name": "Mobile App (iOS / Android)", "current_value": "Responsive web only", "fillable_hint": "[  ] PWA (Progressive Web App - Add to Homescreen)[  ] Native Flutter / React Native App[  ] Not needed at this time", "guidance": "PWA allows push notifications for festival reminders with zero app store fees.", "is_missing": false, "needs_action": false}, {"id": "field_6", "name": "CLIENT AUTHORIZATION & SIGN-OFF", "current_value": "DEVELOPMENT AGENCY ACKNOWLEDGMENT", "fillable_hint": "Representative Name: [__________________________]Title / Role: [__________________________________]Signature: _____________________________________Date: [____ / ____ / ________]", "guidance": "Project Lead: [________________________________]Agency: Web Engineering & Design TeamSignature: _____________________________________Date: [____ / ____ / ________]", "is_missing": false, "needs_action": false}, {"id": "field_7", "name": "Please return the completed document along with your digital vector logo assets, high-res photos, and policy PDFs to the web development team.", "current_value": "", "fillable_hint": "", "guidance": "", "is_missing": true, "needs_action": false}]}];
+    const RAW_SECTIONS = [{"id": "sec_1", "title": "General Organization, Legal & Institutional Profile", "description": "Establishes legal identity, tax exemptions, and official communications.", "fields": [{"id": "field_1", "name": "Temple Official Name", "current_value": "Ballarat Hindu Temple & Cultural Centre Incorporated", "fillable_hint": "[_______________________________________]", "guidance": "Exact legal registered name as per Consumer Affairs Victoria.", "is_missing": false, "needs_action": false, "is_file_field": false, "clean_hint": "Enter verified details for temple official name..."}, {"id": "field_2", "name": "Acronym / Short Form", "current_value": "BHTCC", "fillable_hint": "[_______________________________________]", "guidance": "Used for logos, mobile navbar, badges, and headers.", "is_missing": false, "needs_action": false, "is_file_field": true, "clean_hint": "Enter verified details for acronym / short form..."}, {"id": "field_3", "name": "Legal Entity Type", "current_value": "Incorporated Association (Victoria, Australia)", "fillable_hint": "Attach your file above or type notes here...", "guidance": "Determines terms, constitution rules, and legal footer.", "is_missing": false, "needs_action": false, "is_file_field": true, "clean_hint": "Enter verified details for legal entity type..."}, {"id": "field_4", "name": "State Registration No.", "current_value": "Victorian Association Registration Number", "fillable_hint": "Reg No: [_______________________________]", "guidance": "Appears on government grant applications and disclosures.", "is_missing": false, "needs_action": false, "is_file_field": false, "clean_hint": "e.g. A0100234M (Consumer Affairs Victoria registration number)"}, {"id": "field_5", "name": "ABN (Business Number)", "current_value": "13 397 829 440", "fillable_hint": "[_______________________________________]", "guidance": "11-digit Australian Business Number. Verified on ABN Lookup.", "is_missing": false, "needs_action": false, "is_file_field": false, "clean_hint": "Enter verified details for abn (business number)..."}, {"id": "field_6", "name": "Charity & Tax Status", "current_value": "Registered Charity / Not-for-Profit (Advancement of Religion / Community Support)", "fillable_hint": "[  ] Registered with ACNC[  ] DGR Item 1 Endorsed[  ] DGR Item 2 Endorsed[  ] NFP Exempt", "guidance": "Governs tax deductibility wording on donation checkouts.", "is_missing": false, "needs_action": false, "is_file_field": false, "clean_hint": "\u2022  Registered with ACNC\u2022  DGR Item 1 Endorsed\u2022  DGR Item 2 Endorsed\u2022  NFP Exempt"}, {"id": "field_7", "name": "Physical Site Address", "current_value": "110 Vaggs Rd, Ross Creek VIC 3351", "fillable_hint": "[_______________________________________]Suburb: [___________] State: [___] Postcode: [____]", "guidance": "Location of the 5-acre temple property.", "is_missing": false, "needs_action": false, "is_file_field": false, "clean_hint": "e.g. 110 Vaggs Rd, Ross Creek VIC 3351"}, {"id": "field_8", "name": "Postal / Office Address", "current_value": "110 Vaggs Rd, Ross Creek VIC 3351", "fillable_hint": "[_______________________________________][  ] Same as Physical Site Address", "guidance": "For legal notices, billing, and postal mail.", "is_missing": false, "needs_action": false, "is_file_field": false, "clean_hint": "\u2022  Same as Physical Site Address"}, {"id": "field_9", "name": "Local Council (LGA)", "current_value": "Golden Plains Shire Council (bordering City of Ballarat)", "fillable_hint": "[_______________________________________]", "guidance": "Required for council permits, parking codes, and local links.", "is_missing": false, "needs_action": false, "is_file_field": false, "clean_hint": "Enter verified details for local council (lga)..."}, {"id": "field_10", "name": "Public Contact Phone", "current_value": "+61 3 5300 0000", "fillable_hint": "[_______________________________________]", "guidance": "Primary landline / mobile displayed in site header and footer.", "is_missing": false, "needs_action": false, "is_file_field": false, "clean_hint": "e.g. +61 3 5300 0000 or direct mobile number..."}, {"id": "field_11", "name": "Public Contact Email", "current_value": "info@ballarathindutemple.org.au", "fillable_hint": "[_______________________________________]", "guidance": "Primary public enquiry email inbox.", "is_missing": false, "needs_action": false, "is_file_field": false, "clean_hint": "e.g. contact@ballarathindutemple.org.au..."}, {"id": "field_12", "name": "Emergency / Priest Direct Phone", "current_value": "Not specified on current site", "fillable_hint": "[_______________________________________]", "guidance": "Mobile number for urgent bereavement or crisis support.", "is_missing": false, "needs_action": false, "is_file_field": false, "clean_hint": "e.g. +61 3 5300 0000 or direct mobile number..."}]}, {"id": "sec_3", "title": "Branding, Visual Identity & Creative Assets", "description": "Design guidelines to ensure authentic cultural aesthetics and brand consistency.", "fields": [{"id": "field_1", "name": "Vector Logo Files", "current_value": "Lucide Landmark icon used as placeholder", "fillable_hint": "Attach your file above or type notes here...", "guidance": "Please attach high-res master artwork files.", "is_missing": false, "needs_action": true, "is_file_field": true, "clean_hint": "Attach master vector files (SVG, AI, PDF) or provide instructions..."}, {"id": "field_2", "name": "Icon / Mascot Mark", "current_value": "Traditional Gopuram / Ganesha silhouette", "fillable_hint": "[_______________________________________]", "guidance": "Used for favicon, browser tabs, watermarks, and app icons.", "is_missing": false, "needs_action": false, "is_file_field": false, "clean_hint": "Enter verified details for icon / mascot mark..."}, {"id": "field_3", "name": "Brand Color Palette", "current_value": "Maroon (#6B1D2F), Gold (#D4AF37), Saffron, Temple White (#FAF9F5)", "fillable_hint": "Primary Color (Hex): [__________________]Accent Gold (Hex): [___________________]Background (Hex): [____________________]", "guidance": "Exact HEX / Pantone codes matching physical signage and prints.", "is_missing": false, "needs_action": false, "is_file_field": false, "clean_hint": "e.g. Primary Maroon: #7E1C27, Accent Gold: #B45309, Temple Cream: #FAF9F5"}, {"id": "field_4", "name": "Typography Preferences", "current_value": "Playfair Display (Serif), Inter (Sans), Manrope (Buttons)", "fillable_hint": "Headings Font: [________________________]Body Text Font: [_______________________]Indian Script Font (Tamil/Devanagari): [__]", "guidance": "Web-safe Google Fonts or custom commercial font licenses.", "is_missing": false, "needs_action": false, "is_file_field": false, "clean_hint": "e.g. Headings: Playfair Display, Body: Inter, Indian Scripts: Tamil/Devanagari"}, {"id": "field_5", "name": "Official Slogan / Tagline", "current_value": "Building a Spiritual and Cultural Home for Regional Victoria", "fillable_hint": "[_______________________________________]", "guidance": "Hero tagline displayed prominently under main temple masthead.", "is_missing": false, "needs_action": false, "is_file_field": false, "clean_hint": "Enter verified details for official slogan / tagline..."}, {"id": "field_6", "name": "Brand Style Guide", "current_value": "None provided on site", "fillable_hint": "Attach your file above or type notes here...", "guidance": "Document defining logo clear space, dos and don'ts.", "is_missing": true, "needs_action": false, "is_file_field": true, "clean_hint": "Enter verified details for brand style guide..."}]}, {"id": "sec_4", "title": "Payment Gateways, Banking & Financial Operations", "description": "CRITICAL TECHNICAL REQUIREMENTS for processing live donations, sponsorships, and memberships.", "fields": [{"id": "field_3", "name": "Direct Bank Deposit (EFT)", "current_value": "Not published on current site", "fillable_hint": "Bank Name: [____________________________]Account Name: [_________________________]BSB Number: [___________________________]Account Number: [_______________________]", "guidance": "Displayed on checkout for donors preferring direct bank wire.", "is_missing": false, "needs_action": true, "is_file_field": false, "clean_hint": "Bank Name: [NAB / CBA], Account: BHTCC Inc, BSB: [000-000], Acct No: [00000000]"}, {"id": "field_5", "name": "DGR Receipting Setup", "current_value": "Basic simulated email notice", "fillable_hint": "Receipt Prefix: [e.g. BHTCC-2026-]Authorized Signatory Name: [____________]Signatory Title: [e.g. Treasurer][  ] Digital signature image attached", "guidance": "Australian tax laws require serialized receipt numbers and authorized signature.", "is_missing": false, "needs_action": true, "is_file_field": false, "clean_hint": "e.g. Receipt Prefix: BHTCC-2026-, Authorized Signatory: Dr. Harish Kumar (President)"}, {"id": "field_6", "name": "Currency & International", "current_value": "AUD ($) only", "fillable_hint": "[  ] AUD only[  ] Multi-currency card acceptance enabled", "guidance": "Accepting overseas remittances from family members in India/USA/UK.", "is_missing": false, "needs_action": false, "is_file_field": false, "clean_hint": "\u2022  AUD only\u2022  Multi-currency card acceptance enabled"}]}, {"id": "sec_5", "title": "Temple Operational Timings, Etiquette & Facility Hire", "description": "Operational details essential for visitor experience (Currently missing from web prototype).", "fields": [{"id": "field_1", "name": "Daily Darshan Hours", "current_value": "Not displayed (Site is under construction)", "fillable_hint": "Weekday Morning: [____ AM] to [____ AM]Weekday Evening: [____ PM] to [____ PM]Weekend Morning: [____ AM] to [____ PM]Weekend Evening: [____ PM] to [____ PM]", "guidance": "Displayed on homepage header, Google Maps, and contact page.", "is_missing": false, "needs_action": false, "is_file_field": false, "clean_hint": "e.g. Mon-Fri: 7:00 AM \u2013 11:30 AM, 5:00 PM \u2013 8:30 PM | Weekends: 8:00 AM \u2013 9:00 PM"}, {"id": "field_2", "name": "Daily Pooja / Aarti Times", "current_value": "Not specified", "fillable_hint": "Morning Aarti: [____ AM]Noon Pooja: [____ PM]Evening Aarti: [____ PM]Night Closure Aarti: [____ PM]", "guidance": "Essential for devotees planning visits for specific daily aartis.", "is_missing": false, "needs_action": false, "is_file_field": false, "clean_hint": "e.g. Morning Aarti: 7:30 AM, Noon Pooja: 12:00 PM, Evening Aarti: 7:00 PM"}, {"id": "field_3", "name": "Dress Code & Etiquette", "current_value": "Not explicitly listed", "fillable_hint": "Attach your file above or type notes here...", "guidance": "Sets behavioral expectations for visitors, school tours, and tourists.", "is_missing": false, "needs_action": false, "is_file_field": true, "clean_hint": "Enter verified details for dress code & etiquette..."}, {"id": "field_4", "name": "Prasadam Protocols", "current_value": "Daily prasadam mentioned in project plan", "fillable_hint": "Free Blessed Prasadam Daily: [  ] Yes  [  ] NoWeekend Community Feast (Annadhanam): [  ] YesPaid Laddu/Vada Prasadam Counter: [  ] Planned", "guidance": "Devotee guidance regarding meals and blessed food distribution.", "is_missing": false, "needs_action": false, "is_file_field": false, "clean_hint": "Free Blessed Prasadam Daily: \u2022  Yes  \u2022  NoWeekend Community Feast (Annadhanam): \u2022  YesPaid Laddu/Vada Prasadam Counter: \u2022  Planned"}, {"id": "field_5", "name": "Community Hall Hire", "current_value": "Mentions hall capacity of 350 devotees", "fillable_hint": "Available for Private Hire: [  ] Yes  [  ] NoHire Rate (Half Day / Full Day): [$_______]Security Bond: [$_______]Strict Vegetarian Catering Contract: [  ] Yes", "guidance": "For private weddings, naming ceremonies, classical arangetrams, and gatherings.", "is_missing": false, "needs_action": false, "is_file_field": false, "clean_hint": "Available for Private Hire: \u2022  Yes  \u2022  NoHire Rate (Half Day / Full Day): [$]Security Bond: [$]Strict Vegetarian Catering Contract: \u2022  Yes"}, {"id": "field_6", "name": "Commercial Kitchen Hire", "current_value": "Supported by $400k Victorian grant", "fillable_hint": "Commercial Kitchen Separate Hire: [  ] Yes  [  ] NoFood Safety Supervisor Requirement: [  ] Yes", "guidance": "Terms for community culinary groups and festival banquet preparation.", "is_missing": false, "needs_action": false, "is_file_field": false, "clean_hint": "Commercial Kitchen Separate Hire: \u2022  Yes  \u2022  NoFood Safety Supervisor Requirement: \u2022  Yes"}, {"id": "field_7", "name": "Accessibility Provisions", "current_value": "Accessible bays listed for 75+ parking", "fillable_hint": "Wheelchair Ramps: [  ] YesAccessible Bathrooms: [  ] YesHearing Loop in Hall: [  ] Yes  [  ] Planned", "guidance": "Required for accessibility compliance (Disability Discrimination Act).", "is_missing": false, "needs_action": false, "is_file_field": false, "clean_hint": "Wheelchair Ramps: \u2022  YesAccessible Bathrooms: \u2022  YesHearing Loop in Hall: \u2022  Yes  \u2022  Planned"}]}, {"id": "sec_6", "title": "Spiritual Shrines, Enshrined Deities & Sacred Hierarchy", "description": "Details the religious lineage, primary sanctum, and ritual schedules.", "fields": [{"id": "field_1", "name": "Primary Deity (Moolasthanam)", "current_value": "Sri Ganesha (Vighnaharta / Remover of Obstacles)", "fillable_hint": "Deity Form: [___________________________]Granite Sculptor Source: [e.g. Mahabalipuram, India]Primary Moolamantra: [__________________]", "guidance": "The main central deity anchoring the Ross Creek sanctum.", "is_missing": false, "needs_action": false, "is_file_field": false, "clean_hint": "Deity Form: Granite Sculptor Source: [e.g. Mahabalipuram, India]Primary Moolamantra:"}, {"id": "field_2", "name": "Lord Shiva Shrine", "current_value": "Lord Shiva (Chandeshwar Sannidhi - North Layout)", "fillable_hint": "Form: [  ] Shiva Lingam  [  ] NatarajaSpecific Sacred Day: [e.g. Pradosham, Mondays]Special Abhishekam Offerings: [_________]", "guidance": "Subsidiary sanctum positioned on astronomical coordinates.", "is_missing": false, "needs_action": false, "is_file_field": false, "clean_hint": "Form: \u2022  Shiva Lingam  \u2022  NatarajaSpecific Sacred Day: [e.g. Pradosham, Mondays]Special Abhishekam Offerings:"}, {"id": "field_3", "name": "Goddess Ambal Shrine", "current_value": "Goddess Ambal (Divine Mother / Shakti - Left Flank)", "fillable_hint": "Form: [  ] Durga  [  ] Parvati  [  ] LalithaSpecial Days: [e.g. Fridays, Pournami, Navaratri]Archana Offerings: [Kumkum, Flower garlands]", "guidance": "Dedicated to female divine power and cultural festivals.", "is_missing": false, "needs_action": false, "is_file_field": false, "clean_hint": "Form: \u2022  Durga  \u2022  Parvati  \u2022  LalithaSpecial Days: [e.g. Fridays, Pournami, Navaratri]Archana Offerings: [Kumkum, Flower garlands]"}, {"id": "field_4", "name": "Navagraha Mandapam", "current_value": "Nine Planetary Deities (Elevated Stone Pavilion)", "fillable_hint": "Installation Type: [  ] Traditional Vedic SquareParihara Timings: [Saturdays, Rahu Kalam]Specific Oil Lamps Permitted: [  ] Sesame  [  ] Ghee", "guidance": "Crucial for planetary remedies and astrological rituals.", "is_missing": false, "needs_action": false, "is_file_field": false, "clean_hint": "Installation Type: \u2022  Traditional Vedic SquareParihara Timings: [Saturdays, Rahu Kalam]Specific Oil Lamps Permitted: \u2022  Sesame  \u2022  Ghee"}, {"id": "field_5", "name": "Additional Shrines Planned", "current_value": "Lord Murugan (mentioned in masterplan)", "fillable_hint": "[  ] Lord Murugan / Kartikeya[  ] Sri Hanuman[  ] Sri Venkateswara / Balaji[  ] Sri AyyappaOther: [________________________________]", "guidance": "Future deities to be carved and consecrated in Phase 2/3.", "is_missing": false, "needs_action": false, "is_file_field": false, "clean_hint": "\u2022  Lord Murugan / Kartikeya\u2022  Sri Hanuman\u2022  Sri Venkateswara / Balaji\u2022  Sri AyyappaOther:"}, {"id": "field_6", "name": "Sacred Flagpole & Peedam", "current_value": "Traditional stone carving details", "fillable_hint": "Dhwaja Stambham (Flagpole): [  ] Planned  [  ] Not plannedBali Peedam: [  ] Yes  [  ] NoTulsi Mandapam: [  ] Yes (in garden)", "guidance": "Traditional external temple architecture fixtures.", "is_missing": false, "needs_action": false, "is_file_field": false, "clean_hint": "Dhwaja Stambham (Flagpole): \u2022  Planned  \u2022  Not plannedBali Peedam: \u2022  Yes  \u2022  NoTulsi Mandapam: \u2022  Yes (in garden)"}]}, {"id": "sec_7", "title": "Priest Services, Home Blessings & Booking Workflow", "description": "Catalog of traditional services offered to the community and their booking terms.", "fields": [{"id": "field_1", "name": "Chief Priest / Personnel", "current_value": "General 'Priest Coordinator' listed", "fillable_hint": "Priest Full Name: [_____________________]Vedic Lineage / Veda Patashala: [______]Languages Spoken: [Tamil, Telugu, Hindi, English, Sanskrit]", "guidance": "Builds trust and transparency for devotees booking homams.", "is_missing": false, "needs_action": false, "is_file_field": false, "clean_hint": "Priest Full Name: Vedic Lineage / Veda Patashala: Languages Spoken: [Tamil, Telugu, Hindi, English, Sanskrit]"}, {"id": "field_2", "name": "Priest Booking Coordinator", "current_value": "Simulated booking form", "fillable_hint": "Coordinator Name: [_____________________]Direct Phone / WhatsApp: [_______________]Notification Email: [___________________]", "guidance": "Staff member receiving automatic alerts when a booking is submitted.", "is_missing": false, "needs_action": true, "is_file_field": false, "clean_hint": "Coordinator Name: Direct Phone / WhatsApp: Notification Email:"}, {"id": "field_3", "name": "Temple Archana Rates", "current_value": "Listed as option on form", "fillable_hint": "Suggested Dakshina: [$__________________]Items Included: [  ] Flowers  [  ] Fruits  [  ] Coconut", "guidance": "Brief blessings conducted at the temple altar.", "is_missing": false, "needs_action": false, "is_file_field": false, "clean_hint": "e.g. Suggested Dakshina: $51.00 (Includes coconut, flowers, camphor, prasadam)"}, {"id": "field_4", "name": "Ganapathi Homam / Grihapravesh", "current_value": "Housewarming & new business fire pooja", "fillable_hint": "Attach your file above or type notes here...", "guidance": "The most requested home ceremony for new property buyers.", "is_missing": false, "needs_action": false, "is_file_field": true, "clean_hint": "Enter verified details for ganapathi homam / grihapravesh..."}, {"id": "field_5", "name": "Satyanarayana Vratam", "current_value": "Thanksgiving & family prayer", "fillable_hint": "Suggested Dakshina: [$__________________]Duration: [e.g. 2 Hours]Pooja Samagri provided by priest: [  ] Yes  [  ] No", "guidance": "Popular full-moon (Purnima) family ceremony.", "is_missing": false, "needs_action": false, "is_file_field": false, "clean_hint": "e.g. Suggested Dakshina: $51.00 (Includes coconut, flowers, camphor, prasadam)"}, {"id": "field_6", "name": "Milestone & Baby Blessings", "current_value": "Naming, First Feeding, Anniversaries", "fillable_hint": "Suggested Dakshina: [$__________________]Categories: [Namakarana, Annaprashana, 60th/80th B'day]", "guidance": "Child and elder life-cycle sacraments (Samskaras).", "is_missing": false, "needs_action": false, "is_file_field": false, "clean_hint": "e.g. Suggested Dakshina: $51.00 (Includes coconut, flowers, camphor, prasadam)"}, {"id": "field_7", "name": "Vehicle Blessing (Vahana Pooja)", "current_value": "Not listed on current site", "fillable_hint": "[  ] Available at TempleSuggested Dakshina: [$__________________]Booking Required: [  ] Yes  [  ] Drive-in Walkup", "guidance": "Very high traffic service for new car purchases.", "is_missing": false, "needs_action": false, "is_file_field": false, "clean_hint": "e.g. Suggested Dakshina: $51.00 (Includes coconut, flowers, camphor, prasadam)"}, {"id": "field_8", "name": "Priest Travel Policy", "current_value": "Not specified", "fillable_hint": "Within Ballarat Urban: [Free / Included]Outside Ballarat (25km - 100km): [Add $___ / km]Maximum Travel Radius: [____ km from Ballarat]", "guidance": "Covers fuel/travel time for priests travelling to Geelong, Ararat, etc.", "is_missing": false, "needs_action": false, "is_file_field": true, "clean_hint": "Within Ballarat Urban: [Free / Included]Outside Ballarat (25km - 100km): [Add $ / km]Maximum Travel Radius: [ km from Ballarat]"}, {"id": "field_9", "name": "Booking Notice Period", "current_value": "Instant form submission", "fillable_hint": "Minimum Notice Required: [e.g. 7 Days]Urgent Request Handling: [Call Priest Direct]Online Deposit Required: [  ] Yes ($____)  [  ] Pay on Day", "guidance": "Prevents last-minute double-bookings on auspicious dates.", "is_missing": false, "needs_action": false, "is_file_field": false, "clean_hint": "Minimum Notice Required: [e.g. 7 Days]Urgent Request Handling: [Call Priest Direct]Online Deposit Required: \u2022  Yes ($)  \u2022  Pay on Day"}]}, {"id": "sec_8", "title": "Architecture, Masterplan & Construction Progress", "description": "Engineering specifications, council permits, and construction tracking data.", "fields": [{"id": "field_1", "name": "Total Land Area", "current_value": "5 Acres (110 Vaggs Rd, Ross Creek)", "fillable_hint": "Title Folio: [___________________________]Total Square Metres: [__________________]Zoning Classification: [Rural Living / Special]", "guidance": "Official property title data.", "is_missing": false, "needs_action": false, "is_file_field": false, "clean_hint": "Title Folio: Total Square Metres: Zoning Classification: [Rural Living / Special]"}, {"id": "field_2", "name": "Planning Permit Reference", "current_value": "Golden Plains Shire Council Masterplan approved", "fillable_hint": "Council Permit No: [____________________]Approval Date: [________________________]Conditions of Approval Summary: [_______]", "guidance": "Council permit details build legitimacy and donor confidence.", "is_missing": false, "needs_action": false, "is_file_field": false, "clean_hint": "Council Permit No: Approval Date: Conditions of Approval Summary:"}, {"id": "field_3", "name": "Civil Contractor & Builders", "current_value": "Mr. Ramesh Patel (Civil Engineer / PM)", "fillable_hint": "Principal Builder / Construction Co: [____]Architectural Firm: [___________________]Stonemason Guild (Granite Altars): [____]", "guidance": "Recognizing key engineering and artisan partners on the website.", "is_missing": false, "needs_action": false, "is_file_field": false, "clean_hint": "Principal Builder / Construction Co: Architectural Firm: Stonemason Guild (Granite Altars):"}, {"id": "field_4", "name": "Current Build Progress", "current_value": "45% Completed (Foundation slabs poured)", "fillable_hint": "Current Exact Progress: [____ %]Next Scheduled Milestone: [_____________]Estimated Completion Phase 1: [MM/YYYY]", "guidance": "Drives live progress bars and milestone timeline on website.", "is_missing": false, "needs_action": false, "is_file_field": false, "clean_hint": "Current Exact Progress: [ %]Next Scheduled Milestone: Estimated Completion Phase 1: [MM/YYYY]"}, {"id": "field_5", "name": "Interactive Blueprint Assets", "current_value": "Masterplan (mp-1 to 5), Prayer Hall (ph-1 to 5)", "fillable_hint": "Attach your file above or type notes here...", "guidance": "Used for interactive hotspot map where donors click parts to sponsor.", "is_missing": false, "needs_action": false, "is_file_field": true, "clean_hint": "Attach master vector files (SVG, AI, PDF) or provide instructions..."}]}, {"id": "sec_9", "title": "Capital Fundraising Campaigns, Pillar Sponsorships & Donors", "description": "Detailed breakdown of financial targets, recognition plates, and donor tiers.", "fields": [{"id": "field_1", "name": "Ganesha Temple Target", "current_value": "$500,000 Target ($345,000 Raised on site)", "fillable_hint": "Current Updated Goal: [$________________]Amount Raised to Date: [$_______________]", "guidance": "Dedicated to solid granite sanctum blocks and stone spires.", "is_missing": false, "needs_action": false, "is_file_field": false, "clean_hint": "Current Updated Goal: [$]Amount Raised to Date: [$]"}, {"id": "field_2", "name": "Shiva & Ambal Shrines Target", "current_value": "$250,000 Target ($125,000 Raised on site)", "fillable_hint": "Current Updated Goal: [$________________]Amount Raised to Date: [$_______________]", "guidance": "Dedicated to subsidiary shrines and stone wall carvings.", "is_missing": false, "needs_action": false, "is_file_field": false, "clean_hint": "Current Updated Goal: [$]Amount Raised to Date: [$]"}, {"id": "field_3", "name": "Community Hall & Kitchen Target", "current_value": "$150,000 Target ($82,000 Raised on site)", "fillable_hint": "Current Updated Goal: [$________________]Amount Raised to Date: [$_______________]", "guidance": "To build commercial kitchen, library, classrooms, and park.", "is_missing": false, "needs_action": false, "is_file_field": false, "clean_hint": "Current Updated Goal: [$]Amount Raised to Date: [$]"}, {"id": "field_4", "name": "Pillar Sponsorship Program", "current_value": "Pillar sponsorship recognized with copper plates", "fillable_hint": "Pillar Sponsorship Amount: [$__________]Total Number of Pillars: [e.g. 16 Pillars]Number of Pillars Remaining: [__________]", "guidance": "Prime fundraising vehicle for major donors ($5,000 - $10,000+).", "is_missing": false, "needs_action": false, "is_file_field": false, "clean_hint": "Pillar Sponsorship Amount: [$]Total Number of Pillars: [e.g. 16 Pillars]Number of Pillars Remaining:"}, {"id": "field_5", "name": "Copper Plate Inscription Specs", "current_value": "Custom copper inscription plate in Prayer Hall", "fillable_hint": "Maximum Characters per Plate: [e.g. 60 chars]Lines Allowed: [e.g. 3 Lines]Standard Format: 'Donated by [Family Name], [City]'", "guidance": "Form fields for donor to enter their family inscription at checkout.", "is_missing": false, "needs_action": false, "is_file_field": false, "clean_hint": "Maximum Characters per Plate: [e.g. 60 chars]Lines Allowed: [e.g. 3 Lines]Standard Format: 'Donated by [Family Name], [City]'"}, {"id": "field_6", "name": "Brick / Tile Sponsorship", "current_value": "Not listed on current site", "fillable_hint": "[  ] Enable Engraved Brick CampaignDonation per Brick: [$__________________]Text Limit: [e.g. 2 lines of 16 chars]", "guidance": "Allows everyday devotees to contribute $250 - $500 with their name.", "is_missing": false, "needs_action": false, "is_file_field": false, "clean_hint": "\u2022  Enable Engraved Brick CampaignDonation per Brick: [$]Text Limit: [e.g. 2 lines of 16 chars]"}, {"id": "field_7", "name": "Major Benefactor Wall", "current_value": "Not explicitly listed", "fillable_hint": "Grand Benefactor ($50k+): [  ] YesPatron Sponsor ($25k+): [  ] YesGold Sponsor ($10k+): [  ] Yes", "guidance": "Permanent marble/granite wall of honor at temple entrance.", "is_missing": false, "needs_action": false, "is_file_field": false, "clean_hint": "Grand Benefactor ($50k+): \u2022  YesPatron Sponsor ($25k+): \u2022  YesGold Sponsor ($10k+): \u2022  Yes"}, {"id": "field_8", "name": "Anonymous Giving Option", "current_value": "Checkbox: 'Keep donation anonymous on public lists'", "fillable_hint": "[  ] Keep anonymous checkbox enabledDefault: [  ] Public  [  ] Anonymous", "guidance": "Protects modesty and privacy of donors.", "is_missing": false, "needs_action": false, "is_file_field": false, "clean_hint": "\u2022  Keep anonymous checkbox enabledDefault: \u2022  Public  \u2022  Anonymous"}]}, {"id": "sec_10", "title": "Membership Program, Dues & Devotee Portal", "description": "Configuration of membership tiers, billing cycles, and member rights.", "fields": [{"id": "field_1", "name": "Ordinary Membership Tier", "current_value": "$50.00 AUD / Year", "fillable_hint": "Annual Fee: [$__________________________]Voting Rights: [  ] Yes  [  ] NoRenewable: [  ] Annual Recurring  [  ] Manual", "guidance": "Entry-level voting membership for individual regional adults.", "is_missing": false, "needs_action": false, "is_file_field": false, "clean_hint": "Annual Fee: [$]Voting Rights: \u2022  Yes  \u2022  NoRenewable: \u2022  Annual Recurring  \u2022  Manual"}, {"id": "field_2", "name": "Association Membership Tier", "current_value": "$150.00 AUD / Year", "fillable_hint": "Annual Fee: [$__________________________]Covers: [  ] Immediate Family (2 adults + kids)[  ] Community Association Partner", "guidance": "Family tier offering discounts on workshops and cultural classes.", "is_missing": false, "needs_action": false, "is_file_field": false, "clean_hint": "Annual Fee: [$]Covers: \u2022  Immediate Family (2 adults + kids)\u2022  Community Association Partner"}, {"id": "field_3", "name": "Life Membership Tier", "current_value": "$500.00 AUD (One-Time Payment)", "fillable_hint": "One-Time Fee: [$________________________]Installment Option: [  ] No  [  ] 5x $100Life Certificate Provided: [  ] Yes", "guidance": "Prestigious lifetime status with perpetual AGM voting rights.", "is_missing": false, "needs_action": false, "is_file_field": false, "clean_hint": "One-Time Fee: [$]Installment Option: \u2022  No  \u2022  5x $100Life Certificate Provided: \u2022  Yes"}, {"id": "field_4", "name": "Membership Cycle", "current_value": "Calculated as annual / one-time", "fillable_hint": "[  ] Calendar Year (1 Jan \u2013 31 Dec)[  ] Financial Year (1 Jul \u2013 30 Jun)[  ] Rolling 12 Months from join date", "guidance": "Determines when automated renewal reminder emails are triggered.", "is_missing": false, "needs_action": false, "is_file_field": false, "clean_hint": "\u2022  Calendar Year (1 Jan \u2013 31 Dec)\u2022  Financial Year (1 Jul \u2013 30 Jun)\u2022  Rolling 12 Months from join date"}, {"id": "field_5", "name": "Voting Eligibility Rule", "current_value": "Full voting rights at BHTCC AGMs", "fillable_hint": "Minimum Membership Tenure to Vote: [e.g. 3 Months prior to AGM]Minimum Age to Vote: [18 Years]", "guidance": "Mandatory under Victorian Model Rules for Incorporated Associations.", "is_missing": false, "needs_action": false, "is_file_field": false, "clean_hint": "Minimum Membership Tenure to Vote: [e.g. 3 Months prior to AGM]Minimum Age to Vote: [18 Years]"}, {"id": "field_6", "name": "Devotee Portal Capabilities", "current_value": "Basic simulated card checkout", "fillable_hint": "[  ] Login with Password / Magic Link[  ] Download annual tax receipts[  ] View AGM minutes & voting notices[  ] Update family contact details", "guidance": "Custom portal features for logged-in members.", "is_missing": false, "needs_action": true, "is_file_field": false, "clean_hint": "\u2022  Login with Password / Magic Link\u2022  Download annual tax receipts\u2022  View AGM minutes & voting notices\u2022  Update family contact details"}]}, {"id": "sec_11", "title": "Calendar of Events, Festivals & RSVP / Ticketing System", "description": "Information for scheduling, managing, and ticketing major community festivals.", "fields": [{"id": "field_1", "name": "Ganesh Chaturthi Festival", "current_value": "15 September 2026 (10:00 AM \u2013 8:00 PM)", "fillable_hint": "Current Year Date: [DD/MM/YYYY]Expected Attendees: [e.g. 1,000 - 1,500]Entry Fee: [  ] Free RSVP  [  ] Paid Ticket", "guidance": "Ballarat's signature multicultural festival with chariot procession.", "is_missing": false, "needs_action": false, "is_file_field": false, "clean_hint": "e.g. Date: 15/09/2026, Hours: 10:00 AM \u2013 8:00 PM, Expected Devotees: 1,500"}, {"id": "field_2", "name": "Maha Shivaratri Celebrations", "current_value": "05 March 2026 (6:00 PM \u2013 6:00 AM Overnight)", "fillable_hint": "Attach your file above or type notes here...", "guidance": "Major night festival drawing devotees from Melbourne & regional towns.", "is_missing": false, "needs_action": false, "is_file_field": true, "clean_hint": "Enter verified details for maha shivaratri celebrations..."}, {"id": "field_3", "name": "Diwali / Deepavali Annakut", "current_value": "Not listed in web prototype", "fillable_hint": "Date: [DD/MM/YYYY]Chopra Pooja / Lakshmi Pooja: [  ] YesFireworks / Sparklers Permission: [  ] Yes  [  ] No", "guidance": "Festival of Lights and New Year gathering.", "is_missing": false, "needs_action": false, "is_file_field": false, "clean_hint": "Date: [DD/MM/YYYY]Chopra Pooja / Lakshmi Pooja: \u2022  YesFireworks / Sparklers Permission: \u2022  Yes  \u2022  No"}, {"id": "field_4", "name": "Navaratri & Dussehra", "current_value": "Mentioned in worship text", "fillable_hint": "Dates (9 Nights): [From DD/MM to DD/MM]Daily Golu Display: [  ] YesGarba / Dandiya Night Planned: [  ] Yes", "guidance": "Nine nights of devotional dancing and goddess worship.", "is_missing": false, "needs_action": false, "is_file_field": false, "clean_hint": "e.g. 9 Nights festival dates, Golu setup schedule, Garba/Dandiya timings"}, {"id": "field_5", "name": "RSVP & Capacity Control", "current_value": "Basic simulated ticket counter modal", "fillable_hint": "[  ] Free RSVP with QR code tickets[  ] Limit tickets per booking (Max: ___)[  ] Send automated reminder SMS/Email", "guidance": "Prevents site overcrowding and helps caterer plan Prasadam volumes.", "is_missing": false, "needs_action": true, "is_file_field": false, "clean_hint": "\u2022  Free RSVP with QR code tickets\u2022  Limit tickets per booking (Max: )\u2022  Send automated reminder SMS/Email"}, {"id": "field_6", "name": "Cultural Stage Applications", "current_value": "Not present on site", "fillable_hint": "Attach your file above or type notes here...", "guidance": "Allows local classical dance/music academies to register performances.", "is_missing": false, "needs_action": false, "is_file_field": true, "clean_hint": "Enter verified details for cultural stage applications..."}]}, {"id": "sec_12", "title": "Community Programs, Educational Classes & Welfare Outreach", "description": "Schedules, instructor details, and enrollment workflows for cultural and welfare services.", "fields": [{"id": "field_1", "name": "Saturday Yoga & Meditation", "current_value": "Every Saturday, 8:30 AM \u2013 10:00 AM", "fillable_hint": "Current Timing: [_______________________]Location: [BHTCC Site / Ballarat Hub]Instructor Name & Cert: [_______________]Class Fee: [  ] 100% Free  [  ] Gold Coin Donation", "guidance": "Community health and wellness initiative.", "is_missing": false, "needs_action": false, "is_file_field": false, "clean_hint": "Current Timing: Location: [BHTCC Site / Ballarat Hub]Instructor Name & Cert: Class Fee: \u2022  100% Free  \u2022  Gold Coin Donation"}, {"id": "field_2", "name": "Sunday Language Academy", "current_value": "Every Sunday, 2:00 PM \u2013 4:00 PM", "fillable_hint": "Attach your file above or type notes here...", "guidance": "Preserving linguistic roots and sacred scripture chanting.", "is_missing": false, "needs_action": false, "is_file_field": true, "clean_hint": "Enter verified details for sunday language academy..."}, {"id": "field_3", "name": "Seniors Spiritual Gathering", "current_value": "Fortnightly Wednesdays, 11:00 AM \u2013 1:00 PM", "fillable_hint": "Timing: [_______________________________]Transport Assistance Available: [  ] Yes  [  ] NoHot Vegetarian Lunch Provided: [  ] Yes", "guidance": "Vital social engagement program preventing elderly isolation.", "is_missing": false, "needs_action": false, "is_file_field": false, "clean_hint": "Timing: Transport Assistance Available: \u2022  Yes  \u2022  NoHot Vegetarian Lunch Provided: \u2022  Yes"}, {"id": "field_4", "name": "Welfare & Food Relief Drives", "current_value": "Monthly special campaigns", "fillable_hint": "Partner Charities: [e.g. Ballarat SoupBus, Salvos]Accepted Goods: [Dry pantry rations, blankets, winter wear]Collection Drop-off Point: [110 Vaggs Rd]", "guidance": "Demonstrates public benefit and multicultural civic support.", "is_missing": false, "needs_action": false, "is_file_field": false, "clean_hint": "Partner Charities: [e.g. Ballarat SoupBus, Salvos]Accepted Goods: [Dry pantry rations, blankets, winter wear]Collection Drop-off Point: [110 Vaggs Rd]"}, {"id": "field_5", "name": "Online Student Enrollment", "current_value": "Name, Email, Phone, Program selector", "fillable_hint": "[  ] Require Parent / Guardian Details[  ] Medical / Allergy Disclosures[  ] Student Photo Release Permission", "guidance": "Ensures compliance with duty of care and child protection.", "is_missing": false, "needs_action": false, "is_file_field": false, "clean_hint": "\u2022  Require Parent / Guardian Details\u2022  Medical / Allergy Disclosures\u2022  Student Photo Release Permission"}]}, {"id": "sec_13", "title": "Volunteer Management, Roles & WWCC Compliance", "description": "Framework for recruiting, coordinating, and legally vetting community volunteers.", "fields": [{"id": "field_1", "name": "Volunteer Streams", "current_value": "7 areas listed on existing website", "fillable_hint": "[  ] Festivals & Events Coordination[  ] Temple Operations & Priest Support[  ] Facility Maintenance & Trades[  ] Landscaping & Gardens[  ] Cultural Teaching & Language[  ] IT, Audio-Visual & Photography[  ] Fundraising & Grant Writing", "guidance": "Volunteers select their preferred functional areas on signup.", "is_missing": false, "needs_action": false, "is_file_field": false, "clean_hint": "\u2022  Festivals & Events Coordination\u2022  Temple Operations & Priest Support\u2022  Facility Maintenance & Trades\u2022  Landscaping & Gardens\u2022  Cultural Teaching & Language\u2022  IT, Audio-Visual & Photography\u2022  Fundraising & Grant Writing"}, {"id": "field_2", "name": "Working with Children Check", "current_value": "Mandatory compliance stated on site", "fillable_hint": "Attach your file above or type notes here...", "guidance": "Mandatory under Victorian Child Safe Standards for all active roles.", "is_missing": false, "needs_action": false, "is_file_field": true, "clean_hint": "Enter verified details for working with children check..."}, {"id": "field_3", "name": "Volunteer Shift Availability", "current_value": "Weekends, Weekdays, Flexible, Festivals", "fillable_hint": "[  ] Match existing site optionsCustom Options: [_______________________]", "guidance": "Helps event coordinators filter rosters for working bees and festivals.", "is_missing": false, "needs_action": false, "is_file_field": false, "clean_hint": "\u2022  Match existing site optionsCustom Options:"}, {"id": "field_4", "name": "Volunteer Code of Conduct", "current_value": "PDF download referenced", "fillable_hint": "Digital Sign-off Checkbox Required: [  ] YesEmergency Contact Field Required: [  ] Yes", "guidance": "Ensures all volunteers commit to safety, respect, and zero harassment.", "is_missing": false, "needs_action": false, "is_file_field": false, "clean_hint": "Digital Sign-off Checkbox Required: \u2022  YesEmergency Contact Field Required: \u2022  Yes"}]}, {"id": "sec_14", "title": "Committee Members, Key Personnel & Role-Based Access Control", "description": "Board profiles for website publication and system access permissions.", "fields": [{"id": "field_1", "name": "Dr. Harish Kumar (President)", "current_value": "Healthcare Administration", "fillable_hint": "Attach your file above or type notes here...", "guidance": "President profile for About Us and Governance pages.", "is_missing": false, "needs_action": false, "is_file_field": true, "clean_hint": "Enter verified details for dr. harish kumar (president)..."}, {"id": "field_2", "name": "Mrs. Priya Rajan (Secretary)", "current_value": "Secondary Education / Language Coordinator", "fillable_hint": "Attach your file above or type notes here...", "guidance": "Secretary profile and community liaison.", "is_missing": false, "needs_action": false, "is_file_field": true, "clean_hint": "Enter verified details for mrs. priya rajan (secretary)..."}, {"id": "field_3", "name": "Mr. Satish Nair (Treasurer)", "current_value": "Chartered Accountant / Financial Governance", "fillable_hint": "Attach your file above or type notes here...", "guidance": "Treasurer profile ensuring financial accountability.", "is_missing": false, "needs_action": false, "is_file_field": true, "clean_hint": "Enter verified details for mr. satish nair (treasurer)..."}, {"id": "field_4", "name": "Mr. Ramesh Patel (Project Mgr)", "current_value": "Civil Engineer / Construction Liaison", "fillable_hint": "Attach your file above or type notes here...", "guidance": "Project manager overseeing on-site civil progress.", "is_missing": false, "needs_action": false, "is_file_field": true, "clean_hint": "Enter verified details for mr. ramesh patel (project mgr)..."}, {"id": "field_5", "name": "Additional Board Members", "current_value": "Not listed on current site", "fillable_hint": "Name & Role 1: [________________________]Name & Role 2: [________________________]Name & Role 3: [________________________]", "guidance": "Complete list of all committee members and trustees.", "is_missing": false, "needs_action": false, "is_file_field": false, "clean_hint": "Name & Role 1: Name & Role 2: Name & Role 3:"}]}, {"id": "sec_16", "title": "SEO, Google Business, Analytics & Social Media", "description": "Visibility and digital marketing infrastructure (Not present on prototype site).", "fields": [{"id": "field_1", "name": "Google Maps Listing", "current_value": "Raw link to query: 110 Vaggs Rd", "fillable_hint": "Google Business Profile Claimed: [  ] Yes  [  ] NoExact Google Maps CID / Place ID: [______]Google Reviews Widget Embed: [  ] Yes", "guidance": "Claiming Google Business Profile allows direct directions and reviews.", "is_missing": false, "needs_action": false, "is_file_field": false, "clean_hint": "Google Business Profile Claimed: \u2022  Yes  \u2022  NoExact Google Maps CID / Place ID: Google Reviews Widget Embed: \u2022  Yes"}, {"id": "field_4", "name": "Social Media Links", "current_value": "Generic footer links", "fillable_hint": "Facebook Page: [________________________]Instagram Profile: [____________________]YouTube Channel (Live Poojas): [________]WhatsApp Community Group: [_____________]", "guidance": "Direct links embedded in header, footer, and event RSVP pages.", "is_missing": false, "needs_action": false, "is_file_field": false, "clean_hint": "Facebook Page: Instagram Profile: YouTube Channel (Live Poojas): WhatsApp Community Group:"}]}, {"id": "sec_17", "title": "Legal Compliance, Policies & Statutory Downloads", "description": "Formal documents required for governance and regulatory compliance.", "fields": [{"id": "field_1", "name": "BHTCC Model Constitution", "current_value": "bhtcc-constitution.pdf (15 Aug 2016)", "fillable_hint": "Attach your file above or type notes here...", "guidance": "Mandatory download on Governance page under Victorian law.", "is_missing": false, "needs_action": false, "is_file_field": true, "clean_hint": "Enter verified details for bhtcc model constitution..."}, {"id": "field_2", "name": "Child Safety Standards Policy", "current_value": "child-safety-policy.pdf (01 Oct 2025)", "fillable_hint": "Attach your file above or type notes here...", "guidance": "Demonstrates mandatory compliance with Victoria's 11 Child Safe Standards.", "is_missing": false, "needs_action": false, "is_file_field": true, "clean_hint": "Enter verified details for child safety standards policy..."}, {"id": "field_3", "name": "Volunteer Code of Conduct", "current_value": "volunteer-code-of-conduct.pdf (10 Jan 2026)", "fillable_hint": "Attach your file above or type notes here...", "guidance": "Signed by all active volunteers upon registration.", "is_missing": false, "needs_action": false, "is_file_field": true, "clean_hint": "Enter verified details for volunteer code of conduct..."}, {"id": "field_4", "name": "Audited Financial Report", "current_value": "financial-report-2025.pdf (31 Dec 2025)", "fillable_hint": "Attach your file above or type notes here...", "guidance": "Builds immense trust with donors and government grant auditors.", "is_missing": false, "needs_action": false, "is_file_field": true, "clean_hint": "Enter verified details for audited financial report..."}, {"id": "field_5", "name": "Privacy Policy Document", "current_value": "Points to governance page placeholder", "fillable_hint": "Attach your file above or type notes here...", "guidance": "Required by Australian law for collecting personal/credit card details.", "is_missing": false, "needs_action": true, "is_file_field": true, "clean_hint": "Enter verified details for privacy policy document..."}, {"id": "field_6", "name": "Terms of Website Use", "current_value": "Points to governance page placeholder", "fillable_hint": "[  ] Custom Terms of Use attached[  ] Use standard Australian NFP template", "guidance": "Protects temple against liability and misuse of site materials.", "is_missing": false, "needs_action": true, "is_file_field": false, "clean_hint": "\u2022  Custom Terms of Use attached\u2022  Use standard Australian NFP template"}, {"id": "field_7", "name": "Acknowledgement of Country", "current_value": "Not displayed on existing site", "fillable_hint": "[  ] Display Wadawurrung Traditional Owners acknowledgement in site footerCustom Wording: [_______________________]", "guidance": "Crucial civic respect for Traditional Custodians across regional Victoria.", "is_missing": false, "needs_action": false, "is_file_field": false, "clean_hint": "\u2022  Display Wadawurrung Traditional Owners acknowledgement in site footerCustom Wording:"}]}];
+    const CATEGORIES = [{"id": "cat_all", "name": "All Items", "filter": "all"}, {"id": "cat_action", "name": "Action Required (15)", "filter": "action"}, {"id": "cat_identity", "name": "1. Legal Profile & Identity", "sections": [0, 1]}, {"id": "cat_finance", "name": "2. Banking & Donations", "sections": [2, 7]}, {"id": "cat_worship", "name": "3. Shrines & Daily Timings", "sections": [3, 4]}, {"id": "cat_priests", "name": "4. Priest Services", "sections": [5]}, {"id": "cat_campus", "name": "5. Campus & Facilities", "sections": [6]}, {"id": "cat_events", "name": "6. Festivals & Programs", "sections": [8, 9, 10, 11]}, {"id": "cat_board", "name": "7. Committee & Governance", "sections": [12, 13, 14]}, {"id": "cat_booth", "name": "Document & Media Repository", "filter": "booth"}];
 
-    // Application State Management (persisted in localStorage)
-    const STORAGE_KEY = "bhtcc_intake_responses_v1";
-    const ASSETS_KEY = "bhtcc_intake_assets_v1";
+    const STORAGE_KEY = "bhtcc_intake_responses_v7";
 
-    let userState = {
+    let state = {
+      viewMode: "queue",
+      activeFilter: "all",
+      submittedFilter: "all",
+      openSectionTrays: {},
       responses: {},
-      assets: []
+      fieldFiles: {},
+      uploadedAssets: []
     };
 
-    // Load from localStorage
-    function loadSavedState() {
-      try {
-        const saved = localStorage.getItem(STORAGE_KEY);
-        if (saved) {
-          userState.responses = JSON.parse(saved);
-        }
-        const savedAssets = localStorage.getItem(ASSETS_KEY);
-        if (savedAssets) {
-          userState.assets = JSON.parse(savedAssets);
-        }
-      } catch (e) {
-        console.warn("Could not load localStorage state", e);
+    // Load Local State
+    try {
+      const saved = localStorage.getItem(STORAGE_KEY);
+      if (saved) {
+        const parsed = JSON.parse(saved);
+        state.responses = parsed.responses || {};
+        state.fieldFiles = parsed.fieldFiles || {};
+        state.uploadedAssets = parsed.uploadedAssets || [];
       }
+    } catch (e) {
+      console.warn("Storage load error:", e);
     }
 
     function saveState() {
       try {
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(userState.responses));
-        localStorage.setItem(ASSETS_KEY, JSON.stringify(userState.assets));
-        const statusEl = document.getElementById("save-status");
-        if (statusEl) {
-          statusEl.textContent = "Saved at " + new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit', second:'2-digit'});
-        }
+        localStorage.setItem(STORAGE_KEY, JSON.stringify({
+          responses: state.responses,
+          fieldFiles: state.fieldFiles,
+          uploadedAssets: state.uploadedAssets
+        }));
+        const now = new Date();
+        const timeStr = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+        document.getElementById("save-status").textContent = `Saved locally at ${timeStr}`;
       } catch (e) {
-        console.warn("Could not save to localStorage", e);
+        console.warn("Storage save error:", e);
       }
-      updateStats();
     }
 
     function showToast(msg) {
-      const toast = document.getElementById("toast");
-      toast.textContent = msg;
-      toast.style.display = "block";
-      setTimeout(() => { toast.style.display = "none"; }, 3000);
+      const t = document.getElementById("toast");
+      t.textContent = msg;
+      t.style.display = "block";
+      setTimeout(() => { t.style.display = "none"; }, 2400);
     }
 
-    // Render Questionnaire
-    function renderApp() {
+    // Switch View (Pending Review vs Verified & Submitted)
+    function switchViewMode(mode) {
+      state.viewMode = mode;
+      
+      const tabQueue = document.getElementById("tab-mode-queue");
+      const tabSubmitted = document.getElementById("tab-mode-submitted");
+      const categoryNav = document.getElementById("category-nav-wrap");
+      const mainContent = document.getElementById("main-content");
+      const submittedView = document.getElementById("submitted-view");
+      const photosSection = document.getElementById("section-photos");
+
+      if (mode === "queue") {
+        tabQueue.classList.add("active");
+        tabSubmitted.classList.remove("active");
+        categoryNav.style.display = "block";
+        mainContent.style.display = "flex";
+        submittedView.style.display = "none";
+        photosSection.style.display = "block";
+        renderContent();
+      } else {
+        tabQueue.classList.remove("active");
+        tabSubmitted.classList.add("active");
+        categoryNav.style.display = "none";
+        mainContent.style.display = "none";
+        submittedView.style.display = "flex";
+        photosSection.style.display = "none";
+        renderSubmittedCockpit();
+      }
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      updateStats();
+    }
+
+    function setSubmittedFilter(f) {
+      state.submittedFilter = f;
+      document.querySelectorAll(".sub-filter-pill").forEach(btn => btn.classList.remove("active"));
+      const activeBtn = document.getElementById(`sub-filter-${f}`);
+      if (activeBtn) activeBtn.classList.add("active");
+      renderSubmittedCockpit();
+    }
+
+    function renderPills() {
+      const wrap = document.getElementById("category-pills");
+      wrap.innerHTML = "";
+
+      CATEGORIES.forEach(cat => {
+        const btn = document.createElement("button");
+        btn.className = `filter-pill ${cat.filter === 'action' ? 'action-pill' : ''} ${state.activeFilter === (cat.filter || cat.id) ? 'active' : ''}`;
+        btn.textContent = cat.name;
+        btn.onclick = () => {
+          document.querySelectorAll('.filter-pill').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          state.activeFilter = cat.filter || cat.id;
+
+          if (cat.filter === 'booth') {
+            document.getElementById('section-photos').scrollIntoView({ behavior: 'smooth' });
+            return;
+          }
+
+          renderContent();
+        };
+        wrap.appendChild(btn);
+      });
+    }
+
+    // Render Review Queue
+    function renderContent() {
       const main = document.getElementById("main-content");
-      const jumper = document.getElementById("section-jumper");
       main.innerHTML = "";
-      jumper.innerHTML = '<option value="">Jump to Section...</option>';
+
+      const activeCat = CATEGORIES.find(c => (c.filter || c.id) === state.activeFilter) || CATEGORIES[0];
+      let visibleSectionCount = 0;
 
       RAW_SECTIONS.forEach((sec, sIdx) => {
-        // Option for jumper
-        const opt = document.createElement("option");
-        opt.value = "sec-" + sIdx;
-        opt.textContent = sec.title.replace(/^Section \d+:\s*/, '');
-        jumper.appendChild(opt);
+        if (activeCat.sections && !activeCat.sections.includes(sIdx)) {
+          return;
+        }
 
-        // Section block
-        const secEl = document.createElement("section");
-        secEl.className = "section-block";
-        secEl.id = "sec-" + sIdx;
-
-        const headerEl = document.createElement("div");
-        headerEl.className = "section-header";
-        headerEl.innerHTML = `
-          <div class="section-title-wrap">
-            <h2>${sec.title}</h2>
-            <p class="section-desc">${sec.description || 'Verified requirements and operational parameters'}</p>
-          </div>
-          <div class="section-batch-actions">
-            <button class="btn-batch" onclick="confirmAllInSection(${sIdx})">✓ Confirm All In Section</button>
-          </div>
-        `;
-        secEl.appendChild(headerEl);
-
-        const gridEl = document.createElement("div");
-        gridEl.className = "fields-grid";
+        let pendingFields = [];
+        let submittedFields = [];
 
         sec.fields.forEach((f, fIdx) => {
           const fieldKey = `${sIdx}_${fIdx}`;
-          const currentResp = userState.responses[fieldKey] || {};
-          const isConfirmed = currentResp.status === 'confirmed';
-          const isEdited = currentResp.status === 'edited';
-          const needsAction = f.needs_action;
+          const resp = state.responses[fieldKey] || {};
+          const isSubmitted = resp.status === 'approved' || resp.status === 'submitted';
 
-          const card = document.createElement("div");
-          card.className = `field-card ${isConfirmed ? 'confirmed' : ''} ${needsAction ? 'needs-action' : ''}`;
-          card.id = `card-${fieldKey}`;
-          card.dataset.fieldKey = fieldKey;
-          card.dataset.needsAction = needsAction ? "true" : "false";
-          card.dataset.status = currentResp.status || (needsAction ? "action" : "unconfirmed");
+          if (isSubmitted) {
+            submittedFields.push({ f, fIdx, resp });
+          } else {
+            if (state.activeFilter === "action") {
+              if (f.needs_action) {
+                pendingFields.push({ f, fIdx });
+              }
+            } else {
+              pendingFields.push({ f, fIdx });
+            }
+          }
+        });
 
-          card.innerHTML = `
-            <div class="card-top">
-              <span class="field-name">${f.name}</span>
-              <span class="status-badge ${needsAction ? 'action' : 'verified'}">
-                ${needsAction ? 'Action Required' : 'Verified Fact'}
-              </span>
+        if (pendingFields.length === 0 && submittedFields.length === 0) {
+          return;
+        }
+
+        visibleSectionCount++;
+
+        const secEl = document.createElement("section");
+        secEl.className = "section-card";
+        secEl.id = `sec-${sIdx}`;
+
+        secEl.innerHTML = `
+          <div class="section-header">
+            <div>
+              <div class="section-title">${sec.title}</div>
+              <div class="section-meta">${pendingFields.length} pending review • ${submittedFields.length} verified</div>
             </div>
-
-            <div class="finding-box">
-              <span class="finding-label">${needsAction ? 'Status on Current Staging' : 'Scraped & Official Record'}</span>
-              <div class="finding-value">${escapeHtml(f.current_value)}</div>
-              ${f.guidance ? `<div class="finding-guidance">${escapeHtml(f.guidance)}</div>` : ''}
-            </div>
-
-            <div class="toggle-row">
-              <button class="btn-toggle btn-confirm ${isConfirmed ? 'active' : ''}" onclick="toggleConfirm('${fieldKey}')">
-                ✓ Confirm Correct
+            ${pendingFields.length > 0 ? `<button class="btn-verify-all" onclick="approveAllInSection(${sIdx})">✓ Confirm Remaining</button>` : ''}
+          </div>
+          <div class="fields-list" id="fields-list-${sIdx}"></div>
+          
+          <!-- In-Section Verified Sub-tray -->
+          ${submittedFields.length > 0 ? `
+            <div class="section-verified-tray">
+              <button type="button" class="tray-btn" onclick="toggleSectionTray(${sIdx})">
+                <span>Verified in this section (${submittedFields.length})</span>
+                <span>${state.openSectionTrays[sIdx] ? 'Hide ▲' : 'View Verified ▼'}</span>
               </button>
-              <button class="btn-toggle btn-edit ${isEdited ? 'active' : ''}" onclick="toggleEdit('${fieldKey}')">
-                ✎ Update / Edit
+              <div class="tray-list" id="tray-list-${sIdx}" style="display:${state.openSectionTrays[sIdx] ? 'flex' : 'none'};">
+                ${submittedFields.map(({ f, fIdx, resp }) => {
+                  const fieldKey = `${sIdx}_${fIdx}`;
+                  const attachedFile = state.fieldFiles[fieldKey];
+                  return `
+                    <div class="tray-row">
+                      <div>
+                        <div class="tray-row-title">
+                          ✓ ${escapeHtml(f.name)}
+                          ${resp.isEdited ? '<span style="font-size:0.68rem; color:#b45309; font-weight:700; margin-left:4px;">(Edited)</span>' : ''}
+                          ${attachedFile ? `<span style="font-size:0.68rem; color:#1d4ed8; font-weight:700; margin-left:4px;">(Attached: ${escapeHtml(attachedFile.name)})</span>` : ''}
+                        </div>
+                        <div class="tray-row-val">${escapeHtml(resp.customValue || f.current_value)}</div>
+                      </div>
+                      <button type="button" class="btn-reopen-pill" onclick="reopenQuestion('${fieldKey}')">Reopen</button>
+                    </div>
+                  `;
+                }).join('')}
+              </div>
+            </div>
+          ` : ''}
+        `;
+
+        const listEl = secEl.querySelector(".fields-list");
+
+        pendingFields.forEach(({ f, fIdx }) => {
+          const fieldKey = `${sIdx}_${fIdx}`;
+          const resp = state.responses[fieldKey] || {};
+          const isEdited = resp.isEdited || false;
+          const needsInput = f.needs_action;
+          const isFileField = f.is_file_field;
+          const attachedFile = state.fieldFiles[fieldKey];
+
+          const row = document.createElement("div");
+          row.className = "field-item";
+          row.id = `row-${fieldKey}`;
+
+          row.innerHTML = `
+            <div class="field-top">
+              <span class="field-heading">${f.name}</span>
+              ${needsInput ? `<span class="status-badge badge-needed">Action Required</span>` : ''}
+            </div>
+
+            <div class="record-box">
+              <span class="record-label">Scraped & Documented Record</span>
+              <div class="record-text">${escapeHtml(resp.customValue || f.current_value)}</div>
+              ${f.guidance ? `<div class="record-guidance">${escapeHtml(f.guidance)}</div>` : ''}
+            </div>
+
+            <!-- In-Card File Attachment Component -->
+            ${isFileField ? `
+              <div class="card-attachment-zone">
+                <input type="file" id="file-input-${fieldKey}" style="display:none;" onchange="handleFieldFileUpload('${fieldKey}', this.files)">
+                <div class="attachment-zone-head">
+                  <span class="attachment-zone-title">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg>
+                    Required Asset / Master Document:
+                  </span>
+                  <button type="button" class="btn-select-file" onclick="document.getElementById('file-input-${fieldKey}').click()">
+                    ${attachedFile ? 'Change File' : 'Attach File'}
+                  </button>
+                </div>
+                ${attachedFile ? `
+                  <div class="file-pill">
+                    <div class="file-pill-details">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><polyline points="13 2 13 9 20 9"/></svg>
+                      <span>${escapeHtml(attachedFile.name)}</span>
+                      <span style="font-weight:400; opacity:0.8;">(${attachedFile.size})</span>
+                    </div>
+                    <button type="button" class="btn-file-delete" onclick="removeFieldFile('${fieldKey}')">Remove</button>
+                  </div>
+                ` : `<span style="font-size:0.74rem; color:var(--text-muted);">Accepts SVG, PDF, PNG, JPG, AI, EPS • Stored permanently</span>`}
+              </div>
+            ` : ''}
+
+            <div class="field-action-bar">
+              <button class="btn-confirm-as-is" onclick="confirmAndAdvance('${fieldKey}')">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Confirm Details
+              </button>
+              <button class="btn-edit-trigger" onclick="toggleEditBox('${fieldKey}')">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+                Suggest Edit / Notes
               </button>
             </div>
 
-            <div class="edit-area ${isEdited || (needsAction && !isConfirmed) ? 'open' : ''}" id="edit-area-${fieldKey}">
-              <label>CLIENT SPECIFIED VALUE / CORRECTION:</label>
-              <input type="text" class="edit-input" id="input-${fieldKey}" 
-                value="${escapeHtml(currentResp.customValue || '')}" 
-                placeholder="${escapeHtml(f.fillable_hint || 'Enter updated value or instructions...')}"
-                oninput="onInputChange('${fieldKey}', this.value)">
+            <!-- Expandable Edit Box with Natural Clean Textarea -->
+            <div class="edit-drawer ${isEdited || (needsInput && !resp.customValue && !isFileField) ? 'open' : ''}" id="edit-box-${fieldKey}">
+              <span class="edit-drawer-title">Provide Updated Information or Instructions:</span>
+              <textarea class="edit-textarea" id="input-${fieldKey}"
+                placeholder="${escapeHtml(f.clean_hint)}"
+                oninput="onInputChange('${fieldKey}', this.value)">${escapeHtml(resp.customValue || '')}</textarea>
+              
+              ${!isFileField ? `
+                <div style="margin-top:2px;">
+                  <input type="file" id="inline-file-${fieldKey}" style="display:none;" onchange="handleFieldFileUpload('${fieldKey}', this.files)">
+                  <button type="button" class="btn-select-file" onclick="document.getElementById('inline-file-${fieldKey}').click()">
+                    ${attachedFile ? 'Change Attached File' : 'Attach Document or Image (Optional)'}
+                  </button>
+                  ${attachedFile ? `
+                    <div class="file-pill" style="margin-top:6px;">
+                      <div class="file-pill-details">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><polyline points="13 2 13 9 20 9"/></svg>
+                        <span>${escapeHtml(attachedFile.name)}</span>
+                        <span style="font-weight:400; opacity:0.8;">(${attachedFile.size})</span>
+                      </div>
+                      <button type="button" class="btn-file-delete" onclick="removeFieldFile('${fieldKey}')">Remove</button>
+                    </div>
+                  ` : ''}
+                </div>
+              ` : ''}
+
+              <div class="drawer-actions">
+                <button class="btn-save-drawer" onclick="submitCustomEdit('${fieldKey}')">Save & Mark Verified</button>
+                <button class="btn-cancel-drawer" onclick="toggleEditBox('${fieldKey}')">Close</button>
+              </div>
             </div>
           `;
 
-          gridEl.appendChild(card);
+          listEl.appendChild(row);
         });
 
-        secEl.appendChild(gridEl);
         main.appendChild(secEl);
       });
 
-      // Populate jumper event
-      jumper.addEventListener("change", (e) => {
-        if (e.target.value) {
-          const el = document.getElementById(e.target.value);
-          if (el) {
-            el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      if (visibleSectionCount === 0) {
+        main.innerHTML = `
+          <div style="background:#fff; border:1px solid var(--border); border-radius:var(--radius-lg); padding:40px 20px; text-align:center;">
+            <h3 style="font-size:1.1rem; color:var(--text-main); margin-bottom:6px;">All items in this section have been verified</h3>
+            <p style="font-size:0.82rem; color:var(--text-muted); margin-bottom:16px;">All confirmed items are preserved in the Verified & Submitted section.</p>
+            <div style="display:flex; justify-content:center; gap:10px;">
+              <button class="filter-pill active" onclick="switchViewMode('submitted')">View Verified Section</button>
+              <button class="filter-pill" onclick="switchCategory('all')">View All Items</button>
+            </div>
+          </div>
+        `;
+      }
+
+      updateStats();
+    }
+
+    function toggleSectionTray(sIdx) {
+      state.openSectionTrays[sIdx] = !state.openSectionTrays[sIdx];
+      renderContent();
+    }
+
+    // Render Master Verified Section (Tab 2)
+    function renderSubmittedCockpit() {
+      const listEl = document.getElementById("submitted-cards-list");
+      listEl.innerHTML = "";
+
+      let allSubmitted = [];
+
+      RAW_SECTIONS.forEach((sec, sIdx) => {
+        sec.fields.forEach((f, fIdx) => {
+          const fieldKey = `${sIdx}_${fIdx}`;
+          const resp = state.responses[fieldKey] || {};
+          const isSubmitted = resp.status === 'approved' || resp.status === 'submitted';
+
+          if (isSubmitted) {
+            const attachedFile = state.fieldFiles[fieldKey];
+            allSubmitted.push({
+              sec,
+              sIdx,
+              f,
+              fIdx,
+              fieldKey,
+              resp,
+              attachedFile
+            });
           }
-        }
+        });
       });
 
-      renderAssets();
-      updateStats();
+      const confirmedCount = allSubmitted.filter(i => !i.resp.isEdited).length;
+      const editedCount = allSubmitted.filter(i => i.resp.isEdited).length;
+      const filesCount = allSubmitted.filter(i => !!i.attachedFile).length;
+
+      document.getElementById("count-sub-all").textContent = allSubmitted.length;
+      document.getElementById("count-sub-confirmed").textContent = confirmedCount;
+      document.getElementById("count-sub-edited").textContent = editedCount;
+      document.getElementById("count-sub-files").textContent = filesCount;
+
+      let filtered = allSubmitted;
+      if (state.submittedFilter === 'confirmed') {
+        filtered = allSubmitted.filter(i => !i.resp.isEdited);
+      } else if (state.submittedFilter === 'edited') {
+        filtered = allSubmitted.filter(i => i.resp.isEdited);
+      } else if (state.submittedFilter === 'files') {
+        filtered = allSubmitted.filter(i => !!i.attachedFile);
+      }
+
+      if (filtered.length === 0) {
+        listEl.innerHTML = `
+          <div style="background:#fff; border:1px solid var(--border); border-radius:var(--radius-lg); padding:36px 20px; text-align:center;">
+            <h4 style="font-size:0.95rem; color:var(--text-main); margin-bottom:4px;">No verified records found in this view</h4>
+            <p style="font-size:0.8rem; color:var(--text-muted); margin-bottom:14px;">As questions are confirmed or edited in the review queue, they appear here.</p>
+            <button class="filter-pill active" onclick="switchViewMode('queue')">← Back to Review Queue</button>
+          </div>
+        `;
+        return;
+      }
+
+      filtered.forEach(({ sec, f, fieldKey, resp, attachedFile }) => {
+        const card = document.createElement("div");
+        card.className = "verified-card";
+        card.id = `submitted-card-${fieldKey}`;
+
+        const isEdited = resp.isEdited || false;
+        const displayVal = resp.customValue || f.current_value;
+
+        card.innerHTML = `
+          <div class="verified-card-top">
+            <div>
+              <span class="card-category-tag">${escapeHtml(sec.title)}</span>
+              <h3 class="card-title-text">${escapeHtml(f.name)}</h3>
+            </div>
+            <div class="card-tags">
+              ${isEdited ? `<span class="tag-amber">Custom Feedback</span>` : `<span class="tag-green">Confirmed Record</span>`}
+              ${attachedFile ? `<span class="tag-blue">Asset Attached</span>` : ''}
+            </div>
+          </div>
+
+          <div class="verified-card-body">
+            <span class="body-tag-label">Approved Value for Website</span>
+            <div class="body-approved-val">${escapeHtml(displayVal)}</div>
+            ${attachedFile ? `
+              <div class="file-pill" style="margin-top:6px;">
+                <div class="file-pill-details">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><polyline points="13 2 13 9 20 9"/></svg>
+                  <span>${escapeHtml(attachedFile.name)}</span>
+                  <span style="font-weight:400; opacity:0.8;">(${attachedFile.size})</span>
+                </div>
+              </div>
+            ` : ''}
+          </div>
+
+          <div class="verified-card-foot">
+            <span class="foot-time">Verified: ${resp.submittedAt || 'Current Session'}</span>
+            <button class="btn-return-review" onclick="reopenQuestion('${fieldKey}')">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+              Reopen for Revision
+            </button>
+          </div>
+        `;
+
+        listEl.appendChild(card);
+      });
+    }
+
+    function switchCategory(catId) {
+      state.activeFilter = catId;
+      renderPills();
+      renderContent();
     }
 
     function escapeHtml(str) {
@@ -1132,394 +1856,307 @@
         .replace(/"/g, '&quot;');
     }
 
-    // Toggle Confirm
-    function toggleConfirm(fieldKey) {
-      const card = document.getElementById(`card-${fieldKey}`);
-      const editArea = document.getElementById(`edit-area-${fieldKey}`);
-      const btnConfirm = card.querySelector('.btn-confirm');
-      const btnEdit = card.querySelector('.btn-edit');
-
-      if (!userState.responses[fieldKey]) userState.responses[fieldKey] = {};
-
-      if (userState.responses[fieldKey].status === 'confirmed') {
-        delete userState.responses[fieldKey].status;
-        card.classList.remove('confirmed');
-        btnConfirm.classList.remove('active');
-        card.dataset.status = card.dataset.needsAction === 'true' ? 'action' : 'unconfirmed';
-      } else {
-        userState.responses[fieldKey].status = 'confirmed';
-        card.classList.add('confirmed');
-        card.dataset.status = 'confirmed';
-        btnConfirm.classList.add('active');
-        btnEdit.classList.remove('active');
-        editArea.classList.remove('open');
-      }
-      saveState();
+    // Attach File
+    function handleFieldFileUpload(fieldKey, files) {
+      if (!files || files.length === 0) return;
+      const file = files[0];
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        state.fieldFiles[fieldKey] = {
+          name: file.name,
+          size: (file.size / (1024 * 1024)).toFixed(2) + ' MB',
+          type: file.type,
+          dataUrl: e.target.result
+        };
+        saveState();
+        if (state.viewMode === 'queue') {
+          renderContent();
+        } else {
+          renderSubmittedCockpit();
+        }
+        showToast(`Attached: ${file.name}`);
+      };
+      reader.readAsDataURL(file);
     }
 
-    // Toggle Edit
-    function toggleEdit(fieldKey) {
-      const card = document.getElementById(`card-${fieldKey}`);
-      const editArea = document.getElementById(`edit-area-${fieldKey}`);
-      const input = document.getElementById(`input-${fieldKey}`);
-      const btnConfirm = card.querySelector('.btn-confirm');
-      const btnEdit = card.querySelector('.btn-edit');
-
-      if (!userState.responses[fieldKey]) userState.responses[fieldKey] = {};
-
-      if (userState.responses[fieldKey].status === 'edited') {
-        delete userState.responses[fieldKey].status;
-        card.classList.remove('confirmed');
-        btnEdit.classList.remove('active');
-        editArea.classList.remove('open');
-        card.dataset.status = card.dataset.needsAction === 'true' ? 'action' : 'unconfirmed';
-      } else {
-        userState.responses[fieldKey].status = 'edited';
-        card.classList.remove('confirmed');
-        card.dataset.status = 'edited';
-        btnEdit.classList.add('active');
-        btnConfirm.classList.remove('active');
-        editArea.classList.add('open');
-        setTimeout(() => input.focus(), 50);
-      }
+    function removeFieldFile(fieldKey) {
+      delete state.fieldFiles[fieldKey];
       saveState();
+      if (state.viewMode === 'queue') {
+        renderContent();
+      } else {
+        renderSubmittedCockpit();
+      }
+      showToast("Attachment removed");
+    }
+
+    // Advance
+    function confirmAndAdvance(fieldKey) {
+      const row = document.getElementById(`row-${fieldKey}`);
+      if (row) {
+        row.classList.add('animating-out');
+      }
+
+      setTimeout(() => {
+        if (!state.responses[fieldKey]) state.responses[fieldKey] = {};
+        state.responses[fieldKey].status = 'submitted';
+        state.responses[fieldKey].isEdited = false;
+        state.responses[fieldKey].submittedAt = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+        
+        saveState();
+        renderContent();
+        updateStats();
+        showToast("Confirmed and saved to Verified section");
+      }, 240);
+    }
+
+    function submitCustomEdit(fieldKey) {
+      const row = document.getElementById(`row-${fieldKey}`);
+      if (row) {
+        row.classList.add('animating-out');
+      }
+
+      setTimeout(() => {
+        if (!state.responses[fieldKey]) state.responses[fieldKey] = {};
+        state.responses[fieldKey].status = 'submitted';
+        state.responses[fieldKey].isEdited = true;
+        state.responses[fieldKey].submittedAt = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+        
+        saveState();
+        renderContent();
+        updateStats();
+        showToast("Feedback saved and moved to Verified");
+      }, 240);
+    }
+
+    function toggleEditBox(fieldKey) {
+      const editBox = document.getElementById(`edit-box-${fieldKey}`);
+      if (!editBox) return;
+
+      if (editBox.classList.contains('open')) {
+        editBox.classList.remove('open');
+      } else {
+        editBox.classList.add('open');
+        const input = document.getElementById(`input-${fieldKey}`);
+        if (input) setTimeout(() => input.focus(), 50);
+      }
     }
 
     function onInputChange(fieldKey, value) {
-      if (!userState.responses[fieldKey]) userState.responses[fieldKey] = {};
-      userState.responses[fieldKey].customValue = value;
-      if (value.trim().length > 0) {
-        userState.responses[fieldKey].status = 'edited';
-        const card = document.getElementById(`card-${fieldKey}`);
-        card.dataset.status = 'edited';
-        card.querySelector('.btn-edit').classList.add('active');
-        card.querySelector('.btn-confirm').classList.remove('active');
-      }
+      if (!state.responses[fieldKey]) state.responses[fieldKey] = {};
+      state.responses[fieldKey].customValue = value;
+      state.responses[fieldKey].isEdited = true;
       saveState();
     }
 
-    function confirmAllInSection(sIdx) {
+    function approveAllInSection(sIdx) {
       const sec = RAW_SECTIONS[sIdx];
-      sec.fields.forEach((f, fIdx) => {
-        const fieldKey = `${sIdx}_${fIdx}`;
-        if (!userState.responses[fieldKey]) userState.responses[fieldKey] = {};
-        userState.responses[fieldKey].status = 'confirmed';
-        
-        const card = document.getElementById(`card-${fieldKey}`);
-        if (card) {
-          card.classList.add('confirmed');
-          card.dataset.status = 'confirmed';
-          card.querySelector('.btn-confirm').classList.add('active');
-          card.querySelector('.btn-edit').classList.remove('active');
-          const editArea = document.getElementById(`edit-area-${fieldKey}`);
-          if (editArea) editArea.classList.remove('open');
-        }
-      });
-      saveState();
-      showToast(`Confirmed all ${sec.fields.length} items in ${sec.title.split(':')[0]}`);
+      const secEl = document.getElementById(`sec-${sIdx}`);
+      if (secEl) {
+        secEl.style.transition = 'all 0.25s ease';
+        secEl.style.opacity = '0';
+        secEl.style.transform = 'translateY(-8px)';
+      }
+
+      setTimeout(() => {
+        sec.fields.forEach((f, fIdx) => {
+          const fieldKey = `${sIdx}_${fIdx}`;
+          if (!state.responses[fieldKey]) state.responses[fieldKey] = {};
+          state.responses[fieldKey].status = 'submitted';
+          state.responses[fieldKey].submittedAt = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+        });
+        saveState();
+        renderContent();
+        updateStats();
+        showToast("All items in section confirmed");
+      }, 260);
     }
 
-    // Update Live Progress
+    function reopenQuestion(fieldKey) {
+      if (state.responses[fieldKey]) {
+        state.responses[fieldKey].status = 'pending';
+        saveState();
+        
+        if (state.viewMode === 'submitted') {
+          renderSubmittedCockpit();
+        } else {
+          renderContent();
+        }
+        updateStats();
+        showToast("Item reopened in review queue");
+      }
+    }
+
     function updateStats() {
-      let total = 0;
-      let confirmed = 0;
-      let actionNeededRemaining = 0;
+      let totalFields = 0;
+      let submittedCount = 0;
 
       RAW_SECTIONS.forEach((sec, sIdx) => {
         sec.fields.forEach((f, fIdx) => {
-          total++;
-          const fieldKey = `${sIdx}_${fIdx}`;
-          const resp = userState.responses[fieldKey];
-          if (resp && (resp.status === 'confirmed' || resp.status === 'edited')) {
-            confirmed++;
-          } else if (f.needs_action) {
-            actionNeededRemaining++;
+          totalFields++;
+          const resp = state.responses[`${sIdx}_${fIdx}`];
+          if (resp && (resp.status === 'approved' || resp.status === 'submitted')) {
+            submittedCount++;
           }
         });
       });
 
-      const percentage = Math.round((confirmed / total) * 100);
+      const pendingCount = totalFields - submittedCount;
+      const pct = Math.round((submittedCount / totalFields) * 100);
 
-      document.getElementById('stat-total').textContent = total;
-      document.getElementById('stat-verified').textContent = confirmed;
-      document.getElementById('stat-action').textContent = actionNeededRemaining;
-      document.getElementById('stat-percentage').textContent = percentage + '%';
-      document.getElementById('progress-bar').style.width = percentage + '%';
-      document.getElementById('filter-action-count').textContent = actionNeededRemaining;
+      document.getElementById("progress-bar").style.width = `${pct}%`;
+      document.getElementById("progress-percent").textContent = `${pct}% Verified (${submittedCount}/${totalFields})`;
+      document.getElementById("badge-pending-count").textContent = pendingCount;
+      document.getElementById("badge-submitted-count").textContent = submittedCount;
+      document.getElementById("footer-sub-count").textContent = submittedCount;
+
+      if (pct === 100) {
+        document.getElementById("progress-summary").textContent = "All 91 questions verified";
+      } else {
+        document.getElementById("progress-summary").textContent = `${pendingCount} questions awaiting verification`;
+      }
     }
 
-    // Filtering Tabs
-    document.querySelectorAll('.filter-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        const filter = btn.dataset.filter;
-
-        document.querySelectorAll('.field-card').forEach(card => {
-          const status = card.dataset.status;
-          const isNeedsAction = card.dataset.needsAction === 'true';
-
-          if (filter === 'all') {
-            card.style.display = 'flex';
-          } else if (filter === 'action') {
-            card.style.display = isNeedsAction && status !== 'confirmed' ? 'flex' : 'none';
-          } else if (filter === 'confirmed') {
-            card.style.display = status === 'confirmed' ? 'flex' : 'none';
-          } else if (filter === 'unconfirmed') {
-            card.style.display = status !== 'confirmed' ? 'flex' : 'none';
-          }
-        });
-      });
-    });
-
-    // PHOTO PUSHING BOOTH LOGIC
-    const filePicker = document.getElementById('file-picker');
-    const dropzone = document.getElementById('dropzone');
-
-    ['dragenter', 'dragover'].forEach(name => {
-      dropzone.addEventListener(name, (e) => { e.preventDefault(); dropzone.classList.add('dragover'); });
-    });
-
-    ['dragleave', 'drop'].forEach(name => {
-      dropzone.addEventListener(name, (e) => { e.preventDefault(); dropzone.classList.remove('dragover'); });
-    });
-
-    dropzone.addEventListener('drop', (e) => {
-      const files = e.dataTransfer.files;
-      handleFiles(files);
-    });
-
-    filePicker.addEventListener('change', (e) => {
-      handleFiles(e.target.files);
-    });
-
-    function handleFiles(files) {
-      Array.from(files).forEach(file => {
+    // Media Dropzone
+    document.getElementById("file-picker").addEventListener("change", function(e) {
+      const files = Array.from(e.target.files);
+      files.forEach(file => {
         const reader = new FileReader();
-        reader.onload = (e) => {
-          userState.assets.push({
+        reader.onload = function(evt) {
+          state.uploadedAssets.push({
             id: 'asset_' + Date.now() + '_' + Math.random().toString(36).substr(2, 4),
             name: file.name,
-            size: (file.size / (1024 * 1024)).toFixed(2) + ' MB',
+            size: (file.size / 1024).toFixed(1) + ' KB',
             type: file.type,
-            dataUrl: e.target.result,
-            purpose: 'Hero Main Showcase',
-            caption: ''
+            dataUrl: evt.target.result
           });
           saveState();
           renderAssets();
         };
         reader.readAsDataURL(file);
       });
-      showToast(`Added ${files.length} asset(s) to booth`);
-    }
+      e.target.value = "";
+    });
 
     function renderAssets() {
-      const gallery = document.getElementById('asset-gallery');
-      gallery.innerHTML = '';
+      const grid = document.getElementById("assets-grid");
+      grid.innerHTML = "";
 
-      if (userState.assets.length === 0) {
-        gallery.innerHTML = '<div style="grid-column:1/-1; text-align:center; color:var(--text-muted); padding:20px; font-size:0.85rem;">No assets uploaded yet. Drag files or tap above.</div>';
-        return;
-      }
+      state.uploadedAssets.forEach((asset, idx) => {
+        const card = document.createElement("div");
+        card.className = "media-thumb-card";
 
-      userState.assets.forEach((asset, idx) => {
-        const el = document.createElement('div');
-        el.className = 'asset-card';
-        const isPdf = asset.type === 'application/pdf';
-
-        el.innerHTML = `
-          <div class="asset-thumb-wrap">
-            ${isPdf ? `<div style="font-size:48px; color:var(--brand-crimson);">📄</div>` : `<img src="${asset.dataUrl}" class="asset-thumb" alt="${escapeHtml(asset.name)}">`}
+        const isImg = asset.type.startsWith("image/");
+        card.innerHTML = `
+          ${isImg 
+            ? `<img src="${asset.dataUrl}" class="media-thumb-img" alt="${asset.name}">` 
+            : `<div class="media-thumb-img" style="display:flex; align-items:center; justify-content:center; font-size:1.1rem; background:#fee2e2; color:#b91c1c;">PDF</div>`}
+          <div class="media-meta">
+            <div class="media-name" title="${escapeHtml(asset.name)}">${escapeHtml(asset.name)}</div>
           </div>
-          <div class="asset-body">
-            <div class="asset-meta">
-              <span style="overflow:hidden; text-overflow:ellipsis; white-space:nowrap; max-width:180px;">${escapeHtml(asset.name)}</span>
-              <span>${asset.size}</span>
-            </div>
-            <select class="asset-purpose-select" onchange="updateAssetPurpose(${idx}, this.value)">
-              <option value="Hero Main Showcase" ${asset.purpose === 'Hero Main Showcase' ? 'selected' : ''}>🌟 Hero Main Showcase</option>
-              <option value="Ganesha Sanctum / Shrines" ${asset.purpose === 'Ganesha Sanctum / Shrines' ? 'selected' : ''}>🛕 Ganesha Sanctum / Shrines</option>
-              <option value="Campus & Blueprints" ${asset.purpose === 'Campus & Blueprints' ? 'selected' : ''}>📐 Campus & Blueprints</option>
-              <option value="Festivals & Events" ${asset.purpose === 'Festivals & Events' ? 'selected' : ''}>🎉 Festivals & Events</option>
-              <option value="Pujas & Priests" ${asset.purpose === 'Pujas & Priests' ? 'selected' : ''}>🔥 Pujas & Priests</option>
-              <option value="Logo & Branding" ${asset.purpose === 'Logo & Branding' ? 'selected' : ''}>🏷️ Logo & Branding</option>
-              <option value="Other / Document" ${asset.purpose === 'Other / Document' ? 'selected' : ''}>📜 Other / Document</option>
-            </select>
-            <input type="text" class="asset-caption-input" placeholder="Notes / Placement caption..." 
-              value="${escapeHtml(asset.caption || '')}" oninput="updateAssetCaption(${idx}, this.value)">
-            <button class="asset-btn-remove" onclick="removeAsset(${idx})">✕ Remove Asset</button>
-          </div>
+          <button class="btn-media-delete" onclick="deleteAsset(${idx})">✕</button>
         `;
-        gallery.appendChild(el);
+        grid.appendChild(card);
       });
     }
 
-    function updateAssetPurpose(idx, val) {
-      userState.assets[idx].purpose = val;
-      saveState();
-    }
-
-    function updateAssetCaption(idx, val) {
-      userState.assets[idx].caption = val;
-      saveState();
-    }
-
-    function removeAsset(idx) {
-      userState.assets.splice(idx, 1);
+    function deleteAsset(idx) {
+      state.uploadedAssets.splice(idx, 1);
       saveState();
       renderAssets();
     }
 
-    // EXPORT & DISPATCH ENGINES
-    function generatePayload() {
-      const summary = {
-        meta: {
-          client: "Ballarat Hindu Temple & Cultural Centre Incorporated (BHTCC)",
-          abn: "13 397 829 440",
-          site: "110 Vaggs Rd, Ross Creek VIC 3351",
-          exported_at: new Date().toISOString(),
-        },
-        sections: []
+    // Backend Submission
+    async function submitToServer() {
+      const btn = document.querySelector(".btn-primary-submit");
+      const originalText = btn.innerHTML;
+      btn.innerHTML = `<span>Saving...</span>`;
+      btn.disabled = true;
+
+      const attached_files = [];
+      Object.keys(state.fieldFiles).forEach(key => {
+        const fileObj = state.fieldFiles[key];
+        attached_files.push({
+          source: 'field_attachment',
+          fieldKey: key,
+          name: fileObj.name,
+          dataUrl: fileObj.dataUrl
+        });
+      });
+
+      state.uploadedAssets.forEach(asset => {
+        attached_files.push({
+          source: 'photo_booth',
+          name: asset.name,
+          dataUrl: asset.dataUrl
+        });
+      });
+
+      const payload = {
+        submitted_at: new Date().toISOString(),
+        total_questions: 91,
+        responses: state.responses,
+        attached_files: attached_files
       };
 
-      RAW_SECTIONS.forEach((sec, sIdx) => {
-        const secOut = {
-          title: sec.title,
-          fields: []
-        };
-        sec.fields.forEach((f, fIdx) => {
-          const fieldKey = `${sIdx}_${fIdx}`;
-          const resp = userState.responses[fieldKey] || {};
-          secOut.fields.push({
-            name: f.name,
-            original_value: f.current_value,
-            client_status: resp.status || (f.needs_action ? 'needs_action' : 'unconfirmed'),
-            client_custom_value: resp.customValue || null,
-          });
+      try {
+        const response = await fetch('/api/save-intake', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
         });
-        summary.sections.push(secOut);
-      });
 
-      summary.uploaded_assets = userState.assets.map(a => ({
-        name: a.name,
-        size: a.size,
-        purpose: a.purpose,
-        caption: a.caption
-      }));
+        const result = await response.json();
+        btn.innerHTML = originalText;
+        btn.disabled = false;
 
-      return summary;
-    }
-
-    function downloadJSON() {
-      const data = generatePayload();
-      const blob = new Blob([JSON.stringify(data, null, 2)], { type: "application/json" });
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement("a");
-      a.href = url;
-      a.download = "BHTCC_Verified_Client_Intake.json";
-      a.click();
-      URL.revokeObjectURL(url);
-      showToast("Downloaded BHTCC_Verified_Client_Intake.json");
-    }
-
-    function downloadMarkdown() {
-      const payload = generatePayload();
-      let md = `# BHTCC Verified Client Intake Report\n`;
-      md += `**Client:** ${payload.meta.client}\n`;
-      md += `**ABN:** ${payload.meta.abn} | **Site:** ${payload.meta.site}\n`;
-      md += `**Generated:** ${payload.meta.exported_at}\n\n---\n\n`;
-
-      payload.sections.forEach(sec => {
-        md += `## ${sec.title}\n\n`;
-        sec.fields.forEach(f => {
-          md += `### ${f.name}\n`;
-          md += `- **Original Scraped Record:** ${f.original_value}\n`;
-          md += `- **Client Decision:** ${f.client_status.toUpperCase()}\n`;
-          if (f.client_custom_value) {
-            md += `- **Updated Value:** ${f.client_custom_value}\n`;
-          }
-          md += `\n`;
-        });
-      });
-
-      if (payload.uploaded_assets.length > 0) {
-        md += `## Uploaded Assets (${payload.uploaded_assets.length})\n\n`;
-        payload.uploaded_assets.forEach((a, i) => {
-          md += `${i+1}. **${a.name}** (${a.size}) — Purpose: *${a.purpose}* — Caption: ${a.caption || 'None'}\n`;
-        });
+        if (response.ok && result.status === 'success') {
+          document.getElementById("modal-msg").textContent = `Your verified responses and ${result.files_count || 0} attached files have been recorded to persistent project storage.`;
+          document.getElementById("modal-details").textContent = `Location: ${result.submission_file}`;
+          document.getElementById("success-modal").classList.add("active");
+        } else {
+          downloadBackupJSON();
+          alert("Submission saved locally and exported as a backup JSON file.");
+        }
+      } catch (err) {
+        console.warn("Server save error:", err);
+        btn.innerHTML = originalText;
+        btn.disabled = false;
+        downloadBackupJSON();
+        alert("Submission recorded to local browser and downloaded as JSON.");
       }
+    }
 
-      const blob = new Blob([md], { type: "text/markdown" });
+    function downloadBackupJSON() {
+      const payload = {
+        exported_at: new Date().toISOString(),
+        client: "Ballarat Hindu Temple & Cultural Centre Inc.",
+        responses: state.responses,
+        attached_files_count: Object.keys(state.fieldFiles).length,
+        repository_assets_count: state.uploadedAssets.length
+      };
+
+      const blob = new Blob([JSON.stringify(payload, null, 2)], { type: "application/json" });
       const url = URL.createObjectURL(blob);
       const a = document.createElement("a");
       a.href = url;
-      a.download = "BHTCC_Verified_Client_Intake_Report.md";
+      a.download = `bhtcc_verification_backup_${new Date().toISOString().slice(0, 10)}.json`;
+      document.body.appendChild(a);
       a.click();
+      document.body.removeChild(a);
       URL.revokeObjectURL(url);
-      showToast("Downloaded Markdown Report");
+      showToast("Backup exported");
     }
 
-    function copyExecutiveSummary() {
-      const payload = generatePayload();
-      let summaryText = `*BHTCC CLIENT INTAKE & VERIFICATION SUMMARY*\n`;
-      summaryText += `Entity: Ballarat Hindu Temple & Cultural Centre Inc.\n`;
-      summaryText += `Date: ${new Date().toLocaleDateString()}\n\n`;
-
-      let total = 0, confirmed = 0, modified = 0;
-      payload.sections.forEach(s => {
-        s.fields.forEach(f => {
-          total++;
-          if (f.client_status === 'confirmed') confirmed++;
-          if (f.client_status === 'edited') modified++;
-        });
-      });
-
-      summaryText += `STATUS: ${confirmed} Confirmed | ${modified} Updated | Total ${total} Fields\n`;
-      summaryText += `Photos Attached: ${payload.uploaded_assets.length}\n\n`;
-      summaryText += `Key Updates:\n`;
-
-      let anyUpdates = false;
-      payload.sections.forEach(s => {
-        s.fields.forEach(f => {
-          if (f.client_status === 'edited' && f.client_custom_value) {
-            anyUpdates = true;
-            summaryText += `• ${f.name}: ${f.client_custom_value}\n`;
-          }
-        });
-      });
-
-      if (!anyUpdates) summaryText += `• No custom overrides entered yet.\n`;
-
-      navigator.clipboard.writeText(summaryText).then(() => {
-        showToast("Executive summary copied to clipboard!");
-      }).catch(() => {
-        showToast("Summary generated. Copy manually from alert.");
-      });
+    function closeModal() {
+      document.getElementById("success-modal").classList.remove("active");
     }
 
-    function sendViaWhatsApp() {
-      const payload = generatePayload();
-      let confirmed = 0, modified = 0;
-      payload.sections.forEach(s => {
-        s.fields.forEach(f => {
-          if (f.client_status === 'confirmed') confirmed++;
-          if (f.client_status === 'edited') modified++;
-        });
-      });
-      const text = encodeURIComponent(
-        `Hello BHTCC Web Team, I have reviewed the website verification portal:\n` +
-        `• Verified: ${confirmed} items\n` +
-        `• Modifications: ${modified} items\n` +
-        `• Photos attached: ${payload.uploaded_assets.length}\n` +
-        `Ready for design consecration!`
-      );
-      window.open(`https://api.whatsapp.com/send?text=${text}`, '_blank');
-    }
-
-    // Initialize
-    loadSavedState();
-    renderApp();
+    // Init
+    renderPills();
+    renderContent();
+    renderAssets();
+    updateStats();
   </script>
 </body>
 </html>
