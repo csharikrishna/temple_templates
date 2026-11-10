@@ -1,6 +1,12 @@
 // Unit Test Suite for BHTCC Flagship Engine
-const fs = require('fs');
-const path = require('path');
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+import { createRequire } from 'module';
+const require = createRequire(import.meta.url);
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 console.log('=== RUNNING BHTCC FLAGSHIP UNIT TEST SUITE ===\n');
 
@@ -52,7 +58,18 @@ requiredAssets.forEach(asset => {
 
 // 3. Mathematical & Legal Verification of Australian Tax Calculator
 console.log('\n[3. Australian Progressive Income Tax Calculations]');
-const { calculateAustralianTaxBenefit, calculateBallaratSunTimes } = require('./app.js');
+import vm from 'vm';
+const appCode = fs.readFileSync(path.join(__dirname, 'app.js'), 'utf8');
+const sandbox = {
+  window: {},
+  document: { addEventListener: () => {} },
+  module: { exports: {} },
+  exports: {},
+  console
+};
+vm.createContext(sandbox);
+vm.runInContext(appCode, sandbox);
+const { calculateAustralianTaxBenefit, calculateBallaratSunTimes } = sandbox.module.exports;
 
 // Test Case A: Income $90,000, Donation $250 in FY 2024-25 (with 2% Medicare)
 // Bracket: 30% marginal rate + 2% Medicare = 32% marginal

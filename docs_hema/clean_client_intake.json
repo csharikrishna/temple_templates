@@ -347,84 +347,201 @@
     "fields": [
       {
         "id": "field_1",
-        "name": "Chief Priest / Personnel",
-        "current_value": "General 'Priest Coordinator' listed",
-        "fillable_hint": "Priest Full Name: [_____________________]Vedic Lineage / Veda Patashala: [______]Languages Spoken: [Tamil, Telugu, Hindi, English, Sanskrit]",
-        "guidance": "Builds trust and transparency for devotees booking homams.",
+        "name": "Chief Priest / Personnel & Vedic Lineage",
+        "current_value": "General 'Priest Coordinator' listed on prototype",
+        "fillable_hint": "Priest Full Name: [_____________________]\nVedic Lineage / Patashala: [__________________]\nLanguages: [Tamil, Telugu, Hindi, English, Sanskrit]\nYears of Agamic Experience: [_____ Years]",
+        "guidance": "Builds immense trust and transparency for devotees booking sacred rituals.",
         "is_missing": false,
-        "needs_action": false
+        "needs_action": false,
+        "is_file_field": true,
+        "clean_hint": "Priest Full Name:\nVedic Lineage / Patashala:\nLanguages Spoken:\nYears of Experience:"
       },
       {
         "id": "field_2",
-        "name": "Priest Booking Coordinator",
+        "name": "Priest Booking Coordinator & WhatsApp Contact",
         "current_value": "Simulated booking form",
-        "fillable_hint": "Coordinator Name: [_____________________]Direct Phone / WhatsApp: [_______________]Notification Email: [___________________]",
-        "guidance": "Staff member receiving automatic alerts when a booking is submitted.",
+        "fillable_hint": "Coordinator Name: [_____________________]\nDirect Phone / WhatsApp: [_______________]\nNotification Email: [___________________]\nEmergency Contact: [_____________________]",
+        "guidance": "Staff member or trustee receiving automatic booking alerts and inquiries.",
         "is_missing": false,
-        "needs_action": true
+        "needs_action": true,
+        "is_file_field": false,
+        "clean_hint": "Coordinator Name:\nDirect Phone / WhatsApp:\nNotification Email:\nEmergency Contact:"
       },
       {
         "id": "field_3",
-        "name": "Temple Archana Rates",
-        "current_value": "Listed as option on form",
-        "fillable_hint": "Suggested Dakshina: [$__________________]Items Included: [  ] Flowers  [  ] Fruits  [  ] Coconut",
-        "guidance": "Brief blessings conducted at the temple altar.",
+        "name": "Temple Altar Archana & Pushpanjali Rates",
+        "current_value": "Listed as option on prototype ($51 AUD)",
+        "fillable_hint": "Suggested Dakshina: [$_____ AUD (e.g. $21 - $51)]\nFrequency: [  ] Daily  [  ] Festival Days  [  ] Walkup\nIncluded: [x] Flowers  [x] Coconut  [x] Camphor Aarti  [x] Kumkum Prasadam",
+        "guidance": "Daily personal or family blessing performed directly in front of the Garbhagriha altar.",
         "is_missing": false,
-        "needs_action": false
+        "needs_action": false,
+        "is_file_field": true,
+        "clean_hint": "Suggested Dakshina: $51 AUD\nFrequency: Daily / Walkup\nIncludes: Flowers, Coconut, Camphor Aarti, Kumkum Prasadam"
       },
       {
         "id": "field_4",
-        "name": "Ganapathi Homam / Grihapravesh",
-        "current_value": "Housewarming & new business fire pooja",
-        "fillable_hint": "Suggested Dakshina: [$__________________]Duration: [e.g. 2.5 - 3 Hours]Client Samagri List PDF: [  ] Available  [  ] Need created",
-        "guidance": "The most requested home ceremony for new property buyers.",
+        "name": "Ganapathi Homam / Grihapravesham (Housewarming)",
+        "current_value": "Housewarming & new business fire pooja ($75 - $151)",
+        "fillable_hint": "Suggested Dakshina: [$_____ AUD]\nDuration: [e.g. 2.5 - 3 Hours]\nLocation: [  ] Devotee Home  [  ] Temple Homa Shala\nPooja Samagri: [  ] Devotee purchases  [  ] Priest brings kit",
+        "guidance": "The most requested Vedic home ceremony for new property buyers in regional Victoria. Attach samagri checklist PDF.",
         "is_missing": false,
-        "needs_action": false
+        "needs_action": false,
+        "is_file_field": true,
+        "clean_hint": "Suggested Dakshina: $151 AUD\nDuration: 2.5 - 3 Hours\nLocation: Devotee Home / Temple Homa Shala\nPooja Samagri: PDF Checklist provided"
       },
       {
         "id": "field_5",
-        "name": "Satyanarayana Vratam",
-        "current_value": "Thanksgiving & family prayer",
-        "fillable_hint": "Suggested Dakshina: [$__________________]Duration: [e.g. 2 Hours]Pooja Samagri provided by priest: [  ] Yes  [  ] No",
-        "guidance": "Popular full-moon (Purnima) family ceremony.",
+        "name": "Sri Satyanarayana Swamy Vratam & Katha",
+        "current_value": "Thanksgiving & family prayer ceremony",
+        "fillable_hint": "Suggested Dakshina: [$_____ AUD]\nDuration: [e.g. 2 - 2.5 Hours]\nLanguages: [  ] Sanskrit  [  ] Telugu  [  ] Tamil  [  ] Hindi  [  ] English\nPrasadam: [x] Rava Sheera Prasadam preparation guidelines",
+        "guidance": "Traditional devotional thanksgiving prayer performed on Pournami (Full Moon) and milestone occasions.",
         "is_missing": false,
-        "needs_action": false
+        "needs_action": false,
+        "is_file_field": true,
+        "clean_hint": "Suggested Dakshina: $101 AUD\nDuration: 2 Hours\nLanguages: Sanskrit, Telugu, Tamil, Hindi\nPrasadam: Sheera recipe provided"
       },
       {
         "id": "field_6",
-        "name": "Milestone & Baby Blessings",
-        "current_value": "Naming, First Feeding, Anniversaries",
-        "fillable_hint": "Suggested Dakshina: [$__________________]Categories: [Namakarana, Annaprashana, 60th/80th B'day]",
-        "guidance": "Child and elder life-cycle sacraments (Samskaras).",
+        "name": "Sri Venkateswara Divya Kalyanotsavam",
+        "current_value": "Celestial divine wedding of Lord Balaji & Goddess Padmavati ($151 AUD)",
+        "fillable_hint": "Suggested Dakshina: [$_____ AUD]\nSchedule: [  ] Shravana Saturdays  [  ] Annual Brahmotsavam  [  ] Private Family Request\nInclusions: [x] Silk Angavastram  [x] Akshatas  [x] Laddu Prasadam Box",
+        "guidance": "Celestial wedding ceremony highly recommended for family harmony, marital bliss, and prosperity.",
         "is_missing": false,
-        "needs_action": false
+        "needs_action": false,
+        "is_file_field": true,
+        "clean_hint": "Suggested Dakshina: $151 AUD\nSchedule: Shravana Saturdays / Private Booking\nInclusions: Silk Angavastram, Consecrated Akshatas, Tirupati-style Laddu Box"
       },
       {
         "id": "field_7",
-        "name": "Vehicle Blessing (Vahana Pooja)",
-        "current_value": "Not listed on current site",
-        "fillable_hint": "[  ] Available at TempleSuggested Dakshina: [$__________________]Booking Required: [  ] Yes  [  ] Drive-in Walkup",
-        "guidance": "Very high traffic service for new car purchases.",
+        "name": "Maha Rudrabhishekam (108 Bilva Patra)",
+        "current_value": "Sanctum Shiva Lingam panchamrita abhishekam ($51 - $101 AUD)",
+        "fillable_hint": "Suggested Dakshina: [$_____ AUD]\nSchedule: [  ] Pradosham  [  ] Masa Shivaratri  [  ] Mondays  [  ] Devotee Birthday\nOfferings: [x] Milk  [x] Curd  [x] Honey  [x] Ghee  [x] Bilva Leaves  [x] Bhasma",
+        "guidance": "Traditional Vedic abhishekam chanting Sri Rudram Chamakam for health, peace, longevity, and inner strength.",
         "is_missing": false,
-        "needs_action": false
+        "needs_action": false,
+        "is_file_field": true,
+        "clean_hint": "Suggested Dakshina: $75 AUD\nSchedule: Pradosham / Masa Shivaratri\nOfferings: Panchamrita & 108 Bilva Patra"
       },
       {
         "id": "field_8",
-        "name": "Priest Travel Policy",
-        "current_value": "Not specified",
-        "fillable_hint": "Within Ballarat Urban: [Free / Included]Outside Ballarat (25km - 100km): [Add $___ / km]Maximum Travel Radius: [____ km from Ballarat]",
-        "guidance": "Covers fuel/travel time for priests travelling to Geelong, Ararat, etc.",
+        "name": "Sri Lalitha Sahasranama Kumkumarchana & Chandi Homa",
+        "current_value": "Divine Mother fire ceremony & 1000 names ($101 AUD)",
+        "fillable_hint": "Suggested Dakshina: [$_____ AUD]\nOccasions: [  ] Fridays  [  ] Navratri 9 Days  [  ] Pournami  [  ] Private Request\nInclusions: [x] 1,000 Divine Names  [x] Kumkum Archana  [x] Sanctified Yantra Talisman",
+        "guidance": "Invoking the Supreme Mother for protection, mental clarity, warding off evil eye, and achieving spiritual victory.",
         "is_missing": false,
-        "needs_action": false
+        "needs_action": false,
+        "is_file_field": true,
+        "clean_hint": "Suggested Dakshina: $101 AUD\nOccasions: Fridays & Navratri\nInclusions: Kumkumarchana & Sanctified Silver Yantra"
       },
       {
         "id": "field_9",
-        "name": "Booking Notice Period",
-        "current_value": "Instant form submission",
-        "fillable_hint": "Minimum Notice Required: [e.g. 7 Days]Urgent Request Handling: [Call Priest Direct]Online Deposit Required: [  ] Yes ($____)  [  ] Pay on Day",
-        "guidance": "Prevents last-minute double-bookings on auspicious dates.",
+        "name": "Navagraha Shanti & Dosha Nivarana Homa",
+        "current_value": "Nine planetary deities pacification homam ($125 AUD)",
+        "fillable_hint": "Suggested Dakshina: [$_____ AUD]\nIncludes: [x] 9 Grains (Navadhanya)  [x] 9 Vastra Cloths  [x] Graha Gayatris\nDevotee Input Required: [x] Rashi  [x] Nakshatra  [x] Exact Birth Time & Place",
+        "guidance": "Specific astrological remedy homam to mitigate planetary afflictions, Sade Sati, and Rahu/Ketu transit doshas.",
         "is_missing": false,
-        "needs_action": false
+        "needs_action": false,
+        "is_file_field": true,
+        "clean_hint": "Suggested Dakshina: $125 AUD\nIncludes: Navadhanya, 9 Vastra Cloths, Planetary Homa\nRequirements: Rashi, Nakshatra, Birth Details"
+      },
+      {
+        "id": "field_10",
+        "name": "Sri Hanuman Sindoor Archana & 108 Chalisa Path",
+        "current_value": "Auspicious Tuesday/Saturday Hanuman worship ($45 AUD)",
+        "fillable_hint": "Suggested Dakshina: [$_____ AUD]\nTiming: [  ] Tuesdays  [  ] Saturdays  [  ] Hanuman Jayanti\nOfferings: [x] Sacred Sindoor  [x] Betel Leaf Garland (Vada Mala)  [x] 108 Chalisa Chanting",
+        "guidance": "Invoking courage, physical vitality, protection, and obstacle destruction through sacred sindoor abhishek.",
+        "is_missing": false,
+        "needs_action": false,
+        "is_file_field": true,
+        "clean_hint": "Suggested Dakshina: $45 AUD\nTiming: Tuesdays & Saturdays\nOfferings: Sacred Sindoor Abhishek & 108 Chalisa Path"
+      },
+      {
+        "id": "field_11",
+        "name": "Vehicle Blessing (Vahana Pooja / Car Blessing)",
+        "current_value": "Not listed on current prototype ($51 AUD suggested)",
+        "fillable_hint": "Suggested Dakshina: [$_____ AUD (e.g. $51)]\nBooking: [  ] Drive-in Walkup  [  ] Scheduled Online Slot\nRitual Elements: [x] 4 Lemons crushed  [x] Coconut broken  [x] Kumkum Swastika  [x] Raksha Thread",
+        "guidance": "Very high traffic service consecrating newly purchased cars, SUVs, motorcycles, and commercial vehicles in Ballarat.",
+        "is_missing": false,
+        "needs_action": false,
+        "is_file_field": true,
+        "clean_hint": "Suggested Dakshina: $51 AUD\nBooking: Drive-in Walkup & Online\nRituals: 4 Lemons, Coconut, Swastika, Raksha Thread"
+      },
+      {
+        "id": "field_12",
+        "name": "Baby Life-Cycle Sacraments (Namakarana & Annaprashana)",
+        "current_value": "Naming, First Feeding, Anniversaries",
+        "fillable_hint": "Suggested Dakshina: [$_____ AUD]\nCeremonies Offered:\n[  ] Namakarana (Baby naming ceremony, 11th / 21st day)\n[  ] Annaprashana (First solid food feeding, 6th month)\n[  ] Chaula / Mundan (First hair tonsure ceremony)",
+        "guidance": "Child life-cycle sacraments (Samskaras) conducted at temple hall or devotee homes with customized mantras.",
+        "is_missing": false,
+        "needs_action": false,
+        "is_file_field": true,
+        "clean_hint": "Suggested Dakshina: $101 AUD\nCeremonies: Namakarana, Annaprashana, Chaula / Mundan\nLocation: Temple Hall or Devotee Residence"
+      },
+      {
+        "id": "field_13",
+        "name": "Education & Youth Sacraments (Vidyarambha & Upanayanam)",
+        "current_value": "Learning initiation & sacred thread investiture",
+        "fillable_hint": "Suggested Dakshina: [$_____ AUD]\nCeremonies Offered:\n[  ] Vidyarambha / Aksharabhyasa (Writing first sacred letters on rice on Vijayadashami)\n[  ] Upanayanam (Brahmopadesham sacred thread investiture)",
+        "guidance": "Formal Vedic initiation into education, Gayatri mantra chanting, and sacred spiritual study.",
+        "is_missing": false,
+        "needs_action": false,
+        "is_file_field": true,
+        "clean_hint": "Suggested Dakshina: $101 AUD\nCeremonies: Vidyarambha / Aksharabhyasa & Upanayanam\nInclusions: Mantras, Rice Trays, Sacred Thread"
+      },
+      {
+        "id": "field_14",
+        "name": "Vedic Wedding Officiation & Vivaha Samskara",
+        "current_value": "Traditional marriage ceremonies at temple campus / venue",
+        "fillable_hint": "Suggested Dakshina / Honorarium: [$_____ AUD]\nVenue: [  ] Temple Lawn & Mandap  [  ] External Venue\nIncludes: [x] Kanyadaan  [x] Panigrahana  [x] Saptapadi (7 Steps)  [x] Agni Sakshi Rites",
+        "guidance": "Complete traditional Vedic wedding officiation complying with Hindu Agamic rites and civil wedding support.",
+        "is_missing": false,
+        "needs_action": false,
+        "is_file_field": true,
+        "clean_hint": "Suggested Dakshina: $501 AUD\nVenue: Temple Mandap or External Venue\nIncludes: Full Vedic Wedding, Saptapadi, Agni Sakshi"
+      },
+      {
+        "id": "field_15",
+        "name": "Milestone Birthday Blessings (Sashtiabdapoorthi & Shathabhishekam)",
+        "current_value": "60th, 70th, 75th, and 80th milestone birthday blessings",
+        "fillable_hint": "Suggested Dakshina: [$_____ AUD]\nMilestones Offered:\n[  ] Sashtiabdapoorthi (60th Birthday Celebration)\n[  ] Bhimaratha Shanti (70th Birthday)\n[  ] Sahasra Chandra Darshana (80th Birthday)\nInclusions: [x] Ayushya Homam  [x] Kalasha Snanam  [x] Mangala Aarti",
+        "guidance": "Vedic thanksgiving and health rituals honoring parents, elders, and grandparents with Ayushya Homam.",
+        "is_missing": false,
+        "needs_action": false,
+        "is_file_field": true,
+        "clean_hint": "Suggested Dakshina: $251 AUD\nMilestones: 60th (Sashtiabdapoorthi), 70th, 80th\nInclusions: Ayushya Homam & Kalasha Snanam"
+      },
+      {
+        "id": "field_16",
+        "name": "Priest Travel & Regional Western Victoria Home Visits Policy",
+        "current_value": "Not specified on prototype",
+        "fillable_hint": "Coverage Radius: [______ km from Ballarat (e.g. 100km)]\nBallarat Urban Travel: [  ] Free / Included  [  ] $____ Flat\nRegional Victoria (Geelong, Ararat, Daylesford, Melton): [$____ / km]\nOvernight Stay Terms: [_________________________________]",
+        "guidance": "Covers traveling priest guidelines, vehicle fuel reimbursement, and regional scheduling logistics.",
+        "is_missing": false,
+        "needs_action": false,
+        "is_file_field": true,
+        "clean_hint": "Coverage Radius: 100 km from Ballarat\nUrban Travel: Free / Included in Dakshina\nRegional Travel: $0.85 / km beyond 25 km"
+      },
+      {
+        "id": "field_17",
+        "name": "Pooja Samagri & Devotee Supply Checklist Protocol",
+        "current_value": "Items devotees bring vs items priest provides",
+        "fillable_hint": "Samagri Supply Options:\n[  ] Devotee purchases all items using temple PDF checklist\n[  ] Priest brings complete samagri kit (Add $____ to Dakshina)\n[  ] Hybrid (Devotee brings fruits/flowers/milk; priest brings havan items)",
+        "guidance": "Downloadable PDF samagri checklists eliminate devotee uncertainty prior to sacred home ceremonies.",
+        "is_missing": false,
+        "needs_action": false,
+        "is_file_field": true,
+        "clean_hint": "Samagri Options:\n• Devotee purchases using Temple PDF checklist\n• Priest brings complete Havan kit (+ $50)\n• Hybrid Model"
+      },
+      {
+        "id": "field_18",
+        "name": "Priest Booking Notice Period & Payment Terms",
+        "current_value": "Instant form submission",
+        "fillable_hint": "Advance Notice Required: [e.g. 7 to 14 Days]\nUrgent Requests: [  ] Direct Priest WhatsApp Hotline\nBooking Deposit: [  ] $____ Non-refundable deposit  [  ] Pay on Day\nPayment Methods: [x] Stripe Online  [x] Direct Bank EFT  [x] Cash Dakshina",
+        "guidance": "Prevents scheduling conflicts on auspicious Muhurtham dates and major festival weekends.",
+        "is_missing": false,
+        "needs_action": false,
+        "is_file_field": true,
+        "clean_hint": "Advance Notice: 7 to 14 Days\nUrgent Requests: Direct WhatsApp Hotline\nPayment Methods: Stripe Online, Bank Transfer, Cash"
       }
     ]
   },
