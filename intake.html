@@ -1425,6 +1425,89 @@
       }
     }
 
+    /* File Pill Truncation & Mobile Overflow Immunity */
+    .file-pill {
+      gap: 8px;
+      overflow: hidden;
+      max-width: 100%;
+    }
+
+    .file-pill-details {
+      min-width: 0;
+      flex: 1;
+      overflow: hidden;
+    }
+
+    .file-pill-details svg {
+      flex-shrink: 0;
+    }
+
+    .file-pill-details span:first-of-type {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      display: inline-block;
+      max-width: 100%;
+    }
+
+    .file-pill-details span:last-of-type {
+      flex-shrink: 0;
+      white-space: nowrap;
+    }
+
+    .btn-file-delete {
+      flex-shrink: 0;
+      white-space: nowrap;
+    }
+
+    /* Field Header & Verified Card Top Alignment */
+    .field-top {
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .btn-delete-custom {
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .top-bar {
+      gap: 10px;
+    }
+
+    .brand-group {
+      min-width: 0;
+      flex: 1;
+    }
+
+    .btn-return-hub {
+      flex-shrink: 0;
+      white-space: nowrap;
+    }
+
+    .card-tags {
+      flex-wrap: wrap;
+    }
+
+    .tag-green, .tag-amber, .tag-blue {
+      white-space: nowrap !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      flex-shrink: 0 !important;
+    }
+
+    @media (max-width: 640px) {
+      .verified-card-top {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 8px !important;
+      }
+      .brand-meta h1 {
+        font-size: 0.92rem !important;
+        line-height: 1.25 !important;
+      }
+    }
+
     /* Clean Toast */
     .clean-toast {
       position: fixed;
@@ -1728,7 +1811,8 @@
       openSectionTrays: {},
       responses: {},
       fieldFiles: {},
-      uploadedAssets: []
+      uploadedAssets: [],
+      customFields: []
     };
 
     // Load Local State
@@ -1739,6 +1823,7 @@
         state.responses = parsed.responses || {};
         state.fieldFiles = parsed.fieldFiles || {};
         state.uploadedAssets = parsed.uploadedAssets || [];
+        state.customFields = parsed.customFields || [];
       }
     } catch (e) {
       console.warn("Storage load error:", e);
@@ -1749,7 +1834,8 @@
         localStorage.setItem(STORAGE_KEY, JSON.stringify({
           responses: state.responses,
           fieldFiles: state.fieldFiles,
-          uploadedAssets: state.uploadedAssets
+          uploadedAssets: state.uploadedAssets,
+          customFields: state.customFields || []
         }));
         const now = new Date();
         const timeStr = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
@@ -2155,6 +2241,7 @@
               <h3 class="card-title-text">${escapeHtml(f.name)}</h3>
             </div>
             <div class="card-tags">
+              ${f.is_custom ? `<span class="tag-blue">+ Custom Question</span>` : ''}
               ${isEdited ? `<span class="tag-amber">Custom Feedback</span>` : `<span class="tag-green">Confirmed Record</span>`}
               ${attachedFile ? `<span class="tag-blue">Asset Attached</span>` : ''}
             </div>
@@ -2310,6 +2397,15 @@
           if (!state.responses[fieldKey]) state.responses[fieldKey] = {};
           state.responses[fieldKey].status = 'submitted';
           state.responses[fieldKey].submittedAt = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+        });
+        saveState();
+        renderContent();
+        updateStats();
+        (state.customFields || []).filter(cf => cf.sectionIndex === sIdx).forEach(cf => {
+          const cfKey = `custom_${cf.id}`;
+          if (!state.responses[cfKey]) state.responses[cfKey] = {};
+          state.responses[cfKey].status = 'submitted';
+          state.responses[cfKey].submittedAt = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
         });
         saveState();
         renderContent();
@@ -2541,7 +2637,7 @@
       document.getElementById("footer-sub-count").textContent = submittedCount;
 
       if (pct === 100) {
-        document.getElementById("progress-summary").textContent = "All 91 questions verified";
+        document.getElementById("progress-summary").textContent = `All ${totalFields} questions verified`;
       } else {
         document.getElementById("progress-summary").textContent = `${pendingCount} questions awaiting verification`;
       }
@@ -2624,8 +2720,9 @@
 
       const payload = {
         submitted_at: new Date().toISOString(),
-        total_questions: 91,
+        total_questions: RAW_SECTIONS.reduce((sum, s) => sum + s.fields.length, 0) + (state.customFields || []).length,
         responses: state.responses,
+        custom_fields: state.customFields || [],
         attached_files: attached_files
       };
 
@@ -2662,6 +2759,7 @@
         exported_at: new Date().toISOString(),
         client: "Ballarat Hindu Temple & Cultural Centre Inc.",
         responses: state.responses,
+        custom_fields: state.customFields || [],
         attached_files_count: Object.keys(state.fieldFiles).length,
         repository_assets_count: state.uploadedAssets.length
       };
