@@ -1333,6 +1333,98 @@
       background: #fef2f2;
     }
   
+    .view-control-wrap {
+      display: flex !important;
+      align-items: center !important;
+      gap: 8px !important;
+    }
+
+    .segmented-control {
+      flex: 1 !important;
+      min-width: 0 !important;
+    }
+
+    .btn-quick-plus {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      height: 42px;
+      padding: 0 14px;
+      border-radius: 10px;
+      background: var(--brand-primary);
+      color: #ffffff;
+      border: none;
+      font-size: 0.85rem;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 2px 6px rgba(126, 28, 39, 0.25);
+      transition: all 0.15s ease;
+      flex-shrink: 0;
+      white-space: nowrap;
+    }
+
+    .btn-quick-plus:hover {
+      background: var(--brand-primary-hover);
+      transform: translateY(-1px);
+    }
+
+    .btn-quick-plus .plus-symbol {
+      font-size: 1.25rem;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    @media (max-width: 520px) {
+      .btn-quick-plus .plus-label {
+        display: none;
+      }
+      .btn-quick-plus {
+        width: 42px;
+        padding: 0;
+        border-radius: 10px;
+      }
+      .seg-btn {
+        padding: 8px 8px !important;
+        font-size: 0.78rem !important;
+        gap: 4px !important;
+      }
+    }
+
+    .fab-plus-btn {
+      position: fixed;
+      bottom: 124px;
+      right: 16px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: var(--brand-primary);
+      color: #ffffff;
+      border: 2px solid #ffffff;
+      box-shadow: 0 4px 14px rgba(126, 28, 39, 0.35);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      font-weight: 700;
+      line-height: 1;
+      cursor: pointer;
+      z-index: 45;
+      transition: transform 0.18s ease, background 0.18s ease;
+    }
+
+    .fab-plus-btn:hover {
+      background: var(--brand-primary-hover);
+      transform: scale(1.07);
+    }
+
+    @media (min-width: 641px) {
+      .fab-plus-btn {
+        bottom: 84px;
+        right: 24px;
+      }
+    }
+
     /* Clean Toast */
     .clean-toast {
       position: fixed;
@@ -1355,7 +1447,8 @@
       .view-control-wrap { padding: 0 14px; margin-top: 10px; }
       .filter-nav-wrap { padding: 0 14px; margin-top: 8px; }
       main { padding: 0 14px; margin-top: 10px; }
-      .field-item { padding: 14px 16px; }
+      .field-item { padding: 14px 16px; scroll-margin-top: 150px; }
+      .clean-toast { bottom: 135px; max-width: calc(100vw - 32px); text-align: center; }
       .sticky-inner {
         flex-direction: column;
         align-items: stretch;
@@ -1413,6 +1506,10 @@
 
   <!-- SEGMENTED VIEW SWITCHER: Pending Review vs Verified & Submitted -->
   <div class="view-control-wrap">
+    <button type="button" class="btn-quick-plus" style="order: 2;" onclick="openAddQuestionModal()" title="Create a custom question & answer">
+      <span class="plus-symbol">+</span>
+      <span class="plus-label">Add Question</span>
+    </button>
     <div class="segmented-control">
       <button class="seg-btn active" id="tab-mode-queue" onclick="switchViewMode('queue')">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -1526,6 +1623,9 @@
     </div>
   </footer>
 
+  <!-- Floating Plus Symbol Action Button (Always accessible) -->
+  <button type="button" class="fab-plus-btn" onclick="openAddQuestionModal()" aria-label="Add custom question and answer" title="Add Custom Question & Answer">+</button>
+
   <!-- Modal for Creating a Custom Question & Answer -->
   <div class="modal-backdrop" id="custom-question-modal">
     <div class="modal-box" style="max-width:540px; text-align:left; align-items:stretch;">
@@ -1573,9 +1673,9 @@
         <!-- Optional In-Modal File Attachment -->
         <div style="background:#f8fafc; border:1px solid var(--border); border-radius:var(--radius-sm); padding:10px 12px;">
           <input type="file" id="custom-modal-file" accept="image/*,application/pdf" style="display:none;" onchange="onCustomModalFileSelected(this.files)">
-          <div style="display:flex; align-items:center; justify-content:space-between;">
+          <div style="display:flex; align-items:center; justify-content:space-between; gap:10px;">
             <span style="font-size:0.78rem; font-weight:600; color:var(--text-body);">Attach Reference Image or PDF (Optional):</span>
-            <button type="button" onclick="document.getElementById('custom-modal-file').click()" style="background:#fff; border:1px solid #cbd5e1; border-radius:var(--radius-sm); padding:4px 10px; font-size:0.75rem; font-weight:600; cursor:pointer;">
+            <button type="button" onclick="document.getElementById('custom-modal-file').click()" style="background:#fff; border:1px solid #cbd5e1; border-radius:var(--radius-sm); padding:6px 12px; font-size:0.76rem; font-weight:600; cursor:pointer; white-space:nowrap; flex-shrink:0; display:inline-flex; align-items:center; gap:5px;">
               📎 Choose File
             </button>
           </div>
@@ -1748,7 +1848,7 @@
         let submittedFields = [];
 
         sec.fields.forEach((f, fIdx) => {
-          const fieldKey = `${sIdx}_${fIdx}`;
+          const fieldKey = (f && f.is_custom) ? `custom_${f.id}` : `${sIdx}_${fIdx}`;
           const resp = state.responses[fieldKey] || {};
           const isSubmitted = resp.status === 'approved' || resp.status === 'submitted';
 
@@ -1762,6 +1862,19 @@
             } else {
               pendingFields.push({ f, fIdx });
             }
+          }
+        });
+
+        const customForSec = (state.customFields || []).filter(cf => cf.sectionIndex === sIdx);
+        customForSec.forEach(cf => {
+          const fieldKey = `custom_${cf.id}`;
+          const resp = state.responses[fieldKey] || {};
+          const isSubmitted = resp.status === 'approved' || resp.status === 'submitted';
+
+          if (isSubmitted) {
+            submittedFields.push({ f: cf, fIdx: cf.id, fieldKey, resp, isCustom: true });
+          } else {
+            pendingFields.unshift({ f: cf, fIdx: cf.id, fieldKey, isCustom: true });
           }
         });
 
@@ -1781,7 +1894,13 @@
               <div class="section-title">${sec.title}</div>
               <div class="section-meta">${pendingFields.length} pending review • ${submittedFields.length} verified</div>
             </div>
-            ${pendingFields.length > 0 ? `<button class="btn-verify-all" onclick="approveAllInSection(${sIdx})">✓ Confirm Remaining</button>` : ''}
+            <div class="section-header-actions">
+              <button type="button" class="btn-add-question" onclick="openAddQuestionModal(${sIdx})" title="Add custom question to this section">
+                <span class="plus-sm">+</span>
+                <span>Add Question</span>
+              </button>
+              ${pendingFields.length > 0 ? `<button class="btn-verify-all" onclick="approveAllInSection(${sIdx})">✓ Confirm Remaining</button>` : ''}
+            </div>
           </div>
           <div class="fields-list" id="fields-list-${sIdx}"></div>
           <button type="button" class="btn-add-section-dashed" onclick="openAddQuestionModal(${sIdx})">
@@ -1798,7 +1917,7 @@
               </button>
               <div class="tray-list" id="tray-list-${sIdx}" style="display:${state.openSectionTrays[sIdx] ? 'flex' : 'none'};">
                 ${submittedFields.map(({ f, fIdx, resp }) => {
-                  const fieldKey = `${sIdx}_${fIdx}`;
+                  const fieldKey = (f && f.is_custom) ? `custom_${f.id}` : `${sIdx}_${fIdx}`;
                   const attachedFile = state.fieldFiles[fieldKey];
                   return `
                     <div class="tray-row">
@@ -1822,7 +1941,7 @@
         const listEl = secEl.querySelector(".fields-list");
 
         pendingFields.forEach(({ f, fIdx }) => {
-          const fieldKey = `${sIdx}_${fIdx}`;
+          const fieldKey = (f && f.is_custom) ? `custom_${f.id}` : `${sIdx}_${fIdx}`;
           const resp = state.responses[fieldKey] || {};
           const isEdited = resp.isEdited || false;
           const needsInput = f.needs_action;
@@ -1836,6 +1955,7 @@
           row.innerHTML = `
             <div class="field-top">
               <span class="field-heading">${f.name}</span>
+              ${f.is_custom ? `<span class="status-badge badge-custom">+ Custom Question</span><button type="button" class="btn-delete-custom" onclick="deleteCustomQuestion('${f.id}')" title="Remove custom question">✕ Remove</button>` : ''}
               ${needsInput ? `<span class="status-badge badge-needed">Action Required</span>` : ''}
             </div>
 
@@ -1951,7 +2071,7 @@
 
       RAW_SECTIONS.forEach((sec, sIdx) => {
         sec.fields.forEach((f, fIdx) => {
-          const fieldKey = `${sIdx}_${fIdx}`;
+          const fieldKey = (f && f.is_custom) ? `custom_${f.id}` : `${sIdx}_${fIdx}`;
           const resp = state.responses[fieldKey] || {};
           const isSubmitted = resp.status === 'approved' || resp.status === 'submitted';
 
@@ -1968,6 +2088,27 @@
             });
           }
         });
+      });
+
+      (state.customFields || []).forEach(cf => {
+        const sec = RAW_SECTIONS[cf.sectionIndex] || { title: 'Custom Section' };
+        const fieldKey = `custom_${cf.id}`;
+        const resp = state.responses[fieldKey] || {};
+        const isSubmitted = resp.status === 'approved' || resp.status === 'submitted';
+
+        if (isSubmitted) {
+          const attachedFile = state.fieldFiles[fieldKey];
+          allSubmitted.push({
+            sec,
+            sIdx: cf.sectionIndex,
+            f: cf,
+            fIdx: cf.id,
+            fieldKey,
+            resp,
+            attachedFile,
+            isCustom: true
+          });
+        }
       });
 
       const confirmedCount = allSubmitted.filter(i => !i.resp.isEdited).length;
@@ -2165,7 +2306,7 @@
 
       setTimeout(() => {
         sec.fields.forEach((f, fIdx) => {
-          const fieldKey = `${sIdx}_${fIdx}`;
+          const fieldKey = (f && f.is_custom) ? `custom_${f.id}` : `${sIdx}_${fIdx}`;
           if (!state.responses[fieldKey]) state.responses[fieldKey] = {};
           state.responses[fieldKey].status = 'submitted';
           state.responses[fieldKey].submittedAt = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
@@ -2311,10 +2452,10 @@
 
       const fieldKey = `custom_${cfId}`;
       state.responses[fieldKey] = {
-        status: 'approved',
+        status: 'pending',
         customValue: qAns,
-        confirmedAt: new Date().toISOString(),
-        isEdited: true
+        createdAt: new Date().toISOString(),
+        isEdited: false
       };
 
       if (selectedCustomModalFile) {
@@ -2330,6 +2471,23 @@
         renderSubmittedCockpit();
       }
       updateStats();
+
+      if (state.viewMode !== 'queue') {
+        switchViewMode('queue');
+      }
+      if (state.activeFilter === 'action' || state.activeFilter === 'booth') {
+        switchCategory('all');
+      }
+
+      setTimeout(() => {
+        const newRow = document.getElementById(`row-${fieldKey}`);
+        if (newRow) {
+          newRow.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          newRow.style.transition = 'background-color 0.6s ease';
+          newRow.style.backgroundColor = '#fffbeb';
+          setTimeout(() => { newRow.style.backgroundColor = ''; }, 1800);
+        }
+      }, 100);
 
       showToast(`Added custom question: ${qName}`);
     }
@@ -2363,6 +2521,14 @@
             submittedCount++;
           }
         });
+      });
+
+      (state.customFields || []).forEach(cf => {
+        totalFields++;
+        const resp = state.responses[`custom_${cf.id}`];
+        if (resp && (resp.status === 'approved' || resp.status === 'submitted')) {
+          submittedCount++;
+        }
       });
 
       const pendingCount = totalFields - submittedCount;
