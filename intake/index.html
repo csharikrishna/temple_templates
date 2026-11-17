@@ -1093,6 +1093,17 @@
       transition: all 0.15s ease;
     }
 
+    .btn-save-draft {
+      background: #eff6ff;
+      border-color: #bfdbfe;
+      color: #1d4ed8;
+      font-weight: 600;
+    }
+    .btn-save-draft:hover {
+      background: #dbeafe;
+      border-color: #93c5fd;
+      color: #1e40af;
+    }
     .btn-ghost-action:hover {
       background: #f1f5f9;
     }
@@ -1542,9 +1553,20 @@
       }
       .sticky-right {
         width: 100%;
+        display: flex;
+        gap: 6px;
+      }
+      .sticky-right button {
+        display: flex;
+        gap: 6px;
       }
       .sticky-right button {
         flex: 1;
+        justify-content: center;
+        padding: 8px 4px;
+        font-size: 0.72rem;
+        min-height: 44px;
+        gap: 4px;
         justify-content: center;
       }
     }
@@ -1694,6 +1716,10 @@
       </div>
 
       <div class="sticky-right">
+        <button class="btn-ghost-action btn-save-draft" onclick="manualSaveDraft()" id="btn-save-draft" title="Save draft progress to your device">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
+          Save Draft
+        </button>
         <button class="btn-ghost-action" onclick="downloadBackupJSON()">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
           Export Backup (JSON)
@@ -1815,7 +1841,7 @@
       customFields: []
     };
 
-    // Load Local State
+    // Load Local State / Saved Draft
     try {
       const saved = localStorage.getItem(STORAGE_KEY);
       if (saved) {
@@ -1824,12 +1850,51 @@
         state.fieldFiles = parsed.fieldFiles || {};
         state.uploadedAssets = parsed.uploadedAssets || [];
         state.customFields = parsed.customFields || [];
+        const count = Object.keys(state.responses).length;
+        if (count > 0 || (state.customFields && state.customFields.length > 0)) {
+          const timeStr = parsed.saved_at ? new Date(parsed.saved_at).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) : 'earlier';
+          setTimeout(() => {
+            const saveStatusEl = document.getElementById("save-status");
+            if (saveStatusEl) saveStatusEl.textContent = `Draft resumed (${timeStr})`;
+            showToast(`📂 Resumed draft saved on device (${count} answers loaded)`);
+          }, 350);
+        }
       }
     } catch (e) {
       console.warn("Storage load error:", e);
     }
 
-    function saveState() {
+    function saveState(notify = false) {
+      try {
+        const draftData = {
+          saved_at: new Date().toISOString(),
+          responses: state.responses,
+          fieldFiles: state.fieldFiles,
+          uploadedAssets: state.uploadedAssets,
+          customFields: state.customFields || []
+        };
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(draftData));
+        const now = new Date();
+        const timeStr = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+        const saveStatusEl = document.getElementById("save-status");
+        if (saveStatusEl) {
+          saveStatusEl.textContent = `Draft saved on device at ${timeStr}`;
+        }
+        if (notify) {
+          const verifiedCount = Object.values(state.responses).filter(r => r.status === 'approved' || r.status === 'custom').length;
+          showToast(`✓ Draft saved to device (${verifiedCount} verified, ${Object.keys(state.fieldFiles).length} files attached)`);
+        }
+      } catch (e) {
+        console.warn("Storage save error:", e);
+      }
+    }
+
+    function manualSaveDraft() {
+      saveState(true);
+    }
+
+    // cleanup
+    function _unusedCleanup() {
       try {
         localStorage.setItem(STORAGE_KEY, JSON.stringify({
           responses: state.responses,
@@ -1839,7 +1904,7 @@
         }));
         const now = new Date();
         const timeStr = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-        document.getElementById("save-status").textContent = `Saved locally at ${timeStr}`;
+    /* clean */
       } catch (e) {
         console.warn("Storage save error:", e);
       }
@@ -2755,6 +2820,32 @@
     }
 
     function downloadBackupJSON() {
+      saveState(false);
+      const payload = {
+        exported_at: new Date().toISOString(),
+        client: "Ballarat Hindu Temple & Cultural Centre Inc.",
+        type: "client_intake_draft",
+        version: "1.0",
+        responses: state.responses,
+        custom_fields: state.customFields || [],
+        attached_files_count: Object.keys(state.fieldFiles).length,
+        field_files: state.fieldFiles,
+        repository_assets_count: state.uploadedAssets.length
+      };
+
+      const blob = new Blob([JSON.stringify(payload, null, 2)], { type: "application/json" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = `BHTCC_Intake_Draft_${new Date().toISOString().slice(0, 10)}.json`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+      showToast("✓ Draft JSON file downloaded to device");
+    }
+
+    function _oldDownloadBackupJSON() {
       const payload = {
         exported_at: new Date().toISOString(),
         client: "Ballarat Hindu Temple & Cultural Centre Inc.",

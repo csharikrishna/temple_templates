@@ -49,13 +49,13 @@ export default async function handler(req, res) {
     let blobResult;
     try {
       blobResult = await put(blobPath, fileBuffer, {
-        access: 'private',
+        access: 'public',
         contentType: contentType
       });
     } catch (err) {
-      if (err.message && err.message.includes('allow private access')) {
+      if (err.message && err.message.toLowerCase().includes('private')) {
         blobResult = await put(blobPath, fileBuffer, {
-          access: 'public',
+          access: 'private',
           contentType: contentType
         });
       } else {

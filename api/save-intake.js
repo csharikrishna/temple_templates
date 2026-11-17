@@ -32,13 +32,13 @@ export default async function handler(req, res) {
     const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
     const savedFiles = [];
 
-    // Helper for safe blob put (tries private first to match temple-templates-blob, falls back to public)
+    // Helper for safe blob put (tries public first to match standard Vercel Blob store, falls back to private if needed)
     async function safePut(path, content, options = {}) {
       try {
-        return await put(path, content, { access: 'private', ...options });
+        return await put(path, content, { access: 'public', ...options });
       } catch (err) {
-        if (err.message && err.message.includes('allow private access')) {
-          return await put(path, content, { access: 'public', ...options });
+        if (err.message && err.message.toLowerCase().includes('private')) {
+          return await put(path, content, { access: 'private', ...options });
         }
         throw err;
       }
@@ -84,6 +84,7 @@ export default async function handler(req, res) {
           if (f.fieldKey && data.responses && data.responses[f.fieldKey]) {
             data.responses[f.fieldKey].blobPath = blobResult.pathname;
             data.responses[f.fieldKey].viewUrl = viewUrl;
+            data.responses[f.fieldKey].publicUrl = blobResult.url;
           }
         } catch (uploadErr) {
           console.error(`Error uploading file ${fname}:`, uploadErr);
@@ -103,13 +104,15 @@ export default async function handler(req, res) {
 
     let submissionUrl = '';
     let submissionViewUrl = '';
+    let submissionFile = `bhtcc/submissions/submission_${timestamp}.json`;
     try {
       const submissionBlob = await safePut(
-        `bhtcc/submissions/submission_${timestamp}.json`,
+        submissionFile,
         JSON.stringify(cleanSubmission, null, 2),
         { contentType: 'application/json' }
       );
       submissionUrl = submissionBlob.url;
+      submissionFile = submissionBlob.pathname;
       submissionViewUrl = `/api/view?pathname=${encodeURIComponent(submissionBlob.pathname)}`;
     } catch (subErr) {
       console.warn('Could not save submission json to blob:', subErr.message);
@@ -118,7 +121,7 @@ export default async function handler(req, res) {
     return res.status(200).json({
       status: 'success',
       message: 'All answers and artwork saved permanently to Vercel Blob!',
-      submission_file: submissionBlob?.pathname || `submission_${timestamp}.json`,
+      submission_file: submissionFile,
       submission_url: submissionUrl,
       submission_view_url: submissionViewUrl,
       files_count: savedFiles.length,

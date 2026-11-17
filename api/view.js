@@ -1,4 +1,4 @@
-import { get } from '@vercel/blob';
+import { get, head } from '@vercel/blob';
 
 export default async function handler(req, res) {
   const pathname = req.query?.pathname || req.query?.path;
@@ -8,7 +8,21 @@ export default async function handler(req, res) {
   }
 
   try {
-    const result = await get(pathname, { access: 'private' });
+    let result;
+    try {
+      result = await get(pathname, { access: 'public' });
+    } catch (err1) {
+      try {
+        result = await get(pathname, { access: 'private' });
+      } catch (err2) {
+        // Fallback: try head to get direct public url and redirect
+        const meta = await head(pathname);
+        if (meta && meta.url) {
+          return res.redirect(307, meta.url);
+        }
+        throw err1;
+      }
+    }
 
     if (!result || result.statusCode !== 200) {
       return res.status(404).send('File not found in blob storage');
