@@ -68,8 +68,8 @@ export default async function handler(req, res) {
             contentType: contentType
           });
 
-          // Create viewer URL for easy browser access
-          const viewUrl = `/api/view?pathname=${encodeURIComponent(blobResult.pathname)}`;
+          // Direct public URL for immediate browser access
+          const viewUrl = blobResult.url || `/api/view?url=${encodeURIComponent(blobResult.url)}`;
 
           savedFiles.push({
             name: fname,
@@ -113,7 +113,7 @@ export default async function handler(req, res) {
       );
       submissionUrl = submissionBlob.url;
       submissionFile = submissionBlob.pathname;
-      submissionViewUrl = `/api/view?pathname=${encodeURIComponent(submissionBlob.pathname)}`;
+      submissionViewUrl = submissionBlob.url || `/api/view?url=${encodeURIComponent(submissionBlob.url)}`;
     } catch (subErr) {
       console.warn('Could not save submission json to blob:', subErr.message);
     }
