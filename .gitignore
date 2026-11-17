@@ -21,3 +21,5 @@ audit_artifacts/
 # Intake local test files
 intake_submissions/
 
+.vercel
+.env*
